@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5eaef80f-35ed-4559-b799-89a4d119880d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StepObjects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StepObjects.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Helper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Helper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/StepObjects.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/StepObjects.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test1.json" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test1.json" afterDir="false" />
-    </list>
+    <list default="true" id="5eaef80f-35ed-4559-b799-89a4d119880d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -91,9 +80,9 @@
       <screen x="1440" y="40" width="1440" height="860" />
     </state>
     <state width="1397" height="222" key="GridCell.Tab.0.right/0.40.1440.860/1440.40.1440.860@1440.40.1440.860" timestamp="1589272330302" />
-    <state x="1676" y="285" key="com.intellij.ide.util.TipDialog" timestamp="1589258417255">
+    <state x="1676" y="285" key="com.intellij.ide.util.TipDialog" timestamp="1589279239287">
       <screen x="1440" y="40" width="1440" height="860" />
     </state>
-    <state x="1676" y="285" key="com.intellij.ide.util.TipDialog/0.40.1440.860/1440.40.1440.860@1440.40.1440.860" timestamp="1589258417255" />
+    <state x="1676" y="285" key="com.intellij.ide.util.TipDialog/0.40.1440.860/1440.40.1440.860@1440.40.1440.860" timestamp="1589279239287" />
   </component>
 </project>
