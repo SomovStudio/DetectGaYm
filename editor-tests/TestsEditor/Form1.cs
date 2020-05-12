@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace TestsEditor
 {
@@ -24,7 +25,17 @@ namespace TestsEditor
         {
             if(folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show(folderBrowserDialog1.SelectedPath);
+                ListViewItem item;
+                ListViewItem.ListViewSubItem subitem;
+                string[] fileEntries = Directory.GetFiles(folderBrowserDialog1.SelectedPath);
+                foreach (string fileName in fileEntries)
+                {
+                    item = new ListViewItem();
+                    subitem = new ListViewItem.ListViewSubItem();
+                    subitem.Text = fileName;
+                    item.SubItems.Add(subitem);
+                    listView1.Items.Add(item);
+                }
             }
         }
 
@@ -32,7 +43,17 @@ namespace TestsEditor
         {
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show(folderBrowserDialog1.SelectedPath);
+                ListViewItem item;
+                ListViewItem.ListViewSubItem subitem;
+                string[] fileEntries = Directory.GetFiles(folderBrowserDialog1.SelectedPath);
+                foreach (string fileName in fileEntries)
+                {
+                    item = new ListViewItem();
+                    subitem = new ListViewItem.ListViewSubItem();
+                    subitem.Text = fileName;
+                    item.SubItems.Add(subitem);
+                    listView1.Items.Add(item);
+                }
             }
         }
 
@@ -40,7 +61,11 @@ namespace TestsEditor
         {
             if(openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show(openFileDialog1.FileName);
+                ListViewItem item = new ListViewItem();
+                ListViewItem.ListViewSubItem subitem = new ListViewItem.ListViewSubItem();
+                subitem.Text = openFileDialog1.FileName;
+                item.SubItems.Add(subitem);
+                listView1.Items.Add(item);
             }
         }
 
@@ -48,7 +73,11 @@ namespace TestsEditor
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show(openFileDialog1.FileName);
+                ListViewItem item = new ListViewItem();
+                ListViewItem.ListViewSubItem subitem = new ListViewItem.ListViewSubItem();
+                subitem.Text = openFileDialog1.FileName;
+                item.SubItems.Add(subitem);
+                listView1.Items.Add(item);
             }
         }
 
