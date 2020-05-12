@@ -84,10 +84,8 @@ public class Helper {
         ArrayList<String> links = new ArrayList<String>();
         // получить данные HAR
         Har har = Helper.proxy.getHar();
-        System.out.println("STEP: get HAR version " + har.getLog().getVersion());
         for (int i = 0; i < har.getLog().getEntries().size(); i++) {
             String link = har.getLog().getEntries().get(i).getRequest().getUrl();
-            System.out.println(link);
             links.add(java.net.URLDecoder.decode(link, "UTF-8"));
         }
         System.out.println("STEP: received " + links.size() + " links from HAR");
@@ -111,7 +109,6 @@ public class Helper {
     public static boolean searchYMEvent(ArrayList<String> harLinks, String code) {
         for (String link : harLinks) {
             if (link.contains("mc.yandex.ru/watch") && link.contains("&page-url=goal")) {
-                System.out.println(link);
                 if (link.contains(code)) {
                     System.out.println("STEP: event YM [" + code + "] - detect");
                     return true;
@@ -138,24 +135,25 @@ public class Helper {
         //System.out.println(e.fillInStackTrace());
         System.out.println("|---------------------------------------------");
         System.out.println(" ");
+        endWorkProxy();
         Assert.assertEquals("", "ERROR");
     }
 
     /* Показать сообщение о том что тест провален */
-    public static void showFail(String failMessage) {
+    public static void showFail(String failMessage){
         System.out.println("| FAILED -------------------------------------");
         System.out.println("| " + failMessage);
         System.out.println("|---------------------------------------------");
         System.out.println(" ");
+        endWorkProxy();
         Assert.assertEquals("PASSED", "FAILED");
     }
 
     /* Показать успех */
     public static void showPass(String message) {
-        System.out.println("| PASSED -------------------------------------");
+        System.out.println("| TEST ---------------------------------------");
         System.out.println("| " + message);
         System.out.println("|---------------------------------------------");
-        System.out.println(" ");
         Assert.assertEquals("PASSED", "PASSED");
     }
 

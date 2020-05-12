@@ -1,6 +1,6 @@
 {
    "description":"Test GA & YM",
-   "port":"9091",
+   "port":9091,
    "arguments":"--ignore-certificate-errors",
    "har":"test.har",
    "data":[

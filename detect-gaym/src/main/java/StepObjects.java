@@ -16,9 +16,9 @@ public class StepObjects {
     public static final String TEST_GA = "test_ga";
     public static final String TEST_YM = "test_ym";
 
-    public static void openPage(String url, String description) {
+    public static void openPage(String url, String title) {
         Helper.driver.get(url);
-        if (!description.equals("")) System.out.println("STEP: " + description);
+        if (!title.equals("")) System.out.println("STEP: " + title);
         else System.out.println("STEP: Open page " + url);
     }
 
@@ -29,7 +29,7 @@ public class StepObjects {
         else System.out.println("STEP: input in element [" + locator + "] - is value " + value);
     }
 
-    public static void click(String locator, String description) {
+    public static void clickElement(String locator, String description) {
         WebElement element = Helper.driver.findElement(By.xpath(locator));
         element.click();
         if (!description.equals("")) System.out.println("STEP: " + description);
@@ -63,7 +63,7 @@ public class StepObjects {
         else System.out.println("STEP: sleep " + timeout + " seconds");
     }
 
-    public static void testGA(ArrayList<String> harLinks, String category, String action, String label) {
+    public static void testGA(ArrayList<String> harLinks, String category, String action, String label, String description) {
         boolean result = false;
         for (String link:harLinks) {
             if(link.contains("google-analytics.com/collect") && link.contains("&t=event&"))
@@ -75,13 +75,15 @@ public class StepObjects {
             }
         }
         if(!result) {
-            Helper.showFail("TEST: event GA ["+category+"]["+action+"]["+label+"] - FAILED");
+            if (!description.equals("")) Helper.showFail(description + " - FAILED");
+            else Helper.showFail("TEST: event GA ["+category+"]["+action+"]["+label+"] - FAILED");
         }else{
-            System.out.println("TEST: event GA - PASSED");
+            if (!description.equals("")) Helper.showFail(description + " - PASSED");
+            else Helper.showPass("event GA ["+category+"]["+action+"]["+label+"] - PASSED");
         }
     }
 
-    public static void testYM(ArrayList<String> harLinks, String code){
+    public static void testYM(ArrayList<String> harLinks, String code, String description){
         boolean result = false;
         for (String link:harLinks)
         {
@@ -91,9 +93,11 @@ public class StepObjects {
             }
         }
         if(!result) {
-            System.out.println("TEST: event YM ["+code+"] - FAILED");
+            if (!description.equals("")) Helper.showFail(description + " - FAILED");
+            else Helper.showFail("TEST: event YM ["+code+"] - FAILED");
         }else{
-            System.out.println("TEST: event YM - PASSED");
+            if (!description.equals("")) Helper.showFail(description + " - PASSED");
+            else Helper.showPass("event YM ["+code+"] - PASSED");
         }
     }
 }
