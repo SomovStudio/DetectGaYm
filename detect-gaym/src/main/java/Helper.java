@@ -1,3 +1,6 @@
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,6 +12,9 @@ import net.lightbody.bmp.BrowserMobProxyServer;
 import net.lightbody.bmp.client.ClientUtil;
 import net.lightbody.bmp.core.har.Har;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
@@ -22,6 +28,13 @@ public class Helper {
         //path = path.substring(0, path.length() - 3);
         path = path + "\\driver\\chromedriver.exe";
         System.out.println("PATH DRIVER: " + path);
+        return path;
+    }
+
+    /* Возвращает путь в папку программы */
+    public static String getFolderPath() {
+        String path = System.getProperty("user.dir");
+        //path = path.substring(0, path.length() - 3);
         return path;
     }
 
@@ -206,5 +219,12 @@ public class Helper {
             return false;
         }
         return true;
+    }
+
+    /* Чтение JSON файла */
+    public static JSONObject readJsonFile(String filename) throws IOException, ParseException {
+        Object obj = new JSONParser().parse(new FileReader(getFolderPath() + filename));
+        JSONObject jo = (JSONObject) obj;
+        return jo;
     }
 }

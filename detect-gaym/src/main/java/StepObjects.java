@@ -56,9 +56,11 @@ public class StepObjects {
         else System.out.println("STEP: element [" + locator + "] - is displayed");
     }
 
-    public static void sleep(int timeout) throws InterruptedException {
+    public static void sleep(String description, int timeout) throws InterruptedException {
         long millis = timeout * 1000;
         Thread.sleep(millis);
+        if (!description.equals("")) System.out.println("STEP: " + description);
+        else System.out.println("STEP: sleep " + timeout + " seconds");
     }
 
     public static void testGA(ArrayList<String> harLinks, String category, String action, String label) {

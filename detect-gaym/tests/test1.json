@@ -1,0 +1,74 @@
+{
+   "description":"Test GA & YM",
+   "port":"9091",
+   "arguments":"--ignore-certificate-errors",
+   "har":"test.har",
+   "data":[
+      {
+         "title":"Заявка на подключение услуг МГТС для юридических лиц",
+         "url":"https://mgts.ru/business/orderb2b/",
+         "ga_category":"zayavka_b2b",
+         "ga_action":"orderb2b",
+         "ga_label":"otpravit_success_vpc_gpc_regmsk_regnmsk",
+         "ym_code":"zayavka_business"
+      }
+   ],
+   "steps":[
+      {
+         "description":"",
+         "type":"input_value",
+         "value":"Тестирование Зионек",
+         "locator":"//input[@id='NAME_FID1']",
+         "timeout":0
+      },
+      {
+         "description":"",
+         "type":"input_value",
+         "value":"Тестирование Зионек",
+         "locator":"//input[@id='ADRESS_FID1']",
+         "timeout":0
+      },
+      {
+         "description":"",
+         "type":"input_value",
+         "value":"Тестирование Зионек",
+         "locator":"//input[@id='PERSON_FID1']",
+         "timeout":0
+      },
+      {
+         "description":"",
+         "type":"input_value",
+         "value":"9999999999",
+         "locator":"//input[@id='PHONE_FID1']",
+         "timeout":0
+      },
+      {
+         "description":"",
+         "type":"click_element",
+         "value":"9999999999",
+         "locator":"//input[@id='fb_close_FID1']",
+         "timeout":0
+      },
+      {
+         "description":"",
+         "type":"sleep",
+         "value":"",
+         "locator":"",
+         "timeout":2
+      },
+      {
+         "description":"",
+         "type":"test_ga",
+         "value":"",
+         "locator":"",
+         "timeout":0
+      },
+      {
+         "description":"",
+         "type":"test_ym",
+         "value":"",
+         "locator":"",
+         "timeout":0
+      }
+   ]
+}
