@@ -19,6 +19,7 @@ public class Helper {
     /* Возвращает путь к драйверу */
     public static String getDriverPath() {
         String path = System.getProperty("user.dir");
+        //path = path.substring(0, path.length() - 3);
         path = path + "\\driver\\chromedriver.exe";
         System.out.println("PATH DRIVER: " + path);
         return path;
@@ -162,10 +163,27 @@ public class Helper {
                 if (element.isDisplayed()) break;
             }
             sec++;
-            //System.out.println("TIMER: " + sec);
         } while (sec < timeout);
         Assert.assertTrue(element.isDisplayed());
         return element;
+    }
+
+    public static boolean waitElement(String locator, int timeout) throws InterruptedException {
+        int sec = 0;
+        WebElement element = null;
+        do {
+            Thread.sleep(1000);
+            try {
+                element = driver.findElement(By.xpath(locator));
+            } catch (Exception e) {
+                element = null;
+            }
+            if (element != null) {
+                if (element.isDisplayed()) return true;
+            }
+            sec++;
+        } while (sec < timeout);
+        return false;
     }
 
     /* Ожидание текста в элементе */

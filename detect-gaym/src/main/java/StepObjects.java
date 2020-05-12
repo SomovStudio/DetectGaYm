@@ -26,7 +26,7 @@ public class StepObjects {
         WebElement element = Helper.driver.findElement(By.xpath(locator));
         element.sendKeys(value);
         if (!description.equals("")) System.out.println("STEP: " + description);
-        else System.out.println("STEP: input in element [" + locator + "] is value " + value);
+        else System.out.println("STEP: input in element [" + locator + "] - is value " + value);
     }
 
     public static void click(String locator, String description) {
@@ -43,7 +43,55 @@ public class StepObjects {
             return;
         }
         if (!description.equals("")) System.out.println("STEP: " + description);
-        else System.out.println("STEP: text "+value+" in element [" + locator + "] is displayed");
+        else System.out.println("STEP: text "+value+" in element [" + locator + "] - is displayed");
     }
 
+    public static void waitElement(String locator, String description, int timeout) throws InterruptedException {
+        boolean result = Helper.waitElement(locator, timeout);
+        if(!result) {
+            Helper.showFail("FAIL: not found element [" + locator + "]");
+            return;
+        }
+        if (!description.equals("")) System.out.println("STEP: " + description);
+        else System.out.println("STEP: element [" + locator + "] - is displayed");
+    }
+
+    public static void sleep(int timeout) throws InterruptedException {
+        long millis = timeout * 1000;
+        Thread.sleep(millis);
+    }
+
+    public static void testGA(ArrayList<String> harLinks, String category, String action, String label) {
+        boolean result = false;
+        for (String link:harLinks) {
+            if(link.contains("google-analytics.com/collect") && link.contains("&t=event&"))
+            {
+                if(link.contains("ec="+category) && link.contains("ea="+action) && link.contains("el="+label)){
+                    result = true;
+                    break;
+                }
+            }
+        }
+        if(!result) {
+            Helper.showFail("TEST: event GA ["+category+"]["+action+"]["+label+"] - FAILED");
+        }else{
+            System.out.println("TEST: event GA - PASSED");
+        }
+    }
+
+    public static void testYM(ArrayList<String> harLinks, String code){
+        boolean result = false;
+        for (String link:harLinks)
+        {
+            if(link.contains("mc.yandex.ru/watch") && link.contains("&page-url=goal")){
+                result = link.contains(code);
+                if(result) break;
+            }
+        }
+        if(!result) {
+            System.out.println("TEST: event YM ["+code+"] - FAILED");
+        }else{
+            System.out.println("TEST: event YM - PASSED");
+        }
+    }
 }
