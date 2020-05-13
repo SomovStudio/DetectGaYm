@@ -2,8 +2,7 @@
    "description":"Test GA & YM",
    "port":9091,
    "arguments":[
-      "--ignore-certificate-errors",
-      "user-agent=zionec3"
+      "--ignore-certificate-errors"
    ],
    "har":"test.har",
    "data":[

@@ -20,7 +20,7 @@ public class StepObjects {
 
     public static void openPage(String url, String title) {
         Helper.driver.get(url);
-        if (!title.equals("")) System.out.println("STEP: " + title);
+        if (!title.equals("")) System.out.println(title);
         else System.out.println("STEP: Open page " + url);
     }
 
@@ -28,7 +28,7 @@ public class StepObjects {
         if(timeout > 0) Helper.waitElement(locator, timeout);
         WebElement element = Helper.driver.findElement(By.xpath(locator));
         element.sendKeys(value);
-        if (!description.equals("")) System.out.println("STEP: " + description);
+        if (!description.equals("")) System.out.println(description);
         else System.out.println("STEP: input in element [" + locator + "] - is value " + value);
     }
 
@@ -36,7 +36,7 @@ public class StepObjects {
         if(timeout > 0) Helper.waitElement(locator, timeout);
         WebElement element = Helper.driver.findElement(By.xpath(locator));
         element.click();
-        if (!description.equals("")) System.out.println("STEP: " + description);
+        if (!description.equals("")) System.out.println(description);
         else System.out.println("STEP: click on element [" + locator + "]");
     }
 
@@ -46,7 +46,7 @@ public class StepObjects {
             Helper.showFail("FAIL: not found element [" + locator + "]");
             return;
         }
-        if (!description.equals("")) System.out.println("STEP: " + description);
+        if (!description.equals("")) System.out.println(description);
         else System.out.println("STEP: text "+value+" in element [" + locator + "] - is displayed");
     }
 
@@ -56,14 +56,14 @@ public class StepObjects {
             Helper.showFail("FAIL: not found element [" + locator + "]");
             return;
         }
-        if (!description.equals("")) System.out.println("STEP: " + description);
+        if (!description.equals("")) System.out.println(description);
         else System.out.println("STEP: element [" + locator + "] - is displayed");
     }
 
     public static void sleep(String description, int timeout) throws InterruptedException {
         long millis = timeout * 1000;
         Thread.sleep(millis);
-        if (!description.equals("")) System.out.println("STEP: " + description);
+        if (!description.equals("")) System.out.println(description);
         else System.out.println("STEP: sleep " + timeout + " seconds");
     }
 
@@ -88,7 +88,7 @@ public class StepObjects {
             if (!description.equals("")) Helper.showFail(description + " - FAILED");
             else Helper.showFail("TEST: event GA ["+category+"]["+action+"]["+label+"] - FAILED");
         }else{
-            if (!description.equals("")) Helper.showFail(description + " - PASSED");
+            if (!description.equals("")) Helper.showPass(description + " - PASSED");
             else Helper.showPass("event GA ["+category+"]["+action+"]["+label+"] - PASSED");
         }
     }
@@ -112,7 +112,7 @@ public class StepObjects {
             if (!description.equals("")) Helper.showFail(description + " - FAILED");
             else Helper.showFail("TEST: event YM ["+code+"] - FAILED");
         }else{
-            if (!description.equals("")) Helper.showFail(description + " - PASSED");
+            if (!description.equals("")) Helper.showPass(description + " - PASSED");
             else Helper.showPass("event YM ["+code+"] - PASSED");
         }
     }

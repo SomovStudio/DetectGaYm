@@ -25,7 +25,7 @@ public class Helper {
     /* Возвращает путь к драйверу */
     public static String getDriverPath() {
         String path = System.getProperty("user.dir");
-        //path = path.substring(0, path.length() - 3);
+        //path = path.substring(0, path.length() - 4);
         path = path + "\\driver\\chromedriver.exe";
         System.out.println("PATH DRIVER: " + path);
         return path;
@@ -34,7 +34,7 @@ public class Helper {
     /* Возвращает путь в папку программы */
     public static String getFolderPath() {
         String path = System.getProperty("user.dir");
-        //path = path.substring(0, path.length() - 3);
+        //path = path.substring(0, path.length() - 4);
         return path;
     }
 
@@ -182,20 +182,17 @@ public class Helper {
     }
 
     public static boolean waitElement(String locator, int timeout) throws InterruptedException {
-        int sec = 0;
         WebElement element = null;
-        do {
-            Thread.sleep(1000);
+        for(int i = 0; i < timeout; i++)
+        {
             try {
                 element = driver.findElement(By.xpath(locator));
             } catch (Exception e) {
                 element = null;
             }
-            if (element != null) {
-                if (element.isDisplayed()) return true;
-            }
-            sec++;
-        } while (sec < timeout);
+            if (element != null) return true;
+            Thread.sleep(1000);
+        }
         return false;
     }
 
