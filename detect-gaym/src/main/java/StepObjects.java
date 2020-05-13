@@ -8,6 +8,7 @@ import java.util.List;
 
 public class StepObjects {
     public static final String OPEN_PAGE = "open_page";
+    public static final String OPEN_DEFAULT_PAGE = "open_default_page";
     public static final String INPUT_VALUE = "input_value";
     public static final String CLICK_ELEMENT = "click_element";
     public static final String WAIT_TEXT = "wait_text";

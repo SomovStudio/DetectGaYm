@@ -49,6 +49,7 @@ public class TestCase {
                 int timeout = Integer.parseInt(stepObj.get("timeout").toString());
 
                 if (type.equals(StepObjects.OPEN_PAGE)) StepObjects.openPage(value, desc);
+                if (type.equals(StepObjects.OPEN_DEFAULT_PAGE)) StepObjects.openPage(url, desc);
                 if (type.equals(StepObjects.INPUT_VALUE)) StepObjects.inputValue(locator, value, desc);
                 if (type.equals(StepObjects.CLICK_ELEMENT)) StepObjects.clickElement(locator, desc);
                 if (type.equals(StepObjects.WAIT_TEXT)) StepObjects.waitText(locator, value, desc, timeout);
