@@ -31,16 +31,21 @@ namespace TestsEditor
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                StreamReader sr = new StreamReader(openFileDialog1.FileName, Encoding.UTF8);
+                StreamReader sr = new StreamReader(openFileDialog1.FileName, Encoding.Default); // Encoding.UTF8
                 string jsonText = sr.ReadToEnd();
                 sr.Close();
 
                 TestJson test = JsonConvert.DeserializeObject<TestJson>(jsonText);
-                string description = test.description;
-                int port = test.port;
-                MessageBox.Show(description + " : "+port.ToString());
+                textBoxDescription.Text = test.description;
+                textBoxPort.Text = test.port.ToString();
+                listBoxArguments.Items.Clear();
+                foreach (string argument in test.arguments)
+                {
+                    listBoxArguments.Items.Add(argument);
+                }
+                textBoxHar.Text = test.har;
 
-                
+                MessageBox.Show(test.data[0].title);
             }
         }
 
