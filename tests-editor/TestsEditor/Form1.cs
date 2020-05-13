@@ -209,5 +209,101 @@ namespace TestsEditor
                 listView2.Items[index].Remove();
             }
         }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            saveFileAs();
+        }
+                
+
+        private void saveFileAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFileAs();
+        }
+        private void saveFileAs()
+        {
+            // https://codebeautify.org/jsonvalidator
+            // https://jsonformatter.curiousconcept.com/
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string json = "{";
+                json += System.Environment.NewLine + "\"description\":\""+ this.textBoxDescription.Text +"\",";
+                json += System.Environment.NewLine + "\"port\":" + this.textBoxPort.Text + ",";
+                json += System.Environment.NewLine + "\"arguments\":[";
+                int count = this.listBoxArguments.Items.Count;
+                for (int i = 0; i < count; i++)
+                {
+                    if(i != count - 1) json += System.Environment.NewLine + "\"" + this.listBoxArguments.Items[i].ToString() + "\",";
+                    else json += System.Environment.NewLine + "\"" + this.listBoxArguments.Items[i].ToString() + "\"";
+                }
+                json += System.Environment.NewLine + "],";
+                json += System.Environment.NewLine + "\"har\":\"" + this.textBoxHar.Text + "\",";
+                json += System.Environment.NewLine + "\"data\":[";
+                count = this.listView1.Items.Count;
+                for (int j = 0; j < count; j++)
+                {
+                    json += System.Environment.NewLine + "{";
+                    json += System.Environment.NewLine + "\"title\":\"" + this.listView1.Items[j].SubItems[1].Text + "\",";
+                    json += System.Environment.NewLine + "\"url\":\"" + this.listView1.Items[j].SubItems[2].Text + "\",";
+                    json += System.Environment.NewLine + "\"ga_category\":\"" + this.listView1.Items[j].SubItems[3].Text + "\",";
+                    json += System.Environment.NewLine + "\"ga_action\":\"" + this.listView1.Items[j].SubItems[4].Text + "\",";
+                    json += System.Environment.NewLine + "\"ga_label\":\"" + this.listView1.Items[j].SubItems[5].Text + "\",";
+                    json += System.Environment.NewLine + "\"ym_code\":\"" + this.listView1.Items[j].SubItems[6].Text + "\"";
+                    if (j != count - 1) json += System.Environment.NewLine + "},";
+                    else json += System.Environment.NewLine + "}";
+                }
+                json += System.Environment.NewLine + "],";
+                json += System.Environment.NewLine + "\"steps\":[";
+                count = this.listView2.Items.Count;
+                for (int k = 0; k < count; k++)
+                {
+                    json += System.Environment.NewLine + "{";
+                    json += System.Environment.NewLine + "\"description\":\"" + this.listView2.Items[k].SubItems[1].Text + "\",";
+                    json += System.Environment.NewLine + "\"type\":\"" + this.listView2.Items[k].SubItems[2].Text + "\",";
+                    json += System.Environment.NewLine + "\"value\":\"" + this.listView2.Items[k].SubItems[4].Text + "\",";
+                    json += System.Environment.NewLine + "\"locator\":\"" + this.listView2.Items[k].SubItems[3].Text + "\",";
+                    json += System.Environment.NewLine + "\"timeout\":" + this.listView2.Items[k].SubItems[5].Text;
+                    if (k != count - 1) json += System.Environment.NewLine + "},";
+                    else json += System.Environment.NewLine + "}";
+                }
+                json += System.Environment.NewLine + "]";
+                json += System.Environment.NewLine + "}";
+
+                try
+                {
+                    using (StreamWriter writer = new StreamWriter(saveFileDialog1.FileName))
+                    {
+                        writer.Write(json);
+                    }
+                    MessageBox.Show("Файл успешно сохранён!");
+                }
+                catch (Exception exp)
+                {
+                    MessageBox.Show(exp.Message);
+                }
+                this.toolStripStatusLabelFileName.Text = saveFileDialog1.FileName;
+            }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void saveFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFile();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            saveFile();
+        }
+
+        private void saveFile()
+        {
+
+        }
     }
 }
