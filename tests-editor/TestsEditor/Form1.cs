@@ -45,7 +45,58 @@ namespace TestsEditor
                 }
                 textBoxHar.Text = test.har;
 
-                MessageBox.Show(test.data[0].title);
+                listView1.Items.Clear();
+                ListViewItem item;
+                ListViewItem.ListViewSubItem subitem;
+                foreach (TestJsonData data in test.data)
+                {
+                    item = new ListViewItem();
+                    subitem = new ListViewItem.ListViewSubItem();
+                    subitem.Text = data.title;
+                    item.SubItems.Add(subitem);
+                    subitem = new ListViewItem.ListViewSubItem();
+                    subitem.Text = data.url;
+                    item.SubItems.Add(subitem);
+                    subitem = new ListViewItem.ListViewSubItem();
+                    subitem.Text = data.ga_category;
+                    item.SubItems.Add(subitem);
+                    subitem = new ListViewItem.ListViewSubItem();
+                    subitem.Text = data.ga_action;
+                    item.SubItems.Add(subitem);
+                    subitem = new ListViewItem.ListViewSubItem();
+                    subitem.Text = data.ga_label;
+                    item.SubItems.Add(subitem);
+                    subitem = new ListViewItem.ListViewSubItem();
+                    subitem.Text = data.ym_code;
+                    item.SubItems.Add(subitem);
+                    item.ImageIndex = 0;
+                    listView1.Items.Add(item);
+                }
+
+                listView2.Items.Clear();
+                foreach (TestJsonSteps step in test.steps)
+                {
+                    item = new ListViewItem();
+                    subitem = new ListViewItem.ListViewSubItem();
+                    subitem.Text = step.description;
+                    item.SubItems.Add(subitem);
+                    subitem = new ListViewItem.ListViewSubItem();
+                    subitem.Text = step.type;
+                    item.SubItems.Add(subitem);
+                    subitem = new ListViewItem.ListViewSubItem();
+                    subitem.Text = step.locator;
+                    item.SubItems.Add(subitem);
+                    subitem = new ListViewItem.ListViewSubItem();
+                    subitem.Text = step.value;
+                    item.SubItems.Add(subitem);
+                    subitem = new ListViewItem.ListViewSubItem();
+                    subitem.Text = step.timeout.ToString();
+                    item.SubItems.Add(subitem);
+                    item.ImageIndex = 0;
+                    listView2.Items.Add(item);
+                }
+
+                toolStripStatusLabelFileName.Text = openFileDialog1.FileName;
             }
         }
 

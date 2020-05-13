@@ -32,8 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,6 +54,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.listBoxArguments = new System.Windows.Forms.ListBox();
             this.textBoxHar = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.textBoxArguments = new System.Windows.Forms.TextBox();
@@ -90,9 +93,6 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
@@ -104,11 +104,11 @@
             this.consoleRichTextBox = new System.Windows.Forms.RichTextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.listBoxArguments = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelFileName = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -138,7 +138,7 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
-            this.toolStripStatusLabel3});
+            this.toolStripStatusLabelFileName});
             this.statusStrip1.Location = new System.Drawing.Point(0, 707);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1008, 22);
@@ -150,18 +150,6 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(122, 17);
             this.toolStripStatusLabel1.Text = "2020 © Somov Studio";
-            // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(28, 17);
-            this.toolStripStatusLabel2.Text = "File:";
-            // 
-            // toolStripStatusLabel3
-            // 
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(16, 17);
-            this.toolStripStatusLabel3.Text = "...";
             // 
             // menuStrip1
             // 
@@ -392,6 +380,62 @@
             this.panel5.Size = new System.Drawing.Size(336, 427);
             this.panel5.TabIndex = 2;
             // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.Location = new System.Drawing.Point(292, 253);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(27, 23);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "ua";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Location = new System.Drawing.Point(292, 226);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(27, 23);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "ice";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(292, 155);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(27, 23);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "-";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(292, 127);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(27, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "+";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // listBoxArguments
+            // 
+            this.listBoxArguments.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBoxArguments.FormattingEnabled = true;
+            this.listBoxArguments.Items.AddRange(new object[] {
+            "--ignore-certificate-errors"});
+            this.listBoxArguments.Location = new System.Drawing.Point(14, 155);
+            this.listBoxArguments.Name = "listBoxArguments";
+            this.listBoxArguments.Size = new System.Drawing.Size(272, 121);
+            this.listBoxArguments.TabIndex = 9;
+            // 
             // textBoxHar
             // 
             this.textBoxHar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -546,9 +590,12 @@
             this.columnHeader6,
             this.columnHeader7});
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.FullRowSelect = true;
+            this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.LargeImageList = this.imageList1;
             this.listView1.Location = new System.Drawing.Point(0, 25);
+            this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(666, 173);
             this.listView1.SmallImageList = this.imageList1;
@@ -560,17 +607,17 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "...";
-            this.columnHeader1.Width = 25;
+            this.columnHeader1.Width = 38;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Title";
-            this.columnHeader2.Width = 120;
+            this.columnHeader2.Width = 100;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Url";
-            this.columnHeader3.Width = 120;
+            this.columnHeader3.Width = 100;
             // 
             // columnHeader4
             // 
@@ -691,13 +738,16 @@
             this.columnHeader8,
             this.columnHeader9,
             this.columnHeader10,
-            this.columnHeader11,
-            this.columnHeader12,
-            this.columnHeader13});
+            this.columnHeader14,
+            this.columnHeader15,
+            this.columnHeader16});
             this.listView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView2.FullRowSelect = true;
+            this.listView2.GridLines = true;
             this.listView2.HideSelection = false;
             this.listView2.LargeImageList = this.imageList1;
             this.listView2.Location = new System.Drawing.Point(0, 25);
+            this.listView2.MultiSelect = false;
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(666, 174);
             this.listView2.SmallImageList = this.imageList1;
@@ -709,32 +759,17 @@
             // columnHeader8
             // 
             this.columnHeader8.Text = "...";
-            this.columnHeader8.Width = 25;
+            this.columnHeader8.Width = 38;
             // 
             // columnHeader9
             // 
             this.columnHeader9.Text = "Description";
-            this.columnHeader9.Width = 120;
+            this.columnHeader9.Width = 110;
             // 
             // columnHeader10
             // 
             this.columnHeader10.Text = "Type";
-            this.columnHeader10.Width = 140;
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "Value";
-            this.columnHeader11.Width = 120;
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "Locator";
-            this.columnHeader12.Width = 150;
-            // 
-            // columnHeader13
-            // 
-            this.columnHeader13.Text = "Timeout";
-            this.columnHeader13.Width = 100;
+            this.columnHeader10.Width = 150;
             // 
             // toolStrip3
             // 
@@ -844,61 +879,32 @@
             // 
             this.saveFileDialog1.Filter = "*.json|*.json";
             // 
-            // listBoxArguments
+            // columnHeader14
             // 
-            this.listBoxArguments.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBoxArguments.FormattingEnabled = true;
-            this.listBoxArguments.Items.AddRange(new object[] {
-            "--ignore-certificate-errors"});
-            this.listBoxArguments.Location = new System.Drawing.Point(14, 155);
-            this.listBoxArguments.Name = "listBoxArguments";
-            this.listBoxArguments.Size = new System.Drawing.Size(272, 121);
-            this.listBoxArguments.TabIndex = 9;
+            this.columnHeader14.Text = "Locator";
+            this.columnHeader14.Width = 150;
             // 
-            // button1
+            // columnHeader15
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(292, 127);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(27, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.columnHeader15.Text = "Value";
+            this.columnHeader15.Width = 150;
             // 
-            // button2
+            // columnHeader16
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(292, 155);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(27, 23);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "-";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.columnHeader16.Text = "Timeout";
+            this.columnHeader16.Width = 55;
             // 
-            // button3
+            // toolStripStatusLabel2
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(292, 226);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(27, 23);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "ice";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel2.Text = "|";
             // 
-            // button4
+            // toolStripStatusLabelFileName
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Location = new System.Drawing.Point(292, 253);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(27, 23);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "ua";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.toolStripStatusLabelFileName.Name = "toolStripStatusLabelFileName";
+            this.toolStripStatusLabelFileName.Size = new System.Drawing.Size(16, 17);
+            this.toolStripStatusLabelFileName.Text = "...";
             // 
             // Form1
             // 
@@ -1019,17 +1025,17 @@
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.ColumnHeader columnHeader11;
-        private System.Windows.Forms.ColumnHeader columnHeader12;
-        private System.Windows.Forms.ColumnHeader columnHeader13;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox listBoxArguments;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ColumnHeader columnHeader14;
+        private System.Windows.Forms.ColumnHeader columnHeader15;
+        private System.Windows.Forms.ColumnHeader columnHeader16;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelFileName;
     }
 }
 
