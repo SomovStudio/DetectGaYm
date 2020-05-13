@@ -136,5 +136,42 @@ namespace TestsEditor
         {
             textBoxArguments.Text = "user-agent=node1";
         }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2();
+            form.Text = "Add";
+            form.parentForm = this;
+            form.Show();
+        }
+
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+            if(listView1.FocusedItem != null)
+            {
+                int index = listView1.FocusedItem.Index;
+                Form2 form = new Form2();
+                form.parentForm = this;
+                form.index = index;
+                form.Text = "Edit";
+                form.parentForm = this;
+                form.textBoxTitle.Text = listView1.Items[index].SubItems[1].Text;
+                form.textBoxUrl.Text = listView1.Items[index].SubItems[2].Text;
+                form.textBoxGaCategory.Text = listView1.Items[index].SubItems[3].Text;
+                form.textBoxGaAction.Text = listView1.Items[index].SubItems[4].Text;
+                form.textBoxGaLabel.Text = listView1.Items[index].SubItems[5].Text;
+                form.textBoxYmCode.Text = listView1.Items[index].SubItems[6].Text;
+                form.Show();
+            }
+        }
+
+        private void toolStripButton7_Click(object sender, EventArgs e)
+        {
+            if (listView1.FocusedItem != null)
+            {
+                int index = listView1.FocusedItem.Index;
+                listView1.Items[index].Remove();
+            }
+        }
     }
 }
