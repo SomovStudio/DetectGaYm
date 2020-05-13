@@ -55,14 +55,8 @@ public class TestCase {
                 if (type.equals(StepObjects.WAIT_TEXT)) StepObjects.waitText(locator, value, desc, timeout);
                 if (type.equals(StepObjects.WAIT_ELEMENT)) StepObjects.waitElement(locator, desc, timeout);
                 if (type.equals(StepObjects.SLEEP)) StepObjects.sleep(desc, timeout);
-                if (type.equals(StepObjects.TEST_GA)) {
-                    ArrayList<String> harLinks = Helper.getLinksFromHar();
-                    StepObjects.testGA(harLinks, ga_category, ga_action, ga_label, desc);
-                }
-                if (type.equals(StepObjects.TEST_YM)) {
-                    ArrayList<String> harLinks = Helper.getLinksFromHar();
-                    StepObjects.testYM(harLinks, ym_code, desc);
-                }
+                if (type.equals(StepObjects.TEST_GA)) StepObjects.testGA(ga_category, ga_action, ga_label, desc, timeout);
+                if (type.equals(StepObjects.TEST_YM)) StepObjects.testYM(ym_code, desc, timeout);
 
                 Thread.sleep(250);
             }
@@ -82,7 +76,7 @@ public class TestCase {
         JSONArray args = (JSONArray) oj.get("arguments");
         Iterator argsItr = args.iterator();
         while (argsItr.hasNext()) {
-            String argument  = argsItr.next().toString();
+            String argument = argsItr.next().toString();
             arguments.add(argument);
         }
 

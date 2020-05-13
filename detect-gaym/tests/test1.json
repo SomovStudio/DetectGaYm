@@ -64,14 +64,14 @@
          "type":"test_ga",
          "value":"",
          "locator":"",
-         "timeout":0
+         "timeout":1
       },
       {
          "description":"",
          "type":"test_ym",
          "value":"",
          "locator":"",
-         "timeout":0
+         "timeout":1
       }
    ]
 }

@@ -3,6 +3,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,16 +67,22 @@ public class StepObjects {
         else System.out.println("STEP: sleep " + timeout + " seconds");
     }
 
-    public static void testGA(ArrayList<String> harLinks, String category, String action, String label, String description) {
+    public static void testGA(String category, String action, String label, String description, int timeout) throws UnsupportedEncodingException, InterruptedException {
         boolean result = false;
-        for (String link:harLinks) {
-            if(link.contains("google-analytics.com/collect") && link.contains("&t=event&"))
-            {
-                if(link.contains("ec="+category) && link.contains("ea="+action) && link.contains("el="+label)){
-                    result = true;
-                    break;
+        for (int time = -1; time < timeout; time++) // wait sec
+        {
+            Thread.sleep(1000);
+            ArrayList<String> harLinks = Helper.getLinksFromHar();
+            for (String link:harLinks) {
+                if(link.contains("google-analytics.com/collect") && link.contains("&t=event&"))
+                {
+                    if(link.contains("ec="+category) && link.contains("ea="+action) && link.contains("el="+label)){
+                        result = true;
+                        break;
+                    }
                 }
             }
+            if(result) break;
         }
         if(!result) {
             if (!description.equals("")) Helper.showFail(description + " - FAILED");
@@ -86,14 +93,20 @@ public class StepObjects {
         }
     }
 
-    public static void testYM(ArrayList<String> harLinks, String code, String description){
+    public static void testYM(String code, String description, int timeout) throws InterruptedException, UnsupportedEncodingException {
         boolean result = false;
-        for (String link:harLinks)
+        for (int time = -1; time < timeout; time++) // wait sec
         {
-            if(link.contains("mc.yandex.ru/watch") && link.contains("&page-url=goal")){
-                result = link.contains(code);
-                if(result) break;
+            Thread.sleep(1000);
+            ArrayList<String> harLinks = Helper.getLinksFromHar();
+            for (String link:harLinks)
+            {
+                if(link.contains("mc.yandex.ru/watch") && link.contains("&page-url=goal")){
+                    result = link.contains(code);
+                    if(result) break;
+                }
             }
+            if(result) break;
         }
         if(!result) {
             if (!description.equals("")) Helper.showFail(description + " - FAILED");
