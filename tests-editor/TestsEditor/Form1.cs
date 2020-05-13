@@ -173,5 +173,41 @@ namespace TestsEditor
                 listView1.Items[index].Remove();
             }
         }
+
+        private void toolStripButton8_Click(object sender, EventArgs e)
+        {
+            Form3 form = new Form3();
+            form.Text = "Add";
+            form.parentForm = this;
+            form.Show();
+        }
+
+        private void toolStripButton9_Click(object sender, EventArgs e)
+        {
+            if (listView2.FocusedItem != null)
+            {
+                int index = listView2.FocusedItem.Index;
+                Form3 form = new Form3();
+                form.parentForm = this;
+                form.index = index;
+                form.Text = "Edit";
+                form.parentForm = this;
+                form.textBoxDescription.Text = listView2.Items[index].SubItems[1].Text;
+                form.comboBoxType.Text = listView2.Items[index].SubItems[2].Text;
+                form.textBoxLocator.Text = listView2.Items[index].SubItems[3].Text;
+                form.textBoxValue.Text = listView2.Items[index].SubItems[4].Text;
+                form.numericUpDownTimeout.Text = listView2.Items[index].SubItems[5].Text;
+                form.Show();
+            }
+        }
+
+        private void toolStripButton10_Click(object sender, EventArgs e)
+        {
+            if (listView2.FocusedItem != null)
+            {
+                int index = listView2.FocusedItem.Index;
+                listView2.Items[index].Remove();
+            }
+        }
     }
 }
