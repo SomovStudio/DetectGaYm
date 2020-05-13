@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
+using Newtonsoft.Json; // https://www.newtonsoft.com/json
 
 namespace TestsEditor
 {
@@ -29,6 +31,15 @@ namespace TestsEditor
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
+                StreamReader sr = new StreamReader(openFileDialog1.FileName, Encoding.UTF8);
+                string jsonText = sr.ReadToEnd();
+                sr.Close();
+
+                TestJson test = JsonConvert.DeserializeObject<TestJson>(jsonText);
+                string description = test.description;
+                int port = test.port;
+                MessageBox.Show(description + " : "+port.ToString());
+
                 
             }
         }
