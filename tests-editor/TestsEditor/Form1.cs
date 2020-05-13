@@ -32,5 +32,21 @@ namespace TestsEditor
                 
             }
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            newFile();
+        }
+
+        private void newFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            newFile();
+        }
+
+        private void newFile()
+        {
+            Form1 newform = new Form1();
+            newform.Show();
+        }
     }
 }
