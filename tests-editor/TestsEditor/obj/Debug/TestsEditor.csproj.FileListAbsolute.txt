@@ -1,8 +1,0 @@
-C:\GIT\DetectGaYm\tests-editor\TestsEditor\bin\Debug\TestsEditor.exe
-C:\GIT\DetectGaYm\tests-editor\TestsEditor\bin\Debug\TestsEditor.pdb
-C:\GIT\DetectGaYm\tests-editor\TestsEditor\obj\Debug\TestsEditor.csprojAssemblyReference.cache
-C:\GIT\DetectGaYm\tests-editor\TestsEditor\obj\Debug\TestsEditor.Form1.resources
-C:\GIT\DetectGaYm\tests-editor\TestsEditor\obj\Debug\TestsEditor.Properties.Resources.resources
-C:\GIT\DetectGaYm\tests-editor\TestsEditor\obj\Debug\TestsEditor.csproj.GenerateResource.cache
-C:\GIT\DetectGaYm\tests-editor\TestsEditor\obj\Debug\TestsEditor.exe
-C:\GIT\DetectGaYm\tests-editor\TestsEditor\obj\Debug\TestsEditor.pdb
