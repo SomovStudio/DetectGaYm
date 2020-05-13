@@ -12,7 +12,7 @@ import java.util.Iterator;
 public class TestCase {
     public static String description;
     public static int port;
-    public static String arguments;
+    public static ArrayList<String> arguments;
     public static String nameHar;
     public static JSONArray data;
     public static JSONArray steps;
@@ -73,10 +73,17 @@ public class TestCase {
 
         description = oj.get("description").toString();
         port = Integer.parseInt(oj.get("port").toString());
-        arguments = oj.get("arguments").toString();
         nameHar = oj.get("har").toString();
         data = (JSONArray) oj.get("data");
         steps = (JSONArray) oj.get("steps");
+
+        arguments = new ArrayList<String>();
+        JSONArray args = (JSONArray) oj.get("arguments");
+        Iterator argsItr = args.iterator();
+        while (argsItr.hasNext()) {
+            String argument  = argsItr.next().toString();
+            arguments.add(argument);
+        }
 
         try {
             beforeTest();

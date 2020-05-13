@@ -39,7 +39,7 @@ public class Helper {
     }
 
     /* Инициализация работы с Прокси */
-    public static void initProxyForChromeDriver(int port, String arguments, String nameHar) {
+    public static void initProxyForChromeDriver(int port, ArrayList<String> arguments, String nameHar) {
         System.setProperty("webdriver.chrome.driver", getDriverPath());
 
         // старт прокси
@@ -56,8 +56,10 @@ public class Helper {
         capabilities.setCapability(CapabilityType.PROXY, seleniumProxy);
 
         ChromeOptions options = new ChromeOptions();
-        options.addArguments(arguments);
-        System.out.println("PROXY: chrome options (arguments: " + arguments + ")");
+        for (String argument : arguments) {
+            options.addArguments(argument);
+            System.out.println("PROXY: chrome options (argument: " + argument + ")");
+        }
 
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 
@@ -123,7 +125,7 @@ public class Helper {
     public static void showTitle(String testname) {
         System.out.println(" ");
         System.out.println(" ");
-        System.out.println("| TEST ---------------------------------------");
+        System.out.println("| START TEST ---------------------------------");
         System.out.println("| " + testname);
         System.out.println("|---------------------------------------------");
     }
@@ -151,7 +153,7 @@ public class Helper {
 
     /* Показать успех */
     public static void showPass(String message) {
-        System.out.println("| TEST ---------------------------------------");
+        System.out.println("TEST -----------------------------------------");
         System.out.println("| " + message);
         System.out.println("|---------------------------------------------");
         Assert.assertEquals("PASSED", "PASSED");
