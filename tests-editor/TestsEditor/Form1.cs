@@ -48,5 +48,26 @@ namespace TestsEditor
             Form1 newform = new Form1();
             newform.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            listBoxArguments.Items.Add(textBoxArguments.Text);
+            textBoxArguments.Text = "";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(listBoxArguments.SelectedIndex > -1) listBoxArguments.Items.RemoveAt(listBoxArguments.SelectedIndex);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBoxArguments.Text = "--ignore-certificate-errors";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBoxArguments.Text = "user-agent=node1";
+        }
     }
 }
