@@ -22,21 +22,21 @@
          "type":"input_value",
          "value":"Тестирование Зионек",
          "locator":"//input[@id='NAME_FID1']",
-         "timeout":0
+         "timeout":1
       },
       {
          "description":"",
          "type":"input_value",
          "value":"Тестирование Зионек",
          "locator":"//input[@id='ADRESS_FID1']",
-         "timeout":0
+         "timeout":1
       },
       {
          "description":"",
          "type":"input_value",
          "value":"Тестирование Зионек",
          "locator":"//input[@id='PERSON_FID1']",
-         "timeout":0
+         "timeout":1
       },
       {
          "description":"",
@@ -50,7 +50,7 @@
          "type":"click_element",
          "value":"9999999999",
          "locator":"//input[@id='fb_close_FID1']",
-         "timeout":0
+         "timeout":1
       },
       {
          "description":"",

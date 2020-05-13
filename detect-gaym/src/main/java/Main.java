@@ -7,7 +7,7 @@ public class Main {
         System.out.println("| Detect events: Google Analytics & Yandex Metrika");
         System.out.println("| Author: Somov Studio (version 1.0)");
         System.out.println("|=================================================");
-        TestCase.execute("\\tests\\test2.json");
+        TestCase.execute("\\tests\\test1.json");
         //TestCase.execute(args[0]);
     }
 }

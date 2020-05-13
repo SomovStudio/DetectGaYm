@@ -23,14 +23,16 @@ public class StepObjects {
         else System.out.println("STEP: Open page " + url);
     }
 
-    public static void inputValue(String locator, String value, String description) {
+    public static void inputValue(String locator, String value, String description, int timeout) throws InterruptedException {
+        if(timeout > 0) Helper.waitElement(locator, timeout);
         WebElement element = Helper.driver.findElement(By.xpath(locator));
         element.sendKeys(value);
         if (!description.equals("")) System.out.println("STEP: " + description);
         else System.out.println("STEP: input in element [" + locator + "] - is value " + value);
     }
 
-    public static void clickElement(String locator, String description) {
+    public static void clickElement(String locator, String description, int timeout) throws InterruptedException {
+        if(timeout > 0) Helper.waitElement(locator, timeout);
         WebElement element = Helper.driver.findElement(By.xpath(locator));
         element.click();
         if (!description.equals("")) System.out.println("STEP: " + description);
