@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5eaef80f-35ed-4559-b799-89a4d119880d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../tests-editor/TestsEditor/.vs/TestsEditor/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor/TestsEditor/.vs/TestsEditor/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests-editor/TestsEditor/Form4.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor/TestsEditor/Form4.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests-editor/TestsEditor/TestsEditor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor/TestsEditor/TestsEditor.csproj" afterDir="false" />
-    </list>
+    <list default="true" id="5eaef80f-35ed-4559-b799-89a4d119880d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,9 +80,9 @@
       <screen x="1440" y="40" width="1440" height="860" />
     </state>
     <state width="1397" height="231" key="GridCell.Tab.0.right/0.40.1440.860/1440.40.1440.860@1440.40.1440.860" timestamp="1589353208962" />
-    <state x="1676" y="285" key="com.intellij.ide.util.TipDialog" timestamp="1589444123459">
+    <state x="1676" y="285" key="com.intellij.ide.util.TipDialog" timestamp="1589463889125">
       <screen x="1440" y="40" width="1440" height="860" />
     </state>
-    <state x="1676" y="285" key="com.intellij.ide.util.TipDialog/0.40.1440.860/1440.40.1440.860@1440.40.1440.860" timestamp="1589444123459" />
+    <state x="1676" y="285" key="com.intellij.ide.util.TipDialog/0.40.1440.860/1440.40.1440.860@1440.40.1440.860" timestamp="1589463889125" />
   </component>
 </project>

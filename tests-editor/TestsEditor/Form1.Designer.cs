@@ -33,6 +33,10 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.defaultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aSCIIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uTF8ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripStatusLabelFileName = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -128,10 +132,7 @@
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.uTF8ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aSCIIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.defaultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.howToCloseThePortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -181,6 +182,42 @@
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(10, 17);
             this.toolStripStatusLabel2.Text = "|";
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.defaultToolStripMenuItem,
+            this.aSCIIToolStripMenuItem,
+            this.uTF8ToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(58, 20);
+            this.toolStripDropDownButton1.Text = "Default";
+            // 
+            // defaultToolStripMenuItem
+            // 
+            this.defaultToolStripMenuItem.Checked = true;
+            this.defaultToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.defaultToolStripMenuItem.Name = "defaultToolStripMenuItem";
+            this.defaultToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.defaultToolStripMenuItem.Text = "Default";
+            this.defaultToolStripMenuItem.Click += new System.EventHandler(this.defaultToolStripMenuItem_Click);
+            // 
+            // aSCIIToolStripMenuItem
+            // 
+            this.aSCIIToolStripMenuItem.Name = "aSCIIToolStripMenuItem";
+            this.aSCIIToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.aSCIIToolStripMenuItem.Text = "ASCII";
+            this.aSCIIToolStripMenuItem.Click += new System.EventHandler(this.aSCIIToolStripMenuItem_Click);
+            // 
+            // uTF8ToolStripMenuItem
+            // 
+            this.uTF8ToolStripMenuItem.Name = "uTF8ToolStripMenuItem";
+            this.uTF8ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.uTF8ToolStripMenuItem.Text = "UTF-8";
+            this.uTF8ToolStripMenuItem.Click += new System.EventHandler(this.uTF8ToolStripMenuItem_Click);
             // 
             // toolStripStatusLabelFileName
             // 
@@ -308,7 +345,8 @@
             // supportToolStripMenuItem
             // 
             this.supportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.getStartCommandToolStripMenuItem});
+            this.getStartCommandToolStripMenuItem,
+            this.howToCloseThePortToolStripMenuItem});
             this.supportToolStripMenuItem.Name = "supportToolStripMenuItem";
             this.supportToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.supportToolStripMenuItem.Text = "Support";
@@ -316,7 +354,7 @@
             // getStartCommandToolStripMenuItem
             // 
             this.getStartCommandToolStripMenuItem.Name = "getStartCommandToolStripMenuItem";
-            this.getStartCommandToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.getStartCommandToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.getStartCommandToolStripMenuItem.Text = "Get start command";
             this.getStartCommandToolStripMenuItem.Click += new System.EventHandler(this.getStartCommandToolStripMenuItem_Click);
             // 
@@ -1102,41 +1140,12 @@
             // 
             this.saveFileDialog1.Filter = "*.json|*.json";
             // 
-            // toolStripDropDownButton1
+            // howToCloseThePortToolStripMenuItem
             // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.defaultToolStripMenuItem,
-            this.aSCIIToolStripMenuItem,
-            this.uTF8ToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(58, 20);
-            this.toolStripDropDownButton1.Text = "Default";
-            // 
-            // uTF8ToolStripMenuItem
-            // 
-            this.uTF8ToolStripMenuItem.Name = "uTF8ToolStripMenuItem";
-            this.uTF8ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.uTF8ToolStripMenuItem.Text = "UTF-8";
-            this.uTF8ToolStripMenuItem.Click += new System.EventHandler(this.uTF8ToolStripMenuItem_Click);
-            // 
-            // aSCIIToolStripMenuItem
-            // 
-            this.aSCIIToolStripMenuItem.Name = "aSCIIToolStripMenuItem";
-            this.aSCIIToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.aSCIIToolStripMenuItem.Text = "ASCII";
-            this.aSCIIToolStripMenuItem.Click += new System.EventHandler(this.aSCIIToolStripMenuItem_Click);
-            // 
-            // defaultToolStripMenuItem
-            // 
-            this.defaultToolStripMenuItem.Checked = true;
-            this.defaultToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.defaultToolStripMenuItem.Name = "defaultToolStripMenuItem";
-            this.defaultToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.defaultToolStripMenuItem.Text = "Default";
-            this.defaultToolStripMenuItem.Click += new System.EventHandler(this.defaultToolStripMenuItem_Click);
+            this.howToCloseThePortToolStripMenuItem.Name = "howToCloseThePortToolStripMenuItem";
+            this.howToCloseThePortToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.howToCloseThePortToolStripMenuItem.Text = "How to close the port";
+            this.howToCloseThePortToolStripMenuItem.Click += new System.EventHandler(this.howToCloseThePortToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -1293,6 +1302,7 @@
         private System.Windows.Forms.ToolStripMenuItem aSCIIToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uTF8ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem defaultToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem howToCloseThePortToolStripMenuItem;
     }
 }
 

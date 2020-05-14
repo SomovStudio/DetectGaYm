@@ -504,6 +504,8 @@ namespace TestsEditor
             {
                 P.Kill();
                 P.Close();
+                P.Dispose();
+                MessageBox.Show("Process is Kill (close and dispose)");
             }
             catch (Exception ex)
             {
@@ -616,6 +618,12 @@ namespace TestsEditor
                 uTF8ToolStripMenuItem.Checked = false;
                 toolStripDropDownButton1.Text = defaultToolStripMenuItem.Text;
             }
+        }
+
+        private void howToCloseThePortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form6 form = new Form6();
+            form.ShowDialog();
         }
     }
 }
