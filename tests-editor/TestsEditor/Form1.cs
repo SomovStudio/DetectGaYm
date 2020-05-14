@@ -388,11 +388,16 @@ namespace TestsEditor
 
         private void executeTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            executeTest();
+        }
+
+        private void executeTest()
+        {
             try
             {
                 string path = Directory.GetCurrentDirectory();
                 string bat = "cd " + path;
-                bat += System.Environment.NewLine + "detect.bat \\tests\\"+this.fileName;
+                bat += System.Environment.NewLine + "detect.bat \\tests\\" + this.fileName;
                 using (StreamWriter writer = new StreamWriter("run.bat"))
                 {
                     writer.Write(bat);
@@ -408,6 +413,7 @@ namespace TestsEditor
                 P.StartInfo.UseShellExecute = false;
                 P.ErrorDataReceived += P_ErrorDataReceived;
                 P.OutputDataReceived += P_OutputDataReceived;
+                P.EnableRaisingEvents = true;
                 P.Exited += P_Exited;
                 P.Start();
                 P.BeginErrorReadLine();
@@ -424,7 +430,10 @@ namespace TestsEditor
         {
             try
             {
-                //this.Invoke(this.myDelegate, new object[] { e.Data.ToString() });
+                if (this.detailedInformationInTheConsoleToolStripMenuItem.Checked)
+                {
+                    this.Invoke(this.myDelegate, new object[] { e.Data.ToString() });
+                }
             }
             catch (Exception ex)
             {
@@ -443,10 +452,41 @@ namespace TestsEditor
             }
         }
 
-        void P_Exited(object sender, System.EventArgs e)
+        void P_Exited(object sender, EventArgs e)
         {
             if (File.Exists("run.bat")) File.Delete("run.bat");
         }
 
+        private void detailedInformationInTheConsoleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.detailedInformationInTheConsoleToolStripMenuItem.Checked)
+            {
+                this.detailedInformationInTheConsoleToolStripMenuItem.Checked = false;
+            }
+            else
+            {
+                this.detailedInformationInTheConsoleToolStripMenuItem.Checked = true;
+            }
+        }
+
+        private void clearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            consoleRichTextBox.Clear();
+        }
+
+        private void openSystemConsoleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("cmd.exe");
+        }
+
+        private void toolStripButton12_Click(object sender, EventArgs e)
+        {
+            Process.Start("cmd.exe");
+        }
+
+        private void toolStripButton11_Click(object sender, EventArgs e)
+        {
+            executeTest();
+        }
     }
 }

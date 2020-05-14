@@ -43,6 +43,8 @@
             this.saveFileAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.executeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -109,9 +111,13 @@
             this.consoleRichTextBox = new System.Windows.Forms.RichTextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.executeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.executeTestInSystemConsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.detailedInformationInTheConsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openSystemConsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -134,6 +140,7 @@
             this.toolStrip3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -170,7 +177,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.runToolStripMenuItem});
+            this.runToolStripMenuItem,
+            this.settingsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1008, 24);
@@ -195,7 +203,7 @@
             // 
             this.newFileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newFileToolStripMenuItem.Image")));
             this.newFileToolStripMenuItem.Name = "newFileToolStripMenuItem";
-            this.newFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newFileToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.newFileToolStripMenuItem.Text = "New file";
             this.newFileToolStripMenuItem.Click += new System.EventHandler(this.newFileToolStripMenuItem_Click);
             // 
@@ -241,6 +249,23 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // runToolStripMenuItem
+            // 
+            this.runToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.executeTestToolStripMenuItem,
+            this.openSystemConsoleToolStripMenuItem});
+            this.runToolStripMenuItem.Name = "runToolStripMenuItem";
+            this.runToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.runToolStripMenuItem.Text = "Run";
+            // 
+            // executeTestToolStripMenuItem
+            // 
+            this.executeTestToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("executeTestToolStripMenuItem.Image")));
+            this.executeTestToolStripMenuItem.Name = "executeTestToolStripMenuItem";
+            this.executeTestToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.executeTestToolStripMenuItem.Text = "Execute test";
+            this.executeTestToolStripMenuItem.Click += new System.EventHandler(this.executeTestToolStripMenuItem_Click);
+            // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -249,7 +274,9 @@
             this.toolStripButton2,
             this.toolStripButton3,
             this.toolStripButton4,
-            this.toolStripSeparator4});
+            this.toolStripSeparator4,
+            this.toolStripButton11,
+            this.toolStripButton12});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1008, 25);
@@ -903,6 +930,7 @@
             // 
             this.consoleRichTextBox.BackColor = System.Drawing.Color.White;
             this.consoleRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.consoleRichTextBox.ContextMenuStrip = this.contextMenuStrip1;
             this.consoleRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.consoleRichTextBox.Font = new System.Drawing.Font("Consolas", 9.75F);
             this.consoleRichTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -921,27 +949,62 @@
             // 
             this.saveFileDialog1.Filter = "*.json|*.json";
             // 
-            // runToolStripMenuItem
+            // settingsToolStripMenuItem
             // 
-            this.runToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.executeTestToolStripMenuItem,
-            this.executeTestInSystemConsoleToolStripMenuItem});
-            this.runToolStripMenuItem.Name = "runToolStripMenuItem";
-            this.runToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
-            this.runToolStripMenuItem.Text = "Run";
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.detailedInformationInTheConsoleToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
             // 
-            // executeTestToolStripMenuItem
+            // detailedInformationInTheConsoleToolStripMenuItem
             // 
-            this.executeTestToolStripMenuItem.Name = "executeTestToolStripMenuItem";
-            this.executeTestToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
-            this.executeTestToolStripMenuItem.Text = "Execute test";
-            this.executeTestToolStripMenuItem.Click += new System.EventHandler(this.executeTestToolStripMenuItem_Click);
+            this.detailedInformationInTheConsoleToolStripMenuItem.Name = "detailedInformationInTheConsoleToolStripMenuItem";
+            this.detailedInformationInTheConsoleToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
+            this.detailedInformationInTheConsoleToolStripMenuItem.Text = "Detailed information in the console";
+            this.detailedInformationInTheConsoleToolStripMenuItem.Click += new System.EventHandler(this.detailedInformationInTheConsoleToolStripMenuItem_Click);
             // 
-            // executeTestInSystemConsoleToolStripMenuItem
+            // contextMenuStrip1
             // 
-            this.executeTestInSystemConsoleToolStripMenuItem.Name = "executeTestInSystemConsoleToolStripMenuItem";
-            this.executeTestInSystemConsoleToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
-            this.executeTestInSystemConsoleToolStripMenuItem.Text = "Execute test in system console";
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clearToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(102, 26);
+            // 
+            // clearToolStripMenuItem
+            // 
+            this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clearToolStripMenuItem.Text = "Clear";
+            this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
+            // 
+            // openSystemConsoleToolStripMenuItem
+            // 
+            this.openSystemConsoleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openSystemConsoleToolStripMenuItem.Image")));
+            this.openSystemConsoleToolStripMenuItem.Name = "openSystemConsoleToolStripMenuItem";
+            this.openSystemConsoleToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.openSystemConsoleToolStripMenuItem.Text = "Open system console";
+            this.openSystemConsoleToolStripMenuItem.Click += new System.EventHandler(this.openSystemConsoleToolStripMenuItem_Click);
+            // 
+            // toolStripButton11
+            // 
+            this.toolStripButton11.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton11.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton11.Image")));
+            this.toolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton11.Name = "toolStripButton11";
+            this.toolStripButton11.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton11.Text = "Execute test";
+            this.toolStripButton11.Click += new System.EventHandler(this.toolStripButton11_Click);
+            // 
+            // toolStripButton12
+            // 
+            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
+            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton12.Name = "toolStripButton12";
+            this.toolStripButton12.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton12.Text = "Open system console";
+            this.toolStripButton12.Click += new System.EventHandler(this.toolStripButton12_Click);
             // 
             // Form1
             // 
@@ -988,6 +1051,7 @@
             this.toolStrip3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1076,7 +1140,13 @@
         public System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.ToolStripMenuItem runToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem executeTestToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem executeTestInSystemConsoleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem detailedInformationInTheConsoleToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openSystemConsoleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripButton11;
+        private System.Windows.Forms.ToolStripButton toolStripButton12;
     }
 }
 
