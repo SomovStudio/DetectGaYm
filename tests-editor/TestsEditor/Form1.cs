@@ -488,5 +488,24 @@ namespace TestsEditor
         {
             executeTest();
         }
+
+        private void stopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                P.Kill();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+        }
+
+        private void getStartCommandToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form4 form = new Form4();
+            form.parentForm = this;
+            form.ShowDialog();
+        }
     }
 }
