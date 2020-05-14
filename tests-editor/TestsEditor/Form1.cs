@@ -54,7 +54,10 @@ namespace TestsEditor
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                StreamReader sr = new StreamReader(openFileDialog1.FileName, Encoding.Default); // Encoding.UTF8
+                StreamReader sr;
+                if (toolStripDropDownButton1.Text == "ASCII") sr = new StreamReader(openFileDialog1.FileName, Encoding.ASCII);
+                else if (toolStripDropDownButton1.Text == "UTF-8") sr = new StreamReader(openFileDialog1.FileName, Encoding.UTF8);
+                else sr = new StreamReader(openFileDialog1.FileName, Encoding.Default);
                 string jsonText = sr.ReadToEnd();
                 sr.Close();
 
@@ -296,10 +299,12 @@ namespace TestsEditor
 
                 try
                 {
-                    using (StreamWriter writer = new StreamWriter(saveFileDialog1.FileName))
-                    {
-                        writer.Write(json);
-                    }
+                    StreamWriter writer;
+                    if (toolStripDropDownButton1.Text == "ASCII") writer = new StreamWriter(saveFileDialog1.FileName, false, Encoding.ASCII);
+                    else if (toolStripDropDownButton1.Text == "UTF-8") writer = new StreamWriter(saveFileDialog1.FileName, false, Encoding.UTF8);
+                    else writer = new StreamWriter(saveFileDialog1.FileName, false, Encoding.Default);
+                    writer.Write(json);
+                    writer.Close();
                     this.fileName = Path.GetFileName(saveFileDialog1.FileName);
                     this.toolStripStatusLabelFileName.Text = saveFileDialog1.FileName;
                     MessageBox.Show("File " + this.fileName + " - saved successfully!");
@@ -319,12 +324,14 @@ namespace TestsEditor
 
         private void saveFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            saveFile();
+            if (this.toolStripStatusLabelFileName.Text != "...") saveFile();
+            else saveFileAs();
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            saveFile();
+            if (this.toolStripStatusLabelFileName.Text != "...") saveFile();
+            else saveFileAs();
         }
 
         private void saveFile()
@@ -374,10 +381,12 @@ namespace TestsEditor
 
             try
             {
-                using (StreamWriter writer = new StreamWriter(this.toolStripStatusLabelFileName.Text))
-                {
-                    writer.Write(json);
-                }
+                StreamWriter writer;
+                if (toolStripDropDownButton1.Text == "ASCII") writer = new StreamWriter(this.toolStripStatusLabelFileName.Text, false, Encoding.ASCII);
+                else if (toolStripDropDownButton1.Text == "UTF-8") writer = new StreamWriter(this.toolStripStatusLabelFileName.Text, false, Encoding.UTF8);
+                else writer = new StreamWriter(this.toolStripStatusLabelFileName.Text, false, Encoding.Default);
+                writer.Write(json);
+                writer.Close();
                 MessageBox.Show("File saved successfully!");
             }
             catch (Exception exp)
@@ -494,6 +503,7 @@ namespace TestsEditor
             try
             {
                 P.Kill();
+                P.Close();
             }
             catch (Exception ex)
             {
@@ -573,6 +583,39 @@ namespace TestsEditor
             }
 
             
+        }
+
+        private void aSCIIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (aSCIIToolStripMenuItem.Checked == false)
+            {
+                aSCIIToolStripMenuItem.Checked = true;
+                uTF8ToolStripMenuItem.Checked = false;
+                defaultToolStripMenuItem.Checked = false;
+                toolStripDropDownButton1.Text = aSCIIToolStripMenuItem.Text;
+            }
+        }
+
+        private void uTF8ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (uTF8ToolStripMenuItem.Checked == false)
+            {
+                aSCIIToolStripMenuItem.Checked = false;
+                uTF8ToolStripMenuItem.Checked = true;
+                defaultToolStripMenuItem.Checked = false;
+                toolStripDropDownButton1.Text = uTF8ToolStripMenuItem.Text;
+            }
+        }
+
+        private void defaultToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (defaultToolStripMenuItem.Checked == false)
+            {
+                defaultToolStripMenuItem.Checked = true;
+                aSCIIToolStripMenuItem.Checked = false;
+                uTF8ToolStripMenuItem.Checked = false;
+                toolStripDropDownButton1.Text = defaultToolStripMenuItem.Text;
+            }
         }
     }
 }
