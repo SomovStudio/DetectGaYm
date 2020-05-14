@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Diagnostics;
 using System.IO;
 using Newtonsoft.Json; // https://www.newtonsoft.com/json
 
@@ -15,6 +16,28 @@ namespace TestsEditor
         public Form1()
         {
             InitializeComponent();
+        }
+
+        public string fileName;
+        public delegate void AddConsoleItem(String message);
+        public AddConsoleItem myDelegate;
+        Process P;
+
+        public void addConsoleItemMethod(String message)
+        {
+            consoleMessage(message);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            myDelegate = new AddConsoleItem(addConsoleItemMethod);
+        }
+
+        public void consoleMessage(String message)
+        {
+            consoleRichTextBox.Text = consoleRichTextBox.Text + message + Environment.NewLine;
+            consoleRichTextBox.Select(consoleRichTextBox.Text.Length, consoleRichTextBox.Text.Length);
+            consoleRichTextBox.ScrollToCaret();
         }
 
         private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -97,6 +120,7 @@ namespace TestsEditor
                 }
 
                 toolStripStatusLabelFileName.Text = openFileDialog1.FileName;
+                this.fileName = openFileDialog1.SafeFileName;
             }
         }
 
@@ -276,13 +300,15 @@ namespace TestsEditor
                     {
                         writer.Write(json);
                     }
-                    MessageBox.Show("Файл успешно сохранён!");
+                    this.fileName = Path.GetFileName(saveFileDialog1.FileName);
+                    this.toolStripStatusLabelFileName.Text = saveFileDialog1.FileName;
+                    MessageBox.Show("File " + this.fileName + " - saved successfully!");
                 }
                 catch (Exception exp)
                 {
-                    MessageBox.Show(exp.Message);
+                    MessageBox.Show(exp.Message, "Error");
                 }
-                this.toolStripStatusLabelFileName.Text = saveFileDialog1.FileName;
+                
             }
         }
 
@@ -303,7 +329,124 @@ namespace TestsEditor
 
         private void saveFile()
         {
+            string json = "{";
+            json += System.Environment.NewLine + "\"description\":\"" + this.textBoxDescription.Text + "\",";
+            json += System.Environment.NewLine + "\"port\":" + this.textBoxPort.Text + ",";
+            json += System.Environment.NewLine + "\"arguments\":[";
+            int count = this.listBoxArguments.Items.Count;
+            for (int i = 0; i < count; i++)
+            {
+                if (i != count - 1) json += System.Environment.NewLine + "\"" + this.listBoxArguments.Items[i].ToString() + "\",";
+                else json += System.Environment.NewLine + "\"" + this.listBoxArguments.Items[i].ToString() + "\"";
+            }
+            json += System.Environment.NewLine + "],";
+            json += System.Environment.NewLine + "\"har\":\"" + this.textBoxHar.Text + "\",";
+            json += System.Environment.NewLine + "\"data\":[";
+            count = this.listView1.Items.Count;
+            for (int j = 0; j < count; j++)
+            {
+                json += System.Environment.NewLine + "{";
+                json += System.Environment.NewLine + "\"title\":\"" + this.listView1.Items[j].SubItems[1].Text + "\",";
+                json += System.Environment.NewLine + "\"url\":\"" + this.listView1.Items[j].SubItems[2].Text + "\",";
+                json += System.Environment.NewLine + "\"ga_category\":\"" + this.listView1.Items[j].SubItems[3].Text + "\",";
+                json += System.Environment.NewLine + "\"ga_action\":\"" + this.listView1.Items[j].SubItems[4].Text + "\",";
+                json += System.Environment.NewLine + "\"ga_label\":\"" + this.listView1.Items[j].SubItems[5].Text + "\",";
+                json += System.Environment.NewLine + "\"ym_code\":\"" + this.listView1.Items[j].SubItems[6].Text + "\"";
+                if (j != count - 1) json += System.Environment.NewLine + "},";
+                else json += System.Environment.NewLine + "}";
+            }
+            json += System.Environment.NewLine + "],";
+            json += System.Environment.NewLine + "\"steps\":[";
+            count = this.listView2.Items.Count;
+            for (int k = 0; k < count; k++)
+            {
+                json += System.Environment.NewLine + "{";
+                json += System.Environment.NewLine + "\"description\":\"" + this.listView2.Items[k].SubItems[1].Text + "\",";
+                json += System.Environment.NewLine + "\"type\":\"" + this.listView2.Items[k].SubItems[2].Text + "\",";
+                json += System.Environment.NewLine + "\"value\":\"" + this.listView2.Items[k].SubItems[4].Text + "\",";
+                json += System.Environment.NewLine + "\"locator\":\"" + this.listView2.Items[k].SubItems[3].Text + "\",";
+                json += System.Environment.NewLine + "\"timeout\":" + this.listView2.Items[k].SubItems[5].Text;
+                if (k != count - 1) json += System.Environment.NewLine + "},";
+                else json += System.Environment.NewLine + "}";
+            }
+            json += System.Environment.NewLine + "]";
+            json += System.Environment.NewLine + "}";
 
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(this.toolStripStatusLabelFileName.Text))
+                {
+                    writer.Write(json);
+                }
+                MessageBox.Show("File saved successfully!");
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.Message, "Error");
+            }
         }
+
+        private void executeTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string path = Directory.GetCurrentDirectory();
+                string bat = "cd " + path;
+                bat += System.Environment.NewLine + "detect.bat \\tests\\"+this.fileName;
+                using (StreamWriter writer = new StreamWriter("run.bat"))
+                {
+                    writer.Write(bat);
+                }
+
+                P = new Process();
+                P.StartInfo.FileName = "run.bat";
+                P.StartInfo.Arguments = "/k";
+                P.StartInfo.RedirectStandardError = true;
+                P.StartInfo.RedirectStandardInput = true;
+                P.StartInfo.RedirectStandardOutput = true;
+                P.StartInfo.CreateNoWindow = true;
+                P.StartInfo.UseShellExecute = false;
+                P.ErrorDataReceived += P_ErrorDataReceived;
+                P.OutputDataReceived += P_OutputDataReceived;
+                P.Exited += P_Exited;
+                P.Start();
+                P.BeginErrorReadLine();
+                P.BeginOutputReadLine();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+                if (File.Exists("run.bat")) File.Delete("run.bat");
+            }
+        }
+
+        void P_ErrorDataReceived(object sender, DataReceivedEventArgs e)
+        {
+            try
+            {
+                //this.Invoke(this.myDelegate, new object[] { e.Data.ToString() });
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        void P_OutputDataReceived(object sender, DataReceivedEventArgs e)
+        {
+            try
+            {
+                this.Invoke(this.myDelegate, new object[] { e.Data.ToString() });
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        void P_Exited(object sender, System.EventArgs e)
+        {
+            if (File.Exists("run.bat")) File.Delete("run.bat");
+        }
+
     }
 }

@@ -109,6 +109,9 @@
             this.consoleRichTextBox = new System.Windows.Forms.RichTextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.executeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.executeTestInSystemConsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -166,7 +169,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.runToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1008, 24);
@@ -212,7 +216,7 @@
             // 
             this.saveFileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveFileToolStripMenuItem.Image")));
             this.saveFileToolStripMenuItem.Name = "saveFileToolStripMenuItem";
-            this.saveFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveFileToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.saveFileToolStripMenuItem.Text = "Save file";
             this.saveFileToolStripMenuItem.Click += new System.EventHandler(this.saveFileToolStripMenuItem_Click);
             // 
@@ -220,7 +224,7 @@
             // 
             this.saveFileAsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveFileAsToolStripMenuItem.Image")));
             this.saveFileAsToolStripMenuItem.Name = "saveFileAsToolStripMenuItem";
-            this.saveFileAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveFileAsToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.saveFileAsToolStripMenuItem.Text = "Save file as...";
             this.saveFileAsToolStripMenuItem.Click += new System.EventHandler(this.saveFileAsToolStripMenuItem_Click);
             // 
@@ -233,7 +237,7 @@
             // 
             this.exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -784,16 +788,16 @@
             // columnHeader9
             // 
             this.columnHeader9.Text = "Description";
-            this.columnHeader9.Width = 110;
+            this.columnHeader9.Width = 150;
             // 
             // columnHeader10
             // 
             this.columnHeader10.Text = "Type";
-            this.columnHeader10.Width = 150;
+            this.columnHeader10.Width = 100;
             // 
             // columnHeader14
             // 
-            this.columnHeader14.Text = "Locator";
+            this.columnHeader14.Text = "Locator XPath";
             this.columnHeader14.Width = 150;
             // 
             // columnHeader15
@@ -901,7 +905,7 @@
             this.consoleRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.consoleRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.consoleRichTextBox.Font = new System.Drawing.Font("Consolas", 9.75F);
-            this.consoleRichTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.consoleRichTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.consoleRichTextBox.Location = new System.Drawing.Point(0, 0);
             this.consoleRichTextBox.Name = "consoleRichTextBox";
             this.consoleRichTextBox.ReadOnly = true;
@@ -917,6 +921,28 @@
             // 
             this.saveFileDialog1.Filter = "*.json|*.json";
             // 
+            // runToolStripMenuItem
+            // 
+            this.runToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.executeTestToolStripMenuItem,
+            this.executeTestInSystemConsoleToolStripMenuItem});
+            this.runToolStripMenuItem.Name = "runToolStripMenuItem";
+            this.runToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.runToolStripMenuItem.Text = "Run";
+            // 
+            // executeTestToolStripMenuItem
+            // 
+            this.executeTestToolStripMenuItem.Name = "executeTestToolStripMenuItem";
+            this.executeTestToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.executeTestToolStripMenuItem.Text = "Execute test";
+            this.executeTestToolStripMenuItem.Click += new System.EventHandler(this.executeTestToolStripMenuItem_Click);
+            // 
+            // executeTestInSystemConsoleToolStripMenuItem
+            // 
+            this.executeTestInSystemConsoleToolStripMenuItem.Name = "executeTestInSystemConsoleToolStripMenuItem";
+            this.executeTestInSystemConsoleToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.executeTestInSystemConsoleToolStripMenuItem.Text = "Execute test in system console";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -931,6 +957,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tests editor for DetectGaYm v 1.0";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -1047,6 +1074,9 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelFileName;
         public System.Windows.Forms.ListView listView1;
         public System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ToolStripMenuItem runToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem executeTestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem executeTestInSystemConsoleToolStripMenuItem;
     }
 }
 
