@@ -513,5 +513,66 @@ namespace TestsEditor
             Form5 form = new Form5();
             form.ShowDialog();
         }
+
+        private void toolStripButton13_Click(object sender, EventArgs e)
+        {
+            if (listView1.FocusedItem != null)
+            {
+                int index = listView1.FocusedItem.Index;
+                ListViewItem item;
+                ListViewItem.ListViewSubItem subitem;
+                item = new ListViewItem();
+                subitem = new ListViewItem.ListViewSubItem();
+                subitem.Text = listView1.Items[index].SubItems[1].Text;
+                item.SubItems.Add(subitem);
+                subitem = new ListViewItem.ListViewSubItem();
+                subitem.Text = listView1.Items[index].SubItems[2].Text;
+                item.SubItems.Add(subitem);
+                subitem = new ListViewItem.ListViewSubItem();
+                subitem.Text = listView1.Items[index].SubItems[3].Text;
+                item.SubItems.Add(subitem);
+                subitem = new ListViewItem.ListViewSubItem();
+                subitem.Text = listView1.Items[index].SubItems[4].Text;
+                item.SubItems.Add(subitem);
+                subitem = new ListViewItem.ListViewSubItem();
+                subitem.Text = listView1.Items[index].SubItems[5].Text;
+                item.SubItems.Add(subitem);
+                subitem = new ListViewItem.ListViewSubItem();
+                subitem.Text = listView1.Items[index].SubItems[6].Text;
+                item.SubItems.Add(subitem);
+                item.ImageIndex = 0;
+                this.listView1.Items.Add(item);
+            }
+        }
+
+        private void toolStripButton14_Click(object sender, EventArgs e)
+        {
+            if (listView2.FocusedItem != null)
+            {
+                int index = listView2.FocusedItem.Index;
+                ListViewItem item;
+                ListViewItem.ListViewSubItem subitem;
+                item = new ListViewItem();
+                subitem = new ListViewItem.ListViewSubItem();
+                subitem.Text = listView2.Items[index].SubItems[1].Text;
+                item.SubItems.Add(subitem);
+                subitem = new ListViewItem.ListViewSubItem();
+                subitem.Text = listView2.Items[index].SubItems[2].Text;
+                item.SubItems.Add(subitem);
+                subitem = new ListViewItem.ListViewSubItem();
+                subitem.Text = listView2.Items[index].SubItems[3].Text;
+                item.SubItems.Add(subitem);
+                subitem = new ListViewItem.ListViewSubItem();
+                subitem.Text = listView2.Items[index].SubItems[4].Text;
+                item.SubItems.Add(subitem);
+                subitem = new ListViewItem.ListViewSubItem();
+                subitem.Text = listView2.Items[index].SubItems[5].Text;
+                item.SubItems.Add(subitem);
+                item.ImageIndex = 0;
+                this.listView2.Items.Add(item);
+            }
+
+            
+        }
     }
 }
