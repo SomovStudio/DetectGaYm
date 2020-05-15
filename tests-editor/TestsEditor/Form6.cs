@@ -14,5 +14,17 @@ namespace TestsEditor
         {
             InitializeComponent();
         }
+
+        public Form1 parentForm;
+
+        private void Form6_Load(object sender, EventArgs e)
+        {
+            parentForm.form6Close = false;
+        }
+
+        private void Form6_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            parentForm.form6Close = true;
+        }
     }
 }

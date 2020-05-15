@@ -125,7 +125,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(218, 13);
             this.label7.TabIndex = 5;
-            this.label7.Text = "Дата последнего обновления: 14.05.2020";
+            this.label7.Text = "Дата последнего обновления: 15.05.2020";
             // 
             // label6
             // 

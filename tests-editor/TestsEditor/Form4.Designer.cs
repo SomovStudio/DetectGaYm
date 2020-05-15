@@ -47,7 +47,7 @@
             this.groupBox1.Size = new System.Drawing.Size(376, 117);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Command for *.bat file";
+            this.groupBox1.Text = "Команда для *.bat файла";
             // 
             // textBox1
             // 
@@ -72,7 +72,7 @@
             this.groupBox2.Size = new System.Drawing.Size(379, 117);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Command for direct call";
+            this.groupBox2.Text = "Команда прямого вызова";
             // 
             // textBox2
             // 
@@ -100,7 +100,7 @@
             this.MinimizeBox = false;
             this.Name = "Form4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Start command";
+            this.Text = "Команду запуска теста";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Form4_Load);
             this.groupBox1.ResumeLayout(false);

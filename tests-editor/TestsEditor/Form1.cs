@@ -70,6 +70,7 @@ namespace TestsEditor
                     listBoxArguments.Items.Add(argument);
                 }
                 textBoxHar.Text = test.har;
+                numericUpDownPageLoadTimeout.Value = test.timeout;
 
                 listView1.Items.Clear();
                 ListViewItem item;
@@ -266,6 +267,7 @@ namespace TestsEditor
                 }
                 json += System.Environment.NewLine + "],";
                 json += System.Environment.NewLine + "\"har\":\"" + this.textBoxHar.Text + "\",";
+                json += System.Environment.NewLine + "\"timeout\":" + this.numericUpDownPageLoadTimeout.Value.ToString() + ",";
                 json += System.Environment.NewLine + "\"data\":[";
                 count = this.listView1.Items.Count;
                 for (int j = 0; j < count; j++)
@@ -307,11 +309,11 @@ namespace TestsEditor
                     writer.Close();
                     this.fileName = Path.GetFileName(saveFileDialog1.FileName);
                     this.toolStripStatusLabelFileName.Text = saveFileDialog1.FileName;
-                    MessageBox.Show("File " + this.fileName + " - saved successfully!");
+                    MessageBox.Show("Файл: " + this.fileName + " - успешно сохранён!" , "Сообщение");
                 }
                 catch (Exception exp)
                 {
-                    MessageBox.Show(exp.Message, "Error");
+                    MessageBox.Show(exp.Message, "Ошибка");
                 }
                 
             }
@@ -348,6 +350,7 @@ namespace TestsEditor
             }
             json += System.Environment.NewLine + "],";
             json += System.Environment.NewLine + "\"har\":\"" + this.textBoxHar.Text + "\",";
+            json += System.Environment.NewLine + "\"timeout\":" + this.numericUpDownPageLoadTimeout.Value.ToString() + ",";
             json += System.Environment.NewLine + "\"data\":[";
             count = this.listView1.Items.Count;
             for (int j = 0; j < count; j++)
@@ -387,11 +390,11 @@ namespace TestsEditor
                 else writer = new StreamWriter(this.toolStripStatusLabelFileName.Text, false, Encoding.Default);
                 writer.Write(json);
                 writer.Close();
-                MessageBox.Show("File saved successfully!");
+                MessageBox.Show("Файл успешно сохранён!", "Сообщение");
             }
             catch (Exception exp)
             {
-                MessageBox.Show(exp.Message, "Error");
+                MessageBox.Show(exp.Message, "Ошибка");
             }
         }
 
@@ -430,7 +433,7 @@ namespace TestsEditor
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show(ex.Message, "Ошибка");
                 if (File.Exists("run.bat")) File.Delete("run.bat");
             }
         }
@@ -505,11 +508,11 @@ namespace TestsEditor
                 P.Kill();
                 P.Close();
                 P.Dispose();
-                MessageBox.Show("Process is Kill (close and dispose)");
+                MessageBox.Show("Попытка удаления процесса (выполнение: kill, close и dispose)");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show(ex.Message, "Ошибка");
             }
         }
 
@@ -620,10 +623,39 @@ namespace TestsEditor
             }
         }
 
+        public bool form6Close = true;
         private void howToCloseThePortToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form6 form = new Form6();
-            form.ShowDialog();
+            if(form6Close == true)
+            {
+                Form6 form = new Form6();
+                form.parentForm = this;
+                form.Show();
+            }
+        }
+
+        private void httpscodebeautifyorgjsonvalidatorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(@"https://codebeautify.org/jsonvalidator");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка");
+            }
+        }
+
+        private void httpsjsonformattercuriousconceptcomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(@"https://jsonformatter.curiousconcept.com/");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка");
+            }
         }
     }
 }

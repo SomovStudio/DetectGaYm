@@ -10,6 +10,7 @@ namespace TestsEditor
         public int port;
         public string[] arguments;
         public string har;
+        public int timeout;
         public TestJsonData[] data;
         public TestJsonSteps[] steps;
     }
