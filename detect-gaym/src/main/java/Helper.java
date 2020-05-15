@@ -90,7 +90,7 @@ public class Helper {
             String link = har.getLog().getEntries().get(i).getRequest().getUrl();
             links.add(java.net.URLDecoder.decode(link, "UTF-8"));
         }
-        System.out.println("STEP: received " + links.size() + " links from HAR");
+        System.out.println("PROXY: received " + links.size() + " links from HAR");
         return links;
     }
 
@@ -133,8 +133,8 @@ public class Helper {
     /* Вывод ошибки */
     public static void showError(Exception e) {
         System.out.println("| ERROR --------------------------------------");
-        System.out.println(e.getMessage());
-        //System.out.println(e.fillInStackTrace());
+        //System.out.println(e.getMessage());
+        System.out.println(e.fillInStackTrace());
         System.out.println("|---------------------------------------------");
         System.out.println(" ");
         endWorkProxy();

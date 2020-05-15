@@ -8,12 +8,14 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.concurrent.TimeUnit;
 
 public class TestCase {
     public static String description;
     public static int port;
     public static ArrayList<String> arguments;
     public static String nameHar;
+    public static int pageLoadTimeout;
     public static JSONArray data;
     public static JSONArray steps;
 
@@ -27,6 +29,10 @@ public class TestCase {
 
     private static void test() throws InterruptedException, UnsupportedEncodingException {
         Helper.showTitle(description);
+        if(pageLoadTimeout > 0) {
+            Helper.driver.manage().timeouts().pageLoadTimeout(pageLoadTimeout, TimeUnit.SECONDS);
+            System.out.println("SETTING: Page load time limit " + pageLoadTimeout + " seconds");
+        }
         Iterator dataItr = data.iterator();
         while (dataItr.hasNext()) {
             JSONObject dataObj = (JSONObject) dataItr.next();
@@ -64,20 +70,26 @@ public class TestCase {
     }
 
     public static void execute(String filename) throws IOException, ParseException, InterruptedException {
-        JSONObject oj = Helper.readJsonFile(filename);
+        try {
+            System.out.println("LOAD: test-case file " + filename);
+            JSONObject oj = Helper.readJsonFile(filename);
 
-        description = oj.get("description").toString();
-        port = Integer.parseInt(oj.get("port").toString());
-        nameHar = oj.get("har").toString();
-        data = (JSONArray) oj.get("data");
-        steps = (JSONArray) oj.get("steps");
+            description = oj.get("description").toString();
+            port = Integer.parseInt(oj.get("port").toString());
+            nameHar = oj.get("har").toString();
+            pageLoadTimeout = Integer.parseInt(oj.get("timeout").toString());
+            data = (JSONArray) oj.get("data");
+            steps = (JSONArray) oj.get("steps");
 
-        arguments = new ArrayList<String>();
-        JSONArray args = (JSONArray) oj.get("arguments");
-        Iterator argsItr = args.iterator();
-        while (argsItr.hasNext()) {
-            String argument = argsItr.next().toString();
-            arguments.add(argument);
+            arguments = new ArrayList<String>();
+            JSONArray args = (JSONArray) oj.get("arguments");
+            Iterator argsItr = args.iterator();
+            while (argsItr.hasNext()) {
+                String argument = argsItr.next().toString();
+                arguments.add(argument);
+            }
+        } catch (Exception e) {
+            Helper.showError(e);
         }
 
         try {
