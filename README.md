@@ -10,3 +10,13 @@
 
 <hr>
 
+<p align="center">
+  <img src="https://github.com/SomovStudio/DetectGaYm/blob/master/tests-editor/TestsEditor/img/detectgaym.png">
+</p>
+
+Системные требования: Windows 7, 8, 10 (.Net Framework 3.5)
+
+<hr>
+<br>
+<br>Инструкция:
+
