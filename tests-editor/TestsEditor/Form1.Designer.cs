@@ -49,12 +49,16 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.executeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openSystemConsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.openSystemConsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.getStartCommandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.howToCloseThePortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.валидаторJsonФайлаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.httpscodebeautifyorgjsonvalidatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.httpsjsonformattercuriousconceptcomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detailedInformationInTheConsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,6 +78,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.numericUpDownPageLoadTimeout = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -133,15 +142,12 @@
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.label12 = new System.Windows.Forms.Label();
-            this.numericUpDownPageLoadTimeout = new System.Windows.Forms.NumericUpDown();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.валидаторJsonФайлаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.httpscodebeautifyorgjsonvalidatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.httpsjsonformattercuriousconceptcomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton16 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton17 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton18 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -153,6 +159,7 @@
             this.splitContainer2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPageLoadTimeout)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
@@ -165,7 +172,6 @@
             this.panel4.SuspendLayout();
             this.panel8.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPageLoadTimeout)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -332,6 +338,18 @@
             this.executeTestToolStripMenuItem.Text = "Выполнить данный тест";
             this.executeTestToolStripMenuItem.Click += new System.EventHandler(this.executeTestToolStripMenuItem_Click);
             // 
+            // stopToolStripMenuItem
+            // 
+            this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
+            this.stopToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.stopToolStripMenuItem.Text = "Прервать выполнение";
+            this.stopToolStripMenuItem.Click += new System.EventHandler(this.stopToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(232, 6);
+            // 
             // openSystemConsoleToolStripMenuItem
             // 
             this.openSystemConsoleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openSystemConsoleToolStripMenuItem.Image")));
@@ -339,18 +357,6 @@
             this.openSystemConsoleToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
             this.openSystemConsoleToolStripMenuItem.Text = "Открыть системную консоль";
             this.openSystemConsoleToolStripMenuItem.Click += new System.EventHandler(this.openSystemConsoleToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(232, 6);
-            // 
-            // stopToolStripMenuItem
-            // 
-            this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
-            this.stopToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
-            this.stopToolStripMenuItem.Text = "Прервать выполнение";
-            this.stopToolStripMenuItem.Click += new System.EventHandler(this.stopToolStripMenuItem_Click);
             // 
             // supportToolStripMenuItem
             // 
@@ -377,6 +383,34 @@
             this.howToCloseThePortToolStripMenuItem.Size = new System.Drawing.Size(390, 22);
             this.howToCloseThePortToolStripMenuItem.Text = "Как закрыть порт при ошибке Address already in use: bind";
             this.howToCloseThePortToolStripMenuItem.Click += new System.EventHandler(this.howToCloseThePortToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(387, 6);
+            // 
+            // валидаторJsonФайлаToolStripMenuItem
+            // 
+            this.валидаторJsonФайлаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.httpscodebeautifyorgjsonvalidatorToolStripMenuItem,
+            this.httpsjsonformattercuriousconceptcomToolStripMenuItem});
+            this.валидаторJsonФайлаToolStripMenuItem.Name = "валидаторJsonФайлаToolStripMenuItem";
+            this.валидаторJsonФайлаToolStripMenuItem.Size = new System.Drawing.Size(390, 22);
+            this.валидаторJsonФайлаToolStripMenuItem.Text = "Валидатор json файла";
+            // 
+            // httpscodebeautifyorgjsonvalidatorToolStripMenuItem
+            // 
+            this.httpscodebeautifyorgjsonvalidatorToolStripMenuItem.Name = "httpscodebeautifyorgjsonvalidatorToolStripMenuItem";
+            this.httpscodebeautifyorgjsonvalidatorToolStripMenuItem.Size = new System.Drawing.Size(303, 22);
+            this.httpscodebeautifyorgjsonvalidatorToolStripMenuItem.Text = "https://codebeautify.org/jsonvalidator";
+            this.httpscodebeautifyorgjsonvalidatorToolStripMenuItem.Click += new System.EventHandler(this.httpscodebeautifyorgjsonvalidatorToolStripMenuItem_Click);
+            // 
+            // httpsjsonformattercuriousconceptcomToolStripMenuItem
+            // 
+            this.httpsjsonformattercuriousconceptcomToolStripMenuItem.Name = "httpsjsonformattercuriousconceptcomToolStripMenuItem";
+            this.httpsjsonformattercuriousconceptcomToolStripMenuItem.Size = new System.Drawing.Size(303, 22);
+            this.httpsjsonformattercuriousconceptcomToolStripMenuItem.Text = "https://jsonformatter.curiousconcept.com/";
+            this.httpsjsonformattercuriousconceptcomToolStripMenuItem.Click += new System.EventHandler(this.httpsjsonformattercuriousconceptcomToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem
             // 
@@ -405,7 +439,7 @@
             // 
             this.aboutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aboutToolStripMenuItem.Image")));
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.aboutToolStripMenuItem.Text = "О программе";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -595,6 +629,59 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(336, 427);
             this.panel5.TabIndex = 2;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(13, 265);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(317, 13);
+            this.label16.TabIndex = 18;
+            this.label16.Text = "(можно указать опции для chromedriver, например user-agent)";
+            // 
+            // label15
+            // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(13, 329);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(255, 13);
+            this.label15.TabIndex = 17;
+            this.label15.Text = "(укажите любое имя для получения HAR данных)";
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.Location = new System.Drawing.Point(13, 390);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(306, 26);
+            this.label14.TabIndex = 16;
+            this.label14.Text = "(время ожидания уазываются в секундах, при этом 0 означает неограниченное время о" +
+    "жидания)";
+            // 
+            // numericUpDownPageLoadTimeout
+            // 
+            this.numericUpDownPageLoadTimeout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.numericUpDownPageLoadTimeout.Location = new System.Drawing.Point(16, 367);
+            this.numericUpDownPageLoadTimeout.Name = "numericUpDownPageLoadTimeout";
+            this.numericUpDownPageLoadTimeout.Size = new System.Drawing.Size(303, 20);
+            this.numericUpDownPageLoadTimeout.TabIndex = 15;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(13, 351);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(197, 13);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Лимит ожидания загрузки страницы:";
             // 
             // button4
             // 
@@ -875,7 +962,10 @@
             this.toolStripButton6,
             this.toolStripButton7,
             this.toolStripSeparator6,
-            this.toolStripButton13});
+            this.toolStripButton13,
+            this.toolStripSeparator9,
+            this.toolStripButton15,
+            this.toolStripButton16});
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(666, 25);
@@ -889,7 +979,7 @@
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton5.Text = "Add item";
+            this.toolStripButton5.Text = "Новая строка";
             this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // toolStripButton6
@@ -899,7 +989,7 @@
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
             this.toolStripButton6.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton6.Text = "Edit item";
+            this.toolStripButton6.Text = "Редактировать строку";
             this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
             // 
             // toolStripButton7
@@ -909,7 +999,7 @@
             this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton7.Name = "toolStripButton7";
             this.toolStripButton7.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton7.Text = "Delete item";
+            this.toolStripButton7.Text = "Удалить строку";
             this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
             // 
             // toolStripSeparator6
@@ -924,7 +1014,7 @@
             this.toolStripButton13.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton13.Name = "toolStripButton13";
             this.toolStripButton13.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton13.Text = "Copy and add item";
+            this.toolStripButton13.Text = "Копировать и вставить строку в конец таблицы";
             this.toolStripButton13.Click += new System.EventHandler(this.toolStripButton13_Click);
             // 
             // panel2
@@ -1036,7 +1126,10 @@
             this.toolStripButton9,
             this.toolStripButton10,
             this.toolStripSeparator7,
-            this.toolStripButton14});
+            this.toolStripButton14,
+            this.toolStripSeparator10,
+            this.toolStripButton17,
+            this.toolStripButton18});
             this.toolStrip3.Location = new System.Drawing.Point(0, 0);
             this.toolStrip3.Name = "toolStrip3";
             this.toolStrip3.Size = new System.Drawing.Size(666, 25);
@@ -1050,7 +1143,7 @@
             this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton8.Name = "toolStripButton8";
             this.toolStripButton8.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton8.Text = "Add item";
+            this.toolStripButton8.Text = "Новая строка";
             this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click);
             // 
             // toolStripButton9
@@ -1060,7 +1153,7 @@
             this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton9.Name = "toolStripButton9";
             this.toolStripButton9.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton9.Text = "Edit item";
+            this.toolStripButton9.Text = "Редактировать строку";
             this.toolStripButton9.Click += new System.EventHandler(this.toolStripButton9_Click);
             // 
             // toolStripButton10
@@ -1070,7 +1163,7 @@
             this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton10.Name = "toolStripButton10";
             this.toolStripButton10.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton10.Text = "Delete item";
+            this.toolStripButton10.Text = "Удалить строку";
             this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click);
             // 
             // toolStripSeparator7
@@ -1085,7 +1178,7 @@
             this.toolStripButton14.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton14.Name = "toolStripButton14";
             this.toolStripButton14.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton14.Text = "Copy and add item";
+            this.toolStripButton14.Text = "Копировать и вставить строку в конец таблицы";
             this.toolStripButton14.Click += new System.EventHandler(this.toolStripButton14_Click);
             // 
             // panel4
@@ -1172,86 +1265,55 @@
             // 
             this.saveFileDialog1.Filter = "*.json|*.json";
             // 
-            // label12
+            // toolStripSeparator9
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(13, 351);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(197, 13);
-            this.label12.TabIndex = 14;
-            this.label12.Text = "Лимит ожидания загрузки страницы:";
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 25);
             // 
-            // numericUpDownPageLoadTimeout
+            // toolStripButton15
             // 
-            this.numericUpDownPageLoadTimeout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericUpDownPageLoadTimeout.Location = new System.Drawing.Point(16, 367);
-            this.numericUpDownPageLoadTimeout.Name = "numericUpDownPageLoadTimeout";
-            this.numericUpDownPageLoadTimeout.Size = new System.Drawing.Size(303, 20);
-            this.numericUpDownPageLoadTimeout.TabIndex = 15;
+            this.toolStripButton15.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton15.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton15.Image")));
+            this.toolStripButton15.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton15.Name = "toolStripButton15";
+            this.toolStripButton15.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton15.Text = "Сместить строку вверх";
+            this.toolStripButton15.Click += new System.EventHandler(this.toolStripButton15_Click);
             // 
-            // label14
+            // toolStripButton16
             // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.Location = new System.Drawing.Point(13, 390);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(306, 26);
-            this.label14.TabIndex = 16;
-            this.label14.Text = "(время ожидания уазываются в секундах, при этом 0 означает неограниченное время о" +
-    "жидания)";
+            this.toolStripButton16.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton16.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton16.Image")));
+            this.toolStripButton16.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton16.Name = "toolStripButton16";
+            this.toolStripButton16.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton16.Text = "Сместить строку вниз";
+            this.toolStripButton16.Click += new System.EventHandler(this.toolStripButton16_Click);
             // 
-            // label15
+            // toolStripSeparator10
             // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(13, 329);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(255, 13);
-            this.label15.TabIndex = 17;
-            this.label15.Text = "(укажите любое имя для получения HAR данных)";
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 25);
             // 
-            // label16
+            // toolStripButton17
             // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(13, 265);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(317, 13);
-            this.label16.TabIndex = 18;
-            this.label16.Text = "(можно указать опции для chromedriver, например user-agent)";
+            this.toolStripButton17.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton17.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton17.Image")));
+            this.toolStripButton17.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton17.Name = "toolStripButton17";
+            this.toolStripButton17.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton17.Text = "Сместить строку вверх";
+            this.toolStripButton17.Click += new System.EventHandler(this.toolStripButton17_Click);
             // 
-            // toolStripSeparator8
+            // toolStripButton18
             // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(387, 6);
-            // 
-            // валидаторJsonФайлаToolStripMenuItem
-            // 
-            this.валидаторJsonФайлаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.httpscodebeautifyorgjsonvalidatorToolStripMenuItem,
-            this.httpsjsonformattercuriousconceptcomToolStripMenuItem});
-            this.валидаторJsonФайлаToolStripMenuItem.Name = "валидаторJsonФайлаToolStripMenuItem";
-            this.валидаторJsonФайлаToolStripMenuItem.Size = new System.Drawing.Size(390, 22);
-            this.валидаторJsonФайлаToolStripMenuItem.Text = "Валидатор json файла";
-            // 
-            // httpscodebeautifyorgjsonvalidatorToolStripMenuItem
-            // 
-            this.httpscodebeautifyorgjsonvalidatorToolStripMenuItem.Name = "httpscodebeautifyorgjsonvalidatorToolStripMenuItem";
-            this.httpscodebeautifyorgjsonvalidatorToolStripMenuItem.Size = new System.Drawing.Size(303, 22);
-            this.httpscodebeautifyorgjsonvalidatorToolStripMenuItem.Text = "https://codebeautify.org/jsonvalidator";
-            this.httpscodebeautifyorgjsonvalidatorToolStripMenuItem.Click += new System.EventHandler(this.httpscodebeautifyorgjsonvalidatorToolStripMenuItem_Click);
-            // 
-            // httpsjsonformattercuriousconceptcomToolStripMenuItem
-            // 
-            this.httpsjsonformattercuriousconceptcomToolStripMenuItem.Name = "httpsjsonformattercuriousconceptcomToolStripMenuItem";
-            this.httpsjsonformattercuriousconceptcomToolStripMenuItem.Size = new System.Drawing.Size(303, 22);
-            this.httpsjsonformattercuriousconceptcomToolStripMenuItem.Text = "https://jsonformatter.curiousconcept.com/";
-            this.httpsjsonformattercuriousconceptcomToolStripMenuItem.Click += new System.EventHandler(this.httpsjsonformattercuriousconceptcomToolStripMenuItem_Click);
+            this.toolStripButton18.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton18.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton18.Image")));
+            this.toolStripButton18.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton18.Name = "toolStripButton18";
+            this.toolStripButton18.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton18.Text = "Сместить строку вниз";
+            this.toolStripButton18.Click += new System.EventHandler(this.toolStripButton18_Click);
             // 
             // Form1
             // 
@@ -1283,6 +1345,7 @@
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPageLoadTimeout)).EndInit();
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel2.ResumeLayout(false);
             this.splitContainer3.ResumeLayout(false);
@@ -1299,7 +1362,6 @@
             this.panel4.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPageLoadTimeout)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1419,6 +1481,12 @@
         private System.Windows.Forms.ToolStripMenuItem валидаторJsonФайлаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem httpscodebeautifyorgjsonvalidatorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem httpsjsonformattercuriousconceptcomToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+        private System.Windows.Forms.ToolStripButton toolStripButton15;
+        private System.Windows.Forms.ToolStripButton toolStripButton16;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+        private System.Windows.Forms.ToolStripButton toolStripButton17;
+        private System.Windows.Forms.ToolStripButton toolStripButton18;
     }
 }
 

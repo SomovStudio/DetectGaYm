@@ -657,5 +657,165 @@ namespace TestsEditor
                 MessageBox.Show(ex.Message, "Ошибка");
             }
         }
+
+        private void toolStripButton15_Click(object sender, EventArgs e)
+        {
+            // UP
+            if (listView1.FocusedItem != null)
+            {
+                int index = listView1.FocusedItem.Index;
+                if(index > 0)
+                {
+                    string itemSelectText1 = listView1.Items[index].SubItems[1].Text;
+                    string itemSelectText2 = listView1.Items[index].SubItems[2].Text;
+                    string itemSelectText3 = listView1.Items[index].SubItems[3].Text;
+                    string itemSelectText4 = listView1.Items[index].SubItems[4].Text;
+                    string itemSelectText5 = listView1.Items[index].SubItems[5].Text;
+                    string itemSelectText6 = listView1.Items[index].SubItems[6].Text;
+                    
+                    string itemMoveText1 = listView1.Items[index-1].SubItems[1].Text;
+                    string itemMoveText2 = listView1.Items[index-1].SubItems[2].Text;
+                    string itemMoveText3 = listView1.Items[index-1].SubItems[3].Text;
+                    string itemMoveText4 = listView1.Items[index-1].SubItems[4].Text;
+                    string itemMoveText5 = listView1.Items[index-1].SubItems[5].Text;
+                    string itemMoveText6 = listView1.Items[index-1].SubItems[6].Text;
+
+                    listView1.Items[index].SubItems[1].Text = itemMoveText1;
+                    listView1.Items[index].SubItems[2].Text = itemMoveText2;
+                    listView1.Items[index].SubItems[3].Text = itemMoveText3;
+                    listView1.Items[index].SubItems[4].Text = itemMoveText4;
+                    listView1.Items[index].SubItems[5].Text = itemMoveText5;
+                    listView1.Items[index].SubItems[6].Text = itemMoveText6;
+
+                    listView1.Items[index - 1].SubItems[1].Text = itemSelectText1;
+                    listView1.Items[index - 1].SubItems[2].Text = itemSelectText2;
+                    listView1.Items[index - 1].SubItems[3].Text = itemSelectText3;
+                    listView1.Items[index - 1].SubItems[4].Text = itemSelectText4;
+                    listView1.Items[index - 1].SubItems[5].Text = itemSelectText5;
+                    listView1.Items[index - 1].SubItems[6].Text = itemSelectText6;
+                    index--;
+                    listView1.Items[index].Selected = true;
+                    listView1.Items[index].Focused = true;
+                }
+            }
+        }
+
+        private void toolStripButton16_Click(object sender, EventArgs e)
+        {
+            // DOWN
+            if (listView1.FocusedItem != null)
+            {
+                int index = listView1.FocusedItem.Index;
+                if (index < listView1.Items.Count-1)
+                {
+                    string itemSelectText1 = listView1.Items[index].SubItems[1].Text;
+                    string itemSelectText2 = listView1.Items[index].SubItems[2].Text;
+                    string itemSelectText3 = listView1.Items[index].SubItems[3].Text;
+                    string itemSelectText4 = listView1.Items[index].SubItems[4].Text;
+                    string itemSelectText5 = listView1.Items[index].SubItems[5].Text;
+                    string itemSelectText6 = listView1.Items[index].SubItems[6].Text;
+
+                    string itemMoveText1 = listView1.Items[index + 1].SubItems[1].Text;
+                    string itemMoveText2 = listView1.Items[index + 1].SubItems[2].Text;
+                    string itemMoveText3 = listView1.Items[index + 1].SubItems[3].Text;
+                    string itemMoveText4 = listView1.Items[index + 1].SubItems[4].Text;
+                    string itemMoveText5 = listView1.Items[index + 1].SubItems[5].Text;
+                    string itemMoveText6 = listView1.Items[index + 1].SubItems[6].Text;
+
+                    listView1.Items[index].SubItems[1].Text = itemMoveText1;
+                    listView1.Items[index].SubItems[2].Text = itemMoveText2;
+                    listView1.Items[index].SubItems[3].Text = itemMoveText3;
+                    listView1.Items[index].SubItems[4].Text = itemMoveText4;
+                    listView1.Items[index].SubItems[5].Text = itemMoveText5;
+                    listView1.Items[index].SubItems[6].Text = itemMoveText6;
+
+                    listView1.Items[index + 1].SubItems[1].Text = itemSelectText1;
+                    listView1.Items[index + 1].SubItems[2].Text = itemSelectText2;
+                    listView1.Items[index + 1].SubItems[3].Text = itemSelectText3;
+                    listView1.Items[index + 1].SubItems[4].Text = itemSelectText4;
+                    listView1.Items[index + 1].SubItems[5].Text = itemSelectText5;
+                    listView1.Items[index + 1].SubItems[6].Text = itemSelectText6;
+                    index++;
+                    listView1.Items[index].Selected = true;
+                    listView1.Items[index].Focused = true;
+                }
+            }
+        }
+
+        private void toolStripButton17_Click(object sender, EventArgs e)
+        {
+            // UP
+            if (listView2.FocusedItem != null)
+            {
+                int index = listView2.FocusedItem.Index;
+                if (index > 0)
+                {
+                    string itemSelectText1 = listView2.Items[index].SubItems[1].Text;
+                    string itemSelectText2 = listView2.Items[index].SubItems[2].Text;
+                    string itemSelectText3 = listView2.Items[index].SubItems[3].Text;
+                    string itemSelectText4 = listView2.Items[index].SubItems[4].Text;
+                    string itemSelectText5 = listView2.Items[index].SubItems[5].Text;
+                    
+                    string itemMoveText1 = listView2.Items[index - 1].SubItems[1].Text;
+                    string itemMoveText2 = listView2.Items[index - 1].SubItems[2].Text;
+                    string itemMoveText3 = listView2.Items[index - 1].SubItems[3].Text;
+                    string itemMoveText4 = listView2.Items[index - 1].SubItems[4].Text;
+                    string itemMoveText5 = listView2.Items[index - 1].SubItems[5].Text;
+
+                    listView2.Items[index].SubItems[1].Text = itemMoveText1;
+                    listView2.Items[index].SubItems[2].Text = itemMoveText2;
+                    listView2.Items[index].SubItems[3].Text = itemMoveText3;
+                    listView2.Items[index].SubItems[4].Text = itemMoveText4;
+                    listView2.Items[index].SubItems[5].Text = itemMoveText5;
+                    
+                    listView2.Items[index - 1].SubItems[1].Text = itemSelectText1;
+                    listView2.Items[index - 1].SubItems[2].Text = itemSelectText2;
+                    listView2.Items[index - 1].SubItems[3].Text = itemSelectText3;
+                    listView2.Items[index - 1].SubItems[4].Text = itemSelectText4;
+                    listView2.Items[index - 1].SubItems[5].Text = itemSelectText5;
+                    index--;
+                    listView2.Items[index].Selected = true;
+                    listView2.Items[index].Focused = true;
+                }
+            }
+        }
+
+        private void toolStripButton18_Click(object sender, EventArgs e)
+        {
+            // DOWN
+            if (listView2.FocusedItem != null)
+            {
+                int index = listView2.FocusedItem.Index;
+                if (index < listView2.Items.Count - 1)
+                {
+                    string itemSelectText1 = listView2.Items[index].SubItems[1].Text;
+                    string itemSelectText2 = listView2.Items[index].SubItems[2].Text;
+                    string itemSelectText3 = listView2.Items[index].SubItems[3].Text;
+                    string itemSelectText4 = listView2.Items[index].SubItems[4].Text;
+                    string itemSelectText5 = listView2.Items[index].SubItems[5].Text;
+
+                    string itemMoveText1 = listView2.Items[index + 1].SubItems[1].Text;
+                    string itemMoveText2 = listView2.Items[index + 1].SubItems[2].Text;
+                    string itemMoveText3 = listView2.Items[index + 1].SubItems[3].Text;
+                    string itemMoveText4 = listView2.Items[index + 1].SubItems[4].Text;
+                    string itemMoveText5 = listView2.Items[index + 1].SubItems[5].Text;
+
+                    listView2.Items[index].SubItems[1].Text = itemMoveText1;
+                    listView2.Items[index].SubItems[2].Text = itemMoveText2;
+                    listView2.Items[index].SubItems[3].Text = itemMoveText3;
+                    listView2.Items[index].SubItems[4].Text = itemMoveText4;
+                    listView2.Items[index].SubItems[5].Text = itemMoveText5;
+
+                    listView2.Items[index + 1].SubItems[1].Text = itemSelectText1;
+                    listView2.Items[index + 1].SubItems[2].Text = itemSelectText2;
+                    listView2.Items[index + 1].SubItems[3].Text = itemSelectText3;
+                    listView2.Items[index + 1].SubItems[4].Text = itemSelectText4;
+                    listView2.Items[index + 1].SubItems[5].Text = itemSelectText5;
+                    index++;
+                    listView2.Items[index].Selected = true;
+                    listView2.Items[index].Focused = true;
+                }
+            }
+        }
     }
 }
