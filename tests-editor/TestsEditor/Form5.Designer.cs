@@ -59,7 +59,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 76);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(318, 234);
+            this.panel2.Size = new System.Drawing.Size(324, 235);
             this.panel2.TabIndex = 4;
             // 
             // groupBox1
@@ -73,7 +73,7 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Location = new System.Drawing.Point(6, 140);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(309, 82);
+            this.groupBox1.Size = new System.Drawing.Size(315, 83);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Контакты:";
@@ -181,7 +181,7 @@
             this.label2.ForeColor = System.Drawing.Color.MediumSlateBlue;
             this.label2.Location = new System.Drawing.Point(0, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(318, 234);
+            this.label2.Size = new System.Drawing.Size(324, 235);
             this.label2.TabIndex = 3;
             this.label2.Text = "Somov Studio";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -194,7 +194,7 @@
             this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(318, 76);
+            this.label1.Size = new System.Drawing.Size(324, 76);
             this.label1.TabIndex = 2;
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -202,7 +202,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(318, 310);
+            this.ClientSize = new System.Drawing.Size(324, 311);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -212,7 +212,7 @@
             this.MinimizeBox = false;
             this.Name = "Form5";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "About";
+            this.Text = "О программе";
             this.TopMost = true;
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
