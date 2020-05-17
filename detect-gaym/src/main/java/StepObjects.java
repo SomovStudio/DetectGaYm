@@ -17,6 +17,7 @@ public class StepObjects {
     public static final String SLEEP = "sleep";
     public static final String TEST_GA = "test_ga";
     public static final String TEST_YM = "test_ym";
+    public static final String GET_HAR = "get_har";
 
     public static void openPage(String url, String title) {
         Helper.driver.get(url);
@@ -114,6 +115,14 @@ public class StepObjects {
         }else{
             if (!description.equals("")) Helper.showPass(description + " - PASSED");
             else Helper.showPass("event YM ["+code+"] - PASSED");
+        }
+    }
+
+    public static void getHar() throws UnsupportedEncodingException {
+        ArrayList<String> harLinks = Helper.getLinksFromHar();
+        for (String link:harLinks)
+        {
+            System.out.println("HAR: event " + link);
         }
     }
 }

@@ -175,7 +175,8 @@
             "wait_element",
             "sleep",
             "test_ga",
-            "test_ym"});
+            "test_ym",
+            "get_har"});
             this.comboBoxType.Location = new System.Drawing.Point(107, 71);
             this.comboBoxType.Name = "comboBoxType";
             this.comboBoxType.Size = new System.Drawing.Size(298, 21);

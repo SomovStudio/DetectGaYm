@@ -1298,13 +1298,13 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clearToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(102, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
             // 
             // clearToolStripMenuItem
             // 
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            this.clearToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
-            this.clearToolStripMenuItem.Text = "Clear";
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clearToolStripMenuItem.Text = "Очистить";
             this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
             // 
             // openFileDialog1

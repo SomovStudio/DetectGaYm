@@ -63,6 +63,7 @@ public class TestCase {
                 if (type.equals(StepObjects.SLEEP)) StepObjects.sleep(desc, timeout);
                 if (type.equals(StepObjects.TEST_GA)) StepObjects.testGA(ga_category, ga_action, ga_label, desc, timeout);
                 if (type.equals(StepObjects.TEST_YM)) StepObjects.testYM(ym_code, desc, timeout);
+                if (type.equals(StepObjects.GET_HAR)) StepObjects.getHar();
 
                 Thread.sleep(250);
             }
