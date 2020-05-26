@@ -148,6 +148,7 @@
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.обновитьChromeDriverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -364,7 +365,8 @@
             this.getStartCommandToolStripMenuItem,
             this.howToCloseThePortToolStripMenuItem,
             this.toolStripSeparator8,
-            this.валидаторJsonФайлаToolStripMenuItem});
+            this.валидаторJsonФайлаToolStripMenuItem,
+            this.обновитьChromeDriverToolStripMenuItem});
             this.supportToolStripMenuItem.Name = "supportToolStripMenuItem";
             this.supportToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.supportToolStripMenuItem.Text = "Поддержка";
@@ -397,6 +399,7 @@
             this.валидаторJsonФайлаToolStripMenuItem.Name = "валидаторJsonФайлаToolStripMenuItem";
             this.валидаторJsonФайлаToolStripMenuItem.Size = new System.Drawing.Size(390, 22);
             this.валидаторJsonФайлаToolStripMenuItem.Text = "Валидатор json файла";
+            this.валидаторJsonФайлаToolStripMenuItem.Click += new System.EventHandler(this.валидаторJsonФайлаToolStripMenuItem_Click);
             // 
             // httpscodebeautifyorgjsonvalidatorToolStripMenuItem
             // 
@@ -1298,12 +1301,12 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clearToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(127, 26);
             // 
             // clearToolStripMenuItem
             // 
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            this.clearToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.clearToolStripMenuItem.Text = "Очистить";
             this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
             // 
@@ -1314,6 +1317,13 @@
             // saveFileDialog1
             // 
             this.saveFileDialog1.Filter = "*.json|*.json";
+            // 
+            // обновитьChromeDriverToolStripMenuItem
+            // 
+            this.обновитьChromeDriverToolStripMenuItem.Name = "обновитьChromeDriverToolStripMenuItem";
+            this.обновитьChromeDriverToolStripMenuItem.Size = new System.Drawing.Size(390, 22);
+            this.обновитьChromeDriverToolStripMenuItem.Text = "Обновить Chrome Driver";
+            this.обновитьChromeDriverToolStripMenuItem.Click += new System.EventHandler(this.обновитьChromeDriverToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -1487,6 +1497,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
         private System.Windows.Forms.ToolStripButton toolStripButton17;
         private System.Windows.Forms.ToolStripButton toolStripButton18;
+        private System.Windows.Forms.ToolStripMenuItem обновитьChromeDriverToolStripMenuItem;
     }
 }
 

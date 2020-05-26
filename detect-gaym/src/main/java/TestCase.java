@@ -56,6 +56,7 @@ public class TestCase {
 
                 if (type.equals(StepObjects.OPEN_PAGE)) StepObjects.openPage(value, desc);
                 if (type.equals(StepObjects.OPEN_DEFAULT_PAGE)) StepObjects.openPage(url, desc);
+                if (type.equals(StepObjects.REFRESH_PAGE)) StepObjects.refreshPage(desc);
                 if (type.equals(StepObjects.INPUT_VALUE)) StepObjects.inputValue(locator, value, desc, timeout);
                 if (type.equals(StepObjects.CLICK_ELEMENT)) StepObjects.clickElement(locator, desc, timeout);
                 if (type.equals(StepObjects.WAIT_TEXT)) StepObjects.waitText(locator, value, desc, timeout);
@@ -64,6 +65,8 @@ public class TestCase {
                 if (type.equals(StepObjects.TEST_GA)) StepObjects.testGA(ga_category, ga_action, ga_label, desc, timeout);
                 if (type.equals(StepObjects.TEST_YM)) StepObjects.testYM(ym_code, desc, timeout);
                 if (type.equals(StepObjects.GET_HAR)) StepObjects.getHar();
+                if (type.equals(StepObjects.GET_HAR_GA)) StepObjects.getHarGA();
+                if (type.equals(StepObjects.GET_HAR_YM)) StepObjects.getHarYM();
 
                 Thread.sleep(250);
             }

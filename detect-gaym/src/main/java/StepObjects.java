@@ -10,6 +10,7 @@ import java.util.List;
 public class StepObjects {
     public static final String OPEN_PAGE = "open_page";
     public static final String OPEN_DEFAULT_PAGE = "open_default_page";
+    public static final String REFRESH_PAGE = "refresh_page";
     public static final String INPUT_VALUE = "input_value";
     public static final String CLICK_ELEMENT = "click_element";
     public static final String WAIT_TEXT = "wait_text";
@@ -18,11 +19,19 @@ public class StepObjects {
     public static final String TEST_GA = "test_ga";
     public static final String TEST_YM = "test_ym";
     public static final String GET_HAR = "get_har";
+    public static final String GET_HAR_GA = "get_har_ga";
+    public static final String GET_HAR_YM = "get_har_ym";
 
     public static void openPage(String url, String title) {
         Helper.driver.get(url);
         if (!title.equals("")) System.out.println(title);
         else System.out.println("STEP: Open page " + url);
+    }
+
+    public static void refreshPage(String description) {
+        Helper.driver.navigate().refresh();
+        if (!description.equals("")) System.out.println(description);
+        else System.out.println("STEP: refresh on page");
     }
 
     public static void inputValue(String locator, String value, String description, int timeout) throws InterruptedException {
@@ -123,6 +132,26 @@ public class StepObjects {
         for (String link:harLinks)
         {
             System.out.println("HAR: event " + link);
+        }
+    }
+
+    public static void getHarGA() throws UnsupportedEncodingException {
+        ArrayList<String> harLinks = Helper.getLinksFromHar();
+        for (String link:harLinks)
+        {
+            if (link.contains("google-analytics.com/collect") && link.contains("&t=event&")) {
+                System.out.println("HAR: event GA " + link);
+            }
+        }
+    }
+
+    public static void getHarYM() throws UnsupportedEncodingException {
+        ArrayList<String> harLinks = Helper.getLinksFromHar();
+        for (String link:harLinks)
+        {
+            if (link.contains("mc.yandex.ru/watch") && link.contains("&page-url=goal")) {
+                System.out.println("HAR: event YM " + link);
+            }
         }
     }
 }

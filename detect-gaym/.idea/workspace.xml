@@ -7,13 +7,9 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TestCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tests-editor/TestsEditor/.vs/TestsEditor/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor/TestsEditor/.vs/TestsEditor/v16/.suo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tests-editor/TestsEditor/.vs/TestsEditor/v16/Server/sqlite3/storage.ide" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor/TestsEditor/.vs/TestsEditor/v16/Server/sqlite3/storage.ide" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests-editor/TestsEditor/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor/TestsEditor/Form1.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests-editor/TestsEditor/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor/TestsEditor/Form1.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tests-editor/TestsEditor/Form1.resx" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor/TestsEditor/Form1.resx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests-editor/TestsEditor/Form3.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor/TestsEditor/Form3.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests-editor/TestsEditor/Form4.resx" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor/TestsEditor/Form4.resx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests-editor/TestsEditor/Form5.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor/TestsEditor/Form5.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests-editor/TestsEditor/Form5.resx" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor/TestsEditor/Form5.resx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests-editor/TestsEditor/Form6.resx" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor/TestsEditor/Form6.resx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests-editor/TestsEditor/TestsEditor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor/TestsEditor/TestsEditor.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,9 +89,9 @@
       <screen x="1440" y="40" width="1440" height="860" />
     </state>
     <state width="1397" height="122" key="GridCell.Tab.0.right/0.40.1440.860/1440.40.1440.860@1440.40.1440.860" timestamp="1589525892890" />
-    <state x="1676" y="285" key="com.intellij.ide.util.TipDialog" timestamp="1589699660025">
+    <state x="1676" y="285" key="com.intellij.ide.util.TipDialog" timestamp="1590395668439">
       <screen x="1440" y="40" width="1440" height="860" />
     </state>
-    <state x="1676" y="285" key="com.intellij.ide.util.TipDialog/0.40.1440.860/1440.40.1440.860@1440.40.1440.860" timestamp="1589699660025" />
+    <state x="1676" y="285" key="com.intellij.ide.util.TipDialog/0.40.1440.860/1440.40.1440.860@1440.40.1440.860" timestamp="1590395668439" />
   </component>
 </project>

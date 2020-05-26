@@ -169,6 +169,7 @@
             this.comboBoxType.Items.AddRange(new object[] {
             "open_page",
             "open_default_page",
+            "refresh_page",
             "input_value",
             "click_element",
             "wait_text",
@@ -176,7 +177,9 @@
             "sleep",
             "test_ga",
             "test_ym",
-            "get_har"});
+            "get_har",
+            "get_har_ga",
+            "get_har_ym"});
             this.comboBoxType.Location = new System.Drawing.Point(107, 71);
             this.comboBoxType.Name = "comboBoxType";
             this.comboBoxType.Size = new System.Drawing.Size(298, 21);

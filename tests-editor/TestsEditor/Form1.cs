@@ -817,5 +817,22 @@ namespace TestsEditor
                 }
             }
         }
+
+        private void валидаторJsonФайлаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void обновитьChromeDriverToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(@"https://chromedriver.chromium.org/");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка");
+            }
+        }
     }
 }
