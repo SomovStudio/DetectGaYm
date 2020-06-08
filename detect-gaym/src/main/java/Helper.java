@@ -25,7 +25,7 @@ public class Helper {
     /* Возвращает путь к драйверу */
     public static String getDriverPath() {
         String path = System.getProperty("user.dir");
-        //path = path.substring(0, path.length() - 4);
+        path = path.substring(0, path.length() - 4);
         path = path + "\\driver\\chromedriver.exe";
         System.out.println("PATH DRIVER: " + path);
         return path;
@@ -34,7 +34,7 @@ public class Helper {
     /* Возвращает путь в папку программы */
     public static String getFolderPath() {
         String path = System.getProperty("user.dir");
-        //path = path.substring(0, path.length() - 4);
+        path = path.substring(0, path.length() - 4);
         return path;
     }
 
@@ -221,6 +221,12 @@ public class Helper {
     /* Чтение JSON файла */
     public static JSONObject readJsonFile(String filename) throws IOException, ParseException {
         Object obj = new JSONParser().parse(new FileReader(getFolderPath() + filename));
+        JSONObject jo = (JSONObject) obj;
+        return jo;
+    }
+
+    public static JSONObject readJsonFile2(String filename) throws IOException, ParseException {
+        Object obj = new JSONParser().parse(new FileReader(filename));
         JSONObject jo = (JSONObject) obj;
         return jo;
     }

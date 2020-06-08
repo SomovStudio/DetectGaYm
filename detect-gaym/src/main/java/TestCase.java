@@ -110,15 +110,18 @@ public class TestCase {
 
     public static void executeAll(String folder) throws IOException, ParseException, InterruptedException {
         try {
-
+            String path = System.getProperty("user.dir");
+            path = path.substring(0, path.length() - 4);
+            folder = path + folder;
+            System.out.println("FOLDER: test-cases files " + folder);
             File dir = new File(folder);
             File[] files = dir.listFiles();
             List<File> listFiles = Arrays.asList(files != null ? files : new File[0]);
             for(File file : listFiles){
-                String filename = "\\"+file.getPath();
+                String filename = file.getPath();
 
                 System.out.println("LOAD: test-case file " + filename);
-                JSONObject oj = Helper.readJsonFile(filename);
+                JSONObject oj = Helper.readJsonFile2(filename);
 
                 description = oj.get("description").toString();
                 port = Integer.parseInt(oj.get("port").toString());
