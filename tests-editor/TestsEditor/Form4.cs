@@ -28,6 +28,16 @@ namespace TestsEditor
             bat = "cd " + path+"\\bin";
             bat += System.Environment.NewLine + "java -jar detect-gaym.jar \\tests\\" + parentForm.fileName;
             textBox2.Text = bat;
+
+            path = Directory.GetCurrentDirectory();
+            bat = "cd " + path;
+            bat += System.Environment.NewLine + "detect.bat \\tests";
+            bat += System.Environment.NewLine;
+            bat += System.Environment.NewLine + "или прямой вызов";
+            bat += System.Environment.NewLine;
+            bat += System.Environment.NewLine + "cd " + path + "\\bin";
+            bat += System.Environment.NewLine + "java -jar detect-gaym.jar \\tests";
+            textBox3.Text = bat;
         }
     }
 }

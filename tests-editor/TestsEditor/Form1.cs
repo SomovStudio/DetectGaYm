@@ -438,6 +438,41 @@ namespace TestsEditor
             }
         }
 
+        private void executePackTest(string folderName)
+        {
+            try
+            {
+                string path = Directory.GetCurrentDirectory();
+                string bat = "cd " + path;
+                bat += System.Environment.NewLine + "detect.bat \\"+ folderName;
+                using (StreamWriter writer = new StreamWriter("run.bat"))
+                {
+                    writer.Write(bat);
+                }
+
+                P = new Process();
+                P.StartInfo.FileName = "run.bat";
+                P.StartInfo.Arguments = "/k";
+                P.StartInfo.RedirectStandardError = true;
+                P.StartInfo.RedirectStandardInput = true;
+                P.StartInfo.RedirectStandardOutput = true;
+                P.StartInfo.CreateNoWindow = true;
+                P.StartInfo.UseShellExecute = false;
+                P.ErrorDataReceived += P_ErrorDataReceived;
+                P.OutputDataReceived += P_OutputDataReceived;
+                P.EnableRaisingEvents = true;
+                P.Exited += P_Exited;
+                P.Start();
+                P.BeginErrorReadLine();
+                P.BeginOutputReadLine();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка");
+                if (File.Exists("run.bat")) File.Delete("run.bat");
+            }
+        }
+
         void P_ErrorDataReceived(object sender, DataReceivedEventArgs e)
         {
             try
@@ -832,6 +867,26 @@ namespace TestsEditor
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Ошибка");
+            }
+        }
+
+        private void выполнитьВсеТестыИзПапкиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog1.SelectedPath = Directory.GetCurrentDirectory();
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string folderName = Path.GetFileName(folderBrowserDialog1.SelectedPath);
+                executePackTest(folderName);
+            }
+        }
+
+        private void toolStripButton19_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog1.SelectedPath = Directory.GetCurrentDirectory();
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string folderName = Path.GetFileName(folderBrowserDialog1.SelectedPath);
+                executePackTest(folderName);
             }
         }
     }

@@ -59,6 +59,7 @@
             this.валидаторJsonФайлаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.httpscodebeautifyorgjsonvalidatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.httpsjsonformattercuriousconceptcomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.обновитьChromeDriverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detailedInformationInTheConsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -148,7 +149,10 @@
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.обновитьChromeDriverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выполнитьВсеТестыИзПапкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton19 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -324,6 +328,7 @@
             // 
             this.runToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.executeTestToolStripMenuItem,
+            this.выполнитьВсеТестыИзПапкиToolStripMenuItem,
             this.stopToolStripMenuItem,
             this.toolStripSeparator5,
             this.openSystemConsoleToolStripMenuItem});
@@ -335,27 +340,27 @@
             // 
             this.executeTestToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("executeTestToolStripMenuItem.Image")));
             this.executeTestToolStripMenuItem.Name = "executeTestToolStripMenuItem";
-            this.executeTestToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.executeTestToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.executeTestToolStripMenuItem.Text = "Выполнить данный тест";
             this.executeTestToolStripMenuItem.Click += new System.EventHandler(this.executeTestToolStripMenuItem_Click);
             // 
             // stopToolStripMenuItem
             // 
             this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
-            this.stopToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.stopToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.stopToolStripMenuItem.Text = "Прервать выполнение";
             this.stopToolStripMenuItem.Click += new System.EventHandler(this.stopToolStripMenuItem_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(232, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(239, 6);
             // 
             // openSystemConsoleToolStripMenuItem
             // 
             this.openSystemConsoleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openSystemConsoleToolStripMenuItem.Image")));
             this.openSystemConsoleToolStripMenuItem.Name = "openSystemConsoleToolStripMenuItem";
-            this.openSystemConsoleToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.openSystemConsoleToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.openSystemConsoleToolStripMenuItem.Text = "Открыть системную консоль";
             this.openSystemConsoleToolStripMenuItem.Click += new System.EventHandler(this.openSystemConsoleToolStripMenuItem_Click);
             // 
@@ -415,6 +420,13 @@
             this.httpsjsonformattercuriousconceptcomToolStripMenuItem.Text = "https://jsonformatter.curiousconcept.com/";
             this.httpsjsonformattercuriousconceptcomToolStripMenuItem.Click += new System.EventHandler(this.httpsjsonformattercuriousconceptcomToolStripMenuItem_Click);
             // 
+            // обновитьChromeDriverToolStripMenuItem
+            // 
+            this.обновитьChromeDriverToolStripMenuItem.Name = "обновитьChromeDriverToolStripMenuItem";
+            this.обновитьChromeDriverToolStripMenuItem.Size = new System.Drawing.Size(390, 22);
+            this.обновитьChromeDriverToolStripMenuItem.Text = "Обновить Chrome Driver";
+            this.обновитьChromeDriverToolStripMenuItem.Click += new System.EventHandler(this.обновитьChromeDriverToolStripMenuItem_Click);
+            // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -456,6 +468,8 @@
             this.toolStripButton4,
             this.toolStripSeparator4,
             this.toolStripButton11,
+            this.toolStripButton19,
+            this.toolStripSeparator11,
             this.toolStripButton12});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
@@ -1318,12 +1332,28 @@
             // 
             this.saveFileDialog1.Filter = "*.json|*.json";
             // 
-            // обновитьChromeDriverToolStripMenuItem
+            // выполнитьВсеТестыИзПапкиToolStripMenuItem
             // 
-            this.обновитьChromeDriverToolStripMenuItem.Name = "обновитьChromeDriverToolStripMenuItem";
-            this.обновитьChromeDriverToolStripMenuItem.Size = new System.Drawing.Size(390, 22);
-            this.обновитьChromeDriverToolStripMenuItem.Text = "Обновить Chrome Driver";
-            this.обновитьChromeDriverToolStripMenuItem.Click += new System.EventHandler(this.обновитьChromeDriverToolStripMenuItem_Click);
+            this.выполнитьВсеТестыИзПапкиToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("выполнитьВсеТестыИзПапкиToolStripMenuItem.Image")));
+            this.выполнитьВсеТестыИзПапкиToolStripMenuItem.Name = "выполнитьВсеТестыИзПапкиToolStripMenuItem";
+            this.выполнитьВсеТестыИзПапкиToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.выполнитьВсеТестыИзПапкиToolStripMenuItem.Text = "Выполнить все тесты из папки";
+            this.выполнитьВсеТестыИзПапкиToolStripMenuItem.Click += new System.EventHandler(this.выполнитьВсеТестыИзПапкиToolStripMenuItem_Click);
+            // 
+            // toolStripButton19
+            // 
+            this.toolStripButton19.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton19.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton19.Image")));
+            this.toolStripButton19.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton19.Name = "toolStripButton19";
+            this.toolStripButton19.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton19.Text = "Выполнить все тесты из папки";
+            this.toolStripButton19.Click += new System.EventHandler(this.toolStripButton19_Click);
+            // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 25);
             // 
             // Form1
             // 
@@ -1498,6 +1528,10 @@
         private System.Windows.Forms.ToolStripButton toolStripButton17;
         private System.Windows.Forms.ToolStripButton toolStripButton18;
         private System.Windows.Forms.ToolStripMenuItem обновитьChromeDriverToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem выполнитьВсеТестыИзПапкиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripButton19;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }
 
