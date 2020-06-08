@@ -3,13 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="5eaef80f-35ed-4559-b799-89a4d119880d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StepObjects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StepObjects.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/driver/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/driver/chromedriver.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests-editor/TestsEditor/.vs/TestsEditor/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor/TestsEditor/.vs/TestsEditor/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests-editor/TestsEditor/.vs/TestsEditor/v16/Server/sqlite3/storage.ide" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor/TestsEditor/.vs/TestsEditor/v16/Server/sqlite3/storage.ide" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests-editor/TestsEditor/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor/TestsEditor/Form1.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests-editor/TestsEditor/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor/TestsEditor/Form1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests-editor/TestsEditor/Form1.resx" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor/TestsEditor/Form1.resx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestCase.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,25 +71,30 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1397" height="122" key="GridCell.Tab.0.bottom" timestamp="1589525892890">
-      <screen x="1440" y="40" width="1440" height="860" />
+    <state width="1397" height="261" key="GridCell.Tab.0.bottom" timestamp="1591617098349">
+      <screen x="1920" y="223" width="1440" height="860" />
     </state>
     <state width="1397" height="122" key="GridCell.Tab.0.bottom/0.40.1440.860/1440.40.1440.860@1440.40.1440.860" timestamp="1589525892890" />
-    <state width="1397" height="122" key="GridCell.Tab.0.center" timestamp="1589525892890">
-      <screen x="1440" y="40" width="1440" height="860" />
+    <state width="1397" height="261" key="GridCell.Tab.0.bottom/1920.223.1440.860/0.40.1920.1040@1920.223.1440.860" timestamp="1591617098349" />
+    <state width="1397" height="261" key="GridCell.Tab.0.center" timestamp="1591617098349">
+      <screen x="1920" y="223" width="1440" height="860" />
     </state>
     <state width="1397" height="122" key="GridCell.Tab.0.center/0.40.1440.860/1440.40.1440.860@1440.40.1440.860" timestamp="1589525892890" />
-    <state width="1397" height="122" key="GridCell.Tab.0.left" timestamp="1589525892890">
-      <screen x="1440" y="40" width="1440" height="860" />
+    <state width="1397" height="261" key="GridCell.Tab.0.center/1920.223.1440.860/0.40.1920.1040@1920.223.1440.860" timestamp="1591617098349" />
+    <state width="1397" height="261" key="GridCell.Tab.0.left" timestamp="1591617098349">
+      <screen x="1920" y="223" width="1440" height="860" />
     </state>
     <state width="1397" height="122" key="GridCell.Tab.0.left/0.40.1440.860/1440.40.1440.860@1440.40.1440.860" timestamp="1589525892890" />
-    <state width="1397" height="122" key="GridCell.Tab.0.right" timestamp="1589525892890">
-      <screen x="1440" y="40" width="1440" height="860" />
+    <state width="1397" height="261" key="GridCell.Tab.0.left/1920.223.1440.860/0.40.1920.1040@1920.223.1440.860" timestamp="1591617098349" />
+    <state width="1397" height="261" key="GridCell.Tab.0.right" timestamp="1591617098349">
+      <screen x="1920" y="223" width="1440" height="860" />
     </state>
     <state width="1397" height="122" key="GridCell.Tab.0.right/0.40.1440.860/1440.40.1440.860@1440.40.1440.860" timestamp="1589525892890" />
-    <state x="1676" y="285" key="com.intellij.ide.util.TipDialog" timestamp="1590395668439">
-      <screen x="1440" y="40" width="1440" height="860" />
+    <state width="1397" height="261" key="GridCell.Tab.0.right/1920.223.1440.860/0.40.1920.1040@1920.223.1440.860" timestamp="1591617098349" />
+    <state x="2156" y="468" key="com.intellij.ide.util.TipDialog" timestamp="1591614643549">
+      <screen x="1920" y="223" width="1440" height="860" />
     </state>
     <state x="1676" y="285" key="com.intellij.ide.util.TipDialog/0.40.1440.860/1440.40.1440.860@1440.40.1440.860" timestamp="1590395668439" />
+    <state x="2156" y="468" key="com.intellij.ide.util.TipDialog/1920.223.1440.860/0.40.1920.1040@1920.223.1440.860" timestamp="1591614643549" />
   </component>
 </project>

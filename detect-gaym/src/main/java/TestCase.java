@@ -4,10 +4,13 @@ import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class TestCase {
@@ -100,6 +103,42 @@ public class TestCase {
             beforeTest();
             test();
             afterTest();
+        } catch (Exception e) {
+            Helper.showError(e);
+        }
+    }
+
+    public static void executeAll(String folder) throws IOException, ParseException, InterruptedException {
+        try {
+
+            File dir = new File(folder);
+            File[] files = dir.listFiles();
+            List<File> listFiles = Arrays.asList(files != null ? files : new File[0]);
+            for(File file : listFiles){
+                String filename = "\\"+file.getPath();
+
+                System.out.println("LOAD: test-case file " + filename);
+                JSONObject oj = Helper.readJsonFile(filename);
+
+                description = oj.get("description").toString();
+                port = Integer.parseInt(oj.get("port").toString());
+                nameHar = oj.get("har").toString();
+                pageLoadTimeout = Integer.parseInt(oj.get("timeout").toString());
+                data = (JSONArray) oj.get("data");
+                steps = (JSONArray) oj.get("steps");
+
+                arguments = new ArrayList<String>();
+                JSONArray args = (JSONArray) oj.get("arguments");
+                Iterator argsItr = args.iterator();
+                while (argsItr.hasNext()) {
+                    String argument = argsItr.next().toString();
+                    arguments.add(argument);
+                }
+                beforeTest();
+                test();
+                afterTest();
+            }
+
         } catch (Exception e) {
             Helper.showError(e);
         }
