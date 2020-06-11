@@ -16,8 +16,10 @@ public class StepObjects {
     public static final String WAIT_TEXT = "wait_text";
     public static final String WAIT_ELEMENT = "wait_element";
     public static final String SLEEP = "sleep";
-    public static final String TEST_GA = "test_ga";
-    public static final String TEST_YM = "test_ym";
+    public static final String TEST_OPTIONALLY_GA = "test_optionally_ga";
+    public static final String TEST_DEFAULTS_GA = "test_defaults_ga";
+    public static final String TEST_OPTIONALLY_YM = "test_optionally_ym";
+    public static final String TEST_DEFAULTS_YM = "test_defaults_ym";
     public static final String GET_HAR = "get_har";
     public static final String GET_HAR_GA = "get_har_ga";
     public static final String GET_HAR_YM = "get_har_ym";
@@ -103,6 +105,30 @@ public class StepObjects {
         }
     }
 
+    public static void testOptionallyGA(String value, String description, int timeout) throws UnsupportedEncodingException, InterruptedException {
+        boolean result = false;
+        for (int time = -1; time < timeout; time++) // wait sec
+        {
+            Thread.sleep(1000);
+            ArrayList<String> harLinks = Helper.getLinksFromHar();
+            for (String link:harLinks) {
+                if(link.contains("google-analytics.com/collect") && link.contains(value))
+                {
+                    result = true;
+                    break;
+                }
+            }
+            if(result) break;
+        }
+        if(!result) {
+            if (!description.equals("")) Helper.showFail(description + " - FAILED");
+            else Helper.showFail("TEST: event GA ["+value+"] - FAILED");
+        }else{
+            if (!description.equals("")) Helper.showPass(description + " - PASSED");
+            else Helper.showPass("event GA ["+value+"] - PASSED");
+        }
+    }
+
     public static void testYM(String code, String description, int timeout) throws InterruptedException, UnsupportedEncodingException {
         boolean result = false;
         for (int time = -1; time < timeout; time++) // wait sec
@@ -124,6 +150,30 @@ public class StepObjects {
         }else{
             if (!description.equals("")) Helper.showPass(description + " - PASSED");
             else Helper.showPass("event YM ["+code+"] - PASSED");
+        }
+    }
+
+    public static void testOptionallyYM(String value, String description, int timeout) throws InterruptedException, UnsupportedEncodingException {
+        boolean result = false;
+        for (int time = -1; time < timeout; time++) // wait sec
+        {
+            Thread.sleep(1000);
+            ArrayList<String> harLinks = Helper.getLinksFromHar();
+            for (String link:harLinks)
+            {
+                if(link.contains("mc.yandex.ru/watch") && link.contains(value)){
+                    result = true;
+                    break;
+                }
+            }
+            if(result) break;
+        }
+        if(!result) {
+            if (!description.equals("")) Helper.showFail(description + " - FAILED");
+            else Helper.showFail("TEST: event YM ["+value+"] - FAILED");
+        }else{
+            if (!description.equals("")) Helper.showPass(description + " - PASSED");
+            else Helper.showPass("event YM ["+value+"] - PASSED");
         }
     }
 
