@@ -175,15 +175,18 @@
             "wait_text",
             "wait_element",
             "sleep",
-            "test_ga",
-            "test_ym",
             "get_har",
             "get_har_ga",
-            "get_har_ym"});
+            "get_har_ym",
+            "test_defaults_ga",
+            "test_optionally_ga",
+            "test_defaults_ym",
+            "test_optionally_ym"});
             this.comboBoxType.Location = new System.Drawing.Point(107, 71);
             this.comboBoxType.Name = "comboBoxType";
             this.comboBoxType.Size = new System.Drawing.Size(298, 21);
             this.comboBoxType.TabIndex = 5;
+            this.comboBoxType.SelectedIndexChanged += new System.EventHandler(this.comboBoxType_SelectedIndexChanged);
             // 
             // label3
             // 

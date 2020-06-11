@@ -59,5 +59,10 @@ namespace TestsEditor
 
             Close();
         }
+
+        private void comboBoxType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -17,26 +17,28 @@ namespace TestsEditor
         }
 
         public Form1 parentForm;
+        public string fileName;
+        public string folder;
 
         private void Form4_Load(object sender, EventArgs e)
         {
             string path = Directory.GetCurrentDirectory();
             string bat = "cd " + path;
-            bat += System.Environment.NewLine + "detect.bat \\tests\\" + parentForm.fileName;
+            bat += System.Environment.NewLine + "detect.bat \\" + folder + "\\" + fileName;
             textBox1.Text = bat;
 
             bat = "cd " + path+"\\bin";
-            bat += System.Environment.NewLine + "java -jar detect-gaym.jar \\tests\\" + parentForm.fileName;
+            bat += System.Environment.NewLine + "java -jar detect-gaym.jar \\" + folder + "\\" + fileName;
             textBox2.Text = bat;
 
             path = Directory.GetCurrentDirectory();
             bat = "cd " + path;
-            bat += System.Environment.NewLine + "detect.bat \\tests";
+            bat += System.Environment.NewLine + "detect.bat \\" + folder;
             bat += System.Environment.NewLine;
             bat += System.Environment.NewLine + "или прямой вызов";
             bat += System.Environment.NewLine;
             bat += System.Environment.NewLine + "cd " + path + "\\bin";
-            bat += System.Environment.NewLine + "java -jar detect-gaym.jar \\tests";
+            bat += System.Environment.NewLine + "java -jar detect-gaym.jar \\" + folder;
             textBox3.Text = bat;
         }
     }

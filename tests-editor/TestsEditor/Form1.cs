@@ -398,6 +398,17 @@ namespace TestsEditor
             }
         }
 
+        private string getFolderName()
+        {
+            string path = toolStripStatusLabelFileName.Text;
+            if (path != "...") {
+                path = path.Substring(0, path.Length - this.fileName.Length-1);
+                path = path.Substring(path.LastIndexOf("\\")+1);
+                return path;
+            }
+            return "tests";
+        }
+
         private void executeTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             executeTest();
@@ -409,7 +420,7 @@ namespace TestsEditor
             {
                 string path = Directory.GetCurrentDirectory();
                 string bat = "cd " + path;
-                bat += System.Environment.NewLine + "detect.bat \\tests\\" + this.fileName;
+                bat += System.Environment.NewLine + "detect.bat \\" + getFolderName() + "\\" + this.fileName;
                 using (StreamWriter writer = new StreamWriter("run.bat"))
                 {
                     writer.Write(bat);
@@ -555,6 +566,8 @@ namespace TestsEditor
         {
             Form4 form = new Form4();
             form.parentForm = this;
+            form.fileName = this.fileName;
+            form.folder = getFolderName();
             form.ShowDialog();
         }
 
