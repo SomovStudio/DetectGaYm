@@ -62,6 +62,18 @@ namespace TestsEditor
 
         private void comboBoxType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            switch (comboBoxType.Text)
+            {
+                case "test_optionally_ga":
+                    textBoxLocator.Text = "google-analytics.com/collect";
+                    break;
+                case "test_optionally_ym":
+                    textBoxLocator.Text = "mc.yandex.ru/watch";
+                    break;
+                default:
+                    textBoxLocator.Text = "";
+                    break;
+            }
             
         }
     }
