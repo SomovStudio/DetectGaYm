@@ -65,13 +65,32 @@ namespace TestsEditor
             switch (comboBoxType.Text)
             {
                 case "test_optionally_ga":
+                    label5.Text = "Протокол:";
                     textBoxLocator.Text = "google-analytics.com/collect";
+                    textBoxLocator.ReadOnly = false;
+                    textBoxValue.ReadOnly = false;
                     break;
                 case "test_optionally_ym":
+                    label5.Text = "Протокол:";
                     textBoxLocator.Text = "mc.yandex.ru/watch";
+                    textBoxLocator.ReadOnly = false;
+                    textBoxValue.ReadOnly = false;
+                    break;
+                case "sleep":
+                    label5.Text = "Локатор (XPath):";
+                    textBoxValue.ReadOnly = true;
                     break;
                 default:
+                    label9.Text = "Описание:";
+                    textBoxDescription.ReadOnly = false;
+                    label3.Text = "Тип действия:";
+                    label5.Text = "Локатор (XPath):";
+                    textBoxLocator.ReadOnly = false;
                     textBoxLocator.Text = "";
+                    label4.Text = "Значение:";
+                    textBoxValue.ReadOnly = false;
+                    label6.Text = "Время ожидания:";
+                    numericUpDownTimeout.ReadOnly = false;
                     break;
             }
             
