@@ -105,14 +105,15 @@ public class StepObjects {
         }
     }
 
-    public static void testOptionallyGA(String value, String description, int timeout) throws UnsupportedEncodingException, InterruptedException {
+    public static void testOptionallyGA(String value, String locator, String description, int timeout) throws UnsupportedEncodingException, InterruptedException {
+        if(locator == "") locator = "google-analytics.com/collect";
         boolean result = false;
         for (int time = -1; time < timeout; time++) // wait sec
         {
             Thread.sleep(1000);
             ArrayList<String> harLinks = Helper.getLinksFromHar();
             for (String link:harLinks) {
-                if(link.contains("google-analytics.com/collect") && link.contains(value))
+                if(link.contains(locator) && link.contains(value))
                 {
                     result = true;
                     break;
@@ -153,7 +154,8 @@ public class StepObjects {
         }
     }
 
-    public static void testOptionallyYM(String value, String description, int timeout) throws InterruptedException, UnsupportedEncodingException {
+    public static void testOptionallyYM(String value, String locator, String description, int timeout) throws InterruptedException, UnsupportedEncodingException {
+        if(locator == "") locator = "mc.yandex.ru/watch";
         boolean result = false;
         for (int time = -1; time < timeout; time++) // wait sec
         {
@@ -161,7 +163,7 @@ public class StepObjects {
             ArrayList<String> harLinks = Helper.getLinksFromHar();
             for (String link:harLinks)
             {
-                if(link.contains("mc.yandex.ru/watch") && link.contains(value)){
+                if(link.contains(locator) && link.contains(value)){
                     result = true;
                     break;
                 }

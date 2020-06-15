@@ -70,8 +70,8 @@ public class TestCase {
                 if (type.equals(StepObjects.GET_HAR_YM)) StepObjects.getHarYM();
                 if (type.equals(StepObjects.TEST_DEFAULTS_GA)) StepObjects.testGA(ga_category, ga_action, ga_label, desc, timeout);
                 if (type.equals(StepObjects.TEST_DEFAULTS_YM)) StepObjects.testYM(ym_code, desc, timeout);
-                if (type.equals(StepObjects.TEST_OPTIONALLY_GA)) StepObjects.testOptionallyGA(value, desc, timeout);
-                if (type.equals(StepObjects.TEST_OPTIONALLY_YM)) StepObjects.testOptionallyYM(value, desc, timeout);
+                if (type.equals(StepObjects.TEST_OPTIONALLY_GA)) StepObjects.testOptionallyGA(value, locator, desc, timeout);
+                if (type.equals(StepObjects.TEST_OPTIONALLY_YM)) StepObjects.testOptionallyYM(value, locator, desc, timeout);
 
                 Thread.sleep(250);
             }
