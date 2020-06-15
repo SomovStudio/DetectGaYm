@@ -94,6 +94,11 @@ public class Helper {
         return links;
     }
 
+    /* Очистка HAR */
+    public static void clearHar(String newNameHar) {
+        proxy.newHar(newNameHar);
+    }
+
     /* Поиск GA (google analytics) событий */
     public static boolean searchGAEvent(ArrayList<String> harLinks, String category, String action, String label) {
         for (String link : harLinks) {

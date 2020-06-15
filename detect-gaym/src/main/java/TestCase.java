@@ -36,6 +36,7 @@ public class TestCase {
             Helper.driver.manage().timeouts().pageLoadTimeout(pageLoadTimeout, TimeUnit.SECONDS);
             System.out.println("SETTING: Page load time limit " + pageLoadTimeout + " seconds");
         }
+        int index = 0;
         Iterator dataItr = data.iterator();
         while (dataItr.hasNext()) {
             JSONObject dataObj = (JSONObject) dataItr.next();
@@ -75,6 +76,9 @@ public class TestCase {
 
                 Thread.sleep(250);
             }
+
+            Helper.clearHar(nameHar + String.valueOf(index));
+            index++;
         }
     }
 
