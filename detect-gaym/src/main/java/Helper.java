@@ -86,7 +86,6 @@ public class Helper {
     public static ArrayList<String> getLinksFromHar() throws UnsupportedEncodingException {
         ArrayList<String> links = new ArrayList<String>();
         // получить данные HAR
-        Helper.clearHar();
         Har har = Helper.proxy.getHar();
         for (int i = 0; i < har.getLog().getEntries().size(); i++) {
             String link = har.getLog().getEntries().get(i).getRequest().getUrl();
@@ -100,8 +99,8 @@ public class Helper {
     public static void clearHar() {
         Date date = new Date();
         String newHarName = date.toString();
-        System.out.println("PROXY: HAR clear | New name [" + newHarName + "]");
         proxy.newHar(newHarName);
+        System.out.println("PROXY: HAR clear");
     }
 
     /* Поиск GA (google analytics) событий */
