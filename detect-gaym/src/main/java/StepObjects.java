@@ -23,16 +23,15 @@ public class StepObjects {
     public static final String GET_HAR = "get_har";
     public static final String GET_HAR_GA = "get_har_ga";
     public static final String GET_HAR_YM = "get_har_ym";
+    public static final String CLEAR_HAR = "clear_har";
 
     public static void openPage(String url, String title) {
-        Helper.clearHar();
         Helper.driver.get(url);
         if (!title.equals("")) System.out.println(title);
         else System.out.println("STEP: Open page " + url);
     }
 
     public static void refreshPage(String description) {
-        Helper.clearHar();
         Helper.driver.navigate().refresh();
         if (!description.equals("")) System.out.println(description);
         else System.out.println("STEP: refresh on page");
@@ -47,7 +46,6 @@ public class StepObjects {
     }
 
     public static void clickElement(String locator, String description, int timeout) throws InterruptedException {
-        Helper.clearHar();
         if(timeout > 0) Helper.waitElement(locator, timeout);
         WebElement element = Helper.driver.findElement(By.xpath(locator));
         element.click();
