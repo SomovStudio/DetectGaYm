@@ -118,12 +118,12 @@
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(5, 185);
+            this.label6.Location = new System.Drawing.Point(5, 183);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 13);
+            this.label6.Size = new System.Drawing.Size(96, 17);
             this.label6.TabIndex = 10;
             this.label6.Text = "Время ожидания:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // textBoxLocator
             // 
@@ -136,12 +136,12 @@
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 112);
+            this.label5.Location = new System.Drawing.Point(5, 112);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 13);
+            this.label5.Size = new System.Drawing.Size(96, 17);
             this.label5.TabIndex = 8;
             this.label5.Text = "Локатор (XPath):";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // textBoxValue
             // 
@@ -154,12 +154,12 @@
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(43, 148);
+            this.label4.Location = new System.Drawing.Point(5, 146);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.Size = new System.Drawing.Size(96, 17);
             this.label4.TabIndex = 6;
             this.label4.Text = "Значение:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // comboBoxType
             // 
@@ -190,12 +190,12 @@
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 74);
+            this.label3.Location = new System.Drawing.Point(5, 72);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 13);
+            this.label3.Size = new System.Drawing.Size(96, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "Тип действия:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // textBoxDescription
             // 
