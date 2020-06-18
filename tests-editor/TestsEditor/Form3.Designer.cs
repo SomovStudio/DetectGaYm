@@ -178,6 +178,7 @@
             "get_har",
             "get_har_ga",
             "get_har_ym",
+            "clear_har",
             "test_defaults_ga",
             "test_optionally_ga",
             "test_defaults_ym",
