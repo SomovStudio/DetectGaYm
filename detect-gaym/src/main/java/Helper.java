@@ -17,6 +17,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Helper {
     public static WebDriver driver;
@@ -85,6 +86,7 @@ public class Helper {
     public static ArrayList<String> getLinksFromHar() throws UnsupportedEncodingException {
         ArrayList<String> links = new ArrayList<String>();
         // получить данные HAR
+        Helper.clearHar();
         Har har = Helper.proxy.getHar();
         for (int i = 0; i < har.getLog().getEntries().size(); i++) {
             String link = har.getLog().getEntries().get(i).getRequest().getUrl();
@@ -95,8 +97,11 @@ public class Helper {
     }
 
     /* Очистка HAR */
-    public static void clearHar(String newNameHar) {
-        proxy.newHar(newNameHar);
+    public static void clearHar() {
+        Date date = new Date();
+        String newHarName = date.toString();
+        System.out.println("PROXY: HAR clear | New name [" + newHarName + "]");
+        proxy.newHar(newHarName);
     }
 
     /* Поиск GA (google analytics) событий */

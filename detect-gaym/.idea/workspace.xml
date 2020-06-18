@@ -10,6 +10,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Helper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Helper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Helper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestCase.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,10 +111,10 @@
       <screen x="1920" y="223" width="1440" height="860" />
     </state>
     <state x="2141" y="231" key="SettingsEditor/1920.223.1440.860/0.40.1920.1040@1920.223.1440.860" timestamp="1592210928064" />
-    <state x="2156" y="468" key="com.intellij.ide.util.TipDialog" timestamp="1592223125769">
+    <state x="2429" y="464" key="com.intellij.ide.util.TipDialog" timestamp="1592471919602">
       <screen x="1920" y="223" width="1440" height="860" />
     </state>
     <state x="1676" y="285" key="com.intellij.ide.util.TipDialog/0.40.1440.860/1440.40.1440.860@1440.40.1440.860" timestamp="1590395668439" />
-    <state x="2156" y="468" key="com.intellij.ide.util.TipDialog/1920.223.1440.860/0.40.1920.1040@1920.223.1440.860" timestamp="1592223125769" />
+    <state x="2429" y="464" key="com.intellij.ide.util.TipDialog/1920.223.1440.860/0.40.1920.1040@1920.223.1440.860" timestamp="1592471919602" />
   </component>
 </project>
