@@ -132,9 +132,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(12, 87);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 13);
+            this.label6.Size = new System.Drawing.Size(95, 13);
             this.label6.TabIndex = 4;
-            this.label6.Text = "Версия: 1.6";
+            this.label6.Text = "Версия: 1.7 (beta)";
             // 
             // linkLabel1
             // 

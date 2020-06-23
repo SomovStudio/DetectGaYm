@@ -49,6 +49,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.executeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выполнитьВсеТестыИзПапкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.openSystemConsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,6 +73,8 @@
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton19 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
@@ -149,10 +152,8 @@
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.выполнитьВсеТестыИзПапкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripButton19 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.uTF8WithoutBOMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -201,8 +202,8 @@
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(10, 17);
-            this.toolStripStatusLabel2.Text = "|";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(75, 17);
+            this.toolStripStatusLabel2.Text = "| Кодировка:";
             // 
             // toolStripDropDownButton1
             // 
@@ -210,7 +211,8 @@
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.defaultToolStripMenuItem,
             this.aSCIIToolStripMenuItem,
-            this.uTF8ToolStripMenuItem});
+            this.uTF8ToolStripMenuItem,
+            this.uTF8WithoutBOMToolStripMenuItem});
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
@@ -222,21 +224,21 @@
             this.defaultToolStripMenuItem.Checked = true;
             this.defaultToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.defaultToolStripMenuItem.Name = "defaultToolStripMenuItem";
-            this.defaultToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.defaultToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.defaultToolStripMenuItem.Text = "Default";
             this.defaultToolStripMenuItem.Click += new System.EventHandler(this.defaultToolStripMenuItem_Click);
             // 
             // aSCIIToolStripMenuItem
             // 
             this.aSCIIToolStripMenuItem.Name = "aSCIIToolStripMenuItem";
-            this.aSCIIToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.aSCIIToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aSCIIToolStripMenuItem.Text = "ASCII";
             this.aSCIIToolStripMenuItem.Click += new System.EventHandler(this.aSCIIToolStripMenuItem_Click);
             // 
             // uTF8ToolStripMenuItem
             // 
             this.uTF8ToolStripMenuItem.Name = "uTF8ToolStripMenuItem";
-            this.uTF8ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.uTF8ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.uTF8ToolStripMenuItem.Text = "UTF-8";
             this.uTF8ToolStripMenuItem.Click += new System.EventHandler(this.uTF8ToolStripMenuItem_Click);
             // 
@@ -343,6 +345,14 @@
             this.executeTestToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.executeTestToolStripMenuItem.Text = "Выполнить данный тест";
             this.executeTestToolStripMenuItem.Click += new System.EventHandler(this.executeTestToolStripMenuItem_Click);
+            // 
+            // выполнитьВсеТестыИзПапкиToolStripMenuItem
+            // 
+            this.выполнитьВсеТестыИзПапкиToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("выполнитьВсеТестыИзПапкиToolStripMenuItem.Image")));
+            this.выполнитьВсеТестыИзПапкиToolStripMenuItem.Name = "выполнитьВсеТестыИзПапкиToolStripMenuItem";
+            this.выполнитьВсеТестыИзПапкиToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.выполнитьВсеТестыИзПапкиToolStripMenuItem.Text = "Выполнить все тесты из папки";
+            this.выполнитьВсеТестыИзПапкиToolStripMenuItem.Click += new System.EventHandler(this.выполнитьВсеТестыИзПапкиToolStripMenuItem_Click);
             // 
             // stopToolStripMenuItem
             // 
@@ -536,6 +546,21 @@
             this.toolStripButton11.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton11.Text = "Выполнить данный тест";
             this.toolStripButton11.Click += new System.EventHandler(this.toolStripButton11_Click);
+            // 
+            // toolStripButton19
+            // 
+            this.toolStripButton19.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton19.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton19.Image")));
+            this.toolStripButton19.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton19.Name = "toolStripButton19";
+            this.toolStripButton19.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton19.Text = "Выполнить все тесты из папки";
+            this.toolStripButton19.Click += new System.EventHandler(this.toolStripButton19_Click);
+            // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 25);
             // 
             // toolStripButton12
             // 
@@ -1332,28 +1357,12 @@
             // 
             this.saveFileDialog1.Filter = "*.json|*.json";
             // 
-            // выполнитьВсеТестыИзПапкиToolStripMenuItem
+            // uTF8WithoutBOMToolStripMenuItem
             // 
-            this.выполнитьВсеТестыИзПапкиToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("выполнитьВсеТестыИзПапкиToolStripMenuItem.Image")));
-            this.выполнитьВсеТестыИзПапкиToolStripMenuItem.Name = "выполнитьВсеТестыИзПапкиToolStripMenuItem";
-            this.выполнитьВсеТестыИзПапкиToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
-            this.выполнитьВсеТестыИзПапкиToolStripMenuItem.Text = "Выполнить все тесты из папки";
-            this.выполнитьВсеТестыИзПапкиToolStripMenuItem.Click += new System.EventHandler(this.выполнитьВсеТестыИзПапкиToolStripMenuItem_Click);
-            // 
-            // toolStripButton19
-            // 
-            this.toolStripButton19.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton19.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton19.Image")));
-            this.toolStripButton19.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton19.Name = "toolStripButton19";
-            this.toolStripButton19.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton19.Text = "Выполнить все тесты из папки";
-            this.toolStripButton19.Click += new System.EventHandler(this.toolStripButton19_Click);
-            // 
-            // toolStripSeparator11
-            // 
-            this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 25);
+            this.uTF8WithoutBOMToolStripMenuItem.Name = "uTF8WithoutBOMToolStripMenuItem";
+            this.uTF8WithoutBOMToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.uTF8WithoutBOMToolStripMenuItem.Text = "UTF-8 without BOM";
+            this.uTF8WithoutBOMToolStripMenuItem.Click += new System.EventHandler(this.uTF8WithoutBOMToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -1532,6 +1541,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton19;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.ToolStripMenuItem uTF8WithoutBOMToolStripMenuItem;
     }
 }
 
