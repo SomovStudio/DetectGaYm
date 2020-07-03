@@ -30,7 +30,7 @@ public class TestCase {
         Helper.endWorkProxy();
     }
 
-    private static void test() throws InterruptedException, UnsupportedEncodingException {
+    private static void test() throws Exception {
         Helper.showTitle(description);
         if(pageLoadTimeout > 0) {
             Helper.driver.manage().timeouts().pageLoadTimeout(pageLoadTimeout, TimeUnit.SECONDS);
@@ -81,7 +81,7 @@ public class TestCase {
         }
     }
 
-    public static void execute(String filename) throws IOException, ParseException, InterruptedException {
+    public static void execute(String filename) throws Exception {
         try {
             System.out.println("LOAD: test-case file " + filename);
             JSONObject oj = Helper.readJsonFile(filename);
@@ -113,7 +113,7 @@ public class TestCase {
         }
     }
 
-    public static void executeAll(String folder) throws IOException, ParseException, InterruptedException {
+    public static void executeAll(String folder) throws Exception {
         try {
             String path = System.getProperty("user.dir");
             path = path.substring(0, path.length() - 4);

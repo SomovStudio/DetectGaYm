@@ -145,12 +145,13 @@ public class Helper {
     }
 
     /* Вывод ошибки */
-    public static void showError(Exception e) {
+    public static void showError(Exception e) throws Exception {
         System.out.println("| ERROR --------------------------------------");
         //System.out.println(e.getMessage());
         System.out.println(e.fillInStackTrace());
         System.out.println("|---------------------------------------------");
         System.out.println(" ");
+        screenshot();
         endWorkProxy();
         Assert.assertEquals("", "ERROR");
     }
@@ -266,9 +267,13 @@ public class Helper {
             String filename = date.toString();
             filename = filename.replaceAll(" ","_");
             filename = filename.replaceAll(":","_");
+            System.out.println("PROXY: save image error in file: \\errors\\img_" + filename + ".png");
             FileUtils.copyFile(captureElementBitmap("//html"), new File(getFolderPath() + "\\errors\\img_"+filename+".png"));
         }catch (Exception e) {
-            showError(e);
+            System.out.println("| ERROR SCREENSHOT ---------------------------");
+            System.out.println(e.fillInStackTrace());
+            System.out.println("|---------------------------------------------");
+            System.out.println(" ");
         }
     }
 }

@@ -54,7 +54,7 @@ public class StepObjects {
         else System.out.println("STEP: click on element [" + locator + "]");
     }
 
-    public static void waitText(String locator, String value, String description, int timeout) throws InterruptedException {
+    public static void waitText(String locator, String value, String description, int timeout) throws Exception {
         boolean result = Helper.waitTextInElement(locator, value, timeout);
         if(!result) {
             Helper.showFail("FAIL: not found element [" + locator + "]");
@@ -64,7 +64,7 @@ public class StepObjects {
         else System.out.println("STEP: text "+value+" in element [" + locator + "] - is displayed");
     }
 
-    public static void waitElement(String locator, String description, int timeout) throws InterruptedException {
+    public static void waitElement(String locator, String description, int timeout) throws Exception {
         boolean result = Helper.waitElement(locator, timeout);
         if(!result) {
             Helper.showFail("FAIL: not found element [" + locator + "]");
@@ -74,7 +74,7 @@ public class StepObjects {
         else System.out.println("STEP: element [" + locator + "] - is displayed");
     }
 
-    public static void waitElementNotVisible(String locator, String description, int timeout) throws InterruptedException {
+    public static void waitElementNotVisible(String locator, String description, int timeout) throws Exception {
         boolean result = Helper.waitElement(locator, timeout);
         if(!result){
             if (!description.equals("")) System.out.println(description);
@@ -92,7 +92,7 @@ public class StepObjects {
         else System.out.println("STEP: sleep " + timeout + " seconds");
     }
 
-    public static void testGA(String category, String action, String label, String description, int timeout) throws UnsupportedEncodingException, InterruptedException {
+    public static void testGA(String category, String action, String label, String description, int timeout) throws Exception {
         boolean result = false;
         for (int time = -1; time < timeout; time++) // wait sec
         {
@@ -118,7 +118,7 @@ public class StepObjects {
         }
     }
 
-    public static void testOptionallyGA(String value, String locator, String description, int timeout) throws UnsupportedEncodingException, InterruptedException {
+    public static void testOptionallyGA(String value, String locator, String description, int timeout) throws Exception {
         if(locator == "") locator = "google-analytics.com/collect";
         boolean result = false;
         for (int time = -1; time < timeout; time++) // wait sec
@@ -143,7 +143,7 @@ public class StepObjects {
         }
     }
 
-    public static void testYM(String code, String description, int timeout) throws InterruptedException, UnsupportedEncodingException {
+    public static void testYM(String code, String description, int timeout) throws Exception {
         boolean result = false;
         for (int time = -1; time < timeout; time++) // wait sec
         {
@@ -167,7 +167,7 @@ public class StepObjects {
         }
     }
 
-    public static void testOptionallyYM(String value, String locator, String description, int timeout) throws InterruptedException, UnsupportedEncodingException {
+    public static void testOptionallyYM(String value, String locator, String description, int timeout) throws Exception {
         if(locator == "") locator = "mc.yandex.ru/watch";
         boolean result = false;
         for (int time = -1; time < timeout; time++) // wait sec
