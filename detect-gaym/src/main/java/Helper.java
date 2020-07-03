@@ -239,4 +239,7 @@ public class Helper {
         JSONObject jo = (JSONObject) obj;
         return jo;
     }
+
+    /* Сделать скриншот экрана */
+
 }

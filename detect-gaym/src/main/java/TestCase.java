@@ -65,6 +65,7 @@ public class TestCase {
                 if (type.equals(StepObjects.CLICK_ELEMENT)) StepObjects.clickElement(locator, desc, timeout);
                 if (type.equals(StepObjects.WAIT_TEXT)) StepObjects.waitText(locator, value, desc, timeout);
                 if (type.equals(StepObjects.WAIT_ELEMENT)) StepObjects.waitElement(locator, desc, timeout);
+                if (type.equals(StepObjects.WAIT_ELEMENT_NOT_VISIBLE)) StepObjects.waitElementNotVisible(locator, desc, timeout);
                 if (type.equals(StepObjects.SLEEP)) StepObjects.sleep(desc, timeout);
                 if (type.equals(StepObjects.GET_HAR)) StepObjects.getHar();
                 if (type.equals(StepObjects.GET_HAR_GA)) StepObjects.getHarGA();

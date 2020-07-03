@@ -174,6 +174,7 @@
             "click_element",
             "wait_text",
             "wait_element",
+            "wait_element_not_visible",
             "sleep",
             "get_har",
             "get_har_ga",

@@ -6,7 +6,12 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5eaef80f-35ed-4559-b799-89a4d119880d" name="Default Changelist" comment="" />
+    <list default="true" id="5eaef80f-35ed-4559-b799-89a4d119880d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Helper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/StepObjects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StepObjects.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TestCase.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,10 +110,11 @@
       <screen x="1920" y="223" width="1440" height="860" />
     </state>
     <state x="2141" y="231" key="SettingsEditor/1920.223.1440.860/0.40.1920.1040@1920.223.1440.860" timestamp="1592484106202" />
-    <state x="2429" y="464" key="com.intellij.ide.util.TipDialog" timestamp="1592483595600">
-      <screen x="1920" y="223" width="1440" height="860" />
+    <state x="679" y="331" key="com.intellij.ide.util.TipDialog" timestamp="1593762675372">
+      <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="1676" y="285" key="com.intellij.ide.util.TipDialog/0.40.1440.860/1440.40.1440.860@1440.40.1440.860" timestamp="1590395668439" />
+    <state x="679" y="331" key="com.intellij.ide.util.TipDialog/1920.223.1440.860/0.40.1920.1040@0.40.1920.1040" timestamp="1593762675372" />
     <state x="2429" y="464" key="com.intellij.ide.util.TipDialog/1920.223.1440.860/0.40.1920.1040@1920.223.1440.860" timestamp="1592483595600" />
   </component>
 </project>

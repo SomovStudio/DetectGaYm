@@ -15,6 +15,7 @@ public class StepObjects {
     public static final String CLICK_ELEMENT = "click_element";
     public static final String WAIT_TEXT = "wait_text";
     public static final String WAIT_ELEMENT = "wait_element";
+    public static final String WAIT_ELEMENT_NOT_VISIBLE = "wait_element_not_visible";
     public static final String SLEEP = "sleep";
     public static final String TEST_OPTIONALLY_GA = "test_optionally_ga";
     public static final String TEST_DEFAULTS_GA = "test_defaults_ga";
@@ -71,6 +72,17 @@ public class StepObjects {
         }
         if (!description.equals("")) System.out.println(description);
         else System.out.println("STEP: element [" + locator + "] - is displayed");
+    }
+
+    public static void waitElementNotVisible(String locator, String description, int timeout) throws InterruptedException {
+        boolean result = Helper.waitElement(locator, timeout);
+        if(!result){
+            if (!description.equals("")) System.out.println(description);
+            else System.out.println("STEP: element [" + locator + "] - is not displayed");
+        }else{
+            Helper.showFail("FAIL: element is displayed [" + locator + "]");
+            return;
+        }
     }
 
     public static void sleep(String description, int timeout) throws InterruptedException {
