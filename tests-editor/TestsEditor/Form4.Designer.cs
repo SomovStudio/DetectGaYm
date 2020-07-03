@@ -129,7 +129,7 @@
             this.MinimizeBox = false;
             this.Name = "Form4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Команду запуска теста";
+            this.Text = "Команды запуска теста";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Form4_Load);
             this.groupBox1.ResumeLayout(false);
