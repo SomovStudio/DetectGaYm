@@ -9,8 +9,7 @@
     <list default="true" id="5eaef80f-35ed-4559-b799-89a4d119880d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StepObjects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StepObjects.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests-editor/TestsEditor/.vs/TestsEditor/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor/TestsEditor/.vs/TestsEditor/v16/.suo" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

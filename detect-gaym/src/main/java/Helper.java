@@ -12,12 +12,16 @@ import net.lightbody.bmp.BrowserMobProxyServer;
 import net.lightbody.bmp.client.ClientUtil;
 import net.lightbody.bmp.core.har.Har;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.awt.Rectangle;
 
 public class Helper {
     public static WebDriver driver;
@@ -241,5 +245,22 @@ public class Helper {
     }
 
     /* Сделать скриншот экрана */
+    public static File captureElementBitmap(String elementLocatorXPath) throws Exception {
+        File screen = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        BufferedImage img = ImageIO.read(screen);
+        WebElement element = driver.findElement(By.xpath(elementLocatorXPath));
+        int width = element.getSize().getWidth();
+        int height = element.getSize().getHeight();
+        Rectangle rect = new Rectangle(width, height);
+        Point p = element.getLocation();
+        BufferedImage dest = img.getSubimage(p.getX(), p.getX(), rect.width, rect.height);
+        ImageIO.write(dest, "png", screen);
+        return screen;
+    }
 
+    public static void screenshot() throws Exception {
+        File file = captureElementBitmap("//html");
+
+        // нужно как-то сохранить файл
+    }
 }
