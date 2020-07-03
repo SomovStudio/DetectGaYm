@@ -1,3 +1,4 @@
+import org.apache.commons.io.FileUtils;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -15,10 +16,10 @@ import net.lightbody.bmp.core.har.Har;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.awt.Rectangle;
@@ -155,11 +156,12 @@ public class Helper {
     }
 
     /* Показать сообщение о том что тест провален */
-    public static void showFail(String failMessage){
+    public static void showFail(String failMessage) throws Exception {
         System.out.println("| FAILED -------------------------------------");
         System.out.println("| " + failMessage);
         System.out.println("|---------------------------------------------");
         System.out.println(" ");
+        screenshot();
         endWorkProxy();
         Assert.assertEquals("PASSED", "FAILED");
     }
@@ -259,8 +261,14 @@ public class Helper {
     }
 
     public static void screenshot() throws Exception {
-        File file = captureElementBitmap("//html");
-
-        // нужно как-то сохранить файл
+        try{
+            Date date = new Date();
+            String filename = date.toString();
+            filename = filename.replaceAll(" ","_");
+            filename = filename.replaceAll(":","_");
+            FileUtils.copyFile(captureElementBitmap("//html"), new File(getFolderPath() + "\\errors\\img_"+filename+".png"));
+        }catch (Exception e) {
+            showError(e);
+        }
     }
 }
