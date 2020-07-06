@@ -4,6 +4,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.junit.Assert;
 import org.openqa.selenium.*;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CapabilityType;
@@ -14,6 +15,8 @@ import net.lightbody.bmp.client.ClientUtil;
 import net.lightbody.bmp.core.har.Har;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.io.FileReader;
@@ -22,7 +25,6 @@ import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.awt.Rectangle;
 
 public class Helper {
     public static WebDriver driver;
@@ -236,7 +238,13 @@ public class Helper {
 
     /* Чтение JSON файла */
     public static JSONObject readJsonFile(String filename) throws IOException, ParseException {
-        Object obj = new JSONParser().parse(new FileReader(getFolderPath() + filename));
+        Object obj;
+        File file = new File(filename);
+        if(file.exists()){
+            obj = new JSONParser().parse(new FileReader(filename));
+        }else{
+            obj = new JSONParser().parse(new FileReader(getFolderPath() + filename));
+        }
         JSONObject jo = (JSONObject) obj;
         return jo;
     }
@@ -251,12 +259,24 @@ public class Helper {
     public static File captureElementBitmap(String elementLocatorXPath) throws Exception {
         File screen = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         BufferedImage img = ImageIO.read(screen);
-        WebElement element = driver.findElement(By.xpath(elementLocatorXPath));
-        int width = element.getSize().getWidth();
-        int height = element.getSize().getHeight();
-        Rectangle rect = new Rectangle(width, height);
-        Point p = element.getLocation();
-        BufferedImage dest = img.getSubimage(p.getX(), p.getX(), rect.width, rect.height);
+        //WebElement element = driver.findElement(By.xpath(elementLocatorXPath));
+        //int width = element.getSize().getWidth();
+        //int height = element.getSize().getHeight();
+        //Rectangle rect = new Rectangle(width, height);
+        //Point p = element.getLocation();
+        //BufferedImage dest = img.getSubimage(p.getX(), p.getX(), rect.width, rect.height);
+
+        //java.awt.Dimension monitor = Toolkit.getDefaultToolkit().getScreenSize();
+        //int screenHeight = (int) monitor.getHeight();
+        //int screenWidth = (int) monitor.getWidth();
+
+        Dimension browser = driver.manage().window().getSize();
+        int browserHeight = browser.getHeight();
+        int browserWidth = browser.getWidth();
+
+        //if(browserHeight > screenHeight) browserHeight = browserHeight - (browserHeight - screenHeight) - 150;
+        //if(browserWidth > screenWidth) browserWidth = browserWidth - (browserWidth - screenWidth) - 100;
+        BufferedImage dest = img.getSubimage(0, 0, browserWidth-100, browserHeight-150);
         ImageIO.write(dest, "png", screen);
         return screen;
     }
@@ -267,12 +287,10 @@ public class Helper {
             String filename = date.toString();
             filename = filename.replaceAll(" ","_");
             filename = filename.replaceAll(":","_");
-            System.out.println("PROXY: save image error in file: \\errors\\img_" + filename + ".png");
             FileUtils.copyFile(captureElementBitmap("//html"), new File(getFolderPath() + "\\errors\\img_"+filename+".png"));
+            System.out.println("PROXY: save image error in file: \\errors\\img_" + filename + ".png");
         }catch (Exception e) {
-            System.out.println("| ERROR SCREENSHOT ---------------------------");
-            System.out.println(e.fillInStackTrace());
-            System.out.println("|---------------------------------------------");
+            System.out.println("PROXY: error save screenshot - " + e.fillInStackTrace());
             System.out.println(" ");
         }
     }

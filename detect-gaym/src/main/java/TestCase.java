@@ -7,6 +7,9 @@ import org.openqa.selenium.WebElement;
 import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -115,10 +118,14 @@ public class TestCase {
 
     public static void executeAll(String folder) throws Exception {
         try {
-            String path = System.getProperty("user.dir");
-            path = path.substring(0, path.length() - 4);
-            folder = path + folder;
-            System.out.println("FOLDER: test-cases files " + folder);
+            if(Files.exists(Paths.get(folder))){
+                System.out.println("FOLDER: test-cases files " + folder);
+            }else{
+                String path = System.getProperty("user.dir");
+                path = path.substring(0, path.length() - 4);
+                folder = path + folder;
+                System.out.println("FOLDER: test-cases files " + folder);
+            }
             File dir = new File(folder);
             File[] files = dir.listFiles();
             List<File> listFiles = Arrays.asList(files != null ? files : new File[0]);

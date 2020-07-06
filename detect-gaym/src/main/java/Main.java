@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         System.out.println("|=================================================");
         System.out.println("| Detect events: Google Analytics & Yandex Metrika");
-        System.out.println("| Author: Somov Studio (version 1.7)");
+        System.out.println("| Author: Somov Studio (version 1.8)");
         System.out.println("|=================================================");
         //TestCase.execute("\\tests\\test1.json");
         //TestCase.executeAll("tests\\");
