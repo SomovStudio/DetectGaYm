@@ -112,6 +112,11 @@
             this.numericUpDownTimeout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDownTimeout.Location = new System.Drawing.Point(107, 183);
+            this.numericUpDownTimeout.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numericUpDownTimeout.Name = "numericUpDownTimeout";
             this.numericUpDownTimeout.Size = new System.Drawing.Size(298, 20);
             this.numericUpDownTimeout.TabIndex = 11;
