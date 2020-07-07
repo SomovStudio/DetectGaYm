@@ -37,6 +37,7 @@
             this.defaultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aSCIIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uTF8ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uTF8WithoutBOMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripStatusLabelFileName = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -153,7 +154,6 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.uTF8WithoutBOMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -224,23 +224,30 @@
             this.defaultToolStripMenuItem.Checked = true;
             this.defaultToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.defaultToolStripMenuItem.Name = "defaultToolStripMenuItem";
-            this.defaultToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.defaultToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.defaultToolStripMenuItem.Text = "Default";
             this.defaultToolStripMenuItem.Click += new System.EventHandler(this.defaultToolStripMenuItem_Click);
             // 
             // aSCIIToolStripMenuItem
             // 
             this.aSCIIToolStripMenuItem.Name = "aSCIIToolStripMenuItem";
-            this.aSCIIToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aSCIIToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.aSCIIToolStripMenuItem.Text = "ASCII";
             this.aSCIIToolStripMenuItem.Click += new System.EventHandler(this.aSCIIToolStripMenuItem_Click);
             // 
             // uTF8ToolStripMenuItem
             // 
             this.uTF8ToolStripMenuItem.Name = "uTF8ToolStripMenuItem";
-            this.uTF8ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.uTF8ToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.uTF8ToolStripMenuItem.Text = "UTF-8";
             this.uTF8ToolStripMenuItem.Click += new System.EventHandler(this.uTF8ToolStripMenuItem_Click);
+            // 
+            // uTF8WithoutBOMToolStripMenuItem
+            // 
+            this.uTF8WithoutBOMToolStripMenuItem.Name = "uTF8WithoutBOMToolStripMenuItem";
+            this.uTF8WithoutBOMToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.uTF8WithoutBOMToolStripMenuItem.Text = "UTF-8 without BOM";
+            this.uTF8WithoutBOMToolStripMenuItem.Click += new System.EventHandler(this.uTF8WithoutBOMToolStripMenuItem_Click);
             // 
             // toolStripStatusLabelFileName
             // 
@@ -710,6 +717,11 @@
             this.numericUpDownPageLoadTimeout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDownPageLoadTimeout.Location = new System.Drawing.Point(16, 367);
+            this.numericUpDownPageLoadTimeout.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numericUpDownPageLoadTimeout.Name = "numericUpDownPageLoadTimeout";
             this.numericUpDownPageLoadTimeout.Size = new System.Drawing.Size(303, 20);
             this.numericUpDownPageLoadTimeout.TabIndex = 15;
@@ -1356,13 +1368,6 @@
             // saveFileDialog1
             // 
             this.saveFileDialog1.Filter = "*.json|*.json";
-            // 
-            // uTF8WithoutBOMToolStripMenuItem
-            // 
-            this.uTF8WithoutBOMToolStripMenuItem.Name = "uTF8WithoutBOMToolStripMenuItem";
-            this.uTF8WithoutBOMToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.uTF8WithoutBOMToolStripMenuItem.Text = "UTF-8 without BOM";
-            this.uTF8WithoutBOMToolStripMenuItem.Click += new System.EventHandler(this.uTF8WithoutBOMToolStripMenuItem_Click);
             // 
             // Form1
             // 
