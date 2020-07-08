@@ -961,6 +961,17 @@ namespace TestsEditor
             }
         }
 
-        
+        private void открытьПапкуErrorsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string path = Directory.GetCurrentDirectory() + "\\errors";
+            try
+            {
+                Process.Start(path);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Не удалось открыть папку " + path, "Ошибка");
+            }
+        }
     }
 }

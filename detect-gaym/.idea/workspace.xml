@@ -7,16 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5eaef80f-35ed-4559-b799-89a4d119880d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/detect_gaym_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/detect_gaym_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Helper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Helper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/StepObjects.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/StepObjects.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestCase.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,12 +107,12 @@
       <screen x="1920" y="223" width="1440" height="860" />
     </state>
     <state x="2141" y="231" key="SettingsEditor/1920.223.1440.860/0.40.1920.1040@1920.223.1440.860" timestamp="1594019673088" />
-    <state x="2429" y="464" key="com.intellij.ide.util.TipDialog" timestamp="1594016024879">
+    <state x="2429" y="464" key="com.intellij.ide.util.TipDialog" timestamp="1594194247839">
       <screen x="1920" y="223" width="1440" height="860" />
     </state>
     <state x="1676" y="285" key="com.intellij.ide.util.TipDialog/0.40.1440.860/1440.40.1440.860@1440.40.1440.860" timestamp="1590395668439" />
     <state x="679" y="331" key="com.intellij.ide.util.TipDialog/1920.223.1440.860/0.40.1920.1040@0.40.1920.1040" timestamp="1593762675372" />
-    <state x="2429" y="464" key="com.intellij.ide.util.TipDialog/1920.223.1440.860/0.40.1920.1040@1920.223.1440.860" timestamp="1594016024879" />
+    <state x="2429" y="464" key="com.intellij.ide.util.TipDialog/1920.223.1440.860/0.40.1920.1040@1920.223.1440.860" timestamp="1594194247839" />
     <state x="2303" y="403" width="672" height="678" key="search.everywhere.popup" timestamp="1594018396818">
       <screen x="1920" y="223" width="1440" height="860" />
     </state>
