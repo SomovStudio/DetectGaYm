@@ -7,7 +7,7 @@
     <ProjectGuid>{27DA45D3-72EC-4F43-B6DD-439949779F7D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>TestsEditor</RootNamespace>
-    <AssemblyName>TestsEditor</AssemblyName>
+    <AssemblyName>Tests Editor for DetectGaYm</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
