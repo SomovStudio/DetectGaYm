@@ -5,17 +5,12 @@
       <artifact name="detect-gaym:jar" />
     </artifacts-to-build>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="5eaef80f-35ed-4559-b799-89a4d119880d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/detect_gaym_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/detect_gaym_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests-editor/TestsEditor/.vs/TestsEditor/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor/TestsEditor/.vs/TestsEditor/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests-editor/TestsEditor/.vs/TestsEditor/v16/Server/sqlite3/storage.ide" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor/TestsEditor/.vs/TestsEditor/v16/Server/sqlite3/storage.ide" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests-editor/TestsEditor/Form5.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor/TestsEditor/Form5.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests-editor/TestsEditor/TestsEditor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor/TestsEditor/TestsEditor.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,17 +28,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.1.3\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
     </option>
   </component>
   <component name="ProjectId" id="1bkOagR1kWgTeCxfoUaS27mMQbg" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -69,6 +63,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -115,11 +110,11 @@
       <screen x="1920" y="223" width="1440" height="860" />
     </state>
     <state x="2141" y="231" key="SettingsEditor/1920.223.1440.860/0.40.1920.1040@1920.223.1440.860" timestamp="1595854892670" />
-    <state x="2379" y="491" key="com.intellij.ide.util.TipDialog" timestamp="1596443227472">
-      <screen x="1920" y="223" width="1440" height="860" />
+    <state x="541" y="404" key="com.intellij.ide.util.TipDialog" timestamp="1596779860633">
+      <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="1676" y="285" key="com.intellij.ide.util.TipDialog/0.40.1440.860/1440.40.1440.860@1440.40.1440.860" timestamp="1590395668439" />
-    <state x="2379" y="491" key="com.intellij.ide.util.TipDialog/1920.223.1440.860/0.40.1920.1040@0.40.1920.1040" timestamp="1596443227472" />
+    <state x="541" y="404" key="com.intellij.ide.util.TipDialog/1920.223.1440.860/0.40.1920.1040@0.40.1920.1040" timestamp="1596779860633" />
     <state x="2379" y="491" key="com.intellij.ide.util.TipDialog/1920.223.1440.860/0.40.1920.1040@1920.223.1440.860" timestamp="1596441648838" />
     <state x="2303" y="403" width="672" height="678" key="search.everywhere.popup" timestamp="1594018396818">
       <screen x="1920" y="223" width="1440" height="860" />
