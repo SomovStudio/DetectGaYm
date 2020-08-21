@@ -973,5 +973,16 @@ namespace TestsEditor
                 MessageBox.Show("Не удалось открыть папку " + path, "Ошибка");
             }
         }
+
+        public bool form7Close = true;
+        private void инструкцияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (form7Close == true)
+            {
+                Form7 form = new Form7();
+                form.parentForm = this;
+                form.Show();
+            }
+        }
     }
 }

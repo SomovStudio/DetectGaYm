@@ -47,6 +47,7 @@
             this.saveFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.открытьПапкуErrorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.executeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -154,7 +155,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.открытьПапкуErrorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.инструкцияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -327,6 +328,13 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(186, 6);
             // 
+            // открытьПапкуErrorsToolStripMenuItem
+            // 
+            this.открытьПапкуErrorsToolStripMenuItem.Name = "открытьПапкуErrorsToolStripMenuItem";
+            this.открытьПапкуErrorsToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.открытьПапкуErrorsToolStripMenuItem.Text = "Открыть папку errors";
+            this.открытьПапкуErrorsToolStripMenuItem.Click += new System.EventHandler(this.открытьПапкуErrorsToolStripMenuItem_Click);
+            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
@@ -464,6 +472,7 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.инструкцияToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
@@ -1371,12 +1380,12 @@
             // 
             this.saveFileDialog1.Filter = "*.json|*.json";
             // 
-            // открытьПапкуErrorsToolStripMenuItem
+            // инструкцияToolStripMenuItem
             // 
-            this.открытьПапкуErrorsToolStripMenuItem.Name = "открытьПапкуErrorsToolStripMenuItem";
-            this.открытьПапкуErrorsToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.открытьПапкуErrorsToolStripMenuItem.Text = "Открыть папку errors";
-            this.открытьПапкуErrorsToolStripMenuItem.Click += new System.EventHandler(this.открытьПапкуErrorsToolStripMenuItem_Click);
+            this.инструкцияToolStripMenuItem.Name = "инструкцияToolStripMenuItem";
+            this.инструкцияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.инструкцияToolStripMenuItem.Text = "Инструкция";
+            this.инструкцияToolStripMenuItem.Click += new System.EventHandler(this.инструкцияToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -1557,6 +1566,7 @@
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.ToolStripMenuItem uTF8WithoutBOMToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem открытьПапкуErrorsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem инструкцияToolStripMenuItem;
     }
 }
 
