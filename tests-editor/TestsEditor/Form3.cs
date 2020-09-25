@@ -62,23 +62,124 @@ namespace TestsEditor
 
         private void comboBoxType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label9.Text = "Описание:";
+            textBoxDescription.ReadOnly = false;
+            label3.Text = "Тип действия:";
+            label5.Text = "Локатор (XPath):";
+            textBoxLocator.ReadOnly = false;
+            textBoxLocator.Text = "";
+            label4.Text = "Значение:";
+            textBoxValue.ReadOnly = false;
+            textBoxValue.Text = "";
+            label6.Text = "Время ожидания:";
+            numericUpDownTimeout.ReadOnly = false;
+            numericUpDownTimeout.Value = 0;
+
             switch (comboBoxType.Text)
             {
+                case "open_page":
+                    label5.Text = "Локатор (XPath):";
+                    textBoxLocator.ReadOnly = true;
+                    textBoxValue.ReadOnly = false;
+                    numericUpDownTimeout.ReadOnly = true;
+                    break;
+                case "open_default_page":
+                    label5.Text = "Локатор (XPath):";
+                    textBoxLocator.ReadOnly = true;
+                    textBoxValue.ReadOnly = true;
+                    numericUpDownTimeout.ReadOnly = true;
+                    break;
+                case "refresh_page":
+                    label5.Text = "Локатор (XPath):";
+                    textBoxLocator.ReadOnly = true;
+                    textBoxValue.ReadOnly = true;
+                    numericUpDownTimeout.ReadOnly = true;
+                    break;
+                case "input_value":
+                    label5.Text = "Локатор (XPath):";
+                    textBoxLocator.ReadOnly = false;
+                    textBoxValue.ReadOnly = false;
+                    numericUpDownTimeout.ReadOnly = false;
+                    break;
+                case "click_element":
+                    label5.Text = "Локатор (XPath):";
+                    textBoxLocator.ReadOnly = false;
+                    textBoxValue.ReadOnly = true;
+                    numericUpDownTimeout.ReadOnly = false;
+                    break;
+                case "wait_text":
+                    label5.Text = "Локатор (XPath):";
+                    textBoxLocator.ReadOnly = false;
+                    textBoxValue.ReadOnly = false;
+                    numericUpDownTimeout.ReadOnly = false;
+                    break;
+                case "wait_element":
+                    label5.Text = "Локатор (XPath):";
+                    textBoxLocator.ReadOnly = false;
+                    textBoxValue.ReadOnly = true;
+                    numericUpDownTimeout.ReadOnly = false;
+                    break;
+                case "wait_element_not_visible":
+                    label5.Text = "Локатор (XPath):";
+                    textBoxLocator.ReadOnly = false;
+                    textBoxValue.ReadOnly = true;
+                    numericUpDownTimeout.ReadOnly = false;
+                    break;
+                case "sleep":
+                    label5.Text = "Локатор (XPath):";
+                    textBoxLocator.ReadOnly = true;
+                    textBoxValue.ReadOnly = true;
+                    numericUpDownTimeout.ReadOnly = false;
+                    break;
+                case "get_har":
+                    label5.Text = "Локатор (XPath):";
+                    textBoxLocator.ReadOnly = true;
+                    textBoxValue.ReadOnly = true;
+                    numericUpDownTimeout.ReadOnly = true;
+                    break;
+                case "get_har_ga":
+                    label5.Text = "Локатор (XPath):";
+                    textBoxLocator.ReadOnly = true;
+                    textBoxValue.ReadOnly = true;
+                    numericUpDownTimeout.ReadOnly = true;
+                    break;
+                case "get_har_ym":
+                    label5.Text = "Локатор (XPath):";
+                    textBoxLocator.ReadOnly = true;
+                    textBoxValue.ReadOnly = true;
+                    numericUpDownTimeout.ReadOnly = true;
+                    break;
+                case "clear_har":
+                    label5.Text = "Локатор (XPath):";
+                    textBoxLocator.ReadOnly = true;
+                    textBoxValue.ReadOnly = true;
+                    numericUpDownTimeout.ReadOnly = true;
+                    break;
+                case "test_defaults_ga":
+                    label5.Text = "Протокол:";
+                    textBoxLocator.ReadOnly = true;
+                    textBoxValue.ReadOnly = true;
+                    numericUpDownTimeout.ReadOnly = false;
+                    break;
                 case "test_optionally_ga":
                     label5.Text = "Протокол:";
                     textBoxLocator.Text = "google-analytics.com/collect";
                     textBoxLocator.ReadOnly = false;
                     textBoxValue.ReadOnly = false;
+                    numericUpDownTimeout.ReadOnly = false;
+                    break;
+                case "test_defaults_ym":
+                    label5.Text = "Протокол:";
+                    textBoxLocator.ReadOnly = true;
+                    textBoxValue.ReadOnly = true;
+                    numericUpDownTimeout.ReadOnly = false;
                     break;
                 case "test_optionally_ym":
                     label5.Text = "Протокол:";
                     textBoxLocator.Text = "mc.yandex.ru/watch";
                     textBoxLocator.ReadOnly = false;
                     textBoxValue.ReadOnly = false;
-                    break;
-                case "sleep":
-                    label5.Text = "Локатор (XPath):";
-                    textBoxValue.ReadOnly = true;
+                    numericUpDownTimeout.ReadOnly = false;
                     break;
                 default:
                     label9.Text = "Описание:";

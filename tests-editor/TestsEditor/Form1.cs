@@ -463,7 +463,13 @@ namespace TestsEditor
             {
                 string path = Directory.GetCurrentDirectory();
                 string bat = "cd " + path;
-                bat += System.Environment.NewLine + "detect.bat \\" + getFolderName() + "\\" + this.fileName;
+                string fileTest = getFolderName() + "\\" + this.fileName;
+                if (File.Exists(fileTest)) {
+                    bat += System.Environment.NewLine + "detect.bat \\" + fileTest;
+                }else{
+                    bat += System.Environment.NewLine + "detect.bat " + this.toolStripStatusLabelFileName.Text;
+                }
+                
                 using (StreamWriter writer = new StreamWriter("run.bat"))
                 {
                     writer.Write(bat);
