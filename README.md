@@ -7,7 +7,7 @@
 Программа портативная и кроссплатформенная.
 <br>
 <br>
-Скачать архив: https://github.com/SomovStudio/DetectGaYm/archive/1.9.zip
+Скачать архив: https://github.com/SomovStudio/DetectGaYm/archive/1.9.1.zip
 
 <hr>
 
