@@ -25,25 +25,13 @@ namespace TestsEditor
             string path = Directory.GetCurrentDirectory();
             string bat = "cd " + path;
             string fileTest = getFolderName() + "\\" + parentForm.fileName;
-            if (File.Exists(fileTest))
-            {
-                bat += System.Environment.NewLine + "detect.bat \\" + fileTest;
-            }
-            else
-            {
-                bat += System.Environment.NewLine + "detect.bat " + parentForm.toolStripStatusLabelFileName.Text;
-            }
-
-
-            //string path = Directory.GetCurrentDirectory();
-            //string bat = "cd " + path;
-            //bat += System.Environment.NewLine + "detect.bat \\" + folder + "\\" + fileName;
+            if (File.Exists(fileTest)) bat += System.Environment.NewLine + "detect.bat \\" + folder + "\\" + fileName;
+            else bat += System.Environment.NewLine + "detect.bat " + parentForm.toolStripStatusLabelFileName.Text;
             textBox1.Text = bat;
 
             bat = "cd " + path+"\\bin";
-            //bat += System.Environment.NewLine + "java -jar detect-gaym.jar \\" + folder + "\\" + fileName;
-            if (File.Exists(fileTest))bat += System.Environment.NewLine + "detect.bat \\" + fileTest;
-            else bat += System.Environment.NewLine + "detect.bat " + parentForm.toolStripStatusLabelFileName.Text;
+            if (File.Exists(fileTest)) bat += System.Environment.NewLine + "java -jar detect-gaym.jar \\" + folder + "\\" + fileName;
+            else bat += System.Environment.NewLine + "java -jar detect-gaym.jar " + parentForm.toolStripStatusLabelFileName.Text;
             textBox2.Text = bat;
 
             path = Directory.GetCurrentDirectory();
