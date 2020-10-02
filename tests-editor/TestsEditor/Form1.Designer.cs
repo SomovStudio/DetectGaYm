@@ -66,6 +66,7 @@
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detailedInformationInTheConsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.инструкцияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -155,7 +156,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.инструкцияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -478,11 +479,18 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.helpToolStripMenuItem.Text = "Справка";
             // 
+            // инструкцияToolStripMenuItem
+            // 
+            this.инструкцияToolStripMenuItem.Name = "инструкцияToolStripMenuItem";
+            this.инструкцияToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.инструкцияToolStripMenuItem.Text = "Инструкция";
+            this.инструкцияToolStripMenuItem.Click += new System.EventHandler(this.инструкцияToolStripMenuItem_Click);
+            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aboutToolStripMenuItem.Image")));
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.aboutToolStripMenuItem.Text = "О программе";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -1380,12 +1388,10 @@
             // 
             this.saveFileDialog1.Filter = "*.json|*.json";
             // 
-            // инструкцияToolStripMenuItem
+            // timer1
             // 
-            this.инструкцияToolStripMenuItem.Name = "инструкцияToolStripMenuItem";
-            this.инструкцияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.инструкцияToolStripMenuItem.Text = "Инструкция";
-            this.инструкцияToolStripMenuItem.Click += new System.EventHandler(this.инструкцияToolStripMenuItem_Click);
+            this.timer1.Interval = 2000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -1517,7 +1523,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader15;
         private System.Windows.Forms.ColumnHeader columnHeader16;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelFileName;
         public System.Windows.Forms.ListView listView1;
         public System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.ToolStripMenuItem runToolStripMenuItem;
@@ -1567,6 +1572,8 @@
         private System.Windows.Forms.ToolStripMenuItem uTF8WithoutBOMToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem открытьПапкуErrorsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem инструкцияToolStripMenuItem;
+        public System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelFileName;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

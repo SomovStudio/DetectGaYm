@@ -18,6 +18,8 @@ namespace TestsEditor
             InitializeComponent();
         }
 
+        Form8 startForm;
+
         public string fileName;
         public delegate void AddConsoleItem(String message);
         public AddConsoleItem myDelegate;
@@ -25,11 +27,14 @@ namespace TestsEditor
 
         public void addConsoleItemMethod(String message)
         {
-            consoleMessage(message);
+            consoleMessage(message);            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            startForm = new Form8();
+            startForm.Show();
+            timer1.Start();
             myDelegate = new AddConsoleItem(addConsoleItemMethod);
         }
 
@@ -989,6 +994,12 @@ namespace TestsEditor
                 form.parentForm = this;
                 form.Show();
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            startForm.Close();
+            timer1.Stop();
         }
     }
 }

@@ -24,11 +24,26 @@ namespace TestsEditor
         {
             string path = Directory.GetCurrentDirectory();
             string bat = "cd " + path;
-            bat += System.Environment.NewLine + "detect.bat \\" + folder + "\\" + fileName;
+            string fileTest = getFolderName() + "\\" + parentForm.fileName;
+            if (File.Exists(fileTest))
+            {
+                bat += System.Environment.NewLine + "detect.bat \\" + fileTest;
+            }
+            else
+            {
+                bat += System.Environment.NewLine + "detect.bat " + parentForm.toolStripStatusLabelFileName.Text;
+            }
+
+
+            //string path = Directory.GetCurrentDirectory();
+            //string bat = "cd " + path;
+            //bat += System.Environment.NewLine + "detect.bat \\" + folder + "\\" + fileName;
             textBox1.Text = bat;
 
             bat = "cd " + path+"\\bin";
-            bat += System.Environment.NewLine + "java -jar detect-gaym.jar \\" + folder + "\\" + fileName;
+            //bat += System.Environment.NewLine + "java -jar detect-gaym.jar \\" + folder + "\\" + fileName;
+            if (File.Exists(fileTest))bat += System.Environment.NewLine + "detect.bat \\" + fileTest;
+            else bat += System.Environment.NewLine + "detect.bat " + parentForm.toolStripStatusLabelFileName.Text;
             textBox2.Text = bat;
 
             path = Directory.GetCurrentDirectory();
@@ -40,6 +55,18 @@ namespace TestsEditor
             bat += System.Environment.NewLine + "cd " + path + "\\bin";
             bat += System.Environment.NewLine + "java -jar detect-gaym.jar \\" + folder;
             textBox3.Text = bat;
+        }
+
+        private string getFolderName()
+        {
+            string path = parentForm.toolStripStatusLabelFileName.Text;
+            if (path != "...")
+            {
+                path = path.Substring(0, path.Length - this.fileName.Length - 1);
+                path = path.Substring(path.LastIndexOf("\\") + 1);
+                return path;
+            }
+            return "tests";
         }
     }
 }

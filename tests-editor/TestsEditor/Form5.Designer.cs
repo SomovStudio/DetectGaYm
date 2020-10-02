@@ -123,9 +123,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(12, 112);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(218, 13);
+            this.label7.Size = new System.Drawing.Size(212, 13);
             this.label7.TabIndex = 5;
-            this.label7.Text = "Дата последнего обновления: 25.09.2020";
+            this.label7.Text = "Дата последнего обновления: 2.10.2020";
             // 
             // label6
             // 
@@ -134,7 +134,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 13);
             this.label6.TabIndex = 4;
-            this.label6.Text = "Версия: 1.9.1";
+            this.label6.Text = "Версия: 1.9.2";
             // 
             // linkLabel1
             // 
