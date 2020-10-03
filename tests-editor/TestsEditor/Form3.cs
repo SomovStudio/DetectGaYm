@@ -196,5 +196,10 @@ namespace TestsEditor
             }
             
         }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            richTextBox1.Rtf = richTextBox1.Text;
+        }
     }
 }
