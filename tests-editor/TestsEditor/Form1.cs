@@ -20,6 +20,7 @@ namespace TestsEditor
 
         Form8 startForm;
 
+        public bool showStartDialog = true;
         public string fileName;
         public delegate void AddConsoleItem(String message);
         public AddConsoleItem myDelegate;
@@ -32,9 +33,12 @@ namespace TestsEditor
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            startForm = new Form8();
-            startForm.Show();
-            timer1.Start();
+            if (this.showStartDialog)
+            {
+                startForm = new Form8();
+                startForm.Show();
+                timer1.Start();
+            }            
             myDelegate = new AddConsoleItem(addConsoleItemMethod);
         }
 
@@ -161,6 +165,7 @@ namespace TestsEditor
         private void newFile()
         {
             Form1 newform = new Form1();
+            newform.showStartDialog = false;
             newform.Show();
         }
 
