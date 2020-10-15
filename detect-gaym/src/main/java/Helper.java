@@ -27,14 +27,18 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Helper {
+    public static final String TYPE_OS_WINDOWS = "type_os_windows";
+    public static final String TYPE_OS_LINUX = "type_os_linux";
+
     public static WebDriver driver;
     public static BrowserMobProxy proxy;
 
     /* Возвращает путь к драйверу */
-    public static String getDriverPath() {
+    public static String getDriverPath(String typeOS) {
         String path = System.getProperty("user.dir");
         path = path.substring(0, path.length() - 4);
-        path = path + "\\driver\\chromedriver.exe";
+        if(typeOS == TYPE_OS_WINDOWS) path = path + "\\driver\\windows\\chromedriver.exe";
+        if(typeOS == TYPE_OS_LINUX) path = path + "/driver/linux/chromedriver";
         System.out.println("PATH DRIVER: " + path);
         return path;
     }
@@ -48,7 +52,10 @@ public class Helper {
 
     /* Инициализация работы с Прокси */
     public static void initProxyForChromeDriver(int port, ArrayList<String> arguments, String nameHar) {
-        System.setProperty("webdriver.chrome.driver", getDriverPath());
+        String os = System.getProperty("os.name").toLowerCase();
+        System.out.println("OPERATION SYSTEM: " + os);
+        if(os.indexOf("win") >= 0) System.setProperty("webdriver.chrome.driver", getDriverPath(TYPE_OS_WINDOWS));
+        if(os.indexOf("linux") >= 0) System.setProperty("webdriver.chrome.driver", getDriverPath(TYPE_OS_LINUX));
 
         // старт прокси
         proxy = new BrowserMobProxyServer();
