@@ -9,7 +9,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5eaef80f-35ed-4559-b799-89a4d119880d" name="Default Changelist" comment="" />
+    <list default="true" id="5eaef80f-35ed-4559-b799-89a4d119880d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/detect_gaym_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/detect_gaym_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,17 +81,20 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2391" y="440" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1602766492137">
-      <screen x="1920" y="223" width="1440" height="860" />
+    <state x="628" y="302" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1603956018633">
+      <screen x="0" y="40" width="1920" height="1040" />
     </state>
+    <state x="628" y="302" key="#com.intellij.ide.util.TreeClassChooserDialog/1920.223.1440.860/0.40.1920.1040@0.40.1920.1040" timestamp="1603956018633" />
     <state x="2391" y="440" key="#com.intellij.ide.util.TreeClassChooserDialog/1920.223.1440.860/0.40.1920.1040@1920.223.1440.860" timestamp="1602766492137" />
-    <state x="2441" y="411" key="FileChooserDialogImpl" timestamp="1602766497967">
-      <screen x="1920" y="223" width="1440" height="860" />
+    <state x="695" y="267" key="FileChooserDialogImpl" timestamp="1603956026692">
+      <screen x="0" y="40" width="1920" height="1040" />
     </state>
+    <state x="695" y="267" key="FileChooserDialogImpl/1920.223.1440.860/0.40.1920.1040@0.40.1920.1040" timestamp="1603956026692" />
     <state x="2441" y="411" key="FileChooserDialogImpl/1920.223.1440.860/0.40.1920.1040@1920.223.1440.860" timestamp="1602766497967" />
-    <state x="2141" y="231" key="SettingsEditor" timestamp="1602766530409">
-      <screen x="1920" y="223" width="1440" height="860" />
+    <state x="553" y="175" key="SettingsEditor" timestamp="1603956101750">
+      <screen x="0" y="40" width="1920" height="1040" />
     </state>
+    <state x="553" y="175" key="SettingsEditor/1920.223.1440.860/0.40.1920.1040@0.40.1920.1040" timestamp="1603956101750" />
     <state x="2141" y="231" key="SettingsEditor/1920.223.1440.860/0.40.1920.1040@1920.223.1440.860" timestamp="1602766530409" />
     <state x="541" y="404" key="com.intellij.ide.util.TipDialog" timestamp="1596779860633">
       <screen x="0" y="40" width="1920" height="1040" />
