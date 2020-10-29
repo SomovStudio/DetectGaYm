@@ -15,7 +15,7 @@
   <img src="https://github.com/SomovStudio/DetectGaYm/blob/master/tests-editor-windows/TestsEditor/img/detectgaym.png">
 </p>
 
-Системные требования: Windows 7, 8, 10 (.Net Framework 3.5) и JDK 8 (Java SE Development Kit 8u211)
+Системные требования: Windows 7, 8, 10 (.Net Framework 3.5) или Linux (Ubuntu, Mint и пр) а так же JDK 8 (Java SE Development Kit 8u211)
 
 <hr>
 <br>Видео инструкция: https://youtu.be/Ofam2YHdUOQ
