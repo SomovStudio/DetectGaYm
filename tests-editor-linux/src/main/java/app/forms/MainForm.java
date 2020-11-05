@@ -1,9 +1,11 @@
 package app.forms;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MainForm {
-    private JPanel panel1;
+    private JPanel panelMain;
     private JButton создатьТестButton;
     private JButton открытьТестButton;
     private JButton сохранитьТестButton;
@@ -13,7 +15,7 @@ public class MainForm {
     private JButton сформироватьКомандуButton;
     private JButton валидаторJsonButton;
     private JButton обновитьWebDriverButton;
-    private JButton оПрограммеButton;
+    private JButton aboutButton;
     private JTabbedPane tabbedPane1;
     private JTextField textField1;
     private JTextField a9091TextField;
@@ -39,4 +41,23 @@ public class MainForm {
     private JButton вверхButton1;
     private JButton внизButton1;
     private JTable table2;
+
+    public static void main(String[] args){
+        JFrame frame = new JFrame("MainForm");
+        frame.setContentPane(new MainForm().panelMain);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setTitle("Editor tests for DetectGaYm");
+        frame.pack();
+        frame.setVisible(true);
+    }
+
+    public MainForm() {
+        aboutButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                JOptionPane.showMessageDialog(null, "Editor for DetectGaYm");
+            }
+        });
+    }
+
+
 }
