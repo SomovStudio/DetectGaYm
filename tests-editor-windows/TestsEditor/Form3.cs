@@ -40,7 +40,7 @@ namespace TestsEditor
                 subitem.Text = textBoxLocator.Text;
                 item.SubItems.Add(subitem);
                 subitem = new ListViewItem.ListViewSubItem();
-                subitem.Text = textBoxValue.Text;
+                subitem.Text = comboBoxValue.Text;
                 item.SubItems.Add(subitem);
                 subitem = new ListViewItem.ListViewSubItem();
                 subitem.Text = numericUpDownTimeout.Value.ToString();
@@ -53,7 +53,7 @@ namespace TestsEditor
                 parentForm.listView2.Items[index].SubItems[1].Text = textBoxDescription.Text;
                 parentForm.listView2.Items[index].SubItems[2].Text = comboBoxType.Text;
                 parentForm.listView2.Items[index].SubItems[3].Text = textBoxLocator.Text;
-                parentForm.listView2.Items[index].SubItems[4].Text = textBoxValue.Text;
+                parentForm.listView2.Items[index].SubItems[4].Text = comboBoxValue.Text;
                 parentForm.listView2.Items[index].SubItems[5].Text = numericUpDownTimeout.Value.ToString();
             }
 
@@ -69,8 +69,8 @@ namespace TestsEditor
             textBoxLocator.ReadOnly = false;
             textBoxLocator.Text = "";
             label4.Text = "Значение:";
-            textBoxValue.ReadOnly = false;
-            textBoxValue.Text = "";
+            comboBoxValue.Enabled = false;
+            comboBoxValue.Text = "";
             label6.Text = "Время ожидания:";
             numericUpDownTimeout.ReadOnly = false;
             numericUpDownTimeout.Value = 0;
@@ -80,105 +80,111 @@ namespace TestsEditor
                 case "open_page":
                     label5.Text = "Локатор (XPath):";
                     textBoxLocator.ReadOnly = true;
-                    textBoxValue.ReadOnly = false;
+                    comboBoxValue.Enabled = true;
                     numericUpDownTimeout.ReadOnly = true;
                     break;
                 case "open_default_page":
                     label5.Text = "Локатор (XPath):";
                     textBoxLocator.ReadOnly = true;
-                    textBoxValue.ReadOnly = true;
+                    comboBoxValue.Enabled = false;
                     numericUpDownTimeout.ReadOnly = true;
                     break;
                 case "refresh_page":
                     label5.Text = "Локатор (XPath):";
                     textBoxLocator.ReadOnly = true;
-                    textBoxValue.ReadOnly = true;
+                    comboBoxValue.Enabled = false;
                     numericUpDownTimeout.ReadOnly = true;
                     break;
                 case "input_value":
                     label5.Text = "Локатор (XPath):";
                     textBoxLocator.ReadOnly = false;
-                    textBoxValue.ReadOnly = false;
+                    comboBoxValue.Enabled = true;
                     numericUpDownTimeout.ReadOnly = false;
                     break;
                 case "click_element":
                     label5.Text = "Локатор (XPath):";
                     textBoxLocator.ReadOnly = false;
-                    textBoxValue.ReadOnly = true;
+                    comboBoxValue.Enabled = false;
+                    numericUpDownTimeout.ReadOnly = false;
+                    break;
+                case "find_element":
+                    label5.Text = "Локатор (XPath):";
+                    textBoxLocator.ReadOnly = false;
+                    comboBoxValue.Enabled = false;
                     numericUpDownTimeout.ReadOnly = false;
                     break;
                 case "wait_text":
                     label5.Text = "Локатор (XPath):";
                     textBoxLocator.ReadOnly = false;
-                    textBoxValue.ReadOnly = false;
+                    comboBoxValue.Enabled = true;
                     numericUpDownTimeout.ReadOnly = false;
                     break;
                 case "wait_element":
                     label5.Text = "Локатор (XPath):";
                     textBoxLocator.ReadOnly = false;
-                    textBoxValue.ReadOnly = true;
+                    comboBoxValue.Enabled = false;
                     numericUpDownTimeout.ReadOnly = false;
                     break;
                 case "wait_element_not_visible":
                     label5.Text = "Локатор (XPath):";
                     textBoxLocator.ReadOnly = false;
-                    textBoxValue.ReadOnly = true;
+                    comboBoxValue.Enabled = false;
                     numericUpDownTimeout.ReadOnly = false;
                     break;
                 case "sleep":
                     label5.Text = "Локатор (XPath):";
                     textBoxLocator.ReadOnly = true;
-                    textBoxValue.ReadOnly = true;
+                    comboBoxValue.Enabled = false;
                     numericUpDownTimeout.ReadOnly = false;
                     break;
                 case "get_har":
                     label5.Text = "Локатор (XPath):";
                     textBoxLocator.ReadOnly = true;
-                    textBoxValue.ReadOnly = true;
+                    comboBoxValue.Enabled = false;
                     numericUpDownTimeout.ReadOnly = true;
                     break;
                 case "get_har_ga":
                     label5.Text = "Локатор (XPath):";
                     textBoxLocator.ReadOnly = true;
-                    textBoxValue.ReadOnly = true;
+                    comboBoxValue.Enabled = false;
                     numericUpDownTimeout.ReadOnly = true;
                     break;
                 case "get_har_ym":
                     label5.Text = "Локатор (XPath):";
                     textBoxLocator.ReadOnly = true;
-                    textBoxValue.ReadOnly = true;
+                    comboBoxValue.Enabled = false;
                     numericUpDownTimeout.ReadOnly = true;
                     break;
                 case "clear_har":
                     label5.Text = "Локатор (XPath):";
                     textBoxLocator.ReadOnly = true;
-                    textBoxValue.ReadOnly = true;
+                    comboBoxValue.Enabled = false;
                     numericUpDownTimeout.ReadOnly = true;
                     break;
                 case "test_defaults_ga":
                     label5.Text = "Протокол:";
                     textBoxLocator.ReadOnly = true;
-                    textBoxValue.ReadOnly = true;
+                    comboBoxValue.Enabled = false;
                     numericUpDownTimeout.ReadOnly = false;
                     break;
                 case "test_optionally_ga":
                     label5.Text = "Протокол:";
                     textBoxLocator.Text = "google-analytics.com/collect";
                     textBoxLocator.ReadOnly = false;
-                    textBoxValue.ReadOnly = false;
+                    comboBoxValue.Enabled = true;
                     numericUpDownTimeout.ReadOnly = false;
                     break;
                 case "test_defaults_ym":
                     label5.Text = "Протокол:";
                     textBoxLocator.ReadOnly = true;
-                    textBoxValue.ReadOnly = true;
+                    comboBoxValue.Enabled = false;
                     numericUpDownTimeout.ReadOnly = false;
                     break;
                 case "test_optionally_ym":
                     label5.Text = "Протокол:";
                     textBoxLocator.Text = "mc.yandex.ru/watch";
                     textBoxLocator.ReadOnly = false;
-                    textBoxValue.ReadOnly = false;
+                    comboBoxValue.Enabled = true;
                     numericUpDownTimeout.ReadOnly = false;
                     break;
                 default:
@@ -189,7 +195,7 @@ namespace TestsEditor
                     textBoxLocator.ReadOnly = false;
                     textBoxLocator.Text = "";
                     label4.Text = "Значение:";
-                    textBoxValue.ReadOnly = false;
+                    comboBoxValue.Enabled = true;
                     label6.Text = "Время ожидания:";
                     numericUpDownTimeout.ReadOnly = false;
                     break;

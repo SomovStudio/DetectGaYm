@@ -248,7 +248,7 @@ namespace TestsEditor
                 form.textBoxDescription.Text = listView2.Items[index].SubItems[1].Text;
                 form.comboBoxType.Text = listView2.Items[index].SubItems[2].Text;
                 form.textBoxLocator.Text = listView2.Items[index].SubItems[3].Text;
-                form.textBoxValue.Text = listView2.Items[index].SubItems[4].Text;
+                form.comboBoxValue.Text = listView2.Items[index].SubItems[4].Text;
                 form.numericUpDownTimeout.Text = listView2.Items[index].SubItems[5].Text;
                 form.Show();
             }
