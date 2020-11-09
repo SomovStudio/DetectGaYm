@@ -1,11 +1,8 @@
-import org.junit.Assert;
-import org.openqa.selenium.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class StepObjects {
     public static final String OPEN_PAGE = "open_page";
@@ -26,6 +23,10 @@ public class StepObjects {
     public static final String GET_HAR_YM = "get_har_ym";
     public static final String CLEAR_HAR = "clear_har";
 
+    public static final String FIND_ELEMENT = "find_element";
+    public static final String GET_TEXT = "get_text";
+    public static final String GET_ATTRIBUTE = "get_attribute_";
+
     public static void openPage(String url, String title) {
         Helper.driver.get(url);
         if (!title.equals("")) System.out.println(title);
@@ -41,6 +42,8 @@ public class StepObjects {
     public static void inputValue(String locator, String value, String description, int timeout) throws InterruptedException {
         if(timeout > 0) Helper.waitElement(locator, timeout);
         WebElement element = Helper.driver.findElement(By.xpath(locator));
+        if(value.lastIndexOf(GET_ATTRIBUTE) > -1) value = getAttribute(value);
+        if(value.equals(GET_TEXT)) value = getText();
         element.sendKeys(value);
         if (!description.equals("")) System.out.println(description);
         else System.out.println("STEP: input in element [" + locator + "] - is value " + value);
@@ -218,5 +221,21 @@ public class StepObjects {
                 System.out.println("HAR: event YM " + link);
             }
         }
+    }
+
+    public static void findElement(String locator, String description, int timeout) throws InterruptedException {
+        if(timeout > 0) Helper.waitElement(locator, timeout);
+        Helper.element = Helper.driver.findElement(By.xpath(locator));
+        if (!description.equals("")) System.out.println(description);
+        else System.out.println("STEP: search of element [" + locator + "] - found");
+    }
+
+    public static String getText() {
+        return Helper.element.getText();
+    }
+
+    public static String getAttribute(String value) {
+        String attributeName = value.substring(GET_ATTRIBUTE.length());
+        return Helper.element.getAttribute(attributeName);
     }
 }

@@ -78,6 +78,7 @@ public class TestCase {
                 if (type.equals(StepObjects.TEST_DEFAULTS_YM)) StepObjects.testYM(ym_code, desc, timeout);
                 if (type.equals(StepObjects.TEST_OPTIONALLY_GA)) StepObjects.testOptionallyGA(value, locator, desc, timeout);
                 if (type.equals(StepObjects.TEST_OPTIONALLY_YM)) StepObjects.testOptionallyYM(value, locator, desc, timeout);
+                if (type.equals(StepObjects.FIND_ELEMENT)) StepObjects.findElement(locator, desc, timeout);
 
                 Thread.sleep(250);
             }

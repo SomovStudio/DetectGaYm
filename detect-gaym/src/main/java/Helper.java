@@ -32,6 +32,7 @@ public class Helper {
 
     public static WebDriver driver;
     public static BrowserMobProxy proxy;
+    public static WebElement element;
 
     /* Возвращает путь к драйверу */
     public static String getDriverPath(String typeOS) {
