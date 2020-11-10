@@ -31,7 +31,7 @@ public class FormMain {
     private JTabbedPane tabbedPane1;
     private JTextField textFieldDescription;
     private JTextField textFieldPort;
-    private JTextField textFieldOpdion;
+    private JTextField textFieldOption;
     private JButton buttonOptionAdd;
     private JList listOptions;
     private JButton buttonOptionRemove;
@@ -76,7 +76,11 @@ public class FormMain {
                 labelPathFile.setText(path);
                 try {
                     readJsonFile(path);
-                    showMessage(description);
+                    textFieldDescription.setText(description);
+                    textFieldPort.setText(String.valueOf(port));
+                    textFieldHar.setText(nameHar);
+                    listOptions.setListData(arguments.toArray());
+                    spinnerWaitLimit.setValue(pageLoadTimeout);
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (ParseException e) {
