@@ -63,6 +63,13 @@ public class FormMain {
                 JOptionPane.showMessageDialog(null, "Editor for DetectGaYm");
             }
         });
+        MenuOpenTestFile.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                String path = Editor.dialogOpenFile(PanelMain);
+                labelPathFile.setText(path);
+
+            }
+        });
     }
 
 
