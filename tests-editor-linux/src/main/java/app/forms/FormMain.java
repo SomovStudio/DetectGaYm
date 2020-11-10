@@ -1,8 +1,15 @@
 package app.forms;
 
+import jdk.nashorn.api.scripting.JSObject;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.ParseException;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+
+import static app.forms.Editor.*;
 
 public class FormMain {
     private JPanel PanelMain;
@@ -60,14 +67,21 @@ public class FormMain {
     public FormMain() {
         MenuAbout.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-                JOptionPane.showMessageDialog(null, "Editor for DetectGaYm");
+                showMessage("Editor for DetectGaYm");
             }
         });
         MenuOpenTestFile.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = Editor.dialogOpenFile(PanelMain);
                 labelPathFile.setText(path);
-
+                try {
+                    readJsonFile(path);
+                    showMessage(description);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }

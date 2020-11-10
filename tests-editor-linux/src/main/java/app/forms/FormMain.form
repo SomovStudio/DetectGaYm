@@ -36,12 +36,14 @@
                   <component id="cf73f" class="javax.swing.JMenuItem" binding="MenuCreateNewTest">
                     <constraints/>
                     <properties>
+                      <icon value="javax/swing/plaf/metal/icons/ocean/file.gif"/>
                       <text value="Создать новый тест"/>
                     </properties>
                   </component>
                   <component id="13624" class="javax.swing.JMenuItem" binding="MenuOpenTestFile">
                     <constraints/>
                     <properties>
+                      <icon value="javax/swing/plaf/metal/icons/ocean/directory.gif"/>
                       <text value="Открыть тест"/>
                     </properties>
                   </component>
@@ -52,6 +54,7 @@
                   <component id="e6da0" class="javax.swing.JMenuItem" binding="MenuSaveTestFile">
                     <constraints/>
                     <properties>
+                      <icon value="javax/swing/plaf/metal/icons/ocean/floppy.gif"/>
                       <text value="Сохранить тест"/>
                     </properties>
                   </component>
@@ -80,6 +83,7 @@
                   <component id="6c70a" class="javax.swing.JMenuItem" binding="MenuExecuteTest">
                     <constraints/>
                     <properties>
+                      <icon value="javax/swing/plaf/metal/icons/ocean/computer.gif"/>
                       <text value="Выполнить тест"/>
                     </properties>
                   </component>
