@@ -1,10 +1,13 @@
 package app.forms;
 
 import jdk.nashorn.api.scripting.JSObject;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -81,6 +84,25 @@ public class FormMain {
                     textFieldHar.setText(nameHar);
                     listOptions.setListData(arguments.toArray());
                     spinnerWaitLimit.setValue(pageLoadTimeout);
+
+                    Object[][] dataObj = new Object[data.toArray().length][];
+                    for (int i = 0; i < data.toArray().length; i++)
+                    {
+                        JSONObject dataJson = (JSONObject) data.get(i);
+                        dataObj[i] = new String[6];
+                        dataObj[i][0] = dataJson.get("title");
+                        dataObj[i][1] = dataJson.get("url");
+                        dataObj[i][2] = dataJson.get("ga_category");
+                        dataObj[i][3] = dataJson.get("ga_action");
+                        dataObj[i][4] = dataJson.get("ga_label");
+                        dataObj[i][5] = dataJson.get("ym_code");
+                    }
+                    tableData.setModel(new DefaultTableModel(
+                            dataObj,
+                            new String[]{"title", "url", "ga_category", "ga_action", "ga_label", "ym_code"}
+                    ));
+
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (ParseException e) {
