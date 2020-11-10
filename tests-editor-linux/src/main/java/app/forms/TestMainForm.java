@@ -1,20 +1,24 @@
 package app.forms;
 
+import org.json.simple.JSONObject;
+import org.json.simple.parser.ParseException;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
-public class MainForm {
+public class TestMainForm {
     private JPanel panelMain;
-    private JButton создатьТестButton;
-    private JButton открытьТестButton;
-    private JButton сохранитьТестButton;
-    private JButton сохранитьТестКакButton;
-    private JButton выполнитьТестButton;
-    private JButton выполнитьГруппуТестовButton;
-    private JButton сформироватьКомандуButton;
-    private JButton валидаторJsonButton;
-    private JButton обновитьWebDriverButton;
+    private JButton createNewTestButton;
+    private JButton openTestButton;
+    private JButton saveTestButton;
+    private JButton saveTestAsButton;
+    private JButton executeTestButton;
+    private JButton executeGroupTestsButton;
+    private JButton createCommandButton;
+    private JButton validationJsonButton;
+    private JButton updateWebDriverButton;
     private JButton aboutButton;
     private JTabbedPane tabbedPane1;
     private JTextField textField1;
@@ -41,20 +45,36 @@ public class MainForm {
     private JButton вверхButton1;
     private JButton внизButton1;
     private JTable table2;
+    private JMenuBar MenuBar;
+    private JMenu MenuFile;
+    private JMenu MenuExecute;
+    private JMenuItem MenuCreateNewTest;
+    private JMenuItem MenuOpenTest;
 
     public static void main(String[] args){
         JFrame frame = new JFrame("MainForm");
-        frame.setContentPane(new MainForm().panelMain);
+        frame.setContentPane(new TestMainForm().panelMain);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Editor tests for DetectGaYm");
         frame.pack();
         frame.setVisible(true);
     }
 
-    public MainForm() {
+    public TestMainForm() {
         aboutButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 JOptionPane.showMessageDialog(null, "Editor for DetectGaYm");
+            }
+        });
+        openTestButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                try {
+                    JSONObject jo = Editor.readJsonFile("");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }

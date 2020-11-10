@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="app.forms.MainForm">
-  <grid id="27dc6" binding="panelMain" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="app.forms.TestMainForm">
+  <grid id="27dc6" binding="panelMain" layout-manager="GridLayoutManager" row-count="2" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="1115" height="588"/>
+      <xy x="20" y="20" width="1135" height="597"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
       <splitpane id="a2c87">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+          <grid row="1" column="0" row-span="1" col-span="5" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="200" height="200"/>
           </grid>
         </constraints>
@@ -27,7 +27,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="cd077" class="javax.swing.JButton" binding="создатьТестButton" default-binding="true">
+              <component id="cd077" class="javax.swing.JButton" binding="createNewTestButton">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false"/>
                 </constraints>
@@ -48,7 +48,7 @@
                   <text value="Файл:"/>
                 </properties>
               </component>
-              <component id="6a0dd" class="javax.swing.JButton" binding="открытьТестButton" default-binding="true">
+              <component id="6a0dd" class="javax.swing.JButton" binding="openTestButton">
                 <constraints>
                   <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false"/>
                 </constraints>
@@ -56,7 +56,7 @@
                   <text value="Открыть тест"/>
                 </properties>
               </component>
-              <component id="7492e" class="javax.swing.JButton" binding="сохранитьТестButton" default-binding="true">
+              <component id="7492e" class="javax.swing.JButton" binding="saveTestButton">
                 <constraints>
                   <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false"/>
                 </constraints>
@@ -64,7 +64,7 @@
                   <text value="Сохранить тест"/>
                 </properties>
               </component>
-              <component id="ebbfd" class="javax.swing.JButton" binding="сохранитьТестКакButton" default-binding="true">
+              <component id="ebbfd" class="javax.swing.JButton" binding="saveTestAsButton">
                 <constraints>
                   <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false"/>
                 </constraints>
@@ -80,7 +80,7 @@
                   <text value="Запуск:"/>
                 </properties>
               </component>
-              <component id="ef86" class="javax.swing.JButton" binding="выполнитьТестButton" default-binding="true">
+              <component id="ef86" class="javax.swing.JButton" binding="executeTestButton">
                 <constraints>
                   <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false"/>
                 </constraints>
@@ -88,7 +88,7 @@
                   <text value="Выполнить тест"/>
                 </properties>
               </component>
-              <component id="e6e44" class="javax.swing.JButton" binding="выполнитьГруппуТестовButton" default-binding="true">
+              <component id="e6e44" class="javax.swing.JButton" binding="executeGroupTestsButton">
                 <constraints>
                   <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false"/>
                 </constraints>
@@ -104,7 +104,7 @@
                   <text value="Поддержка:"/>
                 </properties>
               </component>
-              <component id="4057c" class="javax.swing.JButton" binding="сформироватьКомандуButton" default-binding="true">
+              <component id="4057c" class="javax.swing.JButton" binding="createCommandButton">
                 <constraints>
                   <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false"/>
                 </constraints>
@@ -112,7 +112,7 @@
                   <text value="Сформировать команду"/>
                 </properties>
               </component>
-              <component id="ca61c" class="javax.swing.JButton" binding="валидаторJsonButton" default-binding="true">
+              <component id="ca61c" class="javax.swing.JButton" binding="validationJsonButton">
                 <constraints>
                   <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false"/>
                 </constraints>
@@ -120,7 +120,7 @@
                   <text value="Валидатор json"/>
                 </properties>
               </component>
-              <component id="3f650" class="javax.swing.JButton" binding="обновитьWebDriverButton" default-binding="true">
+              <component id="3f650" class="javax.swing.JButton" binding="updateWebDriverButton">
                 <constraints>
                   <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false"/>
                 </constraints>
@@ -528,6 +528,56 @@
           </grid>
         </children>
       </splitpane>
+      <grid id="1996d" class="javax.swing.JMenuBar" binding="MenuBar" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <grid id="8f6f" class="javax.swing.JMenu" binding="MenuFile" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Файл"/>
+              <toolTipText value="Файл"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="fcb5d" class="javax.swing.JMenuItem" binding="MenuCreateNewTest">
+                <constraints/>
+                <properties>
+                  <text value="Создать новый тест"/>
+                </properties>
+              </component>
+              <component id="c3d20" class="javax.swing.JMenuItem" binding="MenuOpenTest">
+                <constraints/>
+                <properties>
+                  <text value="Открыть тест"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <hspacer id="16474">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </hspacer>
+          <grid id="d4923" class="javax.swing.JMenu" binding="MenuExecute" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Запуск"/>
+              <toolTipText value="Запуск"/>
+            </properties>
+            <border type="none"/>
+            <children/>
+          </grid>
+        </children>
+      </grid>
     </children>
   </grid>
   <inspectionSuppressions>
