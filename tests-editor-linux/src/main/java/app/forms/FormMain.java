@@ -228,6 +228,62 @@ public class FormMain {
                 }
             }
         });
+        buttonDataUp.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                if(tableData.getColumnModel().getColumnCount() <= 0) initDataTable();
+                int indexSelectRow = tableData.getSelectedRow();
+                int countRows = tableData.getModel().getRowCount();
+                if(indexSelectRow > -1 && (indexSelectRow-1) > -1 && countRows > 0){
+                    DefaultTableModel model = (DefaultTableModel) tableData.getModel();
+                    String title = tableData.getModel().getValueAt(indexSelectRow, 0).toString();
+                    String url = tableData.getModel().getValueAt(indexSelectRow, 1).toString();
+                    String ga_category = tableData.getModel().getValueAt(indexSelectRow, 2).toString();
+                    String ga_action = tableData.getModel().getValueAt(indexSelectRow, 3).toString();
+                    String ga_label = tableData.getModel().getValueAt(indexSelectRow, 4).toString();
+                    String ym_code = tableData.getModel().getValueAt(indexSelectRow, 5).toString();
+                    tableData.getModel().setValueAt(tableData.getModel().getValueAt(indexSelectRow-1, 0).toString(), indexSelectRow, 0);
+                    tableData.getModel().setValueAt(tableData.getModel().getValueAt(indexSelectRow-1, 1).toString(), indexSelectRow, 1);
+                    tableData.getModel().setValueAt(tableData.getModel().getValueAt(indexSelectRow-1, 2).toString(), indexSelectRow, 2);
+                    tableData.getModel().setValueAt(tableData.getModel().getValueAt(indexSelectRow-1, 3).toString(), indexSelectRow, 3);
+                    tableData.getModel().setValueAt(tableData.getModel().getValueAt(indexSelectRow-1, 4).toString(), indexSelectRow, 4);
+                    tableData.getModel().setValueAt(tableData.getModel().getValueAt(indexSelectRow-1, 5).toString(), indexSelectRow, 5);
+                    tableData.getModel().setValueAt(title, indexSelectRow-1, 0);
+                    tableData.getModel().setValueAt(url, indexSelectRow-1, 1);
+                    tableData.getModel().setValueAt(ga_category, indexSelectRow-1, 2);
+                    tableData.getModel().setValueAt(ga_action, indexSelectRow-1, 3);
+                    tableData.getModel().setValueAt(ga_label, indexSelectRow-1, 4);
+                    tableData.getModel().setValueAt(ym_code, indexSelectRow-1, 5);
+                }
+            }
+        });
+        buttonDataDown.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                if(tableData.getColumnModel().getColumnCount() <= 0) initDataTable();
+                int indexSelectRow = tableData.getSelectedRow();
+                int countRows = tableData.getModel().getRowCount();
+                if(indexSelectRow > -1 && (indexSelectRow+1) < countRows  && countRows > 0){
+                    DefaultTableModel model = (DefaultTableModel) tableData.getModel();
+                    String title = tableData.getModel().getValueAt(indexSelectRow, 0).toString();
+                    String url = tableData.getModel().getValueAt(indexSelectRow, 1).toString();
+                    String ga_category = tableData.getModel().getValueAt(indexSelectRow, 2).toString();
+                    String ga_action = tableData.getModel().getValueAt(indexSelectRow, 3).toString();
+                    String ga_label = tableData.getModel().getValueAt(indexSelectRow, 4).toString();
+                    String ym_code = tableData.getModel().getValueAt(indexSelectRow, 5).toString();
+                    tableData.getModel().setValueAt(tableData.getModel().getValueAt(indexSelectRow+1, 0).toString(), indexSelectRow, 0);
+                    tableData.getModel().setValueAt(tableData.getModel().getValueAt(indexSelectRow+1, 1).toString(), indexSelectRow, 1);
+                    tableData.getModel().setValueAt(tableData.getModel().getValueAt(indexSelectRow+1, 2).toString(), indexSelectRow, 2);
+                    tableData.getModel().setValueAt(tableData.getModel().getValueAt(indexSelectRow+1, 3).toString(), indexSelectRow, 3);
+                    tableData.getModel().setValueAt(tableData.getModel().getValueAt(indexSelectRow+1, 4).toString(), indexSelectRow, 4);
+                    tableData.getModel().setValueAt(tableData.getModel().getValueAt(indexSelectRow+1, 5).toString(), indexSelectRow, 5);
+                    tableData.getModel().setValueAt(title, indexSelectRow+1, 0);
+                    tableData.getModel().setValueAt(url, indexSelectRow+1, 1);
+                    tableData.getModel().setValueAt(ga_category, indexSelectRow+1, 2);
+                    tableData.getModel().setValueAt(ga_action, indexSelectRow+1, 3);
+                    tableData.getModel().setValueAt(ga_label, indexSelectRow+1, 4);
+                    tableData.getModel().setValueAt(ym_code, indexSelectRow+1, 5);
+                }
+            }
+        });
     }
 
 
