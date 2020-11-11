@@ -89,34 +89,32 @@ public class FormMain {
                     for (int i = 0; i < data.toArray().length; i++)
                     {
                         JSONObject dataJson = (JSONObject) data.get(i);
-                        dataObj[i] = new String[7];
-                        dataObj[i][0] = String.valueOf(i+1);
-                        dataObj[i][1] = dataJson.get("title").toString();
-                        dataObj[i][2] = dataJson.get("url").toString();
-                        dataObj[i][3] = dataJson.get("ga_category").toString();
-                        dataObj[i][4] = dataJson.get("ga_action").toString();
-                        dataObj[i][5] = dataJson.get("ga_label").toString();
-                        dataObj[i][6] = dataJson.get("ym_code").toString();
+                        dataObj[i] = new String[6];
+                        dataObj[i][0] = dataJson.get("title").toString();
+                        dataObj[i][1] = dataJson.get("url").toString();
+                        dataObj[i][2] = dataJson.get("ga_category").toString();
+                        dataObj[i][3] = dataJson.get("ga_action").toString();
+                        dataObj[i][4] = dataJson.get("ga_label").toString();
+                        dataObj[i][5] = dataJson.get("ym_code").toString();
                     }
                     tableData.setModel(new DefaultTableModel(
                             dataObj,
-                            new String[]{"№", "title", "url", "ga_category", "ga_action", "ga_label", "ym_code"}
+                            new String[]{"title", "url", "ga_category", "ga_action", "ga_label", "ym_code"}
                     ));
 
                     Object[][] stepsObj = new Object[steps.toArray().length][];
                     for (int i = 0; i < steps.toArray().length; i++){
                         JSONObject dataJson = (JSONObject) steps.get(i);
-                        stepsObj[i] = new String[6];
-                        stepsObj[i][0] = String.valueOf(i+1);
-                        stepsObj[i][1] = dataJson.get("description").toString();
-                        stepsObj[i][2] = dataJson.get("type").toString();
-                        stepsObj[i][3] = dataJson.get("value").toString();
-                        stepsObj[i][4] = dataJson.get("locator").toString();
-                        stepsObj[i][5] = dataJson.get("timeout").toString();
+                        stepsObj[i] = new String[5];
+                        stepsObj[i][0] = dataJson.get("description").toString();
+                        stepsObj[i][1] = dataJson.get("type").toString();
+                        stepsObj[i][2] = dataJson.get("value").toString();
+                        stepsObj[i][3] = dataJson.get("locator").toString();
+                        stepsObj[i][4] = dataJson.get("timeout").toString();
                     }
                     tableSteps.setModel(new DefaultTableModel(
                             stepsObj,
-                            new String[]{"№", "description", "type", "value", "locator", "timeout"}
+                            new String[]{"description", "type", "value", "locator", "timeout"}
                     ));
 
                 } catch (IOException e) {
@@ -124,6 +122,38 @@ public class FormMain {
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
+            }
+        });
+        buttonIC.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                textFieldOption.setText("--ignore-certificate-errors");
+            }
+        });
+        buttonUA.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                textFieldOption.setText("user-agent=node1");
+            }
+        });
+        buttonOptionAdd.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                listOptions.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+                DefaultListModel listModel = new DefaultListModel();
+                for(int i = 0; i < listOptions.getModel().getSize(); i++) {
+                    listModel.addElement(listOptions.getModel().getElementAt(i).toString());
+                }
+                listModel.addElement(textFieldOption.getText());
+                listOptions.setModel(listModel);
+            }
+        });
+        buttonOptionRemove.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                int index = listOptions.getSelectedIndex();
+                DefaultListModel listModel = new DefaultListModel();
+                for(int i = 0; i < listOptions.getModel().getSize(); i++) {
+                    if(index == i)continue;
+                    listModel.addElement(listOptions.getModel().getElementAt(i).toString());
+                }
+                listOptions.setModel(listModel);
             }
         });
     }
