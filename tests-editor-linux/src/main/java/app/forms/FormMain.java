@@ -23,8 +23,6 @@ public class FormMain {
     private JMenu MenuReference;
     private JMenuItem MenuCreateNewTest;
     private JMenuItem MenuOpenTestFile;
-    private JMenuItem MenuSaveTestFile;
-    private JMenuItem MenuSaveAsTestFile;
     private JMenuItem MenuExecuteTest;
     private JMenuItem MenuExecuteGroupTest;
     private JMenuItem MenuCreateCommand;
@@ -55,6 +53,16 @@ public class FormMain {
     private JButton buttonStepDown;
     private JTable tableSteps;
     private JLabel labelPathFile;
+    private JMenu MenuOpenAsTestFile;
+    private JMenuItem MenuOpenAsDefault;
+    private JMenuItem MenuOpenAsUtf8;
+    private JMenuItem MenuOpenAsUtf8Bom;
+    private JMenuItem MenuSaveTestFile;
+    private JMenu MenuSaveAsTestFile;
+    private JMenuItem MenuSaveAsDefault;
+    private JMenuItem MenuSaveAsUtf8;
+    private JMenuItem MenuSaveAsUtf8Bom;
+    private JMenuItem MenuExit;
 
     public static void main(String[] args){
         JFrame frame = new JFrame("MainForm");
@@ -102,6 +110,11 @@ public class FormMain {
     }
 
     public FormMain() {
+        MenuExit.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.exit(0);
+            }
+        });
         MenuAbout.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 showMessage("Editor for DetectGaYm");
@@ -354,6 +367,7 @@ public class FormMain {
                 }
             }
         });
+
     }
 
 
