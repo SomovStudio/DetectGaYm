@@ -9,8 +9,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.io.IOException;
 
 import static app.forms.Editor.*;
@@ -44,7 +43,6 @@ public class FormMain {
     private JTextField textFieldHar;
     private JSpinner spinnerWaitLimit;
     private JButton buttonDataAdd;
-    private JButton buttonDataEdit;
     private JButton buttonDataDelete;
     private JButton buttonDataCopy;
     private JButton buttonDataUp;
@@ -66,6 +64,22 @@ public class FormMain {
         frame.setTitle("Editor tests for DetectGaYm");
         frame.pack();
         frame.setVisible(true);
+     }
+
+    public void initDataTable(){
+        tableData.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        tableData.setModel(new DefaultTableModel(
+                null,
+                new String[]{"Заголовок", "URL", "GA:category", "GA:action", "GA:label", "YM:code"}
+        ));
+    }
+
+    public void initStepsTable(){
+        tableSteps.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        tableSteps.setModel(new DefaultTableModel(
+                null,
+                new String[]{"Описание", "Тип действия", "Локатор (xpath) / Протокол", "Значение", "Время ожидания"}
+        ));
     }
 
     public FormMain() {
@@ -98,6 +112,7 @@ public class FormMain {
                         dataObj[i][4] = dataJson.get("ga_label").toString();
                         dataObj[i][5] = dataJson.get("ym_code").toString();
                     }
+                    tableData.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
                     tableData.setModel(new DefaultTableModel(
                             dataObj,
                             new String[]{"Заголовок", "URL", "GA:category", "GA:action", "GA:label", "YM:code"}
@@ -178,6 +193,39 @@ public class FormMain {
                     listModel.addElement(listOptions.getModel().getElementAt(i).toString());
                 }
                 listOptions.setModel(listModel);
+            }
+        });
+        buttonDataAdd.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                if(tableData.getColumnModel().getColumnCount() <= 0) initDataTable();
+                DefaultTableModel model = (DefaultTableModel) tableData.getModel();
+                model.addRow(new Object[]{"", "", "", "", "", ""});
+            }
+        });
+        buttonDataDelete.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                if(tableData.getColumnModel().getColumnCount() <= 0) initDataTable();
+                int indexSelectRow = tableData.getSelectedRow();
+                if(indexSelectRow > -1){
+                    DefaultTableModel model = (DefaultTableModel) tableData.getModel();
+                    model.removeRow(indexSelectRow);
+                }
+            }
+        });
+        buttonDataCopy.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                if(tableData.getColumnModel().getColumnCount() <= 0) initDataTable();
+                int indexSelectRow = tableData.getSelectedRow();
+                if(indexSelectRow > -1){
+                    String title = tableData.getModel().getValueAt(indexSelectRow, 0).toString();
+                    String url = tableData.getModel().getValueAt(indexSelectRow, 1).toString();
+                    String ga_category = tableData.getModel().getValueAt(indexSelectRow, 2).toString();
+                    String ga_action = tableData.getModel().getValueAt(indexSelectRow, 3).toString();
+                    String ga_label = tableData.getModel().getValueAt(indexSelectRow, 4).toString();
+                    String ym_code = tableData.getModel().getValueAt(indexSelectRow, 5).toString();
+                    DefaultTableModel model = (DefaultTableModel) tableData.getModel();
+                    model.addRow(new Object[]{title, url, ga_category, ga_action, ga_label, ym_code});
+                }
             }
         });
     }
