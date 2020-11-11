@@ -8,6 +8,7 @@ import org.json.simple.parser.ParseException;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -116,6 +117,14 @@ public class FormMain {
                             stepsObj,
                             new String[]{"description", "type", "value", "locator", "timeout"}
                     ));
+                    tableSteps.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+                    JComboBox comboboxType = new JComboBox(new String[] { "open_page", "open_default_page",
+                            "refresh_page", "input_value", "click_element", "find_element", "wait_text",
+                            "wait_element", "wait_element_not_visible", "sleep", "test_optionally_ga",
+                            "test_defaults_ga", "test_optionally_ym", "test_defaults_ym", "get_har", "get_har_ga",
+                            "get_har_ym", "clear_har"});
+                    DefaultCellEditor editor = new DefaultCellEditor(comboboxType);
+                    tableSteps.getColumnModel().getColumn(1).setCellEditor(editor);
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -147,6 +156,7 @@ public class FormMain {
         });
         buttonOptionRemove.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
+                listOptions.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
                 int index = listOptions.getSelectedIndex();
                 DefaultListModel listModel = new DefaultListModel();
                 for(int i = 0; i < listOptions.getModel().getSize(); i++) {
