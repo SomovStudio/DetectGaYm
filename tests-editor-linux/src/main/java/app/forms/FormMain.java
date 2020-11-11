@@ -49,7 +49,6 @@ public class FormMain {
     private JButton buttonDataDown;
     private JTable tableData;
     private JButton buttonStepAdd;
-    private JButton buttonStepEdit;
     private JButton buttonStepDelete;
     private JButton buttonStepCopy;
     private JButton buttonStepUp;
@@ -66,20 +65,40 @@ public class FormMain {
         frame.setVisible(true);
      }
 
-    public void initDataTable(){
+    public void initDataTable(Object[][] dataObj){
         tableData.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         tableData.setModel(new DefaultTableModel(
-                null,
+                dataObj,
                 new String[]{"Заголовок", "URL", "GA:category", "GA:action", "GA:label", "YM:code"}
         ));
     }
 
-    public void initStepsTable(){
+    public void initStepsTable(Object[][] stepsObj){
         tableSteps.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         tableSteps.setModel(new DefaultTableModel(
-                null,
+                stepsObj,
                 new String[]{"Описание", "Тип действия", "Локатор (xpath) / Протокол", "Значение", "Время ожидания"}
         ));
+        JComboBox comboboxType = new JComboBox(new String[] { "open_page", "open_default_page", "refresh_page",
+                "input_value", "click_element", "find_element", "wait_text", "wait_element",
+                "wait_element_not_visible", "sleep", "get_har", "get_har_ga", "get_har_ym", "clear_har",
+                "test_defaults_ga", "test_optionally_ga", "test_defaults_ym", "test_optionally_ym"});
+        comboboxType.setEditable(false);
+        DefaultCellEditor editorType = new DefaultCellEditor(comboboxType);
+        tableSteps.getColumnModel().getColumn(1).setCellEditor(editorType);
+
+        JComboBox comboboxLocator = new JComboBox(new String[] {
+                "google-analytics.com/collect", "mc.yandex.ru/watch"});
+        comboboxLocator.setEditable(true);
+        DefaultCellEditor editorLocator = new DefaultCellEditor(comboboxLocator);
+        tableSteps.getColumnModel().getColumn(2).setCellEditor(editorLocator);
+
+        JComboBox comboboxValue = new JComboBox(new String[] { "get_text", "get_attribute_",
+                "get_attribute_id", "get_attribute_name", "get_attribute_class", "get_attribute_value",
+                "get_attribute_href"});
+        comboboxValue.setEditable(true);
+        DefaultCellEditor editorValue = new DefaultCellEditor(comboboxValue);
+        tableSteps.getColumnModel().getColumn(3).setCellEditor(editorValue);
     }
 
     public FormMain() {
@@ -112,11 +131,7 @@ public class FormMain {
                         dataObj[i][4] = dataJson.get("ga_label").toString();
                         dataObj[i][5] = dataJson.get("ym_code").toString();
                     }
-                    tableData.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-                    tableData.setModel(new DefaultTableModel(
-                            dataObj,
-                            new String[]{"Заголовок", "URL", "GA:category", "GA:action", "GA:label", "YM:code"}
-                    ));
+                    initDataTable(dataObj);
 
                     Object[][] stepsObj = new Object[steps.toArray().length][];
                     for (int i = 0; i < steps.toArray().length; i++){
@@ -128,32 +143,7 @@ public class FormMain {
                         stepsObj[i][3] = dataJson.get("value").toString();
                         stepsObj[i][4] = dataJson.get("timeout").toString();
                     }
-                    tableSteps.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-                    tableSteps.setModel(new DefaultTableModel(
-                            stepsObj,
-                            new String[]{"Описание", "Тип действия", "Локатор (xpath) / Протокол", "Значение", "Время ожидания"}
-                    ));
-
-                    JComboBox comboboxType = new JComboBox(new String[] { "open_page", "open_default_page", "refresh_page",
-                            "input_value", "click_element", "find_element", "wait_text", "wait_element",
-                            "wait_element_not_visible", "sleep", "get_har", "get_har_ga", "get_har_ym", "clear_har",
-                            "test_defaults_ga", "test_optionally_ga", "test_defaults_ym", "test_optionally_ym"});
-                    comboboxType.setEditable(false);
-                    DefaultCellEditor editorType = new DefaultCellEditor(comboboxType);
-                    tableSteps.getColumnModel().getColumn(1).setCellEditor(editorType);
-
-                    JComboBox comboboxLocator = new JComboBox(new String[] {
-                            "google-analytics.com/collect", "mc.yandex.ru/watch"});
-                    comboboxLocator.setEditable(true);
-                    DefaultCellEditor editorLocator = new DefaultCellEditor(comboboxLocator);
-                    tableSteps.getColumnModel().getColumn(2).setCellEditor(editorLocator);
-
-                    JComboBox comboboxValue = new JComboBox(new String[] { "get_text", "get_attribute_",
-                            "get_attribute_id", "get_attribute_name", "get_attribute_class", "get_attribute_value",
-                            "get_attribute_href"});
-                    comboboxValue.setEditable(true);
-                    DefaultCellEditor editorValue = new DefaultCellEditor(comboboxValue);
-                    tableSteps.getColumnModel().getColumn(3).setCellEditor(editorValue);
+                    initStepsTable(stepsObj);
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -197,14 +187,14 @@ public class FormMain {
         });
         buttonDataAdd.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-                if(tableData.getColumnModel().getColumnCount() <= 0) initDataTable();
+                if(tableData.getColumnModel().getColumnCount() <= 0) initDataTable(null);
                 DefaultTableModel model = (DefaultTableModel) tableData.getModel();
                 model.addRow(new Object[]{"", "", "", "", "", ""});
             }
         });
         buttonDataDelete.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-                if(tableData.getColumnModel().getColumnCount() <= 0) initDataTable();
+                if(tableData.getColumnModel().getColumnCount() <= 0) initDataTable(null);
                 int indexSelectRow = tableData.getSelectedRow();
                 if(indexSelectRow > -1){
                     DefaultTableModel model = (DefaultTableModel) tableData.getModel();
@@ -214,7 +204,7 @@ public class FormMain {
         });
         buttonDataCopy.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-                if(tableData.getColumnModel().getColumnCount() <= 0) initDataTable();
+                if(tableData.getColumnModel().getColumnCount() <= 0) initDataTable(null);
                 int indexSelectRow = tableData.getSelectedRow();
                 if(indexSelectRow > -1){
                     String title = tableData.getModel().getValueAt(indexSelectRow, 0).toString();
@@ -230,7 +220,7 @@ public class FormMain {
         });
         buttonDataUp.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-                if(tableData.getColumnModel().getColumnCount() <= 0) initDataTable();
+                if(tableData.getColumnModel().getColumnCount() <= 0) initDataTable(null);
                 int indexSelectRow = tableData.getSelectedRow();
                 int countRows = tableData.getModel().getRowCount();
                 if(indexSelectRow > -1 && (indexSelectRow-1) > -1 && countRows > 0){
@@ -258,7 +248,7 @@ public class FormMain {
         });
         buttonDataDown.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-                if(tableData.getColumnModel().getColumnCount() <= 0) initDataTable();
+                if(tableData.getColumnModel().getColumnCount() <= 0) initDataTable(null);
                 int indexSelectRow = tableData.getSelectedRow();
                 int countRows = tableData.getModel().getRowCount();
                 if(indexSelectRow > -1 && (indexSelectRow+1) < countRows  && countRows > 0){
@@ -281,6 +271,38 @@ public class FormMain {
                     tableData.getModel().setValueAt(ga_action, indexSelectRow+1, 3);
                     tableData.getModel().setValueAt(ga_label, indexSelectRow+1, 4);
                     tableData.getModel().setValueAt(ym_code, indexSelectRow+1, 5);
+                }
+            }
+        });
+        buttonStepAdd.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                if(tableSteps.getColumnModel().getColumnCount() <= 0) initStepsTable(null);
+                DefaultTableModel model = (DefaultTableModel) tableSteps.getModel();
+                model.addRow(new Object[]{"", "", "", "", "0"});
+            }
+        });
+        buttonStepDelete.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                if(tableSteps.getColumnModel().getColumnCount() <= 0) initStepsTable(null);
+                int indexSelectRow = tableSteps.getSelectedRow();
+                if(indexSelectRow > -1){
+                    DefaultTableModel model = (DefaultTableModel) tableSteps.getModel();
+                    model.removeRow(indexSelectRow);
+                }
+            }
+        });
+        buttonStepCopy.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                if(tableSteps.getColumnModel().getColumnCount() <= 0) initStepsTable(null);
+                int indexSelectRow = tableSteps.getSelectedRow();
+                if(indexSelectRow > -1){
+                    String description = tableSteps.getModel().getValueAt(indexSelectRow, 0).toString();
+                    String type = tableSteps.getModel().getValueAt(indexSelectRow, 1).toString();
+                    String locator = tableSteps.getModel().getValueAt(indexSelectRow, 2).toString();
+                    String value = tableSteps.getModel().getValueAt(indexSelectRow, 3).toString();
+                    String timeout = tableSteps.getModel().getValueAt(indexSelectRow, 4).toString();
+                    DefaultTableModel model = (DefaultTableModel) tableSteps.getModel();
+                    model.addRow(new Object[]{description, type, locator, value, timeout});
                 }
             }
         });
