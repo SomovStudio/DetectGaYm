@@ -505,7 +505,9 @@
                     <children>
                       <component id="c6b2d" class="javax.swing.JTable" binding="tableSteps">
                         <constraints/>
-                        <properties/>
+                        <properties>
+                          <font/>
+                        </properties>
                       </component>
                     </children>
                   </scrollpane>

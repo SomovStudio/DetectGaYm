@@ -109,22 +109,29 @@ public class FormMain {
                         stepsObj[i] = new String[5];
                         stepsObj[i][0] = dataJson.get("description").toString();
                         stepsObj[i][1] = dataJson.get("type").toString();
-                        stepsObj[i][2] = dataJson.get("value").toString();
-                        stepsObj[i][3] = dataJson.get("locator").toString();
+                        stepsObj[i][2] = dataJson.get("locator").toString();
+                        stepsObj[i][3] = dataJson.get("value").toString();
                         stepsObj[i][4] = dataJson.get("timeout").toString();
                     }
                     tableSteps.setModel(new DefaultTableModel(
                             stepsObj,
-                            new String[]{"description", "type", "value", "locator", "timeout"}
+                            new String[]{"Описание", "Тип действия", "Локатор (xpath)", "Значение", "Время ожидания"}
                     ));
                     tableSteps.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-                    JComboBox comboboxType = new JComboBox(new String[] { "open_page", "open_default_page",
-                            "refresh_page", "input_value", "click_element", "find_element", "wait_text",
-                            "wait_element", "wait_element_not_visible", "sleep", "test_optionally_ga",
-                            "test_defaults_ga", "test_optionally_ym", "test_defaults_ym", "get_har", "get_har_ga",
-                            "get_har_ym", "clear_har"});
-                    DefaultCellEditor editor = new DefaultCellEditor(comboboxType);
-                    tableSteps.getColumnModel().getColumn(1).setCellEditor(editor);
+                    JComboBox comboboxType = new JComboBox(new String[] { "open_page", "open_default_page", "refresh_page",
+                            "input_value", "click_element", "find_element", "wait_text", "wait_element",
+                            "wait_element_not_visible", "sleep", "get_har", "get_har_ga", "get_har_ym", "clear_har",
+                            "test_defaults_ga", "test_optionally_ga", "test_defaults_ym", "test_optionally_ym"});
+                    comboboxType.setEditable(false);
+                    DefaultCellEditor editorType = new DefaultCellEditor(comboboxType);
+                    tableSteps.getColumnModel().getColumn(1).setCellEditor(editorType);
+
+                    JComboBox comboboxValue = new JComboBox(new String[] { "get_text", "get_attribute_",
+                            "get_attribute_id", "get_attribute_name", "get_attribute_class", "get_attribute_value",
+                            "get_attribute_href"});
+                    comboboxValue.setEditable(true);
+                    DefaultCellEditor editorValue = new DefaultCellEditor(comboboxValue);
+                    tableSteps.getColumnModel().getColumn(3).setCellEditor(editorValue);
 
                 } catch (IOException e) {
                     e.printStackTrace();
