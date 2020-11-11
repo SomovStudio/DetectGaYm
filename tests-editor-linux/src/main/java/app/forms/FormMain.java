@@ -306,6 +306,54 @@ public class FormMain {
                 }
             }
         });
+        buttonStepUp.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                if(tableSteps.getColumnModel().getColumnCount() <= 0) initDataTable(null);
+                int indexSelectRow = tableSteps.getSelectedRow();
+                int countRows = tableSteps.getModel().getRowCount();
+                if(indexSelectRow > -1 && (indexSelectRow-1) > -1 && countRows > 0){
+                    String description = tableSteps.getModel().getValueAt(indexSelectRow, 0).toString();
+                    String type = tableSteps.getModel().getValueAt(indexSelectRow, 1).toString();
+                    String locator = tableSteps.getModel().getValueAt(indexSelectRow, 2).toString();
+                    String value = tableSteps.getModel().getValueAt(indexSelectRow, 3).toString();
+                    String timeout = tableSteps.getModel().getValueAt(indexSelectRow, 4).toString();
+                    tableSteps.getModel().setValueAt(tableSteps.getModel().getValueAt(indexSelectRow-1, 0).toString(), indexSelectRow, 0);
+                    tableSteps.getModel().setValueAt(tableSteps.getModel().getValueAt(indexSelectRow-1, 1).toString(), indexSelectRow, 1);
+                    tableSteps.getModel().setValueAt(tableSteps.getModel().getValueAt(indexSelectRow-1, 2).toString(), indexSelectRow, 2);
+                    tableSteps.getModel().setValueAt(tableSteps.getModel().getValueAt(indexSelectRow-1, 3).toString(), indexSelectRow, 3);
+                    tableSteps.getModel().setValueAt(tableSteps.getModel().getValueAt(indexSelectRow-1, 4).toString(), indexSelectRow, 4);
+                    tableSteps.getModel().setValueAt(description, indexSelectRow-1, 0);
+                    tableSteps.getModel().setValueAt(type, indexSelectRow-1, 1);
+                    tableSteps.getModel().setValueAt(locator, indexSelectRow-1, 2);
+                    tableSteps.getModel().setValueAt(value, indexSelectRow-1, 3);
+                    tableSteps.getModel().setValueAt(timeout, indexSelectRow-1, 4);
+                }
+            }
+        });
+        buttonStepDown.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                if(tableSteps.getColumnModel().getColumnCount() <= 0) initDataTable(null);
+                int indexSelectRow = tableSteps.getSelectedRow();
+                int countRows = tableSteps.getModel().getRowCount();
+                if(indexSelectRow > -1 && (indexSelectRow+1) < countRows  && countRows > 0){
+                    String description = tableSteps.getModel().getValueAt(indexSelectRow, 0).toString();
+                    String type = tableSteps.getModel().getValueAt(indexSelectRow, 1).toString();
+                    String locator = tableSteps.getModel().getValueAt(indexSelectRow, 2).toString();
+                    String value = tableSteps.getModel().getValueAt(indexSelectRow, 3).toString();
+                    String timeout = tableSteps.getModel().getValueAt(indexSelectRow, 4).toString();
+                    tableSteps.getModel().setValueAt(tableSteps.getModel().getValueAt(indexSelectRow+1, 0).toString(), indexSelectRow, 0);
+                    tableSteps.getModel().setValueAt(tableSteps.getModel().getValueAt(indexSelectRow+1, 1).toString(), indexSelectRow, 1);
+                    tableSteps.getModel().setValueAt(tableSteps.getModel().getValueAt(indexSelectRow+1, 2).toString(), indexSelectRow, 2);
+                    tableSteps.getModel().setValueAt(tableSteps.getModel().getValueAt(indexSelectRow+1, 3).toString(), indexSelectRow, 3);
+                    tableSteps.getModel().setValueAt(tableSteps.getModel().getValueAt(indexSelectRow+1, 4).toString(), indexSelectRow, 4);
+                    tableSteps.getModel().setValueAt(description, indexSelectRow+1, 0);
+                    tableSteps.getModel().setValueAt(type, indexSelectRow+1, 1);
+                    tableSteps.getModel().setValueAt(locator, indexSelectRow+1, 2);
+                    tableSteps.getModel().setValueAt(value, indexSelectRow+1, 3);
+                    tableSteps.getModel().setValueAt(timeout, indexSelectRow+1, 4);
+                }
+            }
+        });
     }
 
 
