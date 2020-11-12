@@ -8,6 +8,7 @@ import org.json.simple.parser.ParseException;
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import java.io.*;
+import java.nio.charset.CharsetDecoder;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -66,6 +67,14 @@ public class Editor {
         }
         if(encoding.equals(UTF_8)){
             BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "UTF-8"));
+            Object obj = new JSONParser().parse(reader);
+            return (JSONObject) obj;
+        }
+        if(encoding.equals(UTF_8_BOM)){
+
+        }
+        if(encoding.equals(WINDOWS_1251)){
+            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "windows-1251"));
             Object obj = new JSONParser().parse(reader);
             return (JSONObject) obj;
         }

@@ -199,6 +199,21 @@ public class FormMain {
                 }
             }
         });
+        MenuOpenAsUtf8Bom.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                String path = Editor.dialogOpenFile(PanelMain);
+                labelPathFile.setText(path);
+                if(labelPathFile.getText().equals("...")) return;
+                try {
+                    readJsonFile(path, WINDOWS_1251);
+                    showJsonData();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
         buttonIC.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 textFieldOption.setText("--ignore-certificate-errors");
