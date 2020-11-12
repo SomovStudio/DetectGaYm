@@ -73,7 +73,7 @@ public class FormMain {
         frame.setVisible(true);
      }
 
-    public void initDataTable(Object[][] dataObj){
+    private void initDataTable(Object[][] dataObj){
         tableData.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         tableData.setModel(new DefaultTableModel(
                 dataObj,
@@ -81,7 +81,7 @@ public class FormMain {
         ));
     }
 
-    public void initStepsTable(Object[][] stepsObj){
+    private void initStepsTable(Object[][] stepsObj){
         tableSteps.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         tableSteps.setModel(new DefaultTableModel(
                 stepsObj,
@@ -109,6 +109,40 @@ public class FormMain {
         tableSteps.getColumnModel().getColumn(3).setCellEditor(editorValue);
     }
 
+    private void showJsonData() {
+        textFieldDescription.setText(description);
+        textFieldPort.setText(String.valueOf(port));
+        textFieldHar.setText(nameHar);
+        listOptions.setListData(arguments.toArray());
+        spinnerWaitLimit.setValue(pageLoadTimeout);
+
+        Object[][] dataObj = new Object[data.toArray().length][];
+        for (int i = 0; i < data.toArray().length; i++)
+        {
+            JSONObject dataJson = (JSONObject) data.get(i);
+            dataObj[i] = new String[6];
+            dataObj[i][0] = dataJson.get("title").toString();
+            dataObj[i][1] = dataJson.get("url").toString();
+            dataObj[i][2] = dataJson.get("ga_category").toString();
+            dataObj[i][3] = dataJson.get("ga_action").toString();
+            dataObj[i][4] = dataJson.get("ga_label").toString();
+            dataObj[i][5] = dataJson.get("ym_code").toString();
+        }
+        initDataTable(dataObj);
+
+        Object[][] stepsObj = new Object[steps.toArray().length][];
+        for (int i = 0; i < steps.toArray().length; i++){
+            JSONObject dataJson = (JSONObject) steps.get(i);
+            stepsObj[i] = new String[5];
+            stepsObj[i][0] = dataJson.get("description").toString();
+            stepsObj[i][1] = dataJson.get("type").toString();
+            stepsObj[i][2] = dataJson.get("locator").toString();
+            stepsObj[i][3] = dataJson.get("value").toString();
+            stepsObj[i][4] = dataJson.get("timeout").toString();
+        }
+        initStepsTable(stepsObj);
+    }
+
     public FormMain() {
         MenuExit.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
@@ -124,40 +158,40 @@ public class FormMain {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = Editor.dialogOpenFile(PanelMain);
                 labelPathFile.setText(path);
+                if(labelPathFile.getText().equals("...")) return;
                 try {
-                    readJsonFile(path);
-                    textFieldDescription.setText(description);
-                    textFieldPort.setText(String.valueOf(port));
-                    textFieldHar.setText(nameHar);
-                    listOptions.setListData(arguments.toArray());
-                    spinnerWaitLimit.setValue(pageLoadTimeout);
-
-                    Object[][] dataObj = new Object[data.toArray().length][];
-                    for (int i = 0; i < data.toArray().length; i++)
-                    {
-                        JSONObject dataJson = (JSONObject) data.get(i);
-                        dataObj[i] = new String[6];
-                        dataObj[i][0] = dataJson.get("title").toString();
-                        dataObj[i][1] = dataJson.get("url").toString();
-                        dataObj[i][2] = dataJson.get("ga_category").toString();
-                        dataObj[i][3] = dataJson.get("ga_action").toString();
-                        dataObj[i][4] = dataJson.get("ga_label").toString();
-                        dataObj[i][5] = dataJson.get("ym_code").toString();
-                    }
-                    initDataTable(dataObj);
-
-                    Object[][] stepsObj = new Object[steps.toArray().length][];
-                    for (int i = 0; i < steps.toArray().length; i++){
-                        JSONObject dataJson = (JSONObject) steps.get(i);
-                        stepsObj[i] = new String[5];
-                        stepsObj[i][0] = dataJson.get("description").toString();
-                        stepsObj[i][1] = dataJson.get("type").toString();
-                        stepsObj[i][2] = dataJson.get("locator").toString();
-                        stepsObj[i][3] = dataJson.get("value").toString();
-                        stepsObj[i][4] = dataJson.get("timeout").toString();
-                    }
-                    initStepsTable(stepsObj);
-
+                    readJsonFile(path, DEFAULT);
+                    showJsonData();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        MenuOpenAsDefault.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                String path = Editor.dialogOpenFile(PanelMain);
+                labelPathFile.setText(path);
+                if(labelPathFile.getText().equals("...")) return;
+                try {
+                    readJsonFile(path, DEFAULT);
+                    showJsonData();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        MenuOpenAsUtf8.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                String path = Editor.dialogOpenFile(PanelMain);
+                labelPathFile.setText(path);
+                if(labelPathFile.getText().equals("...")) return;
+                try {
+                    readJsonFile(path, UTF_8);
+                    showJsonData();
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (ParseException e) {
@@ -367,7 +401,6 @@ public class FormMain {
                 }
             }
         });
-
     }
 
 

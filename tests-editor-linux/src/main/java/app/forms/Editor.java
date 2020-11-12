@@ -7,13 +7,16 @@ import org.json.simple.parser.ParseException;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Editor {
+    public static final String DEFAULT = "default";
+    public static final String UTF_8 = "utf_8";
+    public static final String UTF_8_BOM = "utf_8_bom";
+    public static final String WINDOWS_1251 = "windows_1251";
+
     public static String description;
     public static int port;
     public static ArrayList<String> arguments;
@@ -54,10 +57,36 @@ public class Editor {
         }
     }
 
+    /* Чтение файлов в соответствии с выбранной кодировкой */
+    public static JSONObject readFileInEncoding(String filename, String encoding) throws IOException, ParseException {
+        if(encoding.equals(DEFAULT)) {
+            FileReader reader = new FileReader(filename);
+            Object obj = new JSONParser().parse(reader);
+            return (JSONObject) obj;
+        }
+        if(encoding.equals(UTF_8)){
+            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "UTF-8"));
+            Object obj = new JSONParser().parse(reader);
+            return (JSONObject) obj;
+        }
+        return null;
+    }
+
+    public static void saveFileInEncoding(String filename, String encoding) throws IOException {
+        if(encoding.equals(DEFAULT)){
+
+        }
+        if(encoding.equals(UTF_8)){
+            BufferedWriter w = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("output_file.txt"), "UTF-8"));
+            w.write("");
+            w.flush();
+            w.close();
+        }
+    }
+
     /* Чтение json файла */
-    public static JSONObject readJsonFile(String filename) throws IOException, ParseException {
-        Object obj = new JSONParser().parse(new FileReader(filename));
-        JSONObject oj = (JSONObject) obj;
+    public static void readJsonFile(String filename, String encoding) throws IOException, ParseException {
+        JSONObject oj = readFileInEncoding(filename, encoding);
         description = oj.get("description").toString();
         port = Integer.parseInt(oj.get("port").toString());
         nameHar = oj.get("har").toString();
@@ -72,8 +101,6 @@ public class Editor {
             String argument = argsItr.next().toString();
             arguments.add(argument);
         }
-
-        return (JSONObject) obj;
     }
 
 
