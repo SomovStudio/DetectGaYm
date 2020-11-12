@@ -439,6 +439,47 @@ public class FormMain {
                 }
             }
         });
+        MenuSaveTestFile.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+
+            }
+        });
+        MenuSaveAsDefault.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                String path = Editor.dialogSaveFile(PanelMain);
+                labelPathFile.setText(path);
+                labelEncoding.setText(DEFAULT + " | Файл: ");
+                if(labelPathFile.getText().equals("...")) return;
+                try {
+                    String[] fields = new String[] {
+                            textFieldDescription.getText(),
+                            textFieldPort.getText(),
+                            textFieldHar.getText(),
+                            spinnerWaitLimit.getValue().toString()
+                    };
+                    saveJsonFile(path, DEFAULT, fields, listOptions, tableData, tableSteps);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        MenuSaveAsUtf8.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+
+            }
+        });
+        MenuSaveAsUtf8Bom.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+
+            }
+        });
+        MenuSaveAsWindows1251.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+
+            }
+        });
     }
 
 }

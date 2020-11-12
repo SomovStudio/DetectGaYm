@@ -1,0 +1,86 @@
+{
+"description":"Поддержка - Свяжитесь с нами - Тест",
+"port":"9091",
+"arguments":[
+"--ignore-certificate-errors",
+"user-agent=node1"
+],
+"har":"test1.har",
+"timeout":30,
+"data":[
+{
+"title":"ШАГ: Открыл страницу https://help.mgts.ru/home/",
+"url":"https://help.mgts.ru/home/",
+"ga_category":"zayavka",
+"ga_action":"b2c_new_main",
+"ga_label":"some_shpd_help",
+"ym_code":"zayavka_shpd"
+},
+{
+"title":"ШАГ: Открыл страницу https://help.mgts.ru/home/",
+"url":"https://help.mgts.ru/home/",
+"ga_category":"zayavka",
+"ga_action":"b2c_new_main",
+"ga_label":"some_shpd_help",
+"ym_code":"zayavka_shpd"
+}
+],
+"steps":[
+{
+"description":"ШАГ: В поле прописал имя",
+"type":"input_value",
+"locator":"//input[@id='help-form-order_name']",
+"value":"Тестирование Зионек",
+"timeout":1
+},
+{
+"description":"ШАГ: В поле прописал телефон",
+"type":"input_value",
+"locator":"//input[@id='help-form-order_phone']",
+"value":"9999999999",
+"timeout":1
+},
+{
+"description":"ШАГ: Поиск элемента с ответом",
+"type":"find_element",
+"locator":"//input[@id='rightansw']",
+"value":"",
+"timeout":1
+},
+{
+"description":"ШАГ: Ввожу данные из найденного элемента",
+"type":"input_value",
+"locator":"//input[@id='input-capanswer']",
+"value":"get_attribute_value",
+"timeout":1
+},
+{
+"description":"ШАГ: Нажал на кнопку Отправить",
+"type":"click_element",
+"locator":"//section[@id='help-form-order']//button",
+"value":"",
+"timeout":1
+},
+{
+"description":"Событие GA",
+"type":"test_defaults_ga",
+"locator":"",
+"value":"",
+"timeout":5
+},
+{
+"description":"Событие YM",
+"type":"test_defaults_ym",
+"locator":"",
+"value":"",
+"timeout":5
+},
+{
+"description":"Тест",
+"type":"open_page",
+"locator":"google-analytics.com/collect",
+"value":"get_text",
+"timeout":0
+}
+]
+}
