@@ -63,6 +63,9 @@ public class FormMain {
     private JMenuItem MenuSaveAsUtf8;
     private JMenuItem MenuSaveAsUtf8Bom;
     private JMenuItem MenuExit;
+    private JMenuItem MenuOpenAsWindows1251;
+    private JMenuItem MenuSaveAsWindows1251;
+    private JLabel labelEncoding;
 
     public static void main(String[] args){
         JFrame frame = new JFrame("MainForm");
@@ -109,7 +112,7 @@ public class FormMain {
         tableSteps.getColumnModel().getColumn(3).setCellEditor(editorValue);
     }
 
-    private void showJsonData() {
+    private void loadJsonData() {
         textFieldDescription.setText(description);
         textFieldPort.setText(String.valueOf(port));
         textFieldHar.setText(nameHar);
@@ -158,10 +161,11 @@ public class FormMain {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = Editor.dialogOpenFile(PanelMain);
                 labelPathFile.setText(path);
+                labelEncoding.setText(DEFAULT + " | Файл: ");
                 if(labelPathFile.getText().equals("...")) return;
                 try {
                     readJsonFile(path, DEFAULT);
-                    showJsonData();
+                    loadJsonData();
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (ParseException e) {
@@ -173,10 +177,11 @@ public class FormMain {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = Editor.dialogOpenFile(PanelMain);
                 labelPathFile.setText(path);
+                labelEncoding.setText(DEFAULT + " | Файл: ");
                 if(labelPathFile.getText().equals("...")) return;
                 try {
                     readJsonFile(path, DEFAULT);
-                    showJsonData();
+                    loadJsonData();
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (ParseException e) {
@@ -188,10 +193,11 @@ public class FormMain {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = Editor.dialogOpenFile(PanelMain);
                 labelPathFile.setText(path);
+                labelEncoding.setText(UTF_8 + " | Файл: ");
                 if(labelPathFile.getText().equals("...")) return;
                 try {
                     readJsonFile(path, UTF_8);
-                    showJsonData();
+                    loadJsonData();
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (ParseException e) {
@@ -203,10 +209,27 @@ public class FormMain {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = Editor.dialogOpenFile(PanelMain);
                 labelPathFile.setText(path);
+                labelEncoding.setText(UTF_8_BOM + " | Файл: ");
+                if(labelPathFile.getText().equals("...")) return;
+                try {
+                    readJsonFile(path, UTF_8_BOM);
+                    loadJsonData();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        MenuOpenAsWindows1251.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                String path = Editor.dialogOpenFile(PanelMain);
+                labelPathFile.setText(path);
+                labelEncoding.setText(WINDOWS_1251 + " | Файл: ");
                 if(labelPathFile.getText().equals("...")) return;
                 try {
                     readJsonFile(path, WINDOWS_1251);
-                    showJsonData();
+                    loadJsonData();
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (ParseException e) {
@@ -417,6 +440,5 @@ public class FormMain {
             }
         });
     }
-
 
 }

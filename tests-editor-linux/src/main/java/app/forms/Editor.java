@@ -14,9 +14,9 @@ import java.util.Iterator;
 
 public class Editor {
     public static final String DEFAULT = "default";
-    public static final String UTF_8 = "utf_8";
-    public static final String UTF_8_BOM = "utf_8_bom";
-    public static final String WINDOWS_1251 = "windows_1251";
+    public static final String UTF_8 = "utf-8";
+    public static final String UTF_8_BOM = "utf-8-bom";
+    public static final String WINDOWS_1251 = "windows-1251";
 
     public static String description;
     public static int port;
@@ -71,7 +71,12 @@ public class Editor {
             return (JSONObject) obj;
         }
         if(encoding.equals(UTF_8_BOM)){
-
+            //BufferedReader br = new BufferedReader(new InputStreamReader(new BOMInputStream( new FileInputStream(filename), false,
+            //                ByteOrderMark.UTF_8, ByteOrderMark.UTF_16BE, ByteOrderMark.UTF_16LE,
+            //                ByteOrderMark.UTF_32BE, ByteOrderMark.UTF_32LE ) ) );
+            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "UTF-8"));
+            Object obj = new JSONParser().parse(reader);
+            return (JSONObject) obj;
         }
         if(encoding.equals(WINDOWS_1251)){
             BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "windows-1251"));

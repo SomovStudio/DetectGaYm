@@ -78,6 +78,12 @@
                           <text value="Кодировка UTF-8-BOM"/>
                         </properties>
                       </component>
+                      <component id="4d183" class="javax.swing.JMenuItem" binding="MenuOpenAsWindows1251">
+                        <constraints/>
+                        <properties>
+                          <text value="Кодировка Windows 1251"/>
+                        </properties>
+                      </component>
                     </children>
                   </grid>
                   <component id="56965" class="javax.swing.JSeparator">
@@ -120,6 +126,12 @@
                         <constraints/>
                         <properties>
                           <text value="Кодировка UTF-8-BOM"/>
+                        </properties>
+                      </component>
+                      <component id="15fe0" class="javax.swing.JMenuItem" binding="MenuSaveAsWindows1251">
+                        <constraints/>
+                        <properties>
+                          <text value="Кодировка Windows 1251"/>
                         </properties>
                       </component>
                     </children>
@@ -581,7 +593,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="4b5ef" class="javax.swing.JLabel">
+          <component id="4b5ef" class="javax.swing.JLabel" binding="labelEncoding">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
