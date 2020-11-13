@@ -63,6 +63,7 @@ public class FormMain {
     private JMenuItem MenuSaveAsWindows1251;
     private JLabel labelFile;
     private JLabel labelEncoding;
+    private JTextArea textAreaConsole;
 
     public static void main(String[] args){
         JFrame frame = new JFrame("MainForm");
