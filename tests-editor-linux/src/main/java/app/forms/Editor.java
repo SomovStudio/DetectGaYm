@@ -8,12 +8,16 @@ import org.json.simple.parser.ParseException;
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 import java.io.*;
 import java.nio.charset.CharsetDecoder;
 import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Editor {
+    public static final String TYPE_OS_WINDOWS = "type_os_windows";
+    public static final String TYPE_OS_LINUX = "type_os_linux";
+
     public static final String DEFAULT = "default";
     public static final String UTF_8 = "utf-8";
     public static final String UTF_8_BOM = "utf-8-bom";
@@ -252,5 +256,31 @@ public class Editor {
         json += System.getProperty("line.separator") + "}";
         saveFileInEncoding(filename, encoding, json);
         showMessage("Файл сохранен!");
+    }
+
+    /* Выполнение файла автотеста
+     * https://stackoverflow.com/questions/15428414/how-to-run-a-sh-file-from-java
+    * */
+    public static void executeFile(String filename) throws IOException {
+
+        String context = "#!/bin/bash";
+        context += System.getProperty("line.separator") + "ls";
+        context += System.getProperty("line.separator") + "cd ..";
+        context += System.getProperty("line.separator") + "cd bin";
+        context += System.getProperty("line.separator") + "java -jar detect-gaym.jar "+filename;
+
+        FileWriter writer = new FileWriter(System.getProperty("user.dir")+"/run-test.sh");
+        writer.write(context);
+        writer.flush();
+        writer.close();
+
+        ProcessBuilder pb = new ProcessBuilder(System.getProperty("user.dir")+"/run-test.sh");
+        Process p = pb.start();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
+        String line = null;
+        while ((line = reader.readLine()) != null)
+        {
+            System.out.println(line);
+        }
     }
 }

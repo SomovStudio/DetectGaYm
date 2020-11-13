@@ -560,6 +560,17 @@ public class FormMain {
                 modelTableSteps.setRowCount(0);
             }
         });
+        MenuExecuteTest.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                try {
+                    String filename = labelPathFile.getText();
+                    if(filename.equals("...")) showMessage("Невозможно запустить тест.\nФайл теста либо не открыт, либо еще не сохранён.");
+                    else Editor.executeFile(filename);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
 }
