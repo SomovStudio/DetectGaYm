@@ -1,14 +1,10 @@
 package app.forms;
 
-import jdk.nashorn.api.scripting.JSObject;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
-import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
 
@@ -65,6 +61,7 @@ public class FormMain {
     private JMenuItem MenuExit;
     private JMenuItem MenuOpenAsWindows1251;
     private JMenuItem MenuSaveAsWindows1251;
+    private JLabel labelFile;
     private JLabel labelEncoding;
 
     public static void main(String[] args){
@@ -161,7 +158,7 @@ public class FormMain {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = Editor.dialogOpenFile(PanelMain);
                 labelPathFile.setText(path);
-                labelEncoding.setText(DEFAULT + " | Файл: ");
+                labelEncoding.setText(DEFAULT);
                 if(labelPathFile.getText().equals("...")) return;
                 try {
                     readJsonFile(path, DEFAULT);
@@ -177,7 +174,7 @@ public class FormMain {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = Editor.dialogOpenFile(PanelMain);
                 labelPathFile.setText(path);
-                labelEncoding.setText(DEFAULT + " | Файл: ");
+                labelEncoding.setText(DEFAULT);
                 if(labelPathFile.getText().equals("...")) return;
                 try {
                     readJsonFile(path, DEFAULT);
@@ -193,7 +190,7 @@ public class FormMain {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = Editor.dialogOpenFile(PanelMain);
                 labelPathFile.setText(path);
-                labelEncoding.setText(UTF_8 + " | Файл: ");
+                labelEncoding.setText(UTF_8);
                 if(labelPathFile.getText().equals("...")) return;
                 try {
                     readJsonFile(path, UTF_8);
@@ -209,7 +206,7 @@ public class FormMain {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = Editor.dialogOpenFile(PanelMain);
                 labelPathFile.setText(path);
-                labelEncoding.setText(UTF_8_BOM + " | Файл: ");
+                labelEncoding.setText(UTF_8_BOM);
                 if(labelPathFile.getText().equals("...")) return;
                 try {
                     readJsonFile(path, UTF_8_BOM);
@@ -225,7 +222,7 @@ public class FormMain {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = Editor.dialogOpenFile(PanelMain);
                 labelPathFile.setText(path);
-                labelEncoding.setText(WINDOWS_1251 + " | Файл: ");
+                labelEncoding.setText(WINDOWS_1251);
                 if(labelPathFile.getText().equals("...")) return;
                 try {
                     readJsonFile(path, WINDOWS_1251);
@@ -444,7 +441,6 @@ public class FormMain {
                 String path = labelPathFile.getText();
                 if(path.equals("...")) path = Editor.dialogSaveFile(PanelMain);
                 labelPathFile.setText(path);
-                labelEncoding.setText(DEFAULT + " | Файл: ");
                 if(labelPathFile.getText().equals("...")) return;
                 try {
                     String[] fields = new String[] {
@@ -453,7 +449,7 @@ public class FormMain {
                             textFieldHar.getText(),
                             spinnerWaitLimit.getValue().toString()
                     };
-                    saveJsonFile(path, DEFAULT, fields, listOptions, tableData, tableSteps);
+                    saveJsonFile(path, labelEncoding.getText(), fields, listOptions, tableData, tableSteps);
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (ParseException e) {
@@ -465,7 +461,7 @@ public class FormMain {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = Editor.dialogSaveFile(PanelMain);
                 labelPathFile.setText(path);
-                labelEncoding.setText(DEFAULT + " | Файл: ");
+                labelEncoding.setText(DEFAULT);
                 if(labelPathFile.getText().equals("...")) return;
                 try {
                     String[] fields = new String[] {
@@ -486,7 +482,7 @@ public class FormMain {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = Editor.dialogSaveFile(PanelMain);
                 labelPathFile.setText(path);
-                labelEncoding.setText(UTF_8 + " | Файл: ");
+                labelEncoding.setText(UTF_8);
                 if(labelPathFile.getText().equals("...")) return;
                 try {
                     String[] fields = new String[] {
@@ -507,7 +503,7 @@ public class FormMain {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = Editor.dialogSaveFile(PanelMain);
                 labelPathFile.setText(path);
-                labelEncoding.setText(UTF_8_BOM + " | Файл: ");
+                labelEncoding.setText(UTF_8_BOM);
                 if(labelPathFile.getText().equals("...")) return;
                 try {
                     String[] fields = new String[] {
@@ -528,7 +524,7 @@ public class FormMain {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = Editor.dialogSaveFile(PanelMain);
                 labelPathFile.setText(path);
-                labelEncoding.setText(WINDOWS_1251 + " | Файл: ");
+                labelEncoding.setText(WINDOWS_1251);
                 if(labelPathFile.getText().equals("...")) return;
                 try {
                     String[] fields = new String[] {
