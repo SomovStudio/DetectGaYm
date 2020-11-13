@@ -393,7 +393,7 @@ public class FormMain {
         });
         buttonStepUp.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-                if(tableSteps.getColumnModel().getColumnCount() <= 0) initDataTable(null);
+                if(tableSteps.getColumnModel().getColumnCount() <= 0) initStepsTable(null);
                 int indexSelectRow = tableSteps.getSelectedRow();
                 int countRows = tableSteps.getModel().getRowCount();
                 if(indexSelectRow > -1 && (indexSelectRow-1) > -1 && countRows > 0){
@@ -417,7 +417,7 @@ public class FormMain {
         });
         buttonStepDown.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-                if(tableSteps.getColumnModel().getColumnCount() <= 0) initDataTable(null);
+                if(tableSteps.getColumnModel().getColumnCount() <= 0) initStepsTable(null);
                 int indexSelectRow = tableSteps.getSelectedRow();
                 int countRows = tableSteps.getModel().getRowCount();
                 if(indexSelectRow > -1 && (indexSelectRow+1) < countRows  && countRows > 0){
@@ -441,7 +441,24 @@ public class FormMain {
         });
         MenuSaveTestFile.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-
+                String path = labelPathFile.getText();
+                if(path.equals("...")) path = Editor.dialogSaveFile(PanelMain);
+                labelPathFile.setText(path);
+                labelEncoding.setText(DEFAULT + " | Файл: ");
+                if(labelPathFile.getText().equals("...")) return;
+                try {
+                    String[] fields = new String[] {
+                            textFieldDescription.getText(),
+                            textFieldPort.getText(),
+                            textFieldHar.getText(),
+                            spinnerWaitLimit.getValue().toString()
+                    };
+                    saveJsonFile(path, DEFAULT, fields, listOptions, tableData, tableSteps);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
             }
         });
         MenuSaveAsDefault.addActionListener(new ActionListener() {
@@ -467,17 +484,84 @@ public class FormMain {
         });
         MenuSaveAsUtf8.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-
+                String path = Editor.dialogSaveFile(PanelMain);
+                labelPathFile.setText(path);
+                labelEncoding.setText(UTF_8 + " | Файл: ");
+                if(labelPathFile.getText().equals("...")) return;
+                try {
+                    String[] fields = new String[] {
+                            textFieldDescription.getText(),
+                            textFieldPort.getText(),
+                            textFieldHar.getText(),
+                            spinnerWaitLimit.getValue().toString()
+                    };
+                    saveJsonFile(path, UTF_8, fields, listOptions, tableData, tableSteps);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
             }
         });
         MenuSaveAsUtf8Bom.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-
+                String path = Editor.dialogSaveFile(PanelMain);
+                labelPathFile.setText(path);
+                labelEncoding.setText(UTF_8_BOM + " | Файл: ");
+                if(labelPathFile.getText().equals("...")) return;
+                try {
+                    String[] fields = new String[] {
+                            textFieldDescription.getText(),
+                            textFieldPort.getText(),
+                            textFieldHar.getText(),
+                            spinnerWaitLimit.getValue().toString()
+                    };
+                    saveJsonFile(path, UTF_8_BOM, fields, listOptions, tableData, tableSteps);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
             }
         });
         MenuSaveAsWindows1251.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-
+                String path = Editor.dialogSaveFile(PanelMain);
+                labelPathFile.setText(path);
+                labelEncoding.setText(WINDOWS_1251 + " | Файл: ");
+                if(labelPathFile.getText().equals("...")) return;
+                try {
+                    String[] fields = new String[] {
+                            textFieldDescription.getText(),
+                            textFieldPort.getText(),
+                            textFieldHar.getText(),
+                            spinnerWaitLimit.getValue().toString()
+                    };
+                    saveJsonFile(path, WINDOWS_1251, fields, listOptions, tableData, tableSteps);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        MenuCreateNewTest.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                textFieldDescription.setText("");
+                textFieldPort.setText("9091");
+                textFieldOption.setText("");
+                listOptions.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+                DefaultListModel listModel = new DefaultListModel();
+                listModel.addElement("--ignore-certificate-errors");
+                listOptions.setModel(listModel);
+                textFieldHar.setText("test.har");
+                spinnerWaitLimit.setValue(0);
+                if(tableData.getColumnModel().getColumnCount() <= 0) initDataTable(null);
+                DefaultTableModel modelTableData = (DefaultTableModel) tableData.getModel();
+                modelTableData.setRowCount(0);
+                if(tableSteps.getColumnModel().getColumnCount() <= 0) initStepsTable(null);
+                DefaultTableModel modelTableSteps = (DefaultTableModel) tableSteps.getModel();
+                modelTableSteps.setRowCount(0);
             }
         });
     }
