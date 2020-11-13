@@ -166,8 +166,10 @@ public class FormMain {
                     readJsonFile(path, DEFAULT);
                     loadJsonData();
                 } catch (IOException e) {
+                    showMessage(e.getMessage());
                     e.printStackTrace();
                 } catch (ParseException e) {
+                    showMessage(e.getMessage());
                     e.printStackTrace();
                 }
             }
@@ -182,8 +184,10 @@ public class FormMain {
                     readJsonFile(path, DEFAULT);
                     loadJsonData();
                 } catch (IOException e) {
+                    showMessage(e.getMessage());
                     e.printStackTrace();
                 } catch (ParseException e) {
+                    showMessage(e.getMessage());
                     e.printStackTrace();
                 }
             }
@@ -198,8 +202,10 @@ public class FormMain {
                     readJsonFile(path, UTF_8);
                     loadJsonData();
                 } catch (IOException e) {
+                    showMessage(e.getMessage());
                     e.printStackTrace();
                 } catch (ParseException e) {
+                    showMessage(e.getMessage());
                     e.printStackTrace();
                 }
             }
@@ -214,8 +220,10 @@ public class FormMain {
                     readJsonFile(path, UTF_8_BOM);
                     loadJsonData();
                 } catch (IOException e) {
+                    showMessage(e.getMessage());
                     e.printStackTrace();
                 } catch (ParseException e) {
+                    showMessage(e.getMessage());
                     e.printStackTrace();
                 }
             }
@@ -230,8 +238,10 @@ public class FormMain {
                     readJsonFile(path, WINDOWS_1251);
                     loadJsonData();
                 } catch (IOException e) {
+                    showMessage(e.getMessage());
                     e.printStackTrace();
                 } catch (ParseException e) {
+                    showMessage(e.getMessage());
                     e.printStackTrace();
                 }
             }
@@ -453,8 +463,10 @@ public class FormMain {
                     };
                     saveJsonFile(path, labelEncoding.getText(), fields, listOptions, tableData, tableSteps);
                 } catch (IOException e) {
+                    showMessage(e.getMessage());
                     e.printStackTrace();
                 } catch (ParseException e) {
+                    showMessage(e.getMessage());
                     e.printStackTrace();
                 }
             }
@@ -474,8 +486,10 @@ public class FormMain {
                     };
                     saveJsonFile(path, DEFAULT, fields, listOptions, tableData, tableSteps);
                 } catch (IOException e) {
+                    showMessage(e.getMessage());
                     e.printStackTrace();
                 } catch (ParseException e) {
+                    showMessage(e.getMessage());
                     e.printStackTrace();
                 }
             }
@@ -495,8 +509,10 @@ public class FormMain {
                     };
                     saveJsonFile(path, UTF_8, fields, listOptions, tableData, tableSteps);
                 } catch (IOException e) {
+                    showMessage(e.getMessage());
                     e.printStackTrace();
                 } catch (ParseException e) {
+                    showMessage(e.getMessage());
                     e.printStackTrace();
                 }
             }
@@ -516,8 +532,10 @@ public class FormMain {
                     };
                     saveJsonFile(path, UTF_8_BOM, fields, listOptions, tableData, tableSteps);
                 } catch (IOException e) {
+                    showMessage(e.getMessage());
                     e.printStackTrace();
                 } catch (ParseException e) {
+                    showMessage(e.getMessage());
                     e.printStackTrace();
                 }
             }
@@ -537,8 +555,10 @@ public class FormMain {
                     };
                     saveJsonFile(path, WINDOWS_1251, fields, listOptions, tableData, tableSteps);
                 } catch (IOException e) {
+                    showMessage(e.getMessage());
                     e.printStackTrace();
                 } catch (ParseException e) {
+                    showMessage(e.getMessage());
                     e.printStackTrace();
                 }
             }
@@ -569,6 +589,7 @@ public class FormMain {
                     if(filename.equals("...")) showMessage("Невозможно запустить тест.\nФайл теста либо не открыт, либо еще не сохранён.");
                     else Editor.executeFile(filename, textAreaConsole, scrollPaneConsole);
                 } catch (IOException e) {
+                    showMessage(e.getMessage());
                     e.printStackTrace();
                 }
             }
