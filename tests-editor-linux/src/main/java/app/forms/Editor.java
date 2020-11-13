@@ -261,10 +261,9 @@ public class Editor {
     /* Выполнение файла автотеста
      * https://stackoverflow.com/questions/15428414/how-to-run-a-sh-file-from-java
     * */
-    public static void executeFile(String filename) throws IOException {
+    public static void executeFile(String filename, JTextArea console, JScrollPane scrollPaneConsole) throws IOException {
 
         String context = "#!/bin/bash";
-        context += System.getProperty("line.separator") + "ls";
         context += System.getProperty("line.separator") + "cd ..";
         context += System.getProperty("line.separator") + "cd bin";
         context += System.getProperty("line.separator") + "java -jar detect-gaym.jar "+filename;
@@ -278,8 +277,15 @@ public class Editor {
         Process p = pb.start();
         BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
         String line = null;
+        console.setText("");
         while ((line = reader.readLine()) != null)
         {
+            console.append(line + System.getProperty("line.separator"));
+            console.setCaretPosition(console.getText().length() - 1);
+            console.update(console.getGraphics());
+            console.validate();
+            scrollPaneConsole.update(scrollPaneConsole.getGraphics());
+            scrollPaneConsole.validate();
             System.out.println(line);
         }
     }

@@ -240,8 +240,8 @@
           <tabbedpane id="895b0" binding="tabbedPane1" default-binding="true">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <minimum-size width="1024" height="600"/>
-                <preferred-size width="1024" height="600"/>
+                <minimum-size width="1024" height="500"/>
+                <preferred-size width="1024" height="500"/>
               </grid>
             </constraints>
             <properties>
@@ -661,11 +661,11 @@
               <text value="Консоль:"/>
             </properties>
           </component>
-          <scrollpane id="3254c">
+          <scrollpane id="3254c" binding="scrollPaneConsole">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <minimum-size width="-1" height="150"/>
-                <preferred-size width="-1" height="150"/>
+                <minimum-size width="-1" height="200"/>
+                <preferred-size width="-1" height="200"/>
               </grid>
             </constraints>
             <properties/>

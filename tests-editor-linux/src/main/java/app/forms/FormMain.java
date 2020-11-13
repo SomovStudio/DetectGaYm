@@ -64,6 +64,7 @@ public class FormMain {
     private JLabel labelFile;
     private JLabel labelEncoding;
     private JTextArea textAreaConsole;
+    private JScrollPane scrollPaneConsole;
 
     public static void main(String[] args){
         JFrame frame = new JFrame("MainForm");
@@ -566,7 +567,7 @@ public class FormMain {
                 try {
                     String filename = labelPathFile.getText();
                     if(filename.equals("...")) showMessage("Невозможно запустить тест.\nФайл теста либо не открыт, либо еще не сохранён.");
-                    else Editor.executeFile(filename);
+                    else Editor.executeFile(filename, textAreaConsole, scrollPaneConsole);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
