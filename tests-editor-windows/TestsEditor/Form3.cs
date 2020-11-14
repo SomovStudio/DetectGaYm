@@ -137,6 +137,44 @@ namespace TestsEditor
                     comboBoxValue.Enabled = false;
                     numericUpDownTimeout.ReadOnly = false;
                     break;
+                case "if_get_text":
+                    label5.Text = "Условие:";
+                    textBoxLocator.ReadOnly = false;
+                    comboBoxValue.Enabled = true;
+                    numericUpDownTimeout.ReadOnly = true;
+                    break;
+                case "if_get_attribute_":
+                    label5.Text = "Условие:";
+                    textBoxLocator.ReadOnly = false;
+                    comboBoxValue.Enabled = true;
+                    numericUpDownTimeout.ReadOnly = true;
+                    break;
+                case "else_if_get_text":
+                    label5.Text = "Условие:";
+                    textBoxLocator.ReadOnly = false;
+                    comboBoxValue.Enabled = true;
+                    numericUpDownTimeout.ReadOnly = true;
+                    break;
+                case "else_if_get_attribute_":
+                    label5.Text = "Условие:";
+                    textBoxLocator.ReadOnly = false;
+                    comboBoxValue.Enabled = true;
+                    numericUpDownTimeout.ReadOnly = true;
+                    break;
+                case "else":
+                    label5.Text = "Условие:";
+                    textBoxLocator.ReadOnly = true;
+                    comboBoxValue.Enabled = false;
+                    numericUpDownTimeout.ReadOnly = true;
+                    break;
+                case "end_if":
+                    label5.Text = "Условие:";
+                    textBoxLocator.ReadOnly = true;
+                    comboBoxValue.Enabled = false;
+                    numericUpDownTimeout.ReadOnly = true;
+                    break;
+
+
                 case "get_har":
                     label5.Text = "Локатор (XPath):";
                     textBoxLocator.ReadOnly = true;

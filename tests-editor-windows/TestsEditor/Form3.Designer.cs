@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.comboBoxValue = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.numericUpDownTimeout = new System.Windows.Forms.NumericUpDown();
@@ -48,7 +49,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBoxValue = new System.Windows.Forms.ComboBox();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -134,6 +134,24 @@
             this.splitContainer1.SplitterDistance = 215;
             this.splitContainer1.TabIndex = 13;
             // 
+            // comboBoxValue
+            // 
+            this.comboBoxValue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxValue.FormattingEnabled = true;
+            this.comboBoxValue.Items.AddRange(new object[] {
+            "get_text",
+            "get_attribute_id",
+            "get_attribute_name",
+            "get_attribute_class",
+            "get_attribute_value",
+            "get_attribute_href",
+            "get_attribute_"});
+            this.comboBoxValue.Location = new System.Drawing.Point(110, 136);
+            this.comboBoxValue.Name = "comboBoxValue";
+            this.comboBoxValue.Size = new System.Drawing.Size(491, 21);
+            this.comboBoxValue.TabIndex = 12;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -196,6 +214,12 @@
             "input_value",
             "click_element",
             "find_element",
+            "if_get_text",
+            "if_get_attribute_",
+            "else_if_get_text",
+            "else_if_get_attribute_",
+            "else",
+            "end_if",
             "wait_text",
             "wait_element",
             "wait_element_not_visible",
@@ -295,24 +319,6 @@
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // comboBoxValue
-            // 
-            this.comboBoxValue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxValue.FormattingEnabled = true;
-            this.comboBoxValue.Items.AddRange(new object[] {
-            "get_text",
-            "get_attribute_id",
-            "get_attribute_name",
-            "get_attribute_class",
-            "get_attribute_value",
-            "get_attribute_href",
-            "get_attribute_"});
-            this.comboBoxValue.Location = new System.Drawing.Point(110, 136);
-            this.comboBoxValue.Name = "comboBoxValue";
-            this.comboBoxValue.Size = new System.Drawing.Size(491, 21);
-            this.comboBoxValue.TabIndex = 12;
             // 
             // Form3
             // 

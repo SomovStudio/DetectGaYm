@@ -150,7 +150,23 @@
 {\pntext\f2\'B7\tab}\'cb\'ee\'ea\'e0\'f2\'ee\'f0 - \'e2 \'f4\'ee\'f0\'ec\'e0\'f2\'e5 \f1\lang1033 XPath \f0\lang1049\'e7\'e0\'ef\'f0\'ee\'f1 \'ea \'fd\'eb\'e5\'ec\'e5\'ed\'f2\'f3 \f1\lang1033 html \f0\lang1049\'f1\'f2\'f0\'e0\'ed\'e8\'f6\'fb\par
 {\pntext\f2\'B7\tab}\'c2\'f0\'e5\'ec\'ff \'ee\'e6\'e8\'e4\'e0\'ed\'e8\'ff - \'ea\'ee\'eb\'e8\'f7\'e5\'f1\'f2\'e2\'ee \'f1\'e5\'ea\'f3\'ed\'e4 \'e4\'ee \'ef\'ee\'ff\'e2\'eb\'e5\'ed\'e8\'ff \'f2\'e5\'ea\'f1\'f2\'e0\par
 
-\pard\li360\sa200\sl240\slmult1\b wait_text\b0  - \'ee\'e6\'e8\'e4\'e0\'ed\'e8\'e5 \'ef\'ee\'ff\'e2\'eb\'e5\'ed\'e8\'ff \'f2\'e5\'ea\'f1\'f2\'e0 \'ed\'e0 \'f1\'f2\'f0\'e0\'ed\'e8\'f6\'e5.\par
+\pard\li360\sa200\sl240\slmult1\b if_get_text \b0\'e8\'eb\'e8\b  if_get_attribute_ \b0 - \'ed\'e0\'f7\'e0\'eb\'ee \'f3\'f1\'eb\'ee\'e2\'e8\'e5 (\'ef\'f0\'ee\'e2\'e5\'f0\'ea\'e0 \'e7\'ed\'e0\'f7\'e5\'ed\'e8\'ff \'e4\'e0\'ed\'ed\'fb\'f5 \'e8\'e7 \b\f1\lang1033 find_element\b0 )\f0\lang1049\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li1080\sa200\sl240\slmult1\'ce\'ef\'e8\'f1\'e0\'ed\'e8\'e5 - \'f2\'e5\'ea\'f1\'f2\'ee\'e2\'ee\'e5 \'ef\'f0\'e5\'e4\'f1\'f2\'e0\'e2\'eb\'e5\'ed\'e8\'e5 \'e4\'e5\'e9\'f1\'f2\'e2\'e8\'ff\par
+{\pntext\f2\'B7\tab}\'d3\'f1\'eb\'ee\'e2\'e8\'e5 - \'e7\'ed\'e0\'f7\'e5\'ed\'e8\'e5 \'e2 \'f4\'ee\'f0\'ec\'e0\'f2\'e5: ==\f1\lang1033 , !=, &lt;, &lt;=, &gt;, &gt;=\f0\lang1049\par
+{\pntext\f2\'B7\tab}\'c7\'ed\'e0\'f7\'e5\'ed\'e8\'e5 - \'e4\'e0\'ed\'ed\'fb\'e5 \'ea\'ee\'f2\'ee\'f0\'fb\'e5 \'e4\'ee\'eb\'e6\'ed\'fb \'e1\'fb\'f2\'fc \'ef\'f0\'ee\'e2\'e5\'f0\'e5\'ed\'fb \'ed\'e0 \'f1\'ee\'ee\'f2\'e2\'e5\'f2\'f1\'f2\'e2\'e8\'e5\par
+{\pntext\f2\'B7\tab}\'c4\'eb\'ff \b if_get_attribute_\b0  \'ed\'f3\'e6\'ed\'ee \'e4\'ee\'ef\'e8\'f1\'fb\'e2\'e0\'f2\'fc \'ee\'e1\'fa\'e5\'ea\'f2 (\'ea \'ef\'f0\'e8\'ec\'e5\'f0\'f3\f1\lang1033  \f0\lang1049 if_get_attribute_\b\f1\lang1033 id\b0 )\f0\lang1049\par
+
+\pard\li360\sa200\sl240\slmult1\b else_if_get_text \b0\'e8\'eb\'e8\b  else_if_get_attribute_ \b0 -  \'e8\'ed\'e0\'f7\'e5 \'f3\'f1\'eb\'ee\'e2\'e8\'e5 (\'ef\'f0\'ee\'e2\'e5\'f0\'ea\'e0 \'e7\'ed\'e0\'f7\'e5\'ed\'e8\'ff \'e4\'e0\'ed\'ed\'fb\'f5 \'e8\'e7 \b\f1\lang1033 find_element\b0 )\f0\lang1049\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li1080\sa200\sl240\slmult1\'ce\'ef\'e8\'f1\'e0\'ed\'e8\'e5 - \'f2\'e5\'ea\'f1\'f2\'ee\'e2\'ee\'e5 \'ef\'f0\'e5\'e4\'f1\'f2\'e0\'e2\'eb\'e5\'ed\'e8\'e5 \'e4\'e5\'e9\'f1\'f2\'e2\'e8\'ff\par
+{\pntext\f2\'B7\tab}\'d3\'f1\'eb\'ee\'e2\'e8\'e5 - \'e7\'ed\'e0\'f7\'e5\'ed\'e8\'e5 \'e2 \'f4\'ee\'f0\'ec\'e0\'f2\'e5: ==\f1\lang1033 , !=, &lt;, &lt;=, &gt;, &gt;=\f0\lang1049\par
+{\pntext\f2\'B7\tab}\'c7\'ed\'e0\'f7\'e5\'ed\'e8\'e5 - \'e4\'e0\'ed\'ed\'fb\'e5 \'ea\'ee\'f2\'ee\'f0\'fb\'e5 \'e4\'ee\'eb\'e6\'ed\'fb \'e1\'fb\'f2\'fc \'ef\'f0\'ee\'e2\'e5\'f0\'e5\'ed\'fb \'ed\'e0 \'f1\'ee\'ee\'f2\'e2\'e5\'f2\'f1\'f2\'e2\'e8\'e5\par
+{\pntext\f2\'B7\tab}\'c4\'eb\'ff \b else_if_get_attribute_\b0  \'ed\'f3\'e6\'ed\'ee \'e4\'ee\'ef\'e8\'f1\'fb\'e2\'e0\'f2\'fc \'ee\'e1\'fa\'e5\'ea\'f2 (\'ea \'ef\'f0\'e8\'ec\'e5\'f0\'f3\f1\lang1033  else_\f0\lang1049 if_get_attribute_\b\f1\lang1033 id\b0 )\f0\lang1049\par
+
+\pard\li360\sa200\sl240\slmult1\b\f1\lang1033 else\b0\f0\lang1049  - \'e8\'ed\'e0\'f7\'e5\f1\lang1033  \f0\lang1049\'f3\'f1\'eb\'ee\'e2\'e8\'e5.\par
+\b\f1\lang1033 end_if\b0\f0\lang1049  - \'e7\'e0\'e2\'e5\'f0\'f8\'e5\'ed\'e8\'e5 \'f3\'f1\'eb\'ee\'e2\'e8\'ff.\par
+\b wait_text\b0  - \'ee\'e6\'e8\'e4\'e0\'ed\'e8\'e5 \'ef\'ee\'ff\'e2\'eb\'e5\'ed\'e8\'ff \'f2\'e5\'ea\'f1\'f2\'e0 \'ed\'e0 \'f1\'f2\'f0\'e0\'ed\'e8\'f6\'e5.\par
 
 \pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li1080\sa200\sl240\slmult1\'ce\'ef\'e8\'f1\'e0\'ed\'e8\'e5 - \'f2\'e5\'ea\'f1\'f2\'ee\'e2\'ee\'e5 \'ef\'f0\'e5\'e4\'f1\'f2\'e0\'e2\'eb\'e5\'ed\'e8\'e5 \'e4\'e5\'e9\'f1\'f2\'e2\'e8\'ff\par
 {\pntext\f2\'B7\tab}\'cb\'ee\'ea\'e0\'f2\'ee\'f0 - \'e2 \'f4\'ee\'f0\'ec\'e0\'f2\'e5 \f1\lang1033 XPath \f0\lang1049\'e7\'e0\'ef\'f0\'ee\'f1 \'ea \'fd\'eb\'e5\'ec\'e5\'ed\'f2\'f3 \f1\lang1033 html \f0\lang1049\'f1\'f2\'f0\'e0\'ed\'e8\'f6\'fb\par
