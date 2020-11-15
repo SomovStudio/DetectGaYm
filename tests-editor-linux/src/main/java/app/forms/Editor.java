@@ -271,6 +271,47 @@ public class Editor {
      * https://stackoverflow.com/questions/15428414/how-to-run-a-sh-file-from-java
     * */
     public static void executeFile(String filename, JTextArea console, JScrollPane scrollPaneConsole) throws IOException {
+        /*
+        ProcessBuilder pb = new ProcessBuilder("gnome-terminal", "-x");
+        pb.command("cd "+getProgramFolder());
+        pb.command("cd ..");
+        pb.command("ls");
+        pb.command("java -jar detect-gaym.jar "+filename);
+        Process p = pb.start();
+        String line = null;
+        console.setText("");
+        BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
+        while ((line = reader.readLine()) != null)
+        {
+            console.append(line + System.getProperty("line.separator"));
+            console.setCaretPosition(console.getText().length() - 1);
+            console.update(console.getGraphics());
+            console.validate();
+            scrollPaneConsole.update(scrollPaneConsole.getGraphics());
+            scrollPaneConsole.validate();
+            System.out.println(line);
+        }
+         */
+
+        /*
+        ProcessBuilder pb = new ProcessBuilder();
+        pb.command("bash", "-c", "cd ..");
+        pb.command("bash", "-c", "java -jar detect-gaym.jar "+filename);
+        Process p = pb.start();
+        String line = null;
+        console.setText("");
+        BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
+        while ((line = reader.readLine()) != null)
+        {
+            console.append(line + System.getProperty("line.separator"));
+            console.setCaretPosition(console.getText().length() - 1);
+            console.update(console.getGraphics());
+            console.validate();
+            scrollPaneConsole.update(scrollPaneConsole.getGraphics());
+            scrollPaneConsole.validate();
+            System.out.println(line);
+        }
+        */
 
         String context = "#!/bin/bash";
         context += System.getProperty("line.separator") + "cd ..";

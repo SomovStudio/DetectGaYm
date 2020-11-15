@@ -586,7 +586,7 @@ public class FormMain {
             public void actionPerformed(ActionEvent actionEvent) {
                 try {
                     String filename = labelPathFile.getText();
-                    if(filename.equals("...")) showMessage("Невозможно запустить тест.\nФайл теста либо не открыт, либо еще не сохранён.");
+                    if(filename.equals("... .")) showMessage("Невозможно запустить тест.\nФайл теста либо не открыт, либо еще не сохранён.");
                     else Editor.executeFile(filename, textAreaConsole, scrollPaneConsole);
                 } catch (IOException e) {
                     showMessage(e.getMessage());
