@@ -36,6 +36,13 @@ public class Editor {
         JOptionPane.showMessageDialog(null, message);
     }
 
+    /* Путь к папке программы */
+    public static String getProgramFolder(){
+        String path = FormMain.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+        String folder = new File(path).getParent();
+        return folder;
+    }
+
     /* Диалог открытия файла */
     public static String dialogOpenFile(java.awt.Component parent) {
         JFileChooser fileChooser = new JFileChooser();
