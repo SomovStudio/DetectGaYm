@@ -46,7 +46,8 @@ public class Editor {
     /* Диалог открытия файла */
     public static String dialogOpenFile(java.awt.Component parent) {
         JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setCurrentDirectory(new File(System.getProperty("user.dir"))); //user.home
+        //fileChooser.setCurrentDirectory(new File(System.getProperty("user.dir"))); //user.home
+        fileChooser.setCurrentDirectory(new File(getProgramFolder()));
         fileChooser.setFileFilter(new FileFilter() {
             @Override
             public boolean accept(File file) {
@@ -73,7 +74,8 @@ public class Editor {
     /* Диалог сохранения файлов */
     public static String dialogSaveFile(java.awt.Component parent) {
         JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setCurrentDirectory(new File(System.getProperty("user.dir"))); //user.home
+        //fileChooser.setCurrentDirectory(new File(System.getProperty("user.dir"))); //user.home
+        fileChooser.setCurrentDirectory(new File(getProgramFolder()));
         fileChooser.setFileFilter(new FileFilter() {
             @Override
             public boolean accept(File file) {
@@ -275,12 +277,12 @@ public class Editor {
         context += System.getProperty("line.separator") + "cd bin";
         context += System.getProperty("line.separator") + "java -jar detect-gaym.jar "+filename;
 
-        FileWriter writer = new FileWriter(System.getProperty("user.dir")+"/run-test.sh");
+        FileWriter writer = new FileWriter(getProgramFolder()+"/run-test.sh");
         writer.write(context);
         writer.flush();
         writer.close();
 
-        ProcessBuilder pb = new ProcessBuilder(System.getProperty("user.dir")+"/run-test.sh");
+        ProcessBuilder pb = new ProcessBuilder(getProgramFolder()+"/run-test.sh");
         Process p = pb.start();
         BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
         String line = null;
