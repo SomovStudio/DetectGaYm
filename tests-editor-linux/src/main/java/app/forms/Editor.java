@@ -7,10 +7,7 @@ import org.json.simple.parser.ParseException;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
-import javax.swing.table.DefaultTableModel;
-import java.awt.*;
 import java.io.*;
-import java.nio.charset.CharsetDecoder;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -267,10 +264,45 @@ public class Editor {
         showMessage("Файл сохранен!");
     }
 
-    /* Выполнение файла автотеста
-     * https://stackoverflow.com/questions/15428414/how-to-run-a-sh-file-from-java
-    * */
+    /* Консоле Linux */
+    public static Process executeConsoleLinux(String filename) throws IOException {
+        ProcessBuilder pb = new ProcessBuilder("gnome-terminal", "-e --working-directory=" + getProgramFolder());
+        pb.command("cd ..");
+        pb.command("ls");
+        pb.command("java -jar detect-gaym.jar "+filename);
+        Process p = pb.start();
+        return p;
+
+    }
+
+    /* Консоль Windows */
+    public static Process executeConsoleWindows(String filename) throws IOException {
+        ProcessBuilder pb = new ProcessBuilder("cmd.exe", "/C", "start", "dir", "cd..", "java -jar detect-gaym.jar "+filename);
+        Process p = pb.start();
+        return p;
+    }
+
+    /* Выполнение файла автотеста */
     public static void executeFile(String filename, JTextArea console, JScrollPane scrollPaneConsole) throws IOException {
+        Process p = null;
+        String os = System.getProperty("os.name").toLowerCase();
+        if(os.indexOf("win") >= 0) executeConsoleWindows(filename);
+        if(os.indexOf("linux") >= 0) p = executeConsoleLinux(filename);
+
+        String line = null;
+        console.setText("");
+        BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
+        while ((line = reader.readLine()) != null)
+        {
+            console.append(line + System.getProperty("line.separator"));
+            console.setCaretPosition(console.getText().length() - 1);
+            console.update(console.getGraphics());
+            console.validate();
+            scrollPaneConsole.update(scrollPaneConsole.getGraphics());
+            scrollPaneConsole.validate();
+            System.out.println(line);
+        }
+
         /*
         ProcessBuilder pb = new ProcessBuilder("gnome-terminal", "-x");
         pb.command("cd "+getProgramFolder());
@@ -313,6 +345,7 @@ public class Editor {
         }
         */
 
+        /*
         String context = "#!/bin/bash";
         context += System.getProperty("line.separator") + "cd ..";
         context += System.getProperty("line.separator") + "cd bin";
@@ -338,5 +371,6 @@ public class Editor {
             scrollPaneConsole.validate();
             System.out.println(line);
         }
+         */
     }
 }
