@@ -266,10 +266,22 @@ public class Editor {
 
     /* Консоле Linux */
     public static Process executeConsoleLinux(String filename) throws IOException {
-        ProcessBuilder pb = new ProcessBuilder("gnome-terminal", "-e --working-directory=" + getProgramFolder());
-        pb.command("cd ..");
-        pb.command("ls");
-        pb.command("java -jar detect-gaym.jar "+filename);
+        File file = new File(getProgramFolder()+"/run-test.sh");
+        file.createNewFile();
+        file.setWritable(true);
+        file.setReadable(true);
+        file.setExecutable(true);
+
+        String context = "#!/bin/bash";
+        context += System.getProperty("line.separator") + "cd ..";
+        context += System.getProperty("line.separator") + "java -jar detect-gaym.jar "+filename;
+
+        FileWriter writer = new FileWriter(getProgramFolder()+"/run-test.sh");
+        writer.write(context);
+        writer.flush();
+        writer.close();
+
+        ProcessBuilder pb = new ProcessBuilder(getProgramFolder()+"/run-test.sh");
         Process p = pb.start();
         return p;
 

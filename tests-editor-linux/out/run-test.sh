@@ -1,5 +1,3 @@
 #!/bin/bash
-ls
 cd ..
-cd bin
-java -jar detect-gaym.jar /home/user/detect-gaym/tests/test1.json
+java -jar detect-gaym.jar /home/catfish/GIT/test.mgts.2/detect-gaym/tests/test-help-gaym.json
