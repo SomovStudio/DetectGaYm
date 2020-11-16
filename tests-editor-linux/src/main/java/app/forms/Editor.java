@@ -40,6 +40,12 @@ public class Editor {
         return folder;
     }
 
+    /* Путь к папке для выбранного файла */
+    public static String getFileFolder(String filename) {
+        String folder = new File(filename).getParent();
+        return folder;
+    }
+
     /* Диалог открытия файла */
     public static String dialogOpenFile(java.awt.Component parent) {
         JFileChooser fileChooser = new JFileChooser();

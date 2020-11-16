@@ -634,8 +634,26 @@ public class FormMain {
         MenuCreateCommand.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 JFrame frameCommand = new JFrame("FormCommand");
-                frameCommand.setContentPane(new FormCommand().PanelMain);
-                frameCommand.setTitle("Команда для запуска");
+                FormCommand form = new FormCommand();
+                String os = System.getProperty("os.name").toLowerCase();
+                if(os.indexOf("linux") >= 0) {
+                    form.textAreaCommandFile.setText(
+                            "cd " + getProgramFolder() + System.getProperty("line.separator") +
+                            "cd .." + System.getProperty("line.separator") +
+                            "java -jar detect-gaym.jar " + labelPathFile.getText()
+                    );
+                    form.textAreaCommandGroup.setText(
+                            "cd " + getProgramFolder() + System.getProperty("line.separator") +
+                            "cd .." + System.getProperty("line.separator") +
+                            "java -jar detect-gaym.jar " + getFileFolder(labelPathFile.getText()) + "/"
+                    );
+                }
+                if(os.indexOf("win") >= 0) {
+                    form.textAreaCommandFile.setText("");
+                    form.textAreaCommandGroup.setText("");
+                }
+                frameCommand.setContentPane(form.PanelMain);
+                frameCommand.setTitle("Команды для запуска автотестов");
                 frameCommand.pack();
                 frameCommand.setVisible(true);
             }
