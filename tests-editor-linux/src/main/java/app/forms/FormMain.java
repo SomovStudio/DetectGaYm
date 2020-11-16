@@ -70,7 +70,7 @@ public class FormMain {
         JFrame frame = new JFrame("MainForm");
         frame.setContentPane(new FormMain().PanelMain);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setTitle("Editor tests for DetectGaYm");
+        frame.setTitle("2020 © Somov Studio - Editor tests for DetectGaYm");
         frame.pack();
         frame.setVisible(true);
      }
