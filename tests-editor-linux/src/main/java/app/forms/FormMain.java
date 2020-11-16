@@ -631,6 +631,15 @@ public class FormMain {
                 }
             }
         });
+        MenuCreateCommand.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                JFrame frameCommand = new JFrame("FormCommand");
+                frameCommand.setContentPane(new FormCommand().PanelMain);
+                frameCommand.setTitle("Команда для запуска");
+                frameCommand.pack();
+                frameCommand.setVisible(true);
+            }
+        });
     }
 
 }
