@@ -268,20 +268,18 @@ public class Editor {
     public static Process executeConsoleLinux(String filename) throws IOException {
         File file = new File(getProgramFolder()+"/run-test.sh");
         file.createNewFile();
-        file.setWritable(true);
-        file.setReadable(true);
-        file.setExecutable(true);
 
         String context = "#!/bin/bash";
+        context += System.getProperty("line.separator") + "cd " + getProgramFolder();
         context += System.getProperty("line.separator") + "cd ..";
         context += System.getProperty("line.separator") + "java -jar detect-gaym.jar "+filename;
 
-        FileWriter writer = new FileWriter(getProgramFolder()+"/run-test.sh");
+        FileWriter writer = new FileWriter(file);
         writer.write(context);
         writer.flush();
         writer.close();
 
-        ProcessBuilder pb = new ProcessBuilder(getProgramFolder()+"/run-test.sh");
+        ProcessBuilder pb = new ProcessBuilder(file.getAbsolutePath());
         Process p = pb.start();
         return p;
 
