@@ -304,18 +304,58 @@ public class Editor {
         if(os.indexOf("win") >= 0) p = executeConsoleWindows(filename);
         if(os.indexOf("linux") >= 0) p = executeConsoleLinux(filename);
 
+        String messages = "";
+        int countMessages = 0;
         String line = null;
-        console.setText("");
         BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
         while ((line = reader.readLine()) != null)
         {
+            messages += line + System.getProperty("line.separator");
             console.append(line + System.getProperty("line.separator"));
             console.setCaretPosition(console.getText().length() - 1);
             console.update(console.getGraphics());
             console.validate();
+            if(countMessages > 10) {
+                console.setText("");
+                countMessages = 0;
+            }else{
+                countMessages++;
+            }
             scrollPaneConsole.update(scrollPaneConsole.getGraphics());
             scrollPaneConsole.validate();
             System.out.println(line);
         }
+        console.setText(messages);
+    }
+
+    /* Выполнить группу автотестов */
+    public static void executeGroup(String folder, JTextArea console, JScrollPane scrollPaneConsole) throws IOException {
+        Process p = null;
+        String os = System.getProperty("os.name").toLowerCase();
+        if(os.indexOf("win") >= 0) p = executeConsoleWindows(folder);
+        if(os.indexOf("linux") >= 0) p = executeConsoleLinux(folder);
+
+        String messages = "";
+        int countMessages = 0;
+        String line = null;
+        BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
+        while ((line = reader.readLine()) != null)
+        {
+            messages += line + System.getProperty("line.separator");
+            console.append(line + System.getProperty("line.separator"));
+            console.setCaretPosition(console.getText().length() - 1);
+            console.update(console.getGraphics());
+            console.validate();
+            if(countMessages > 10) {
+                console.setText("");
+                countMessages = 0;
+            }else{
+                countMessages++;
+            }
+            scrollPaneConsole.update(scrollPaneConsole.getGraphics());
+            scrollPaneConsole.validate();
+            System.out.println(line);
+        }
+        console.setText(messages);
     }
 }

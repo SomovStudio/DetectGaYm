@@ -631,6 +631,19 @@ public class FormMain {
                 }
             }
         });
+        MenuExecuteGroupTest.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                try {
+                    String filename = labelPathFile.getText();
+                    String folder = getFileFolder(filename);
+                    if(filename.equals("...")) showMessage("Невозможно запустить группу тестов.\nФайл теста либо не открыт, либо еще не сохранён.\nОткройте один из файлов группы тестов.");
+                    else Editor.executeGroup(folder, textAreaConsole, scrollPaneConsole);
+                } catch (IOException e) {
+                    showMessage(e.getMessage());
+                    e.printStackTrace();
+                }
+            }
+        });
         MenuCreateCommand.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 JFrame frameCommand = new JFrame("FormCommand");
@@ -658,6 +671,7 @@ public class FormMain {
                 frameCommand.setVisible(true);
             }
         });
+
     }
 
 }
