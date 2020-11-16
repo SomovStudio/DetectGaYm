@@ -286,7 +286,7 @@ public class Editor {
     public static void executeFile(String filename, JTextArea console, JScrollPane scrollPaneConsole) throws IOException {
         Process p = null;
         String os = System.getProperty("os.name").toLowerCase();
-        if(os.indexOf("win") >= 0) executeConsoleWindows(filename);
+        if(os.indexOf("win") >= 0) p = executeConsoleWindows(filename);
         if(os.indexOf("linux") >= 0) p = executeConsoleLinux(filename);
 
         String line = null;
