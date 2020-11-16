@@ -683,7 +683,6 @@ public class FormMain {
                 try {
                     validatorJson(jsonFile);
                 } catch (FileNotFoundException e) {
-                    showMessage("ОШИБКА: "+e.toString());
                     e.printStackTrace();
                 }
             }

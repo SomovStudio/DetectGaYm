@@ -365,7 +365,6 @@ public class Editor {
         try {
             Object obj = new JSONParser().parse(reader);
         } catch (IOException e) {
-            showMessage("ОШИБКА: "+e.toString());
             e.printStackTrace();
             return;
         } catch (ParseException e) {
@@ -376,10 +375,9 @@ public class Editor {
         try {
             reader.close();
         } catch (IOException e) {
-            showMessage("ОШИБКА: "+e.toString());
             e.printStackTrace();
             return;
         }
-        showMessage("Проверка файла: "+filename+" - успешно!");
+        showMessage("Файл: " + filename+ "\nПроверка структуры json файла "+" - успешно!");
     }
 }
