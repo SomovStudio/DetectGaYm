@@ -87,24 +87,53 @@ public class FormMain {
         tableSteps.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         tableSteps.setModel(new DefaultTableModel(
                 stepsObj,
-                new String[]{"Описание", "Тип действия", "Локатор (xpath) / Протокол", "Значение", "Время ожидания"}
+                new String[]{"Описание", "Тип действия", "Локатор / Протокол / Условие", "Значение", "Время ожидания"}
         ));
-        JComboBox comboboxType = new JComboBox(new String[] { "open_page", "open_default_page", "refresh_page",
-                "input_value", "click_element", "find_element", "wait_text", "wait_element",
-                "wait_element_not_visible", "sleep", "get_har", "get_har_ga", "get_har_ym", "clear_har",
-                "test_defaults_ga", "test_optionally_ga", "test_defaults_ym", "test_optionally_ym"});
-        comboboxType.setEditable(false);
+        JComboBox comboboxType = new JComboBox(new String[] {
+                "open_page",
+                "open_default_page",
+                "refresh_page",
+                "input_value",
+                "click_element",
+                "find_element",
+                "if_get_text",
+                "if_get_attribute_",
+                "else_if_get_text",
+                "else_if_get_attribute_",
+                "else",
+                "end_if",
+                "wait_text",
+                "wait_element",
+                "wait_element_not_visible",
+                "sleep",
+                "get_har",
+                "get_har_ga",
+                "get_har_ym",
+                "clear_har",
+                "test_defaults_ga",
+                "test_optionally_ga",
+                "test_defaults_ym",
+                "test_optionally_ym"});
+        comboboxType.setEditable(true);
         DefaultCellEditor editorType = new DefaultCellEditor(comboboxType);
         tableSteps.getColumnModel().getColumn(1).setCellEditor(editorType);
 
         JComboBox comboboxLocator = new JComboBox(new String[] {
-                "google-analytics.com/collect", "mc.yandex.ru/watch"});
+                "google-analytics.com/collect",
+                "mc.yandex.ru/watch",
+                "==", "!=", "<", "<=", ">", ">="
+                });
         comboboxLocator.setEditable(true);
         DefaultCellEditor editorLocator = new DefaultCellEditor(comboboxLocator);
         tableSteps.getColumnModel().getColumn(2).setCellEditor(editorLocator);
 
-        JComboBox comboboxValue = new JComboBox(new String[] { "get_text", "get_attribute_",
-                "get_attribute_id", "get_attribute_name", "get_attribute_class", "get_attribute_value",
+        JComboBox comboboxValue = new JComboBox(new String[] {
+                "get_text",
+                "get_attribute_",
+                "get_attribute_id",
+                "get_attribute_name",
+                "get_attribute_class",
+                "get_attribute_value",
                 "get_attribute_href"});
         comboboxValue.setEditable(true);
         DefaultCellEditor editorValue = new DefaultCellEditor(comboboxValue);

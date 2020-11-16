@@ -237,7 +237,7 @@ public class Editor {
             for(int m = 0; m < countColumnsInTableSteps; m++){
                 if(tableSteps.getModel().getColumnName(m).equals("Описание")) iDescription = m;
                 if(tableSteps.getModel().getColumnName(m).equals("Тип действия")) iType = m;
-                if(tableSteps.getModel().getColumnName(m).equals("Локатор (xpath) / Протокол")) iLocator = m;
+                if(tableSteps.getModel().getColumnName(m).equals("Локатор / Протокол / Условие")) iLocator = m;
                 if(tableSteps.getModel().getColumnName(m).equals("Значение")) iValue = m;
                 if(tableSteps.getModel().getColumnName(m).equals("Время ожидания")) iTimeout = m;
             }
