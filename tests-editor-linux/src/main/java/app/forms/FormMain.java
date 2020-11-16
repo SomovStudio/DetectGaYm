@@ -6,6 +6,7 @@ import org.json.simple.parser.ParseException;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.*;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import static app.forms.Editor.*;
@@ -602,6 +603,8 @@ public class FormMain {
         });
         MenuCreateNewTest.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
+                labelPathFile.setText("...");
+                labelEncoding.setText(DEFAULT);
                 textFieldDescription.setText("");
                 textFieldPort.setText("9091");
                 textFieldOption.setText("");
@@ -672,6 +675,19 @@ public class FormMain {
             }
         });
 
+        MenuValidatorJson.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                String jsonFile;
+                if(labelPathFile.getText() == "...") jsonFile = Editor.dialogOpenFile(PanelMain);
+                else jsonFile = labelPathFile.getText();
+                try {
+                    validatorJson(jsonFile);
+                } catch (FileNotFoundException e) {
+                    showMessage("ОШИБКА: "+e.toString());
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
 }

@@ -358,4 +358,28 @@ public class Editor {
         }
         console.setText(messages);
     }
+
+    /* Валидатор Json */
+    public static void validatorJson(String filename) throws FileNotFoundException {
+        FileReader reader = new FileReader(filename);
+        try {
+            Object obj = new JSONParser().parse(reader);
+        } catch (IOException e) {
+            showMessage("ОШИБКА: "+e.toString());
+            e.printStackTrace();
+            return;
+        } catch (ParseException e) {
+            showMessage("ОШИБКА: Нарущена структура json файла.\n"+e.toString());
+            e.printStackTrace();
+            return;
+        }
+        try {
+            reader.close();
+        } catch (IOException e) {
+            showMessage("ОШИБКА: "+e.toString());
+            e.printStackTrace();
+            return;
+        }
+        showMessage("Проверка файла: "+filename+" - успешно!");
+    }
 }
