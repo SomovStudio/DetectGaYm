@@ -282,7 +282,6 @@ public class Editor {
         ProcessBuilder pb = new ProcessBuilder(file.getAbsolutePath());
         Process p = pb.start();
         return p;
-
     }
 
     /* Консоль Windows */
@@ -312,75 +311,5 @@ public class Editor {
             scrollPaneConsole.validate();
             System.out.println(line);
         }
-
-        /*
-        ProcessBuilder pb = new ProcessBuilder("gnome-terminal", "-x");
-        pb.command("cd "+getProgramFolder());
-        pb.command("cd ..");
-        pb.command("ls");
-        pb.command("java -jar detect-gaym.jar "+filename);
-        Process p = pb.start();
-        String line = null;
-        console.setText("");
-        BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
-        while ((line = reader.readLine()) != null)
-        {
-            console.append(line + System.getProperty("line.separator"));
-            console.setCaretPosition(console.getText().length() - 1);
-            console.update(console.getGraphics());
-            console.validate();
-            scrollPaneConsole.update(scrollPaneConsole.getGraphics());
-            scrollPaneConsole.validate();
-            System.out.println(line);
-        }
-         */
-
-        /*
-        ProcessBuilder pb = new ProcessBuilder();
-        pb.command("bash", "-c", "cd ..");
-        pb.command("bash", "-c", "java -jar detect-gaym.jar "+filename);
-        Process p = pb.start();
-        String line = null;
-        console.setText("");
-        BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
-        while ((line = reader.readLine()) != null)
-        {
-            console.append(line + System.getProperty("line.separator"));
-            console.setCaretPosition(console.getText().length() - 1);
-            console.update(console.getGraphics());
-            console.validate();
-            scrollPaneConsole.update(scrollPaneConsole.getGraphics());
-            scrollPaneConsole.validate();
-            System.out.println(line);
-        }
-        */
-
-        /*
-        String context = "#!/bin/bash";
-        context += System.getProperty("line.separator") + "cd ..";
-        context += System.getProperty("line.separator") + "cd bin";
-        context += System.getProperty("line.separator") + "java -jar detect-gaym.jar "+filename;
-
-        FileWriter writer = new FileWriter(getProgramFolder()+"/run-test.sh");
-        writer.write(context);
-        writer.flush();
-        writer.close();
-
-        ProcessBuilder pb = new ProcessBuilder(getProgramFolder()+"/run-test.sh");
-        Process p = pb.start();
-        BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
-        String line = null;
-        console.setText("");
-        while ((line = reader.readLine()) != null)
-        {
-            console.append(line + System.getProperty("line.separator"));
-            console.setCaretPosition(console.getText().length() - 1);
-            console.update(console.getGraphics());
-            console.validate();
-            scrollPaneConsole.update(scrollPaneConsole.getGraphics());
-            scrollPaneConsole.validate();
-            System.out.println(line);
-        }
-         */
     }
 }
