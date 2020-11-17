@@ -694,25 +694,7 @@ public class FormMain {
             public void actionPerformed(ActionEvent actionEvent) {
                 JFrame frameUpdateWebdriver = new JFrame("FormInstruction");
                 FormInstruction form = new FormInstruction();
-                form.textAreaInformation.setText("Обновление Chrome Web Driver в системе Linux" +
-                        System.getProperty("line.separator") + "=======================================================" +
-                        System.getProperty("line.separator") + "1. Скачать архив можно командой:" +
-                        System.getProperty("line.separator") + "wget https://chromedriver.storage.googleapis.com/86.0.4240.22/chromedriver_linux64.zip" +
-                        System.getProperty("line.separator") + "или скачать архив на сайте https://chromedriver.chromium.org/" + System.getProperty("line.separator") +
-                        System.getProperty("line.separator") + "2. Выполнить распаковку и установку драйвера с помощью следующих команд:" +
-                        System.getProperty("line.separator") + "unzip chromedriver_linux64.zip" +
-                        System.getProperty("line.separator") + "sudo mv chromedriver /usr/local/bin/chromedriver" +
-                        System.getProperty("line.separator") + "sudo chown root:root /usr/local/bin/chromedriver" +
-                        System.getProperty("line.separator") + "sudo chmod +x /usr/local/bin/chromedriver" + System.getProperty("line.separator") +
-                        System.getProperty("line.separator") + "3. Проверить версию устанлвденного дравера командой:" +
-                        System.getProperty("line.separator") + "chromedriver --version" + System.getProperty("line.separator") +
-                        System.getProperty("line.separator") + "4. Обновить файл chromedriver в папке /detect-gaym/driver/linux/" +
-                        System.getProperty("line.separator") + "=======================================================" + System.getProperty("line.separator") +
-                        System.getProperty("line.separator") + "Обновление Chrome Web Driver в системе Windows" +
-                        System.getProperty("line.separator") + "=======================================================" +
-                        System.getProperty("line.separator") + "1. Скачать архив на сайте https://chromedriver.chromium.org/" + System.getProperty("line.separator") +
-                        "2. Распаковать архив и обновить файл chromedriver.exe в папке \\detect-gaym\\driver\\windows\\" +
-                        System.getProperty("line.separator") + "=======================================================");
+                form.instructionUpdate();
                 frameUpdateWebdriver.setContentPane(form.PanelMain);
                 frameUpdateWebdriver.setTitle("Инструкция как обновить Web Driver");
                 frameUpdateWebdriver.pack();
@@ -721,7 +703,13 @@ public class FormMain {
         });
         MenuActionsInSteps.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-
+                JFrame frameUpdateWebdriver = new JFrame("FormInstruction");
+                FormInstruction form = new FormInstruction();
+                form.instructionActions();
+                frameUpdateWebdriver.setContentPane(form.PanelMain);
+                frameUpdateWebdriver.setTitle("Описание действий применяемых в шагах");
+                frameUpdateWebdriver.pack();
+                frameUpdateWebdriver.setVisible(true);
             }
         });
     }
