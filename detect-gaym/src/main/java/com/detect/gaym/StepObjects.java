@@ -1,3 +1,6 @@
+package com.detect.gaym;
+
+import com.detect.gaym.Helper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 

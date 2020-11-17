@@ -278,6 +278,7 @@ public class Editor {
         String context = "#!/bin/bash";
         context += System.getProperty("line.separator") + "cd " + getProgramFolder();
         context += System.getProperty("line.separator") + "cd ..";
+        context += System.getProperty("line.separator") + "cd bin";
         context += System.getProperty("line.separator") + "java -jar detect-gaym.jar "+filename;
 
         FileWriter writer = new FileWriter(file);

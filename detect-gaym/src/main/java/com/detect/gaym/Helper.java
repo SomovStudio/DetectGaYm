@@ -1,3 +1,5 @@
+package com.detect.gaym;
+
 import org.apache.commons.io.FileUtils;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -15,14 +17,11 @@ import net.lightbody.bmp.client.ClientUtil;
 import net.lightbody.bmp.core.har.Har;
 
 import javax.imageio.ImageIO;
-import java.awt.*;
-import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 

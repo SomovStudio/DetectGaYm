@@ -1,14 +1,12 @@
+package com.detect.gaym;
+
+import com.detect.gaym.Helper;
+import com.detect.gaym.StepObjects;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.ParseException;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 import java.io.File;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;

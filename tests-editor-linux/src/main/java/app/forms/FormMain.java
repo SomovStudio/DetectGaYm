@@ -190,7 +190,7 @@ public class FormMain {
                 context += System.getProperty("line.separator") + "Сайт: https://somovstudio.github.io";
                 context += System.getProperty("line.separator") + "Почта: somov.studio@gmail.com";
                 context += System.getProperty("line.separator") + "Дата последнего обновления: 22.11.2020";
-                context += System.getProperty("line.separator") + "Версия: 2.0.1";
+                context += System.getProperty("line.separator") + "Версия: 1.0.0";
                 context += System.getProperty("line.separator") + "Лицензия: GNU";
                 context += System.getProperty("line.separator") + "----------------------------------------------------------------------";
                 context += System.getProperty("line.separator") + "2020 © Somov Studio";
@@ -659,11 +659,13 @@ public class FormMain {
                     form.textAreaCommandFile.setText(
                             "cd " + getProgramFolder() + System.getProperty("line.separator") +
                             "cd .." + System.getProperty("line.separator") +
+                            "cd bin" + System.getProperty("line.separator") +
                             "java -jar detect-gaym.jar " + labelPathFile.getText()
                     );
                     form.textAreaCommandGroup.setText(
                             "cd " + getProgramFolder() + System.getProperty("line.separator") +
                             "cd .." + System.getProperty("line.separator") +
+                            "cd bin" + System.getProperty("line.separator") +
                             "java -jar detect-gaym.jar " + getFileFolder(labelPathFile.getText()) + "/"
                     );
                 }
