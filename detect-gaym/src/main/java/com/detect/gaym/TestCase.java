@@ -23,6 +23,15 @@ public class TestCase {
     public static JSONArray data;
     public static JSONArray steps;
 
+    public static final String CONDITION_IF = "condition_if";
+    public static final String CONDITION_ELSE_IF = "condition_else_if";
+    public static final String CONDITION_ELSE = "condition_else";
+    public static final String CONDITION_END = "condition_end";
+    public static String conditionStatus;
+    public static boolean conditionIFResult;
+    public static boolean conditionELSEResult;
+
+
     private static void beforeTest() {
         Helper.initProxyForChromeDriver(port, arguments, nameHar);
     }
@@ -59,11 +68,92 @@ public class TestCase {
                 String locator = stepObj.get("locator").toString();
                 int timeout = Integer.parseInt(stepObj.get("timeout").toString());
 
+                if (type.equals(StepObjects.IF_GET_TEXT) && conditionIFResult == false) {
+                    conditionStatus = CONDITION_IF;
+                    conditionIFResult = StepObjects.ifGetText(locator, value, desc, timeout);
+                    continue;
+                }else if (type.lastIndexOf(StepObjects.IF_GET_ATTRIBUTE) > -1 && conditionIFResult == false) {
+                    conditionStatus = CONDITION_IF;
+                    conditionIFResult = StepObjects.ifAttribute(type, locator, value, desc, timeout);
+                    continue;
+                }else if (type.equals(StepObjects.ELSE_IF_GET_TEXT) && conditionIFResult == false && conditionELSEResult == false){
+                    conditionStatus = CONDITION_ELSE_IF;
+                    conditionELSEResult = StepObjects.ifGetText(locator, value, desc, timeout);
+                    continue;
+                }else if (type.lastIndexOf(StepObjects.ELSE_IF_GET_ATTRIBUTE) > -1 && conditionIFResult == false && conditionELSEResult == false){
+                    conditionStatus = CONDITION_ELSE_IF;
+                    conditionELSEResult = StepObjects.ifGetText(locator, value, desc, timeout);
+                    continue;
+                }else if (type.equals(StepObjects.ELSE) && conditionIFResult == false && conditionELSEResult == false){
+                    conditionStatus = CONDITION_ELSE;
+                    conditionELSEResult = true;
+                    continue;
+                }else if (type.equals(StepObjects.END_IF)) {
+                    conditionStatus = CONDITION_END;
+                    conditionIFResult = false;
+                    conditionELSEResult = false;
+                }
+
+                System.out.println("CONDITION STATUS: " + conditionStatus + " | RESULT: " + conditionIFResult + " ELSE: " + conditionELSEResult);
+                if(conditionStatus.equals(CONDITION_IF) && conditionIFResult == false) continue;
+                if(conditionStatus.equals(CONDITION_ELSE_IF) && conditionELSEResult == false) continue;
+                if(conditionStatus.equals(CONDITION_ELSE) && conditionELSEResult == false) continue;
+
+                /*
+                if (type.equals(StepObjects.IF_GET_TEXT)) {
+                    conditionStatus = CONDITION_IF;
+                    conditionIFResult = StepObjects.ifGetText(locator, value, desc, timeout);
+                    continue;
+                }else if (type.lastIndexOf(StepObjects.IF_GET_ATTRIBUTE) > -1) {
+                    conditionStatus = CONDITION_IF;
+                    conditionIFResult = StepObjects.ifAttribute(type, locator, value, desc, timeout);
+                    continue;
+                }else if (type.lastIndexOf(StepObjects.ELSE_IF_GET_ATTRIBUTE) > -1 && conditionStatus.equals(CONDITION_IF) && conditionIFResult == false && conditionELSEResult == false) {
+                    conditionStatus = CONDITION_ELSE_IF;
+                    conditionELSEResult = StepObjects.ifAttribute(type, locator, value, desc, timeout);
+                    continue;
+                }else if (type.lastIndexOf(StepObjects.ELSE_IF_GET_ATTRIBUTE) > -1 && conditionStatus.equals(CONDITION_ELSE_IF) && conditionIFResult == false && conditionELSEResult == false) {
+                    conditionStatus = CONDITION_ELSE_IF;
+                    conditionELSEResult = StepObjects.ifAttribute(type, locator, value, desc, timeout);
+                    continue;
+                }else if (type.lastIndexOf(StepObjects.ELSE_IF_GET_ATTRIBUTE) > -1 && conditionStatus.equals(CONDITION_IF) && conditionIFResult == true){
+                    conditionStatus = CONDITION_ELSE_IF;
+                    conditionELSEResult = false;
+                    continue;
+                }else if (type.lastIndexOf(StepObjects.ELSE_IF_GET_ATTRIBUTE) > -1 && conditionStatus.equals(CONDITION_ELSE_IF) && conditionELSEResult == true){
+                    conditionStatus = CONDITION_ELSE_IF;
+                    conditionELSEResult = false;
+                    continue;
+                }else if (type.equals(StepObjects.ELSE_IF_GET_TEXT) && (conditionStatus.equals(CONDITION_IF) || conditionStatus.equals(CONDITION_ELSE_IF)) && conditionResult == false) {
+                    conditionStatus = CONDITION_ELSE_IF;
+                    conditionResult = StepObjects.ifGetText(locator, value, desc, timeout);
+                    continue;
+                }else if (type.equals(StepObjects.ELSE_IF_GET_TEXT) && conditionStatus.equals(CONDITION_IF) && conditionResult == true){
+                    conditionStatus = CONDITION_ELSE_IF;
+                    conditionResult = false;
+                    continue;
+                }else if (type.equals(StepObjects.ELSE) && (conditionStatus.equals(CONDITION_IF) || conditionStatus.equals(CONDITION_ELSE_IF)) && conditionResult == false) {
+                    conditionStatus = CONDITION_ELSE;
+                    conditionResult = true;
+                    continue;
+                }else if (type.equals(StepObjects.ELSE) && (conditionStatus.equals(CONDITION_IF) || conditionStatus.equals(CONDITION_ELSE_IF)) && conditionResult == true) {
+                    conditionStatus = CONDITION_ELSE;
+                    conditionResult = false;
+                    continue;
+                }else if (type.equals(StepObjects.END_IF)) {
+                    conditionStatus = CONDITION_END;
+                    conditionResult = false;
+                }
+                */
+
+
+
                 if (type.equals(StepObjects.OPEN_PAGE)) StepObjects.openPage(value, desc);
                 if (type.equals(StepObjects.OPEN_DEFAULT_PAGE)) StepObjects.openPage(url, desc);
                 if (type.equals(StepObjects.REFRESH_PAGE)) StepObjects.refreshPage(desc);
                 if (type.equals(StepObjects.INPUT_VALUE)) StepObjects.inputValue(locator, value, desc, timeout);
                 if (type.equals(StepObjects.CLICK_ELEMENT)) StepObjects.clickElement(locator, desc, timeout);
+                if (type.equals(StepObjects.FIND_ELEMENT)) StepObjects.findElement(locator, desc, timeout);
                 if (type.equals(StepObjects.WAIT_TEXT)) StepObjects.waitText(locator, value, desc, timeout);
                 if (type.equals(StepObjects.WAIT_ELEMENT)) StepObjects.waitElement(locator, desc, timeout);
                 if (type.equals(StepObjects.WAIT_ELEMENT_NOT_VISIBLE)) StepObjects.waitElementNotVisible(locator, desc, timeout);
@@ -76,7 +166,6 @@ public class TestCase {
                 if (type.equals(StepObjects.TEST_DEFAULTS_YM)) StepObjects.testYM(ym_code, desc, timeout);
                 if (type.equals(StepObjects.TEST_OPTIONALLY_GA)) StepObjects.testOptionallyGA(value, locator, desc, timeout);
                 if (type.equals(StepObjects.TEST_OPTIONALLY_YM)) StepObjects.testOptionallyYM(value, locator, desc, timeout);
-                if (type.equals(StepObjects.FIND_ELEMENT)) StepObjects.findElement(locator, desc, timeout);
 
                 Thread.sleep(250);
             }
@@ -85,6 +174,9 @@ public class TestCase {
 
     public static void execute(String filename) throws Exception {
         try {
+            conditionStatus = CONDITION_END;
+            conditionIFResult = false;
+            conditionELSEResult = false;
             System.out.println("LOAD: test-case file " + filename);
             JSONObject oj = Helper.readJsonFile(filename);
 
@@ -119,6 +211,9 @@ public class TestCase {
 
     public static void executeAll(String folder) throws Exception {
         try {
+            conditionStatus = CONDITION_END;
+            conditionIFResult = false;
+            conditionELSEResult = false;
             if(Files.exists(Paths.get(folder))){
                 System.out.println("FOLDER: test-cases files " + folder);
             }else{

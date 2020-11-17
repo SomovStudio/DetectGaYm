@@ -13,6 +13,25 @@ public class StepObjects {
     public static final String REFRESH_PAGE = "refresh_page";
     public static final String INPUT_VALUE = "input_value";
     public static final String CLICK_ELEMENT = "click_element";
+
+    public static final String FIND_ELEMENT = "find_element";
+    public static final String GET_TEXT = "get_text";
+    public static final String GET_ATTRIBUTE = "get_attribute_";
+
+
+    public static final String IF_EQUALLY = "==";
+    public static final String IF_NOT_EQUALLY = "!=";
+    public static final String IF_LESS = "<";
+    public static final String IF_LESS_OR_EQUALLY = "<=";
+    public static final String IF_MORE = ">";
+    public static final String IF_MORE_OR_EQUALLY = ">=";
+    public static final String IF_GET_TEXT = "if_get_text";
+    public static final String IF_GET_ATTRIBUTE = "if_get_attribute_";
+    public static final String ELSE_IF_GET_TEXT = "else_if_get_text";
+    public static final String ELSE_IF_GET_ATTRIBUTE = "else_if_get_attribute_";
+    public static final String ELSE = "else";
+    public static final String END_IF = "end_if";
+
     public static final String WAIT_TEXT = "wait_text";
     public static final String WAIT_ELEMENT = "wait_element";
     public static final String WAIT_ELEMENT_NOT_VISIBLE = "wait_element_not_visible";
@@ -26,9 +45,6 @@ public class StepObjects {
     public static final String GET_HAR_YM = "get_har_ym";
     public static final String CLEAR_HAR = "clear_har";
 
-    public static final String FIND_ELEMENT = "find_element";
-    public static final String GET_TEXT = "get_text";
-    public static final String GET_ATTRIBUTE = "get_attribute_";
 
     public static void openPage(String url, String title) {
         Helper.driver.get(url);
@@ -238,7 +254,36 @@ public class StepObjects {
     }
 
     public static String getAttribute(String value) {
-        String attributeName = value.substring(GET_ATTRIBUTE.length());
+        String attributeName = "";
+        if (value.lastIndexOf(GET_ATTRIBUTE) > -1) attributeName = value.substring(GET_ATTRIBUTE.length());
+        if (value.lastIndexOf(IF_GET_ATTRIBUTE) > -1) attributeName = value.substring(IF_GET_ATTRIBUTE.length());
+        if (value.lastIndexOf(ELSE_IF_GET_ATTRIBUTE) > -1) attributeName = value.substring(ELSE_IF_GET_ATTRIBUTE.length());
         return Helper.element.getAttribute(attributeName);
+    }
+
+    public static boolean ifGetText(String locator, String value, String description, int timeout) {
+        String elementText = Helper.element.getText();
+        if (!description.equals("")) System.out.println(description);
+        else System.out.println("STEP: checking the condition between [" + elementText + " " + locator + " " + value + "]");
+        if (locator.equals(IF_EQUALLY) && elementText.equals(value)) return true;
+        if (locator.equals(IF_NOT_EQUALLY) && !elementText.equals(value)) return true;
+        if (locator.equals(IF_LESS) && Float.parseFloat(elementText) < Float.parseFloat(value)) return true;
+        if (locator.equals(IF_LESS_OR_EQUALLY) && Float.parseFloat(elementText) <= Float.parseFloat(value)) return true;
+        if (locator.equals(IF_MORE) && Float.parseFloat(elementText) > Float.parseFloat(value)) return true;
+        if (locator.equals(IF_MORE_OR_EQUALLY) && Float.parseFloat(elementText) >= Float.parseFloat(value)) return true;
+        return false;
+    }
+
+    public static boolean ifAttribute(String type, String locator, String value, String description, int timeout) {
+        String elementAttribute = getAttribute(type);
+        if (!description.equals("")) System.out.println(description);
+        else System.out.println("STEP: checking the condition between [" + elementAttribute + " " + locator + " " + value + "]");
+        if (locator.equals(IF_EQUALLY) && elementAttribute.equals(value)) return true;
+        if (locator.equals(IF_NOT_EQUALLY) && !elementAttribute.equals(value)) return true;
+        if (locator.equals(IF_LESS) && Float.parseFloat(elementAttribute) < Float.parseFloat(value)) return true;
+        if (locator.equals(IF_LESS_OR_EQUALLY) && Float.parseFloat(elementAttribute) <= Float.parseFloat(value)) return true;
+        if (locator.equals(IF_MORE) && Float.parseFloat(elementAttribute) > Float.parseFloat(value)) return true;
+        if (locator.equals(IF_MORE_OR_EQUALLY) && Float.parseFloat(elementAttribute) >= Float.parseFloat(value)) return true;
+        return false;
     }
 }
