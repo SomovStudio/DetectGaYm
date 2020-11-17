@@ -2,11 +2,11 @@ package app.forms;
 
 import javax.swing.*;
 
-public class FormUpdateWebdriver {
+public class FormInstruction {
     public JPanel PanelMain;
     public JTextArea textAreaInformation;
 
-    public FormUpdateWebdriver() {
+    public FormInstruction() {
 
     }
 }

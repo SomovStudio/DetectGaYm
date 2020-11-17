@@ -200,12 +200,6 @@
                       <text value="Валидатор JSON"/>
                     </properties>
                   </component>
-                  <component id="b686b" class="javax.swing.JMenuItem" binding="MenuUpdateWedDriver">
-                    <constraints/>
-                    <properties>
-                      <text value="Обновить Web Driver"/>
-                    </properties>
-                  </component>
                 </children>
               </grid>
               <grid id="e4667" class="javax.swing.JMenu" binding="MenuReference" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
@@ -217,6 +211,18 @@
                 </properties>
                 <border type="none"/>
                 <children>
+                  <component id="b686b" class="javax.swing.JMenuItem" binding="MenuUpdateWedDriver">
+                    <constraints/>
+                    <properties>
+                      <text value="Инструкция как обновить Web Driver"/>
+                    </properties>
+                  </component>
+                  <component id="e0890" class="javax.swing.JMenuItem" binding="MenuActionsInSteps">
+                    <constraints/>
+                    <properties>
+                      <text value="Инструкция по действиям в шагах"/>
+                    </properties>
+                  </component>
                   <component id="d4016" class="javax.swing.JMenuItem" binding="MenuAbout">
                     <constraints/>
                     <properties>

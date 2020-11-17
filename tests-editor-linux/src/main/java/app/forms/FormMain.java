@@ -66,6 +66,7 @@ public class FormMain {
     private JLabel labelEncoding;
     private JTextArea textAreaConsole;
     private JScrollPane scrollPaneConsole;
+    private JMenuItem MenuActionsInSteps;
 
     public static void main(String[] args){
         JFrame frame = new JFrame("MainForm");
@@ -191,6 +192,8 @@ public class FormMain {
                 context += System.getProperty("line.separator") + "Дата последнего обновления: 22.11.2020";
                 context += System.getProperty("line.separator") + "Версия: 2.0.1";
                 context += System.getProperty("line.separator") + "Лицензия: GNU";
+                context += System.getProperty("line.separator") + "----------------------------------------------------------------------";
+                context += System.getProperty("line.separator") + "2020 © Somov Studio";
                 showMessage(context);
             }
         });
@@ -689,8 +692,8 @@ public class FormMain {
         });
         MenuUpdateWedDriver.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-                JFrame frameUpdateWebdriver = new JFrame("FormUpdateWebdriver");
-                FormUpdateWebdriver form = new FormUpdateWebdriver();
+                JFrame frameUpdateWebdriver = new JFrame("FormInstruction");
+                FormInstruction form = new FormInstruction();
                 form.textAreaInformation.setText("Обновление Chrome Web Driver в системе Linux" +
                         System.getProperty("line.separator") + "=======================================================" +
                         System.getProperty("line.separator") + "1. Скачать архив можно командой:" +
@@ -714,6 +717,11 @@ public class FormMain {
                 frameUpdateWebdriver.setTitle("Инструкция как обновить Web Driver");
                 frameUpdateWebdriver.pack();
                 frameUpdateWebdriver.setVisible(true);
+            }
+        });
+        MenuActionsInSteps.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+
             }
         });
     }
