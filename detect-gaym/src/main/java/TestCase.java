@@ -113,7 +113,7 @@ public class TestCase {
             test();
             afterTest();
 
-            System.out.println("PROXY: finished - SUCCESS");
+            System.out.println("TESTING: finished - SUCCESS");
         } catch (Exception e) {
             Helper.showError(e);
         }
@@ -157,7 +157,7 @@ public class TestCase {
                 afterTest();
             }
 
-            System.out.println("PROXY: finished - SUCCESS");
+            System.out.println("TESTING: finished - SUCCESS");
         } catch (Exception e) {
             Helper.showError(e);
         }

@@ -33,9 +33,10 @@ public class Helper {
     public static WebDriver driver;
     public static BrowserMobProxy proxy;
     public static WebElement element;
+    public static String typeOS;
 
     /* Возвращает путь к драйверу */
-    public static String getDriverPath(String typeOS) {
+    public static String getDriverPath() {
         String path = System.getProperty("user.dir");
         path = path.substring(0, path.length() - 4);
         if(typeOS == TYPE_OS_WINDOWS) path = path + "\\driver\\windows\\chromedriver.exe";
@@ -55,8 +56,9 @@ public class Helper {
     public static void initProxyForChromeDriver(int port, ArrayList<String> arguments, String nameHar) {
         String os = System.getProperty("os.name").toLowerCase();
         System.out.println("OPERATION SYSTEM: " + os);
-        if(os.indexOf("win") >= 0) System.setProperty("webdriver.chrome.driver", getDriverPath(TYPE_OS_WINDOWS));
-        if(os.indexOf("linux") >= 0) System.setProperty("webdriver.chrome.driver", getDriverPath(TYPE_OS_LINUX));
+        if(os.indexOf("win") >= 0) typeOS = TYPE_OS_WINDOWS;
+        if(os.indexOf("linux") >= 0) typeOS = TYPE_OS_LINUX;
+        System.setProperty("webdriver.chrome.driver", getDriverPath());
 
         // старт прокси
         proxy = new BrowserMobProxyServer();
@@ -295,10 +297,17 @@ public class Helper {
             String filename = date.toString();
             filename = filename.replaceAll(" ","_");
             filename = filename.replaceAll(":","_");
-            FileUtils.copyFile(captureElementBitmap("//html"), new File(getFolderPath() + "\\errors\\img_"+filename+".png"));
-            System.out.println("PROXY: save image error in file: \\errors\\img_" + filename + ".png");
+
+            if(typeOS == TYPE_OS_WINDOWS) {
+                FileUtils.copyFile(captureElementBitmap("//html"), new File(getFolderPath() + "\\errors\\img_"+filename+".png"));
+                System.out.println("SCREENSHOT: save image error in file: \\errors\\img_" + filename + ".png");
+            }
+            if(typeOS == TYPE_OS_LINUX) {
+                FileUtils.copyFile(captureElementBitmap("//html"), new File(getFolderPath() + "/errors/img_"+filename+".png"));
+                System.out.println("SCREENSHOT: save image error in file: "+getFolderPath()+"/errors/img_" + filename + ".png");
+            }
         }catch (Exception e) {
-            System.out.println("PROXY: error save screenshot - " + e.fillInStackTrace());
+            System.out.println("SCREENSHOT: error save screenshot - " + e.fillInStackTrace());
             System.out.println(" ");
         }
     }
