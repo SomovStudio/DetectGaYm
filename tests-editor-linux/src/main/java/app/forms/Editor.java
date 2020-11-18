@@ -184,7 +184,7 @@ public class Editor {
     public static void saveJsonFile(String filename, String encoding, String[] fields, JList listOptions, JTable tableData, JTable tableSteps) throws IOException, ParseException {
         String json = "{";
         json += System.getProperty("line.separator") + "\"description\":\""+ fields[0] +"\",";
-        json += System.getProperty("line.separator") + "\"port\":\""+ fields[1] +"\",";
+        json += System.getProperty("line.separator") + "\"port\":"+ fields[1] +",";
         json += System.getProperty("line.separator") + "\"arguments\":[";
         int count = listOptions.getModel().getSize();
         for(int i = 0; i < count; i++) {

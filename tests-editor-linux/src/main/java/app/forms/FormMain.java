@@ -200,9 +200,9 @@ public class FormMain {
         MenuOpenTestFile.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = Editor.dialogOpenFile(PanelMain);
+                if(path.equals("...")) return;
                 labelPathFile.setText(path);
                 labelEncoding.setText(DEFAULT);
-                if(labelPathFile.getText().equals("...")) return;
                 try {
                     readJsonFile(path, DEFAULT);
                     loadJsonData();
@@ -218,9 +218,9 @@ public class FormMain {
         MenuOpenAsDefault.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = Editor.dialogOpenFile(PanelMain);
+                if(path.equals("...")) return;
                 labelPathFile.setText(path);
                 labelEncoding.setText(DEFAULT);
-                if(labelPathFile.getText().equals("...")) return;
                 try {
                     readJsonFile(path, DEFAULT);
                     loadJsonData();
@@ -236,9 +236,9 @@ public class FormMain {
         MenuOpenAsUtf8.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = Editor.dialogOpenFile(PanelMain);
+                if(path.equals("...")) return;
                 labelPathFile.setText(path);
                 labelEncoding.setText(UTF_8);
-                if(labelPathFile.getText().equals("...")) return;
                 try {
                     readJsonFile(path, UTF_8);
                     loadJsonData();
@@ -254,9 +254,9 @@ public class FormMain {
         MenuOpenAsUtf8Bom.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = Editor.dialogOpenFile(PanelMain);
+                if(path.equals("...")) return;
                 labelPathFile.setText(path);
                 labelEncoding.setText(UTF_8_BOM);
-                if(labelPathFile.getText().equals("...")) return;
                 try {
                     readJsonFile(path, UTF_8_BOM);
                     loadJsonData();
@@ -272,9 +272,9 @@ public class FormMain {
         MenuOpenAsWindows1251.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = Editor.dialogOpenFile(PanelMain);
+                if(path.equals("...")) return;
                 labelPathFile.setText(path);
                 labelEncoding.setText(WINDOWS_1251);
-                if(labelPathFile.getText().equals("...")) return;
                 try {
                     readJsonFile(path, WINDOWS_1251);
                     loadJsonData();
@@ -493,8 +493,8 @@ public class FormMain {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = labelPathFile.getText();
                 if(path.equals("...")) path = Editor.dialogSaveFile(PanelMain);
+                if(path.equals("...")) return;
                 labelPathFile.setText(path);
-                if(labelPathFile.getText().equals("...")) return;
                 try {
                     String[] fields = new String[] {
                             textFieldDescription.getText(),
@@ -515,9 +515,9 @@ public class FormMain {
         MenuSaveAsDefault.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = Editor.dialogSaveFile(PanelMain);
+                if(path.equals("...")) return;
                 labelPathFile.setText(path);
                 labelEncoding.setText(DEFAULT);
-                if(labelPathFile.getText().equals("...")) return;
                 try {
                     String[] fields = new String[] {
                             textFieldDescription.getText(),
@@ -538,9 +538,9 @@ public class FormMain {
         MenuSaveAsUtf8.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = Editor.dialogSaveFile(PanelMain);
+                if(path.equals("...")) return;
                 labelPathFile.setText(path);
                 labelEncoding.setText(UTF_8);
-                if(labelPathFile.getText().equals("...")) return;
                 try {
                     String[] fields = new String[] {
                             textFieldDescription.getText(),
@@ -561,9 +561,9 @@ public class FormMain {
         MenuSaveAsUtf8Bom.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = Editor.dialogSaveFile(PanelMain);
+                if(path.equals("...")) return;
                 labelPathFile.setText(path);
                 labelEncoding.setText(UTF_8_BOM);
-                if(labelPathFile.getText().equals("...")) return;
                 try {
                     String[] fields = new String[] {
                             textFieldDescription.getText(),
@@ -584,9 +584,9 @@ public class FormMain {
         MenuSaveAsWindows1251.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = Editor.dialogSaveFile(PanelMain);
+                if(path.equals("...")) return;
                 labelPathFile.setText(path);
                 labelEncoding.setText(WINDOWS_1251);
-                if(labelPathFile.getText().equals("...")) return;
                 try {
                     String[] fields = new String[] {
                             textFieldDescription.getText(),
