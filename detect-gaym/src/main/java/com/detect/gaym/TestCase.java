@@ -23,13 +23,9 @@ public class TestCase {
     public static JSONArray data;
     public static JSONArray steps;
 
-    public static final String CONDITION_IF = "condition_if";
-    public static final String CONDITION_ELSE_IF = "condition_else_if";
-    public static final String CONDITION_ELSE = "condition_else";
-    public static final String CONDITION_END = "condition_end";
-    public static String conditionStatus;
-    public static boolean conditionIFResult;
-    public static boolean conditionELSEResult;
+    public static boolean conditionStatus;
+    public static boolean conditionResult;
+    public static boolean conditionCompleted;
 
 
     private static void beforeTest() {
@@ -68,84 +64,37 @@ public class TestCase {
                 String locator = stepObj.get("locator").toString();
                 int timeout = Integer.parseInt(stepObj.get("timeout").toString());
 
-                if (type.equals(StepObjects.IF_GET_TEXT) && conditionIFResult == false) {
-                    conditionStatus = CONDITION_IF;
-                    conditionIFResult = StepObjects.ifGetText(locator, value, desc, timeout);
-                    continue;
-                }else if (type.lastIndexOf(StepObjects.IF_GET_ATTRIBUTE) > -1 && conditionIFResult == false) {
-                    conditionStatus = CONDITION_IF;
-                    conditionIFResult = StepObjects.ifAttribute(type, locator, value, desc, timeout);
-                    continue;
-                }else if (type.equals(StepObjects.ELSE_IF_GET_TEXT) && conditionIFResult == false && conditionELSEResult == false){
-                    conditionStatus = CONDITION_ELSE_IF;
-                    conditionELSEResult = StepObjects.ifGetText(locator, value, desc, timeout);
-                    continue;
-                }else if (type.lastIndexOf(StepObjects.ELSE_IF_GET_ATTRIBUTE) > -1 && conditionIFResult == false && conditionELSEResult == false){
-                    conditionStatus = CONDITION_ELSE_IF;
-                    conditionELSEResult = StepObjects.ifGetText(locator, value, desc, timeout);
-                    continue;
-                }else if (type.equals(StepObjects.ELSE) && conditionIFResult == false && conditionELSEResult == false){
-                    conditionStatus = CONDITION_ELSE;
-                    conditionELSEResult = true;
-                    continue;
-                }else if (type.equals(StepObjects.END_IF)) {
-                    conditionStatus = CONDITION_END;
-                    conditionIFResult = false;
-                    conditionELSEResult = false;
+                if (conditionStatus == true && conditionResult == true && (type.equals(StepObjects.IF_GET_TEXT) || type.equals(StepObjects.ELSE_IF_GET_TEXT) ||
+                        type.lastIndexOf(StepObjects.IF_GET_ATTRIBUTE) > -1 || type.lastIndexOf(StepObjects.ELSE_IF_GET_ATTRIBUTE) > -1 ||
+                        type.equals(StepObjects.ELSE)))
+                {
+                    conditionCompleted = true;
                 }
-
-                System.out.println("CONDITION STATUS: " + conditionStatus + " | RESULT: " + conditionIFResult + " ELSE: " + conditionELSEResult);
-                if(conditionStatus.equals(CONDITION_IF) && conditionIFResult == false) continue;
-                if(conditionStatus.equals(CONDITION_ELSE_IF) && conditionELSEResult == false) continue;
-                if(conditionStatus.equals(CONDITION_ELSE) && conditionELSEResult == false) continue;
-
-                /*
-                if (type.equals(StepObjects.IF_GET_TEXT)) {
-                    conditionStatus = CONDITION_IF;
-                    conditionIFResult = StepObjects.ifGetText(locator, value, desc, timeout);
-                    continue;
-                }else if (type.lastIndexOf(StepObjects.IF_GET_ATTRIBUTE) > -1) {
-                    conditionStatus = CONDITION_IF;
-                    conditionIFResult = StepObjects.ifAttribute(type, locator, value, desc, timeout);
-                    continue;
-                }else if (type.lastIndexOf(StepObjects.ELSE_IF_GET_ATTRIBUTE) > -1 && conditionStatus.equals(CONDITION_IF) && conditionIFResult == false && conditionELSEResult == false) {
-                    conditionStatus = CONDITION_ELSE_IF;
-                    conditionELSEResult = StepObjects.ifAttribute(type, locator, value, desc, timeout);
-                    continue;
-                }else if (type.lastIndexOf(StepObjects.ELSE_IF_GET_ATTRIBUTE) > -1 && conditionStatus.equals(CONDITION_ELSE_IF) && conditionIFResult == false && conditionELSEResult == false) {
-                    conditionStatus = CONDITION_ELSE_IF;
-                    conditionELSEResult = StepObjects.ifAttribute(type, locator, value, desc, timeout);
-                    continue;
-                }else if (type.lastIndexOf(StepObjects.ELSE_IF_GET_ATTRIBUTE) > -1 && conditionStatus.equals(CONDITION_IF) && conditionIFResult == true){
-                    conditionStatus = CONDITION_ELSE_IF;
-                    conditionELSEResult = false;
-                    continue;
-                }else if (type.lastIndexOf(StepObjects.ELSE_IF_GET_ATTRIBUTE) > -1 && conditionStatus.equals(CONDITION_ELSE_IF) && conditionELSEResult == true){
-                    conditionStatus = CONDITION_ELSE_IF;
-                    conditionELSEResult = false;
-                    continue;
-                }else if (type.equals(StepObjects.ELSE_IF_GET_TEXT) && (conditionStatus.equals(CONDITION_IF) || conditionStatus.equals(CONDITION_ELSE_IF)) && conditionResult == false) {
-                    conditionStatus = CONDITION_ELSE_IF;
-                    conditionResult = StepObjects.ifGetText(locator, value, desc, timeout);
-                    continue;
-                }else if (type.equals(StepObjects.ELSE_IF_GET_TEXT) && conditionStatus.equals(CONDITION_IF) && conditionResult == true){
-                    conditionStatus = CONDITION_ELSE_IF;
-                    conditionResult = false;
-                    continue;
-                }else if (type.equals(StepObjects.ELSE) && (conditionStatus.equals(CONDITION_IF) || conditionStatus.equals(CONDITION_ELSE_IF)) && conditionResult == false) {
-                    conditionStatus = CONDITION_ELSE;
-                    conditionResult = true;
-                    continue;
-                }else if (type.equals(StepObjects.ELSE) && (conditionStatus.equals(CONDITION_IF) || conditionStatus.equals(CONDITION_ELSE_IF)) && conditionResult == true) {
-                    conditionStatus = CONDITION_ELSE;
-                    conditionResult = false;
-                    continue;
-                }else if (type.equals(StepObjects.END_IF)) {
-                    conditionStatus = CONDITION_END;
-                    conditionResult = false;
+                if(conditionCompleted == false) {
+                    if (type.equals(StepObjects.IF_GET_TEXT) || type.equals(StepObjects.ELSE_IF_GET_TEXT))
+                    {
+                        conditionStatus = true;
+                        conditionResult = StepObjects.ifGetText(locator, value, desc, timeout);
+                    }
+                    else if (type.lastIndexOf(StepObjects.IF_GET_ATTRIBUTE) > -1 || type.lastIndexOf(StepObjects.ELSE_IF_GET_ATTRIBUTE) > -1)
+                    {
+                        conditionStatus = true;
+                        conditionResult = StepObjects.ifAttribute(type, locator, value, desc, timeout);
+                    }
+                    else if (type.equals(StepObjects.ELSE))
+                    {
+                        conditionStatus = true;
+                        conditionResult = true;
+                    }
                 }
-                */
-
+                if (type.equals(StepObjects.END_IF)){
+                    conditionStatus = false;
+                    conditionResult = false;
+                    conditionCompleted = false;
+                }
+                //System.out.println("CONDITION STATUS: " + conditionStatus + " | RESULT: " + conditionResult + " | COMPTATE: " + conditionCompleted);
+                if (conditionStatus == true && conditionResult == false && conditionCompleted == false) continue;
+                if (conditionCompleted == true) continue;
 
 
                 if (type.equals(StepObjects.OPEN_PAGE)) StepObjects.openPage(value, desc);
@@ -174,9 +123,9 @@ public class TestCase {
 
     public static void execute(String filename) throws Exception {
         try {
-            conditionStatus = CONDITION_END;
-            conditionIFResult = false;
-            conditionELSEResult = false;
+            conditionStatus = false;
+            conditionResult = false;
+            conditionCompleted = false;
             System.out.println("LOAD: test-case file " + filename);
             JSONObject oj = Helper.readJsonFile(filename);
 
@@ -211,9 +160,9 @@ public class TestCase {
 
     public static void executeAll(String folder) throws Exception {
         try {
-            conditionStatus = CONDITION_END;
-            conditionIFResult = false;
-            conditionELSEResult = false;
+            conditionStatus = false;
+            conditionResult = false;
+            conditionCompleted = false;
             if(Files.exists(Paths.get(folder))){
                 System.out.println("FOLDER: test-cases files " + folder);
             }else{
