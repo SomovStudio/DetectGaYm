@@ -473,20 +473,25 @@ namespace TestsEditor
             {
                 string path = Directory.GetCurrentDirectory();
                 string bat = "cd " + path;
-                string fileTest = getFolderName() + "\\" + this.fileName;
-                if (File.Exists(fileTest)) {
-                    bat += System.Environment.NewLine + "detect.bat \\" + fileTest;
-                }else{
-                    bat += System.Environment.NewLine + "detect.bat " + this.toolStripStatusLabelFileName.Text;
-                }
+                bat += System.Environment.NewLine + "cd..";
+                bat += System.Environment.NewLine + "cd bin";
+                string fileTest = toolStripStatusLabelFileName.Text;
                 
-                using (StreamWriter writer = new StreamWriter("run.bat"))
-                {
-                    writer.Write(bat);
+                if (File.Exists(toolStripStatusLabelFileName.Text)) {
+                    bat += System.Environment.NewLine + "java -jar detect-gaym.jar " + toolStripStatusLabelFileName.Text;
+                }
+                else{
+                    MessageBox.Show("Невозможно запустить тест! Файл не существует.");
+                    return;
                 }
 
+                string batFile = Directory.GetCurrentDirectory() + "\\run.bat";
+                StreamWriter writer = new StreamWriter(batFile, false, Encoding.ASCII);
+                writer.Write(bat);
+                writer.Close();
+
                 P = new Process();
-                P.StartInfo.FileName = "run.bat";
+                P.StartInfo.FileName = batFile;
                 P.StartInfo.Arguments = "/k";
                 P.StartInfo.RedirectStandardError = true;
                 P.StartInfo.RedirectStandardInput = true;
@@ -514,14 +519,17 @@ namespace TestsEditor
             {
                 string path = Directory.GetCurrentDirectory();
                 string bat = "cd " + path;
-                bat += System.Environment.NewLine + "detect.bat \\"+ folderName;
-                using (StreamWriter writer = new StreamWriter("run.bat"))
-                {
-                    writer.Write(bat);
-                }
+                bat += System.Environment.NewLine + "cd..";
+                bat += System.Environment.NewLine + "cd bin";
+                bat += System.Environment.NewLine + "java -jar detect-gaym.jar " + folderName;
+
+                string batFile = Directory.GetCurrentDirectory() + "\\run.bat";
+                StreamWriter writer = new StreamWriter(batFile, false, Encoding.ASCII);
+                writer.Write(bat);
+                writer.Close();
 
                 P = new Process();
-                P.StartInfo.FileName = "run.bat";
+                P.StartInfo.FileName = batFile;
                 P.StartInfo.Arguments = "/k";
                 P.StartInfo.RedirectStandardError = true;
                 P.StartInfo.RedirectStandardInput = true;
@@ -962,8 +970,9 @@ namespace TestsEditor
             folderBrowserDialog1.SelectedPath = Directory.GetCurrentDirectory();
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
-                string folderName = Path.GetFileName(folderBrowserDialog1.SelectedPath);
-                executePackTest(folderName);
+                //string folderName = Path.GetFileName(folderBrowserDialog1.SelectedPath);
+                //executePackTest(folderName);
+                executePackTest(folderBrowserDialog1.SelectedPath);
             }
         }
 
@@ -972,8 +981,9 @@ namespace TestsEditor
             folderBrowserDialog1.SelectedPath = Directory.GetCurrentDirectory();
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
-                string folderName = Path.GetFileName(folderBrowserDialog1.SelectedPath);
-                executePackTest(folderName);
+                //string folderName = Path.GetFileName(folderBrowserDialog1.SelectedPath);
+                //executePackTest(folderName);
+                executePackTest(folderBrowserDialog1.SelectedPath);
             }
         }
 
