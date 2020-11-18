@@ -299,7 +299,7 @@ public class Editor {
     }
 
     /* Выполнение файла автотеста */
-    public static void executeFile(String filename, JTextArea console, JScrollPane scrollPaneConsole) throws IOException {
+    public static void executeFile(String filename, JPanel panel, JTextArea console) throws IOException {
         Process p = null;
         String os = System.getProperty("os.name").toLowerCase();
         if(os.indexOf("win") >= 0) p = executeConsoleWindows(filename);
@@ -322,15 +322,15 @@ public class Editor {
             }else{
                 countMessages++;
             }
-            scrollPaneConsole.update(scrollPaneConsole.getGraphics());
-            scrollPaneConsole.validate();
+            panel.update(panel.getGraphics());
+            panel.validate();
             System.out.println(line);
         }
         console.setText(messages);
     }
 
     /* Выполнить группу автотестов */
-    public static void executeGroup(String folder, JTextArea console, JScrollPane scrollPaneConsole) throws IOException {
+    public static void executeGroup(String folder, JPanel panel, JTextArea console) throws IOException {
         Process p = null;
         String os = System.getProperty("os.name").toLowerCase();
         if(os.indexOf("win") >= 0) p = executeConsoleWindows(folder);
@@ -353,8 +353,8 @@ public class Editor {
             }else{
                 countMessages++;
             }
-            scrollPaneConsole.update(scrollPaneConsole.getGraphics());
-            scrollPaneConsole.validate();
+            panel.update(panel.getGraphics());
+            panel.validate();
             System.out.println(line);
         }
         console.setText(messages);

@@ -191,7 +191,7 @@ public class FormMain {
                 context += System.getProperty("line.separator") + "Почта: somov.studio@gmail.com";
                 context += System.getProperty("line.separator") + "Дата последнего обновления: 22.11.2020";
                 context += System.getProperty("line.separator") + "Версия: 1.0.0";
-                context += System.getProperty("line.separator") + "Лицензия: GNU";
+                //context += System.getProperty("line.separator") + "Лицензия: GNU";
                 context += System.getProperty("line.separator") + "----------------------------------------------------------------------";
                 context += System.getProperty("line.separator") + "2020 © Somov Studio";
                 showMessage(context);
@@ -630,7 +630,7 @@ public class FormMain {
                 try {
                     String filename = labelPathFile.getText();
                     if(filename.equals("...")) showMessage("Невозможно запустить тест.\nФайл теста либо не открыт, либо еще не сохранён.");
-                    else Editor.executeFile(filename, textAreaConsole, scrollPaneConsole);
+                    else Editor.executeFile(filename, PanelMain, textAreaConsole);
                 } catch (IOException e) {
                     showMessage(e.getMessage());
                     e.printStackTrace();
@@ -643,7 +643,7 @@ public class FormMain {
                     String filename = labelPathFile.getText();
                     String folder = getFileFolder(filename);
                     if(filename.equals("...")) showMessage("Невозможно запустить группу тестов.\nФайл теста либо не открыт, либо еще не сохранён.\nОткройте один из файлов группы тестов.");
-                    else Editor.executeGroup(folder, textAreaConsole, scrollPaneConsole);
+                    else Editor.executeGroup(folder, PanelMain, textAreaConsole);
                 } catch (IOException e) {
                     showMessage(e.getMessage());
                     e.printStackTrace();
