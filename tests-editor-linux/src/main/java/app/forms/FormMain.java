@@ -24,7 +24,7 @@ public class FormMain {
     private JMenuItem MenuExecuteGroupTest;
     private JMenuItem MenuCreateCommand;
     private JMenuItem MenuValidatorJson;
-    private JMenuItem MenuUpdateWedDriver;
+    private JMenuItem MenuInstructionUpdateWedDriver;
     private JMenuItem MenuAbout;
     private JTabbedPane tabbedPane1;
     private JTextField textFieldDescription;
@@ -66,11 +66,12 @@ public class FormMain {
     private JLabel labelEncoding;
     private JTextArea textAreaConsole;
     private JScrollPane scrollPaneConsole;
-    private JMenuItem MenuActionsInSteps;
+    private JMenuItem MenuReferenceActionsInSteps;
     private JButton buttonCreateNewTest;
     private JButton buttonOpenTestFile;
     private JButton buttonSaveTestFile;
     private JButton buttonExecuteTest;
+    private JMenuItem MenuInstructionCreateTest;
 
     public static void main(String[] args){
         JFrame frame = new JFrame("MainForm");
@@ -696,7 +697,7 @@ public class FormMain {
                 }
             }
         });
-        MenuUpdateWedDriver.addActionListener(new ActionListener() {
+        MenuInstructionUpdateWedDriver.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 JFrame frameUpdateWebdriver = new JFrame("FormInstruction");
                 FormInstruction form = new FormInstruction();
@@ -707,13 +708,24 @@ public class FormMain {
                 frameUpdateWebdriver.setVisible(true);
             }
         });
-        MenuActionsInSteps.addActionListener(new ActionListener() {
+        MenuReferenceActionsInSteps.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 JFrame frameUpdateWebdriver = new JFrame("FormInstruction");
                 FormInstruction form = new FormInstruction();
-                form.instructionActions();
+                form.referenceActions();
                 frameUpdateWebdriver.setContentPane(form.PanelMain);
                 frameUpdateWebdriver.setTitle("Описание действий применяемых в шагах");
+                frameUpdateWebdriver.pack();
+                frameUpdateWebdriver.setVisible(true);
+            }
+        });
+        MenuInstructionCreateTest.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                JFrame frameUpdateWebdriver = new JFrame("FormInstruction");
+                FormInstruction form = new FormInstruction();
+                form.inctructionCreateTest();
+                frameUpdateWebdriver.setContentPane(form.PanelMain);
+                frameUpdateWebdriver.setTitle("Инструкция как создать и описать тест");
                 frameUpdateWebdriver.pack();
                 frameUpdateWebdriver.setVisible(true);
             }
@@ -792,6 +804,7 @@ public class FormMain {
                 }
             }
         });
+
     }
 
 }

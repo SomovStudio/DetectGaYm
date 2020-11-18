@@ -211,13 +211,19 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="b686b" class="javax.swing.JMenuItem" binding="MenuUpdateWedDriver">
+                  <component id="f045f" class="javax.swing.JMenuItem" binding="MenuInstructionCreateTest">
+                    <constraints/>
+                    <properties>
+                      <text value="Инструкция: как создать и описать тест"/>
+                    </properties>
+                  </component>
+                  <component id="b686b" class="javax.swing.JMenuItem" binding="MenuInstructionUpdateWedDriver">
                     <constraints/>
                     <properties>
                       <text value="Инструкция: как обновить Web Driver"/>
                     </properties>
                   </component>
-                  <component id="e0890" class="javax.swing.JMenuItem" binding="MenuActionsInSteps">
+                  <component id="e0890" class="javax.swing.JMenuItem" binding="MenuReferenceActionsInSteps">
                     <constraints/>
                     <properties>
                       <text value="Справочник: типы действий"/>

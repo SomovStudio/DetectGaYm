@@ -32,7 +32,7 @@ public class FormInstruction {
                 System.getProperty("line.separator") + "=======================================================");
     }
 
-    public void instructionActions() {
+    public void referenceActions() {
         textAreaInformation.setText("ТИПЫ ДЕЙСТВИЙ:" +
                 System.getProperty("line.separator") + "=======================================================" +
                 System.getProperty("line.separator") + "open_page - открывает указанную страницу сайта в браузере." + System.getProperty("line.separator") +
@@ -92,13 +92,11 @@ public class FormInstruction {
                 System.getProperty("line.separator") + "   - Локатор - не нужно заполнять" +
                 System.getProperty("line.separator") + "   - Значение - не нужно заполнять" +
                 System.getProperty("line.separator") + "   - Время ожидания - не нужно заполнять" + System.getProperty("line.separator") +
-
                 System.getProperty("line.separator") + "end_if - завершение условия." + System.getProperty("line.separator") +
                 System.getProperty("line.separator") + "   - Описание - не нужно заполнять" +
                 System.getProperty("line.separator") + "   - Локатор - не нужно заполнять" +
                 System.getProperty("line.separator") + "   - Значение - не нужно заполнять" +
                 System.getProperty("line.separator") + "   - Время ожидания - не нужно заполнять" + System.getProperty("line.separator") +
-
                 System.getProperty("line.separator") + "wait_text - ожидание появления текста на странице." + System.getProperty("line.separator") +
                 System.getProperty("line.separator") + "   - Описание - текстовое представление действия" +
                 System.getProperty("line.separator") + "   - Локатор - в формате XPath запрос к элементу html страницы" +
@@ -161,5 +159,15 @@ public class FormInstruction {
                 System.getProperty("line.separator") + "   - Время ожидания - не нужно заполнять" + System.getProperty("line.separator") +
                 System.getProperty("line.separator") + "=======================================================");
         textAreaInformation.setCaretPosition(0);
+    }
+
+    public void inctructionCreateTest(){
+        textAreaInformation.setText("Руководство по созданию теста" +
+                System.getProperty("line.separator") + "=======================================================" +
+                System.getProperty("line.separator") + "1. Чтобы создать тест нужно в меню Файл выберите Создать новый тест " + System.getProperty("line.separator") +
+                System.getProperty("line.separator") + "2. На вкладке Общие параметры необходимо задать параметры теста" +
+                System.getProperty("line.separator") + "   - Описание - это текстовое поле для краткого описания теста (наименование)" +
+                System.getProperty("line.separator") + "   - Порт - это текстовое поле в котором указывается порт для работы прокси (по умолчанию 9091)" +
+                System.getProperty("line.separator") + "=======================================================");
     }
 }
