@@ -377,6 +377,7 @@
             this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
             this.stopToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.stopToolStripMenuItem.Text = "Прервать выполнение";
+            this.stopToolStripMenuItem.Visible = false;
             this.stopToolStripMenuItem.Click += new System.EventHandler(this.stopToolStripMenuItem_Click);
             // 
             // toolStripSeparator5
