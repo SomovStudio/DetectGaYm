@@ -67,6 +67,10 @@ public class FormMain {
     private JTextArea textAreaConsole;
     private JScrollPane scrollPaneConsole;
     private JMenuItem MenuActionsInSteps;
+    private JButton buttonCreateNewTest;
+    private JButton buttonOpenTestFile;
+    private JButton buttonSaveTestFile;
+    private JButton buttonExecuteTest;
 
     public static void main(String[] args){
         JFrame frame = new JFrame("MainForm");
@@ -712,6 +716,80 @@ public class FormMain {
                 frameUpdateWebdriver.setTitle("Описание действий применяемых в шагах");
                 frameUpdateWebdriver.pack();
                 frameUpdateWebdriver.setVisible(true);
+            }
+        });
+        buttonCreateNewTest.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                labelPathFile.setText("...");
+                labelEncoding.setText(DEFAULT);
+                textFieldDescription.setText("");
+                textFieldPort.setText("9091");
+                textFieldOption.setText("");
+                listOptions.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+                DefaultListModel listModel = new DefaultListModel();
+                listModel.addElement("--ignore-certificate-errors");
+                listOptions.setModel(listModel);
+                textFieldHar.setText("test.har");
+                spinnerWaitLimit.setValue(0);
+                if(tableData.getColumnModel().getColumnCount() <= 0) initDataTable(null);
+                DefaultTableModel modelTableData = (DefaultTableModel) tableData.getModel();
+                modelTableData.setRowCount(0);
+                if(tableSteps.getColumnModel().getColumnCount() <= 0) initStepsTable(null);
+                DefaultTableModel modelTableSteps = (DefaultTableModel) tableSteps.getModel();
+                modelTableSteps.setRowCount(0);
+            }
+        });
+        buttonOpenTestFile.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                String path = Editor.dialogOpenFile(PanelMain);
+                if(path.equals("...")) return;
+                labelPathFile.setText(path);
+                labelEncoding.setText(DEFAULT);
+                try {
+                    readJsonFile(path, DEFAULT);
+                    loadJsonData();
+                } catch (IOException e) {
+                    showMessage(e.getMessage());
+                    e.printStackTrace();
+                } catch (ParseException e) {
+                    showMessage(e.getMessage());
+                    e.printStackTrace();
+                }
+            }
+        });
+        buttonSaveTestFile.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                String path = labelPathFile.getText();
+                if(path.equals("...")) path = Editor.dialogSaveFile(PanelMain);
+                if(path.equals("...")) return;
+                labelPathFile.setText(path);
+                try {
+                    String[] fields = new String[] {
+                            textFieldDescription.getText(),
+                            textFieldPort.getText(),
+                            textFieldHar.getText(),
+                            spinnerWaitLimit.getValue().toString()
+                    };
+                    saveJsonFile(path, labelEncoding.getText(), fields, listOptions, tableData, tableSteps);
+                } catch (IOException e) {
+                    showMessage(e.getMessage());
+                    e.printStackTrace();
+                } catch (ParseException e) {
+                    showMessage(e.getMessage());
+                    e.printStackTrace();
+                }
+            }
+        });
+        buttonExecuteTest.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                try {
+                    String filename = labelPathFile.getText();
+                    if(filename.equals("...")) showMessage("Невозможно запустить тест.\nФайл теста либо не открыт, либо еще не сохранён.");
+                    else Editor.executeFile(filename, PanelMain, textAreaConsole);
+                } catch (IOException e) {
+                    showMessage(e.getMessage());
+                    e.printStackTrace();
+                }
             }
         });
     }
