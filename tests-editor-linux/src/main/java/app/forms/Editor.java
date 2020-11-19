@@ -15,10 +15,11 @@ public class Editor {
     public static final String TYPE_OS_WINDOWS = "type_os_windows";
     public static final String TYPE_OS_LINUX = "type_os_linux";
 
-    public static final String DEFAULT = "default";
-    public static final String UTF_8 = "utf-8";
-    public static final String UTF_8_BOM = "utf-8-bom";
-    public static final String WINDOWS_1251 = "windows-1251";
+    public static final String DEFAULT = "DEFAULT";
+    public static final String UTF_8 = "UTF-8";
+    public static final String UTF_8_BOM = "UTF-8-BOM";
+    public static final String WINDOWS_1251 = "WINDOWS-1251";
+    public static final String ANSI = "ANSI";
 
     public static String description;
     public static int port;

@@ -668,9 +668,17 @@ public class FormMain {
                             "cd " + folderBin + System.getProperty("line.separator") +
                             "java -jar detect-gaym.jar " + labelPathFile.getText()
                     );
+                    form.textAreaCommandFile2.setText(
+                            "cd " + folderBin + System.getProperty("line.separator") +
+                            "java -jar detect-gaym.jar " + labelEncoding.getText() + " " + labelPathFile.getText()
+                    );
                     form.textAreaCommandGroup.setText(
                             "cd " + folderBin + System.getProperty("line.separator") +
                             "java -jar detect-gaym.jar " + getFileFolder(labelPathFile.getText()) + "/"
+                    );
+                    form.textAreaCommandGroup2.setText(
+                            "cd " + folderBin + System.getProperty("line.separator") +
+                            "java -jar detect-gaym.jar " + labelEncoding.getText() + " " + getFileFolder(labelPathFile.getText()) + "/"
                     );
                 }
                 if(os.indexOf("win") >= 0) {
