@@ -123,11 +123,14 @@ public class Editor {
             return (JSONObject) obj;
         }
         if(encoding.equals(UTF_8_BOM)){
-            //BufferedReader br = new BufferedReader(new InputStreamReader(new BOMInputStream( new FileInputStream(filename), false,
-            //                ByteOrderMark.UTF_8, ByteOrderMark.UTF_16BE, ByteOrderMark.UTF_16LE,
-            //                ByteOrderMark.UTF_32BE, ByteOrderMark.UTF_32LE ) ) );
             BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "UTF-8"));
-            Object obj = new JSONParser().parse(reader);
+            String context = "";
+            String line = reader.readLine().replace("\uFEFF", "");
+            while (line != null){
+                context += line + System.getProperty("line.separator");
+                line = reader.readLine();
+            }
+            Object obj = new JSONParser().parse(context);
             reader.close();
             return (JSONObject) obj;
         }
