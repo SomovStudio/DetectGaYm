@@ -282,7 +282,7 @@ public class Editor {
     }
 
     /* Консоле Linux */
-    public static Process executeConsoleLinux(String filename) throws IOException {
+    public static Process executeConsoleLinux(String filename, String encoding) throws IOException {
         String folderBin= getProgramFolder();
         folderBin = folderBin.substring(0, folderBin.length() - "editor".length());
         folderBin = folderBin + "bin";
@@ -292,7 +292,8 @@ public class Editor {
 
         String context = "#!/bin/bash";
         context += System.getProperty("line.separator") + "cd " + folderBin;
-        context += System.getProperty("line.separator") + "java -jar detect-gaym.jar "+filename;
+        if(encoding.equals("")) context += System.getProperty("line.separator") + "java -jar detect-gaym.jar " + filename;
+        else context += System.getProperty("line.separator") + "java -jar detect-gaym.jar " + encoding + " " + filename;
 
         FileWriter writer = new FileWriter(file);
         writer.write(context);
@@ -305,18 +306,18 @@ public class Editor {
     }
 
     /* Консоль Windows */
-    public static Process executeConsoleWindows(String filename) throws IOException {
+    public static Process executeConsoleWindows(String filename, String encoding) throws IOException {
         ProcessBuilder pb = new ProcessBuilder("cmd.exe", "/C", "start", "dir", "cd..", "java -jar detect-gaym.jar "+filename);
         Process p = pb.start();
         return p;
     }
 
     /* Выполнение файла автотеста */
-    public static void executeFile(String filename, JPanel panel, JTextArea console) throws IOException {
+    public static void executeFile(String filename, JPanel panel, JTextArea console, String encoding) throws IOException {
         Process p = null;
         String os = System.getProperty("os.name").toLowerCase();
-        if(os.indexOf("win") >= 0) p = executeConsoleWindows(filename);
-        if(os.indexOf("linux") >= 0) p = executeConsoleLinux(filename);
+        if(os.indexOf("win") >= 0) p = executeConsoleWindows(filename, encoding);
+        if(os.indexOf("linux") >= 0) p = executeConsoleLinux(filename, encoding);
 
         String messages = "";
         int countMessages = 0;
@@ -343,11 +344,11 @@ public class Editor {
     }
 
     /* Выполнить группу автотестов */
-    public static void executeGroup(String folder, JPanel panel, JTextArea console) throws IOException {
+    public static void executeGroup(String folder, JPanel panel, JTextArea console, String encoding) throws IOException {
         Process p = null;
         String os = System.getProperty("os.name").toLowerCase();
-        if(os.indexOf("win") >= 0) p = executeConsoleWindows(folder);
-        if(os.indexOf("linux") >= 0) p = executeConsoleLinux(folder);
+        if(os.indexOf("win") >= 0) p = executeConsoleWindows(folder, encoding);
+        if(os.indexOf("linux") >= 0) p = executeConsoleLinux(folder, encoding);
 
         String messages = "";
         int countMessages = 0;

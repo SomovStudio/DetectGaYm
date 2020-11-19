@@ -177,6 +177,17 @@
                       <text value="Выполнить группу тестов"/>
                     </properties>
                   </component>
+                  <component id="76f84" class="javax.swing.JSeparator">
+                    <constraints/>
+                    <properties/>
+                  </component>
+                  <component id="5db43" class="javax.swing.JCheckBoxMenuItem" binding="MenuCheckBoxExecuteEncodingTest">
+                    <constraints/>
+                    <properties>
+                      <selected value="true"/>
+                      <text value="Выполнять тест в текущей кодировке"/>
+                    </properties>
+                  </component>
                 </children>
               </grid>
               <grid id="f8d8d" class="javax.swing.JMenu" binding="MenuHelp" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">

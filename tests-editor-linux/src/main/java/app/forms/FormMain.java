@@ -72,6 +72,7 @@ public class FormMain {
     private JButton buttonSaveTestFile;
     private JButton buttonExecuteTest;
     private JMenuItem MenuInstructionCreateTest;
+    private JCheckBoxMenuItem MenuCheckBoxExecuteEncodingTest;
 
     public static void main(String[] args){
         JFrame frame = new JFrame("MainForm");
@@ -635,7 +636,10 @@ public class FormMain {
                 try {
                     String filename = labelPathFile.getText();
                     if(filename.equals("...")) showMessage("Невозможно запустить тест.\nФайл теста либо не открыт, либо еще не сохранён.");
-                    else Editor.executeFile(filename, PanelMain, textAreaConsole);
+                    else {
+                        if(MenuCheckBoxExecuteEncodingTest.getState()) Editor.executeFile(filename, PanelMain, textAreaConsole, labelEncoding.getText());
+                        else Editor.executeFile(filename, PanelMain, textAreaConsole, "");
+                    }
                 } catch (IOException e) {
                     showMessage(e.toString());
                     e.printStackTrace();
@@ -648,7 +652,10 @@ public class FormMain {
                     String filename = labelPathFile.getText();
                     String folder = getFileFolder(filename);
                     if(filename.equals("...")) showMessage("Невозможно запустить группу тестов.\nФайл теста либо не открыт, либо еще не сохранён.\nОткройте один из файлов группы тестов.");
-                    else Editor.executeGroup(folder, PanelMain, textAreaConsole);
+                    else {
+                        if(MenuCheckBoxExecuteEncodingTest.getState()) Editor.executeGroup(filename, PanelMain, textAreaConsole, labelEncoding.getText());
+                        else Editor.executeGroup(filename, PanelMain, textAreaConsole, "");
+                    }
                 } catch (IOException e) {
                     showMessage(e.toString());
                     e.printStackTrace();
@@ -804,7 +811,10 @@ public class FormMain {
                 try {
                     String filename = labelPathFile.getText();
                     if(filename.equals("...")) showMessage("Невозможно запустить тест.\nФайл теста либо не открыт, либо еще не сохранён.");
-                    else Editor.executeFile(filename, PanelMain, textAreaConsole);
+                    else {
+                        if(MenuCheckBoxExecuteEncodingTest.getState()) Editor.executeFile(filename, PanelMain, textAreaConsole, labelEncoding.getText());
+                        else Editor.executeFile(filename, PanelMain, textAreaConsole, "");
+                    }
                 } catch (IOException e) {
                     showMessage(e.toString());
                     e.printStackTrace();
