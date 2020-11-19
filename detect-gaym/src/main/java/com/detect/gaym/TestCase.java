@@ -121,13 +121,14 @@ public class TestCase {
         }
     }
 
-    public static void execute(String filename) throws Exception {
+    public static void execute(String filename, String encoding) throws Exception {
         try {
             conditionStatus = false;
             conditionResult = false;
             conditionCompleted = false;
             System.out.println("LOAD: test-case file " + filename);
-            JSONObject oj = Helper.readJsonFile(filename);
+            //JSONObject oj = Helper.readJsonFile(filename);
+            JSONObject oj = Helper.readJsonFileInEncoding(filename, encoding);
 
             description = oj.get("description").toString();
             port = Integer.parseInt(oj.get("port").toString());
@@ -158,7 +159,7 @@ public class TestCase {
         }
     }
 
-    public static void executeAll(String folder) throws Exception {
+    public static void executeAll(String folder, String encoding) throws Exception {
         try {
             conditionStatus = false;
             conditionResult = false;
@@ -178,7 +179,8 @@ public class TestCase {
                 String filename = file.getPath();
 
                 System.out.println("LOAD: test-case file " + filename);
-                JSONObject oj = Helper.readJsonFile2(filename);
+                //JSONObject oj = Helper.readJsonFile2(filename);
+                JSONObject oj = Helper.readJsonFileInEncoding(filename, encoding);
 
                 description = oj.get("description").toString();
                 port = Integer.parseInt(oj.get("port").toString());

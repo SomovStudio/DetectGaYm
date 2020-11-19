@@ -7,8 +7,15 @@ public class Main {
         System.out.println("| 2020 © Somov Studio (version 1.0.0)");
         System.out.println("|=================================================");
 
-        String argument = args[0];
-        if(argument.lastIndexOf("json") >= 0) TestCase.execute(argument);
-        else TestCase.executeAll(argument);
+        String argumentFileName = "";
+        String argumentFileEncoding = "";
+        if(args.length > 1){
+            argumentFileName = args[1];
+            argumentFileEncoding = args[0];
+        }else{
+            argumentFileName = args[0];
+        }
+        if(argumentFileName.lastIndexOf("json") >= 0) TestCase.execute(argumentFileName, argumentFileEncoding);
+        else TestCase.executeAll(argumentFileName, argumentFileEncoding);
     }
 }

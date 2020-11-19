@@ -26,6 +26,11 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Helper {
+    public static final String DEFAULT = "DEFAULT";
+    public static final String UTF_8 = "UTF-8";
+    public static final String UTF_8_BOM = "UTF-8-BOM";
+    public static final String WINDOWS_1251 = "WINDOWS-1251";
+    public static final String ANSI = "ANSI";
     public static final String TYPE_OS_WINDOWS = "type_os_windows";
     public static final String TYPE_OS_LINUX = "type_os_linux";
 
@@ -141,7 +146,6 @@ public class Helper {
                     return true;
                 }
             }
-
         }
         return false;
     }
@@ -262,6 +266,49 @@ public class Helper {
         Object obj = new JSONParser().parse(new FileReader(filename));
         JSONObject jo = (JSONObject) obj;
         return jo;
+    }
+
+    public static JSONObject readJsonFileInEncoding(String filename, String encoding) throws IOException, ParseException {
+        if(encoding.equals(DEFAULT)) {
+            FileReader reader = new FileReader(filename);
+            Object obj = new JSONParser().parse(reader);
+            reader.close();
+            return (JSONObject) obj;
+        }
+        if(encoding.equals(UTF_8)){
+            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "UTF-8"));
+            Object obj = new JSONParser().parse(reader);
+            reader.close();
+            return (JSONObject) obj;
+        }
+        if(encoding.equals(UTF_8_BOM)){
+            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "UTF-8"));
+            String context = "";
+            String line = reader.readLine().replace("\uFEFF", "");
+            while (line != null){
+                context += line + System.getProperty("line.separator");
+                line = reader.readLine();
+            }
+            Object obj = new JSONParser().parse(context);
+            reader.close();
+            return (JSONObject) obj;
+        }
+        if(encoding.equals(WINDOWS_1251)){
+            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "windows-1251"));
+            Object obj = new JSONParser().parse(reader);
+            reader.close();
+            return (JSONObject) obj;
+        }
+        if(encoding.equals(ANSI)){
+            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "Cp1252"));
+            Object obj = new JSONParser().parse(reader);
+            reader.close();
+            return (JSONObject) obj;
+        }
+        FileReader reader = new FileReader(filename);
+        Object obj = new JSONParser().parse(reader);
+        reader.close();
+        return (JSONObject) obj;
     }
 
     /* Сделать скриншот экрана */
