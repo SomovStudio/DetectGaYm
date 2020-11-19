@@ -272,13 +272,15 @@ public class Editor {
 
     /* Консоле Linux */
     public static Process executeConsoleLinux(String filename) throws IOException {
-        File file = new File(getProgramFolder()+"/run-test.sh");
+        String folderBin= getProgramFolder();
+        folderBin = folderBin.substring(0, folderBin.length() - "editor".length());
+        folderBin = folderBin + "bin";
+
+        File file = new File(folderBin+"/run-test.sh");
         file.createNewFile();
 
         String context = "#!/bin/bash";
-        context += System.getProperty("line.separator") + "cd " + getProgramFolder();
-        context += System.getProperty("line.separator") + "cd ..";
-        context += System.getProperty("line.separator") + "cd bin";
+        context += System.getProperty("line.separator") + "cd " + folderBin;
         context += System.getProperty("line.separator") + "java -jar detect-gaym.jar "+filename;
 
         FileWriter writer = new FileWriter(file);
