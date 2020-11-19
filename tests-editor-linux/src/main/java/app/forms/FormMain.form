@@ -191,7 +191,7 @@
                   <component id="db1a4" class="javax.swing.JMenuItem" binding="MenuCreateCommand">
                     <constraints/>
                     <properties>
-                      <text value="Сформировать команду"/>
+                      <text value="Сформировать команду для запуска"/>
                     </properties>
                   </component>
                   <component id="3e3b7" class="javax.swing.JMenuItem" binding="MenuValidatorJson">

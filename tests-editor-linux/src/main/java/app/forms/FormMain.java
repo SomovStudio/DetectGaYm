@@ -661,16 +661,15 @@ public class FormMain {
                 FormCommand form = new FormCommand();
                 String os = System.getProperty("os.name").toLowerCase();
                 if(os.indexOf("linux") >= 0) {
+                    String folderBin= getProgramFolder();
+                    folderBin = folderBin.substring(0, folderBin.length() - "editor".length());
+                    folderBin = folderBin + "bin";
                     form.textAreaCommandFile.setText(
-                            "cd " + getProgramFolder() + System.getProperty("line.separator") +
-                            "cd .." + System.getProperty("line.separator") +
-                            "cd bin" + System.getProperty("line.separator") +
+                            "cd " + folderBin + System.getProperty("line.separator") +
                             "java -jar detect-gaym.jar " + labelPathFile.getText()
                     );
                     form.textAreaCommandGroup.setText(
-                            "cd " + getProgramFolder() + System.getProperty("line.separator") +
-                            "cd .." + System.getProperty("line.separator") +
-                            "cd bin" + System.getProperty("line.separator") +
+                            "cd " + folderBin + System.getProperty("line.separator") +
                             "java -jar detect-gaym.jar " + getFileFolder(labelPathFile.getText()) + "/"
                     );
                 }
