@@ -159,6 +159,13 @@ public class Editor {
             writer.flush();
             writer.close();
         }
+        if(encoding.equals(UTF_8_BOM)){
+            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filename), "UTF-8"));
+            writer.write('\ufeff');
+            writer.write(context);
+            writer.flush();
+            writer.close();
+        }
     }
 
     /* Чтение json файла */
