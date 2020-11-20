@@ -92,7 +92,6 @@ public class TestCase {
                     conditionResult = false;
                     conditionCompleted = false;
                 }
-                //System.out.println("CONDITION STATUS: " + conditionStatus + " | RESULT: " + conditionResult + " | COMPTATE: " + conditionCompleted);
                 if (conditionStatus == true && conditionResult == false && conditionCompleted == false) continue;
                 if (conditionCompleted == true) continue;
 
@@ -127,7 +126,6 @@ public class TestCase {
             conditionResult = false;
             conditionCompleted = false;
             System.out.println("LOAD: test-case file " + filename);
-            //JSONObject oj = Helper.readJsonFile(filename);
             JSONObject oj = Helper.readJsonFileInEncoding(filename, encoding);
 
             description = oj.get("description").toString();
@@ -179,7 +177,6 @@ public class TestCase {
                 String filename = file.getPath();
 
                 System.out.println("LOAD: test-case file " + filename);
-                //JSONObject oj = Helper.readJsonFile2(filename);
                 JSONObject oj = Helper.readJsonFileInEncoding(filename, encoding);
 
                 description = oj.get("description").toString();
