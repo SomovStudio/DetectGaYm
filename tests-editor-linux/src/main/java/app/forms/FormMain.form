@@ -54,18 +54,18 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="cf8a9" class="javax.swing.JMenuItem" binding="MenuOpenAsDefault">
-                        <constraints/>
-                        <properties>
-                          <text value="Кодировка по умолчанию"/>
-                        </properties>
-                      </component>
                       <hspacer id="a844e">
                         <constraints/>
                       </hspacer>
                       <vspacer id="c071f">
                         <constraints/>
                       </vspacer>
+                      <component id="71e08" class="javax.swing.JMenuItem" binding="MenuOpenAsANSI">
+                        <constraints/>
+                        <properties>
+                          <text value="Кодировка ANSI"/>
+                        </properties>
+                      </component>
                       <component id="9c650" class="javax.swing.JMenuItem" binding="MenuOpenAsUtf8">
                         <constraints/>
                         <properties>
@@ -82,6 +82,12 @@
                         <constraints/>
                         <properties>
                           <text value="Кодировка Windows 1251"/>
+                        </properties>
+                      </component>
+                      <component id="cf8a9" class="javax.swing.JMenuItem" binding="MenuOpenAsDefault">
+                        <constraints/>
+                        <properties>
+                          <text value="Кодировка по умолчанию"/>
                         </properties>
                       </component>
                     </children>
@@ -104,18 +110,18 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="f4e79" class="javax.swing.JMenuItem" binding="MenuSaveAsDefault">
-                        <constraints/>
-                        <properties>
-                          <text value="Кодировка по умолчанию"/>
-                        </properties>
-                      </component>
                       <hspacer id="ece6a">
                         <constraints/>
                       </hspacer>
                       <vspacer id="d5602">
                         <constraints/>
                       </vspacer>
+                      <component id="e9dda" class="javax.swing.JMenuItem" binding="MenuSaveAsANSI">
+                        <constraints/>
+                        <properties>
+                          <text value="Кодировка ANSI"/>
+                        </properties>
+                      </component>
                       <component id="625b5" class="javax.swing.JMenuItem" binding="MenuSaveAsUtf8">
                         <constraints/>
                         <properties>
@@ -132,6 +138,12 @@
                         <constraints/>
                         <properties>
                           <text value="Кодировка Windows 1251"/>
+                        </properties>
+                      </component>
+                      <component id="f4e79" class="javax.swing.JMenuItem" binding="MenuSaveAsDefault">
+                        <constraints/>
+                        <properties>
+                          <text value="Кодировка по умолчанию"/>
                         </properties>
                       </component>
                     </children>

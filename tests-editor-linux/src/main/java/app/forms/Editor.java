@@ -141,6 +141,12 @@ public class Editor {
             reader.close();
             return (JSONObject) obj;
         }
+        if(encoding.equals(ANSI)){
+            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "Cp1252"));
+            Object obj = new JSONParser().parse(reader);
+            reader.close();
+            return (JSONObject) obj;
+        }
         return null;
     }
 
@@ -157,15 +163,21 @@ public class Editor {
             writer.flush();
             writer.close();
         }
+        if(encoding.equals(UTF_8_BOM)){
+            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filename), "UTF-8"));
+            writer.write('\ufeff');
+            writer.write(context);
+            writer.flush();
+            writer.close();
+        }
         if(encoding.equals(WINDOWS_1251)){
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filename), "windows-1251"));
             writer.write(context);
             writer.flush();
             writer.close();
         }
-        if(encoding.equals(UTF_8_BOM)){
-            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filename), "UTF-8"));
-            writer.write('\ufeff');
+        if(encoding.equals(ANSI)){
+            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filename), "Cp1252"));
             writer.write(context);
             writer.flush();
             writer.close();

@@ -73,6 +73,8 @@ public class FormMain {
     private JButton buttonExecuteTest;
     private JMenuItem MenuInstructionCreateTest;
     private JCheckBoxMenuItem MenuCheckBoxExecuteEncodingTest;
+    private JMenuItem MenuOpenAsANSI;
+    private JMenuItem MenuSaveAsANSI;
 
     public static void main(String[] args){
         JFrame frame = new JFrame("MainForm");
@@ -283,6 +285,24 @@ public class FormMain {
                 labelEncoding.setText(WINDOWS_1251);
                 try {
                     readJsonFile(path, WINDOWS_1251);
+                    loadJsonData();
+                } catch (IOException e) {
+                    showMessage(e.toString());
+                    e.printStackTrace();
+                } catch (ParseException e) {
+                    showMessage(e.toString());
+                    e.printStackTrace();
+                }
+            }
+        });
+        MenuOpenAsANSI.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                String path = Editor.dialogOpenFile(PanelMain);
+                if(path.equals("...")) return;
+                labelPathFile.setText(path);
+                labelEncoding.setText(ANSI);
+                try {
+                    readJsonFile(path, ANSI);
                     loadJsonData();
                 } catch (IOException e) {
                     showMessage(e.toString());
@@ -601,6 +621,29 @@ public class FormMain {
                             spinnerWaitLimit.getValue().toString()
                     };
                     saveJsonFile(path, WINDOWS_1251, fields, listOptions, tableData, tableSteps);
+                } catch (IOException e) {
+                    showMessage(e.toString());
+                    e.printStackTrace();
+                } catch (ParseException e) {
+                    showMessage(e.toString());
+                    e.printStackTrace();
+                }
+            }
+        });
+        MenuSaveAsANSI.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                String path = Editor.dialogSaveFile(PanelMain);
+                if(path.equals("...")) return;
+                labelPathFile.setText(path);
+                labelEncoding.setText(ANSI);
+                try {
+                    String[] fields = new String[] {
+                            textFieldDescription.getText(),
+                            textFieldPort.getText(),
+                            textFieldHar.getText(),
+                            spinnerWaitLimit.getValue().toString()
+                    };
+                    saveJsonFile(path, ANSI, fields, listOptions, tableData, tableSteps);
                 } catch (IOException e) {
                     showMessage(e.toString());
                     e.printStackTrace();
