@@ -387,24 +387,90 @@ public class Editor {
     }
 
     /* Валидатор Json */
-    public static void validatorJson(String filename) throws FileNotFoundException {
-        FileReader reader = new FileReader(filename);
-        try {
-            Object obj = new JSONParser().parse(reader);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return;
-        } catch (ParseException e) {
-            showMessage("ОШИБКА: Нарущена структура json файла.\n"+e.toString());
-            e.printStackTrace();
-            return;
+    public static void validatorJson(String filename, String encoding) throws FileNotFoundException {
+
+        if(encoding.equals(DEFAULT)) {
+            try {
+                FileReader reader = new FileReader(filename);
+                Object obj = new JSONParser().parse(reader);
+                reader.close();
+            } catch (IOException e) {
+                showMessage(e.toString());
+                e.printStackTrace();
+                return;
+            } catch (ParseException e) {
+                showMessage("ОШИБКА: Нарущена структура json файла.\n"+e.toString());
+                e.printStackTrace();
+                return;
+            }
         }
-        try {
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return;
+        if(encoding.equals(UTF_8)){
+            try {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "UTF-8"));
+                Object obj = new JSONParser().parse(reader);
+                reader.close();
+            } catch (IOException e) {
+                showMessage(e.toString());
+                e.printStackTrace();
+                return;
+            } catch (ParseException e) {
+                showMessage("ОШИБКА: Нарущена структура json файла.\n"+e.toString());
+                e.printStackTrace();
+                return;
+            }
         }
-        showMessage("Файл: " + filename+ "\nПроверка структуры json файла "+" - успешно!");
+        if(encoding.equals(UTF_8_BOM)){
+            try {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "UTF-8"));
+                String context = "";
+                String line = reader.readLine().replace("\uFEFF", "");
+                while (line != null){
+                    context += line + System.getProperty("line.separator");
+                    line = reader.readLine();
+                }
+                Object obj = new JSONParser().parse(context);
+                reader.close();
+            } catch (IOException e) {
+                showMessage(e.toString());
+                e.printStackTrace();
+                return;
+            } catch (ParseException e) {
+                showMessage("ОШИБКА: Нарущена структура json файла.\n"+e.toString());
+                e.printStackTrace();
+                return;
+            }
+        }
+        if(encoding.equals(WINDOWS_1251)){
+            try {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "windows-1251"));
+                Object obj = new JSONParser().parse(reader);
+                reader.close();
+            } catch (IOException e) {
+                showMessage(e.toString());
+                e.printStackTrace();
+                return;
+            } catch (ParseException e) {
+                showMessage("ОШИБКА: Нарущена структура json файла.\n"+e.toString());
+                e.printStackTrace();
+                return;
+            }
+        }
+        if(encoding.equals(ANSI)){
+            try {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "Cp1252"));
+                Object obj = new JSONParser().parse(reader);
+                reader.close();
+            } catch (IOException e) {
+                showMessage(e.toString());
+                e.printStackTrace();
+                return;
+            } catch (ParseException e) {
+                showMessage("ОШИБКА: Нарущена структура json файла.\n"+e.toString());
+                e.printStackTrace();
+                return;
+            }
+        }
+        //showMessage("Проверка структуры json файла - успешно!\nФайл: " + filename);
+        showMessage("Проверка структуры json файла - ошибок не обнаружено!");
     }
 }

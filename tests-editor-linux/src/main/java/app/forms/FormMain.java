@@ -748,7 +748,7 @@ public class FormMain {
                 if(labelPathFile.getText() == "...") jsonFile = Editor.dialogOpenFile(PanelMain);
                 else jsonFile = labelPathFile.getText();
                 try {
-                    validatorJson(jsonFile);
+                    validatorJson(jsonFile, labelEncoding.getText());
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
