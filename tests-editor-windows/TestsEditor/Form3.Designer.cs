@@ -45,7 +45,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxHelp = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -267,7 +267,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.richTextBox1);
+            this.groupBox1.Controls.Add(this.richTextBoxHelp);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
@@ -276,16 +276,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Помощь";
             // 
-            // richTextBox1
+            // richTextBoxHelp
             // 
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(3, 16);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(614, 114);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            this.richTextBoxHelp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxHelp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBoxHelp.Location = new System.Drawing.Point(3, 16);
+            this.richTextBoxHelp.Name = "richTextBoxHelp";
+            this.richTextBoxHelp.ReadOnly = true;
+            this.richTextBoxHelp.Size = new System.Drawing.Size(614, 114);
+            this.richTextBoxHelp.TabIndex = 0;
+            this.richTextBoxHelp.Text = resources.GetString("richTextBoxHelp.Text");
             // 
             // panel1
             // 
@@ -363,7 +363,7 @@
         public System.Windows.Forms.ComboBox comboBoxType;
         public System.Windows.Forms.NumericUpDown numericUpDownTimeout;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBoxHelp;
         private System.Windows.Forms.SplitContainer splitContainer1;
         public System.Windows.Forms.ComboBox comboBoxValue;
     }

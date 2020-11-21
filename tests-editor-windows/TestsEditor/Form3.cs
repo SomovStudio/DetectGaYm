@@ -173,8 +173,6 @@ namespace TestsEditor
                     comboBoxValue.Enabled = false;
                     numericUpDownTimeout.ReadOnly = true;
                     break;
-
-
                 case "get_har":
                     label5.Text = "Локатор (XPath):";
                     textBoxLocator.ReadOnly = true;
@@ -238,12 +236,16 @@ namespace TestsEditor
                     numericUpDownTimeout.ReadOnly = false;
                     break;
             }
-            
+            int index = richTextBoxHelp.Find(comboBoxType.Text);
+            richTextBoxHelp.Select(index, comboBoxType.Text.Length);
+            richTextBoxHelp.ScrollToCaret();
+            richTextBoxHelp.Focus();
+
         }
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            richTextBox1.Rtf = richTextBox1.Text;
+            richTextBoxHelp.Rtf = richTextBoxHelp.Text;
         }
     }
 }
