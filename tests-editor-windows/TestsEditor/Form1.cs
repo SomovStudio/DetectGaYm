@@ -471,21 +471,22 @@ namespace TestsEditor
         {
             try
             {
-                string path = Directory.GetCurrentDirectory();
-                string bat = "cd " + path;
-                bat += System.Environment.NewLine + "cd..";
-                bat += System.Environment.NewLine + "cd bin";
-                string fileTest = toolStripStatusLabelFileName.Text;
+                string folderBin = Directory.GetCurrentDirectory();
+                folderBin = folderBin.Substring(0, folderBin.Length - "editor".Length);
+                folderBin = folderBin + "bin";
+
+                string bat = "cd " + folderBin;
+                string filename = toolStripStatusLabelFileName.Text;
                 
-                if (File.Exists(toolStripStatusLabelFileName.Text)) {
-                    bat += System.Environment.NewLine + "java -jar detect-gaym.jar " + toolStripStatusLabelFileName.Text;
+                if (File.Exists(filename)) {
+                    bat += System.Environment.NewLine + "java -jar detect-gaym.jar " + filename;
                 }
                 else{
                     MessageBox.Show("Невозможно запустить тест! Файл не существует.");
                     return;
                 }
 
-                string batFile = Directory.GetCurrentDirectory() + "\\run.bat";
+                string batFile = folderBin + "\\run-test.bat";
                 StreamWriter writer = new StreamWriter(batFile, false, Encoding.ASCII);
                 writer.Write(bat);
                 writer.Close();
@@ -509,7 +510,7 @@ namespace TestsEditor
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Ошибка");
-                if (File.Exists("run.bat")) File.Delete("run.bat");
+                //if (File.Exists("run.bat")) File.Delete("run.bat");
             }
         }
 
@@ -517,13 +518,14 @@ namespace TestsEditor
         {
             try
             {
-                string path = Directory.GetCurrentDirectory();
-                string bat = "cd " + path;
-                bat += System.Environment.NewLine + "cd..";
-                bat += System.Environment.NewLine + "cd bin";
+                string folderBin = Directory.GetCurrentDirectory();
+                folderBin = folderBin.Substring(0, folderBin.Length - "editor".Length);
+                folderBin = folderBin + "bin";
+
+                string bat = "cd " + folderBin;
                 bat += System.Environment.NewLine + "java -jar detect-gaym.jar " + folderName;
 
-                string batFile = Directory.GetCurrentDirectory() + "\\run.bat";
+                string batFile = folderBin + "\\run-test.bat";
                 StreamWriter writer = new StreamWriter(batFile, false, Encoding.ASCII);
                 writer.Write(bat);
                 writer.Close();
@@ -547,7 +549,7 @@ namespace TestsEditor
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Ошибка");
-                if (File.Exists("run.bat")) File.Delete("run.bat");
+                //if (File.Exists("run.bat")) File.Delete("run.bat");
             }
         }
 
@@ -579,7 +581,7 @@ namespace TestsEditor
 
         void P_Exited(object sender, EventArgs e)
         {
-            if (File.Exists("run.bat")) File.Delete("run.bat");
+            //if (File.Exists("run.bat")) File.Delete("run.bat");
         }
 
         private void detailedInformationInTheConsoleToolStripMenuItem_Click(object sender, EventArgs e)

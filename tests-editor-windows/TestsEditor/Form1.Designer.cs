@@ -157,6 +157,9 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.выполнятьТестВТекущейКодировкеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -349,8 +352,11 @@
             this.runToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.executeTestToolStripMenuItem,
             this.выполнитьВсеТестыИзПапкиToolStripMenuItem,
-            this.stopToolStripMenuItem,
             this.toolStripSeparator5,
+            this.выполнятьТестВТекущейКодировкеToolStripMenuItem,
+            this.toolStripSeparator12,
+            this.stopToolStripMenuItem,
+            this.toolStripSeparator13,
             this.openSystemConsoleToolStripMenuItem});
             this.runToolStripMenuItem.Name = "runToolStripMenuItem";
             this.runToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
@@ -360,22 +366,22 @@
             // 
             this.executeTestToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("executeTestToolStripMenuItem.Image")));
             this.executeTestToolStripMenuItem.Name = "executeTestToolStripMenuItem";
-            this.executeTestToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
-            this.executeTestToolStripMenuItem.Text = "Выполнить данный тест";
+            this.executeTestToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
+            this.executeTestToolStripMenuItem.Text = "Выполнить тест";
             this.executeTestToolStripMenuItem.Click += new System.EventHandler(this.executeTestToolStripMenuItem_Click);
             // 
             // выполнитьВсеТестыИзПапкиToolStripMenuItem
             // 
             this.выполнитьВсеТестыИзПапкиToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("выполнитьВсеТестыИзПапкиToolStripMenuItem.Image")));
             this.выполнитьВсеТестыИзПапкиToolStripMenuItem.Name = "выполнитьВсеТестыИзПапкиToolStripMenuItem";
-            this.выполнитьВсеТестыИзПапкиToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
-            this.выполнитьВсеТестыИзПапкиToolStripMenuItem.Text = "Выполнить все тесты из папки";
+            this.выполнитьВсеТестыИзПапкиToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
+            this.выполнитьВсеТестыИзПапкиToolStripMenuItem.Text = "Выполнить группу тестов";
             this.выполнитьВсеТестыИзПапкиToolStripMenuItem.Click += new System.EventHandler(this.выполнитьВсеТестыИзПапкиToolStripMenuItem_Click);
             // 
             // stopToolStripMenuItem
             // 
             this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
-            this.stopToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.stopToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
             this.stopToolStripMenuItem.Text = "Прервать выполнение";
             this.stopToolStripMenuItem.Visible = false;
             this.stopToolStripMenuItem.Click += new System.EventHandler(this.stopToolStripMenuItem_Click);
@@ -383,13 +389,13 @@
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(239, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(277, 6);
             // 
             // openSystemConsoleToolStripMenuItem
             // 
             this.openSystemConsoleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openSystemConsoleToolStripMenuItem.Image")));
             this.openSystemConsoleToolStripMenuItem.Name = "openSystemConsoleToolStripMenuItem";
-            this.openSystemConsoleToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.openSystemConsoleToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
             this.openSystemConsoleToolStripMenuItem.Text = "Открыть системную консоль";
             this.openSystemConsoleToolStripMenuItem.Click += new System.EventHandler(this.openSystemConsoleToolStripMenuItem_Click);
             // 
@@ -409,7 +415,7 @@
             // 
             this.getStartCommandToolStripMenuItem.Name = "getStartCommandToolStripMenuItem";
             this.getStartCommandToolStripMenuItem.Size = new System.Drawing.Size(390, 22);
-            this.getStartCommandToolStripMenuItem.Text = "Сформировать команду запуска теста";
+            this.getStartCommandToolStripMenuItem.Text = "Сформировать команду для запуска";
             this.getStartCommandToolStripMenuItem.Click += new System.EventHandler(this.getStartCommandToolStripMenuItem_Click);
             // 
             // howToCloseThePortToolStripMenuItem
@@ -571,7 +577,7 @@
             this.toolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton11.Name = "toolStripButton11";
             this.toolStripButton11.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton11.Text = "Выполнить данный тест";
+            this.toolStripButton11.Text = "Выполнить тест";
             this.toolStripButton11.Click += new System.EventHandler(this.toolStripButton11_Click);
             // 
             // toolStripButton19
@@ -581,7 +587,7 @@
             this.toolStripButton19.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton19.Name = "toolStripButton19";
             this.toolStripButton19.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton19.Text = "Выполнить все тесты из папки";
+            this.toolStripButton19.Text = "Выполнить группу тестов";
             this.toolStripButton19.Click += new System.EventHandler(this.toolStripButton19_Click);
             // 
             // toolStripSeparator11
@@ -1394,6 +1400,24 @@
             this.timer1.Interval = 2000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // выполнятьТестВТекущейКодировкеToolStripMenuItem
+            // 
+            this.выполнятьТестВТекущейКодировкеToolStripMenuItem.Checked = true;
+            this.выполнятьТестВТекущейКодировкеToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.выполнятьТестВТекущейКодировкеToolStripMenuItem.Name = "выполнятьТестВТекущейКодировкеToolStripMenuItem";
+            this.выполнятьТестВТекущейКодировкеToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
+            this.выполнятьТестВТекущейКодировкеToolStripMenuItem.Text = "Выполнять тест в текущей кодировке";
+            // 
+            // toolStripSeparator12
+            // 
+            this.toolStripSeparator12.Name = "toolStripSeparator12";
+            this.toolStripSeparator12.Size = new System.Drawing.Size(277, 6);
+            // 
+            // toolStripSeparator13
+            // 
+            this.toolStripSeparator13.Name = "toolStripSeparator13";
+            this.toolStripSeparator13.Size = new System.Drawing.Size(277, 6);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1575,6 +1599,9 @@
         private System.Windows.Forms.ToolStripMenuItem инструкцияToolStripMenuItem;
         public System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelFileName;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ToolStripMenuItem выполнятьТестВТекущейКодировкеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
     }
 }
 
