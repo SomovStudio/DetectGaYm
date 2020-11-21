@@ -159,7 +159,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.выполнятьТестВТекущейКодировкеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -356,7 +355,6 @@
             this.выполнятьТестВТекущейКодировкеToolStripMenuItem,
             this.toolStripSeparator12,
             this.stopToolStripMenuItem,
-            this.toolStripSeparator13,
             this.openSystemConsoleToolStripMenuItem});
             this.runToolStripMenuItem.Name = "runToolStripMenuItem";
             this.runToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
@@ -383,7 +381,6 @@
             this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
             this.stopToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
             this.stopToolStripMenuItem.Text = "Прервать выполнение";
-            this.stopToolStripMenuItem.Visible = false;
             this.stopToolStripMenuItem.Click += new System.EventHandler(this.stopToolStripMenuItem_Click);
             // 
             // toolStripSeparator5
@@ -397,6 +394,7 @@
             this.openSystemConsoleToolStripMenuItem.Name = "openSystemConsoleToolStripMenuItem";
             this.openSystemConsoleToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
             this.openSystemConsoleToolStripMenuItem.Text = "Открыть системную консоль";
+            this.openSystemConsoleToolStripMenuItem.Visible = false;
             this.openSystemConsoleToolStripMenuItem.Click += new System.EventHandler(this.openSystemConsoleToolStripMenuItem_Click);
             // 
             // supportToolStripMenuItem
@@ -1413,11 +1411,6 @@
             this.toolStripSeparator12.Name = "toolStripSeparator12";
             this.toolStripSeparator12.Size = new System.Drawing.Size(277, 6);
             // 
-            // toolStripSeparator13
-            // 
-            this.toolStripSeparator13.Name = "toolStripSeparator13";
-            this.toolStripSeparator13.Size = new System.Drawing.Size(277, 6);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1432,6 +1425,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Редактор тестов для DetectGaYm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -1601,7 +1595,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripMenuItem выполнятьТестВТекущейКодировкеToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
     }
 }
 

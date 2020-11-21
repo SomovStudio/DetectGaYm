@@ -618,16 +618,20 @@ namespace TestsEditor
 
         private void stopToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
+            foreach (Process p in Process.GetProcesses())
             {
-                P.Kill();
-                P.Close();
-                P.Dispose();
-                MessageBox.Show("Попытка удаления процесса (выполнение: kill, close и dispose)");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Ошибка");
+                if (p.ProcessName.ToString() == "chromedriver" || p.ProcessName.ToString() == "java")
+                {
+                    try
+                    {
+                        p.Kill();
+                        consoleMessage("Удаление процесса: " + p.ProcessName + " | ID:" + p.Id.ToString());
+                    }
+                    catch (Exception ex)
+                    {
+                        //consoleMessage("Удаление процесса: " + p.ProcessName + " | ID:" + p.Id.ToString() + " | Ошибка: " + ex.Message);
+                    }
+                }
             }
         }
 
@@ -1017,6 +1021,24 @@ namespace TestsEditor
         {
             startForm.Close();
             timer1.Stop();
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            foreach (Process p in Process.GetProcesses())
+            {
+                if (p.ProcessName.ToString() == "chromedriver" || p.ProcessName.ToString() == "java")
+                {
+                    try
+                    {
+                        p.Kill();
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }
+            }
         }
     }
 }
