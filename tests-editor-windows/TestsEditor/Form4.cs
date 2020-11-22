@@ -22,30 +22,31 @@ namespace TestsEditor
 
         private void Form4_Load(object sender, EventArgs e)
         {
+            string folderBin = Directory.GetCurrentDirectory();
+            folderBin = folderBin.Substring(0, folderBin.Length - "editor".Length);
+            folderBin = folderBin + "bin";
+
             string path;
             string bat;
             path = Directory.GetCurrentDirectory();
-            bat = "cd " + path;
-            bat += System.Environment.NewLine + "cd..";
-            bat += System.Environment.NewLine + "cd bin";
-            bat += System.Environment.NewLine + "java -jar detect-gaym.jar " + parentForm.toolStripStatusLabelFileName.Text;
+            bat = "cd " + folderBin;
+            bat += System.Environment.NewLine + "java -jar detect-gaym.jar " + parentForm.toolStripStatusLabelFileEncoding + " " + parentForm.toolStripStatusLabelFileName.Text;
             textBox1.Text = bat;
 
             path = Directory.GetCurrentDirectory();
-            bat = "cd " + path;
-            bat += System.Environment.NewLine + "cd..";
-            bat += System.Environment.NewLine + "cd bin";
-            bat += System.Environment.NewLine + "java -jar detect-gaym.jar " + folder;
+            bat = "cd " + folderBin;
+            bat += System.Environment.NewLine + "java -jar detect-gaym.jar " + parentForm.toolStripStatusLabelFileEncoding + " " + getFolderName();
             textBox3.Text = bat;
         }
 
         private string getFolderName()
         {
+            
+
             string path = parentForm.toolStripStatusLabelFileName.Text;
             if (path != "...")
             {
                 path = path.Substring(0, path.Length - this.fileName.Length - 1);
-                path = path.Substring(path.LastIndexOf("\\") + 1);
                 return path;
             }
             return "tests";

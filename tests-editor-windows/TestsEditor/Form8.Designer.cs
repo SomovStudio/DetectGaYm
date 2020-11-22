@@ -64,10 +64,10 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(13, 170);
+            this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(14, 177);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(385, 16);
+            this.label2.Size = new System.Drawing.Size(328, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Copyright © 2020 Сомов Евгений Павлович. All Rights Reserved.";
             // 

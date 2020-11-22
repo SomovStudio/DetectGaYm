@@ -18,6 +18,11 @@ namespace TestsEditor
             InitializeComponent();
         }
 
+        public const string DEFAULT = "DEFAULT";
+        public const string UTF_8 = "UTF-8";
+        public const string UTF_8_BOM = "UTF-8-BOM";
+        public const string WINDOWS_1251 = "WINDOWS-1251";
+
         Form8 startForm;
 
         public bool showStartDialog = true;
@@ -40,6 +45,7 @@ namespace TestsEditor
                 timer1.Start();
             }            
             myDelegate = new AddConsoleItem(addConsoleItemMethod);
+            toolStripStatusLabelFileEncoding.Text = DEFAULT;
         }
 
         public void consoleMessage(String message)
@@ -52,31 +58,31 @@ namespace TestsEditor
 
         private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openFile();
+            openFile(DEFAULT);
         }
 
-        private void toolStripButton2_Click(object sender, EventArgs e)
-        {
-            openFile();
-        }
 
-        private void openFile()
+        private void openFile(string encoding)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 StreamReader sr;
-                if (toolStripDropDownButton1.Text == "ASCII")
+                if (encoding == DEFAULT)
                 {
-                    sr = new StreamReader(openFileDialog1.FileName, Encoding.ASCII);
+                    sr = new StreamReader(openFileDialog1.FileName, Encoding.Default);
                 }
-                else if (toolStripDropDownButton1.Text == "UTF-8")
+                else if (encoding == UTF_8)
                 {
                     sr = new StreamReader(openFileDialog1.FileName, Encoding.UTF8);
                 }
-                else if (toolStripDropDownButton1.Text == "UTF-8 without BOM")
+                else if (encoding == UTF_8_BOM)
                 {
                     UTF8Encoding utf8wb = new UTF8Encoding(false);
                     sr = new StreamReader(openFileDialog1.FileName, utf8wb);
+                }
+                else if (encoding == WINDOWS_1251)
+                {
+                    sr = new StreamReader(openFileDialog1.FileName, Encoding.ASCII);
                 }
                 else
                 {
@@ -147,9 +153,11 @@ namespace TestsEditor
                     listView2.Items.Add(item);
                 }
 
-                toolStripStatusLabelFileName.Text = openFileDialog1.FileName;
+                this.toolStripStatusLabelFileEncoding.Text = encoding;
+                this.toolStripStatusLabelFileName.Text = openFileDialog1.FileName;
                 this.fileName = openFileDialog1.SafeFileName;
             }
+            
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -263,17 +271,11 @@ namespace TestsEditor
             }
         }
 
-        private void toolStripButton4_Click(object sender, EventArgs e)
-        {
-            saveFileAs();
-        }
-                
-
         private void saveFileAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            saveFileAs();
+            
         }
-        private void saveFileAs()
+        private void saveFileAs(string encoding)
         {
             // https://codebeautify.org/jsonvalidator
             // https://jsonformatter.curiousconcept.com/
@@ -327,18 +329,22 @@ namespace TestsEditor
                 try
                 {
                     StreamWriter writer;
-                    if (toolStripDropDownButton1.Text == "ASCII")
+                    if (encoding == DEFAULT)
                     {
-                        writer = new StreamWriter(saveFileDialog1.FileName, false, Encoding.ASCII);
+                        writer = new StreamWriter(saveFileDialog1.FileName, false, Encoding.Default);
                     }
-                    else if (toolStripDropDownButton1.Text == "UTF-8")
+                    else if (encoding == UTF_8)
                     {
                         writer = new StreamWriter(saveFileDialog1.FileName, false, Encoding.UTF8);
                     }
-                    else if (toolStripDropDownButton1.Text == "UTF-8 without BOM")
+                    else if (encoding == UTF_8_BOM)
                     {
                         UTF8Encoding utf8wb = new UTF8Encoding(false);
                         writer = new StreamWriter(saveFileDialog1.FileName, false, utf8wb);
+                    }
+                    else if (encoding == WINDOWS_1251)
+                    {
+                        writer = new StreamWriter(saveFileDialog1.FileName, false, Encoding.ASCII);
                     }
                     else
                     {
@@ -348,6 +354,7 @@ namespace TestsEditor
                     writer.Close();
                     this.fileName = Path.GetFileName(saveFileDialog1.FileName);
                     this.toolStripStatusLabelFileName.Text = saveFileDialog1.FileName;
+                    this.toolStripStatusLabelFileEncoding.Text = encoding;
                     MessageBox.Show("Файл: " + this.fileName + " - успешно сохранён!" , "Сообщение");
                 }
                 catch (Exception exp)
@@ -366,13 +373,13 @@ namespace TestsEditor
         private void saveFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (this.toolStripStatusLabelFileName.Text != "...") saveFile();
-            else saveFileAs();
+            else saveFileAs(toolStripStatusLabelFileEncoding.Text);
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             if (this.toolStripStatusLabelFileName.Text != "...") saveFile();
-            else saveFileAs();
+            else saveFileAs(toolStripStatusLabelFileEncoding.Text);
         }
 
         private void saveFile()
@@ -424,18 +431,22 @@ namespace TestsEditor
             try
             {
                 StreamWriter writer;
-                if (toolStripDropDownButton1.Text == "ASCII")
+                if (toolStripStatusLabelFileEncoding.Text == DEFAULT)
                 {
-                    writer = new StreamWriter(this.toolStripStatusLabelFileName.Text, false, Encoding.ASCII);
+                    writer = new StreamWriter(this.toolStripStatusLabelFileName.Text, false, Encoding.Default);
                 }
-                else if (toolStripDropDownButton1.Text == "UTF-8")
+                else if (toolStripStatusLabelFileEncoding.Text == UTF_8)
                 {
                     writer = new StreamWriter(this.toolStripStatusLabelFileName.Text, false, Encoding.UTF8);
                 }
-                else if (toolStripDropDownButton1.Text == "UTF-8 without BOM")
+                else if (toolStripStatusLabelFileEncoding.Text == UTF_8_BOM)
                 {
                     UTF8Encoding utf8wb = new UTF8Encoding(false);
                     writer = new StreamWriter(this.toolStripStatusLabelFileName.Text, false, utf8wb);
+                }
+                else if (toolStripStatusLabelFileEncoding.Text == WINDOWS_1251)
+                {
+                    writer = new StreamWriter(this.toolStripStatusLabelFileName.Text, false, Encoding.ASCII);
                 }
                 else
                 {
@@ -711,53 +722,7 @@ namespace TestsEditor
             
         }
 
-        private void aSCIIToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (aSCIIToolStripMenuItem.Checked == false)
-            {
-                aSCIIToolStripMenuItem.Checked = true;
-                uTF8ToolStripMenuItem.Checked = false;
-                uTF8WithoutBOMToolStripMenuItem.Checked = false;
-                defaultToolStripMenuItem.Checked = false;
-                toolStripDropDownButton1.Text = aSCIIToolStripMenuItem.Text;
-            }
-        }
-
-        private void uTF8ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (uTF8ToolStripMenuItem.Checked == false)
-            {
-                aSCIIToolStripMenuItem.Checked = false;
-                uTF8ToolStripMenuItem.Checked = true;
-                uTF8WithoutBOMToolStripMenuItem.Checked = false;
-                defaultToolStripMenuItem.Checked = false;
-                toolStripDropDownButton1.Text = uTF8ToolStripMenuItem.Text;
-            }
-        }
-
-        private void uTF8WithoutBOMToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (uTF8WithoutBOMToolStripMenuItem.Checked == false)
-            {
-                aSCIIToolStripMenuItem.Checked = false;
-                uTF8ToolStripMenuItem.Checked = false;
-                uTF8WithoutBOMToolStripMenuItem.Checked = true;
-                defaultToolStripMenuItem.Checked = false;
-                toolStripDropDownButton1.Text = uTF8WithoutBOMToolStripMenuItem.Text;
-            }
-        }
-
-        private void defaultToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (defaultToolStripMenuItem.Checked == false)
-            {
-                defaultToolStripMenuItem.Checked = true;
-                aSCIIToolStripMenuItem.Checked = false;
-                uTF8ToolStripMenuItem.Checked = false;
-                uTF8WithoutBOMToolStripMenuItem.Checked = false;
-                toolStripDropDownButton1.Text = defaultToolStripMenuItem.Text;
-            }
-        }
+        
 
         public bool form6Close = true;
         private void howToCloseThePortToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1039,6 +1004,91 @@ namespace TestsEditor
                     }
                 }
             }
+        }
+
+        private void кодировкаUTF8ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFile(UTF_8);
+        }
+
+        private void кодировкаUTF8BOMToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFile(UTF_8_BOM);
+        }
+
+        private void кодировкаWindows1251ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFile(WINDOWS_1251);
+        }
+
+        private void кодировкаПоУмолчаниюToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            openFile(DEFAULT);
+        }
+
+        private void открытьТестКакToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void кодировкаUTF8ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            saveFileAs(UTF_8);
+        }
+
+        private void кодировкаUTF8BOMToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            saveFileAs(UTF_8_BOM);
+        }
+
+        private void кодировкаWindows1251ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            saveFileAs(WINDOWS_1251);
+        }
+
+        private void кодировкаПоУмолчаниюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFileAs(DEFAULT);
+        }
+
+        private void кодировкаUTF8ToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            openFile(UTF_8);
+        }
+
+        private void кодировкаUTF8BOMToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            openFile(UTF_8_BOM);
+        }
+
+        private void кодировкаWindows1251ToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            openFile(WINDOWS_1251);
+        }
+
+        private void кодировкаПоУмолчаниюToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            openFile(DEFAULT);
+        }
+
+        private void кодировкаUTF8ToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            saveFileAs(UTF_8);
+        }
+
+        private void кодировкаUTF8BOMToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            saveFileAs(UTF_8_BOM);
+        }
+
+        private void кодировкаWindows1251ToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            saveFileAs(WINDOWS_1251);
+        }
+
+        private void кодировкаПоУмолчаниюToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            saveFileAs(DEFAULT);
         }
     }
 }
