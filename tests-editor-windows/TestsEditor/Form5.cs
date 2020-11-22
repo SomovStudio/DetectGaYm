@@ -43,7 +43,7 @@ namespace TestsEditor
         {
             try
             {
-                System.Diagnostics.Process.Start(@"https://somovstudio.github.io/");
+                System.Diagnostics.Process.Start(@"https://detect-gaym.ucoz.net/");
             }
             catch (Exception ex)
             {
