@@ -21,6 +21,7 @@ namespace TestsEditor
         {
             parentForm.form7Close = false;
             //richTextBox1.LoadFile("help.rtf");
+            richTextBox1.Rtf = richTextBox1.Text;
         }
 
         private void Form7_FormClosed(object sender, FormClosedEventArgs e)
