@@ -490,7 +490,8 @@ namespace TestsEditor
                 string filename = toolStripStatusLabelFileName.Text;
                 
                 if (File.Exists(filename)) {
-                    bat += System.Environment.NewLine + "java -jar detect-gaym.jar " + filename;
+                    if(checkEncodingToolStripMenuItem.Checked) bat += System.Environment.NewLine + "java -jar detect-gaym.jar " + toolStripStatusLabelFileEncoding.Text + " " + filename;
+                    else bat += System.Environment.NewLine + "java -jar detect-gaym.jar " + filename;
                 }
                 else{
                     MessageBox.Show("Невозможно запустить тест! Файл не существует.");
@@ -534,7 +535,8 @@ namespace TestsEditor
                 folderBin = folderBin + "bin";
 
                 string bat = "cd " + folderBin;
-                bat += System.Environment.NewLine + "java -jar detect-gaym.jar " + folderName;
+                if (checkEncodingToolStripMenuItem.Checked) bat += System.Environment.NewLine + "java -jar detect-gaym.jar " + toolStripStatusLabelFileEncoding.Text + " " + folderName;
+                else bat += System.Environment.NewLine + "java -jar detect-gaym.jar " + folderName;
 
                 string batFile = folderBin + "\\run-test.bat";
                 StreamWriter writer = new StreamWriter(batFile, false, Encoding.ASCII);
@@ -1089,6 +1091,12 @@ namespace TestsEditor
         private void кодировкаПоУмолчаниюToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             saveFileAs(DEFAULT);
+        }
+
+        private void checkEncodingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (checkEncodingToolStripMenuItem.Checked) checkEncodingToolStripMenuItem.Checked = false;
+            else checkEncodingToolStripMenuItem.Checked = true;
         }
     }
 }

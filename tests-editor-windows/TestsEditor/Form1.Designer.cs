@@ -60,7 +60,7 @@
             this.executeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выполнитьВсеТестыИзПапкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.выполнятьТестВТекущейКодировкеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkEncodingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openSystemConsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -418,7 +418,7 @@
             this.executeTestToolStripMenuItem,
             this.выполнитьВсеТестыИзПапкиToolStripMenuItem,
             this.toolStripSeparator5,
-            this.выполнятьТестВТекущейКодировкеToolStripMenuItem,
+            this.checkEncodingToolStripMenuItem,
             this.toolStripSeparator12,
             this.stopToolStripMenuItem,
             this.openSystemConsoleToolStripMenuItem});
@@ -447,13 +447,14 @@
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(277, 6);
             // 
-            // выполнятьТестВТекущейКодировкеToolStripMenuItem
+            // checkEncodingToolStripMenuItem
             // 
-            this.выполнятьТестВТекущейКодировкеToolStripMenuItem.Checked = true;
-            this.выполнятьТестВТекущейКодировкеToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.выполнятьТестВТекущейКодировкеToolStripMenuItem.Name = "выполнятьТестВТекущейКодировкеToolStripMenuItem";
-            this.выполнятьТестВТекущейКодировкеToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
-            this.выполнятьТестВТекущейКодировкеToolStripMenuItem.Text = "Выполнять тест в текущей кодировке";
+            this.checkEncodingToolStripMenuItem.Checked = true;
+            this.checkEncodingToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkEncodingToolStripMenuItem.Name = "checkEncodingToolStripMenuItem";
+            this.checkEncodingToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
+            this.checkEncodingToolStripMenuItem.Text = "Выполнять тест в текущей кодировке";
+            this.checkEncodingToolStripMenuItem.Click += new System.EventHandler(this.checkEncodingToolStripMenuItem_Click);
             // 
             // toolStripSeparator12
             // 
@@ -1727,7 +1728,7 @@
         private System.Windows.Forms.ToolStripMenuItem инструкцияToolStripMenuItem;
         public System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelFileName;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.ToolStripMenuItem выполнятьТестВТекущейКодировкеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem checkEncodingToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
         private System.Windows.Forms.ToolStripMenuItem открытьТестКакToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem кодировкаUTF8ToolStripMenuItem;
