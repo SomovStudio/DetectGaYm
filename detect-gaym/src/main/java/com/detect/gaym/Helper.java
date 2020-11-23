@@ -30,7 +30,7 @@ public class Helper {
     public static final String UTF_8 = "UTF-8";
     public static final String UTF_8_BOM = "UTF-8-BOM";
     public static final String WINDOWS_1251 = "WINDOWS-1251";
-    public static final String ANSI = "ANSI";
+    public static final String WINDOWS_1252 = "WINDOWS-1252";
     public static final String TYPE_OS_WINDOWS = "type_os_windows";
     public static final String TYPE_OS_LINUX = "type_os_linux";
 
@@ -299,7 +299,7 @@ public class Helper {
             reader.close();
             return (JSONObject) obj;
         }
-        if(encoding.equals(ANSI)){
+        if(encoding.equals(WINDOWS_1252)){
             BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "Cp1252"));
             Object obj = new JSONParser().parse(reader);
             reader.close();
