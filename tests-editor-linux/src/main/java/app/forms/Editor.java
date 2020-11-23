@@ -19,7 +19,7 @@ public class Editor {
     public static final String UTF_8 = "UTF-8";
     public static final String UTF_8_BOM = "UTF-8-BOM";
     public static final String WINDOWS_1251 = "WINDOWS-1251";
-    public static final String ANSI = "ANSI";
+    public static final String WINDOWS_1252 = "WINDOWS-1252";
 
     public static String description;
     public static int port;
@@ -141,7 +141,7 @@ public class Editor {
             reader.close();
             return (JSONObject) obj;
         }
-        if(encoding.equals(ANSI)){
+        if(encoding.equals(WINDOWS_1252)){
             BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "Cp1252"));
             Object obj = new JSONParser().parse(reader);
             reader.close();
@@ -176,7 +176,7 @@ public class Editor {
             writer.flush();
             writer.close();
         }
-        if(encoding.equals(ANSI)){
+        if(encoding.equals(WINDOWS_1252)){
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filename), "Cp1252"));
             writer.write(context);
             writer.flush();
@@ -455,7 +455,7 @@ public class Editor {
                 return;
             }
         }
-        if(encoding.equals(ANSI)){
+        if(encoding.equals(WINDOWS_1252)){
             try {
                 BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "Cp1252"));
                 Object obj = new JSONParser().parse(reader);

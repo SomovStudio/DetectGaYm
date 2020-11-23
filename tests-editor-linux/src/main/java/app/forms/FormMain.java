@@ -73,8 +73,8 @@ public class FormMain {
     private JButton buttonExecuteTest;
     private JMenuItem MenuInstructionCreateTest;
     private JCheckBoxMenuItem MenuCheckBoxExecuteEncodingTest;
-    private JMenuItem MenuOpenAsANSI;
-    private JMenuItem MenuSaveAsANSI;
+    private JMenuItem MenuOpenAsWindows1252;
+    private JMenuItem MenuSaveAsWindows1252;
 
     public static void main(String[] args){
         JFrame frame = new JFrame("MainForm");
@@ -295,14 +295,14 @@ public class FormMain {
                 }
             }
         });
-        MenuOpenAsANSI.addActionListener(new ActionListener() {
+        MenuOpenAsWindows1252.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = Editor.dialogOpenFile(PanelMain);
                 if(path.equals("...")) return;
                 labelPathFile.setText(path);
-                labelEncoding.setText(ANSI);
+                labelEncoding.setText(WINDOWS_1252);
                 try {
-                    readJsonFile(path, ANSI);
+                    readJsonFile(path, WINDOWS_1252);
                     loadJsonData();
                 } catch (IOException e) {
                     showMessage(e.toString());
@@ -630,12 +630,12 @@ public class FormMain {
                 }
             }
         });
-        MenuSaveAsANSI.addActionListener(new ActionListener() {
+        MenuSaveAsWindows1252.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = Editor.dialogSaveFile(PanelMain);
                 if(path.equals("...")) return;
                 labelPathFile.setText(path);
-                labelEncoding.setText(ANSI);
+                labelEncoding.setText(WINDOWS_1252);
                 try {
                     String[] fields = new String[] {
                             textFieldDescription.getText(),
@@ -643,7 +643,7 @@ public class FormMain {
                             textFieldHar.getText(),
                             spinnerWaitLimit.getValue().toString()
                     };
-                    saveJsonFile(path, ANSI, fields, listOptions, tableData, tableSteps);
+                    saveJsonFile(path, WINDOWS_1252, fields, listOptions, tableData, tableSteps);
                 } catch (IOException e) {
                     showMessage(e.toString());
                     e.printStackTrace();
