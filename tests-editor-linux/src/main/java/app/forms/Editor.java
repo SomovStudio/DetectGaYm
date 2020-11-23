@@ -319,8 +319,29 @@ public class Editor {
 
     /* Консоль Windows */
     public static Process executeConsoleWindows(String filename, String encoding) throws IOException {
-        ProcessBuilder pb = new ProcessBuilder("cmd.exe", "/C", "start", "dir", "cd..", "java -jar detect-gaym.jar "+filename);
-        Process p = pb.start();
+        String folderBin= getProgramFolder();
+        folderBin = folderBin.substring(0, folderBin.length() - "editor".length());
+        folderBin = folderBin + "bin";
+
+        File file = new File(folderBin + "\\run-test.bat");
+        file.createNewFile();
+
+        String context = "";
+        context += System.getProperty("line.separator") + "cd " + folderBin;
+        if(encoding.equals("")) context += System.getProperty("line.separator") + "java -jar detect-gaym.jar " + filename;
+        else context += System.getProperty("line.separator") + "java -jar detect-gaym.jar " + encoding + " " + filename;
+
+        FileWriter writer = new FileWriter(file);
+        writer.write(context);
+        writer.flush();
+        writer.close();
+
+        String batFile = "cmd /c start " + folderBin + "\\run-test.bat";
+        Runtime runtime = Runtime.getRuntime();
+        Process p = runtime.exec(batFile);
+
+        //ProcessBuilder pb = new ProcessBuilder("cmd.exe", "/C", "start", "dir", "cd..", "java -jar detect-gaym.jar "+filename);
+        //Process p = pb.start();
         return p;
     }
 
