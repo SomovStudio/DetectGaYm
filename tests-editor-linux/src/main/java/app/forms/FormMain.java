@@ -726,31 +726,38 @@ public class FormMain {
                 JFrame frameCommand = new JFrame("FormCommand");
                 FormCommand form = new FormCommand();
                 String os = System.getProperty("os.name").toLowerCase();
+                String folderBin= getProgramFolder();
+                folderBin = folderBin.substring(0, folderBin.length() - "editor".length());
+                folderBin = folderBin + "bin";
+                form.textAreaCommandFile.setText(
+                        "cd " + folderBin + System.getProperty("line.separator") +
+                        "java -jar detect-gaym.jar " + labelPathFile.getText()
+                );
+                form.textAreaCommandFile2.setText(
+                        "cd " + folderBin + System.getProperty("line.separator") +
+                        "java -jar detect-gaym.jar " + labelEncoding.getText() + " " + labelPathFile.getText()
+                );
                 if(os.indexOf("linux") >= 0) {
-                    String folderBin= getProgramFolder();
-                    folderBin = folderBin.substring(0, folderBin.length() - "editor".length());
-                    folderBin = folderBin + "bin";
-                    form.textAreaCommandFile.setText(
-                            "cd " + folderBin + System.getProperty("line.separator") +
-                            "java -jar detect-gaym.jar " + labelPathFile.getText()
-                    );
-                    form.textAreaCommandFile2.setText(
-                            "cd " + folderBin + System.getProperty("line.separator") +
-                            "java -jar detect-gaym.jar " + labelEncoding.getText() + " " + labelPathFile.getText()
-                    );
                     form.textAreaCommandGroup.setText(
                             "cd " + folderBin + System.getProperty("line.separator") +
-                            "java -jar detect-gaym.jar " + getFileFolder(labelPathFile.getText()) + "/"
+                                    "java -jar detect-gaym.jar " + getFileFolder(labelPathFile.getText()) + "/"
                     );
                     form.textAreaCommandGroup2.setText(
                             "cd " + folderBin + System.getProperty("line.separator") +
-                            "java -jar detect-gaym.jar " + labelEncoding.getText() + " " + getFileFolder(labelPathFile.getText()) + "/"
+                                    "java -jar detect-gaym.jar " + labelEncoding.getText() + " " + getFileFolder(labelPathFile.getText()) + "/"
                     );
                 }
                 if(os.indexOf("win") >= 0) {
-                    form.textAreaCommandFile.setText("");
-                    form.textAreaCommandGroup.setText("");
+                    form.textAreaCommandGroup.setText(
+                            "cd " + folderBin + System.getProperty("line.separator") +
+                                    "java -jar detect-gaym.jar " + getFileFolder(labelPathFile.getText()) + "\\"
+                    );
+                    form.textAreaCommandGroup2.setText(
+                            "cd " + folderBin + System.getProperty("line.separator") +
+                                    "java -jar detect-gaym.jar " + labelEncoding.getText() + " " + getFileFolder(labelPathFile.getText()) + "\\"
+                    );
                 }
+
                 frameCommand.setContentPane(form.PanelMain);
                 frameCommand.setTitle("Команды для запуска автотестов");
                 frameCommand.pack();
