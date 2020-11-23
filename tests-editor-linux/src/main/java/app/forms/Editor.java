@@ -336,12 +336,12 @@ public class Editor {
         writer.flush();
         writer.close();
 
-        String batFile = "cmd /c start " + folderBin + "\\run-test.bat";
-        Runtime runtime = Runtime.getRuntime();
-        Process p = runtime.exec(batFile);
+        //String batFile = "cmd /c start " + folderBin + "\\run-test.bat";
+        //Runtime runtime = Runtime.getRuntime();
+        //Process p = runtime.exec(batFile);
 
-        //ProcessBuilder pb = new ProcessBuilder("cmd.exe", "/C", "start", "dir", "cd..", "java -jar detect-gaym.jar "+filename);
-        //Process p = pb.start();
+        ProcessBuilder pb = new ProcessBuilder("cmd.exe", "/C", "start", folderBin + "\\run-test.bat");
+        Process p = pb.start();
         return p;
     }
 
