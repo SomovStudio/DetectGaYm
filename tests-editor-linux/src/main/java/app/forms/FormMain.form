@@ -36,20 +36,21 @@
                   <component id="cf73f" class="javax.swing.JMenuItem" binding="MenuCreateNewTest">
                     <constraints/>
                     <properties>
-                      <icon value="javax/swing/plaf/metal/icons/ocean/file.gif"/>
+                      <icon value="iconfinder_New_document_132726.png"/>
                       <text value="Создать новый тест"/>
                     </properties>
                   </component>
                   <component id="13624" class="javax.swing.JMenuItem" binding="MenuOpenTestFile">
                     <constraints/>
                     <properties>
-                      <icon value="javax/swing/plaf/metal/icons/ocean/directory.gif"/>
+                      <icon value="folder.png"/>
                       <text value="Открыть тест"/>
                     </properties>
                   </component>
                   <grid id="e8b16" class="javax.swing.JMenu" binding="MenuOpenAsTestFile" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
                     <constraints/>
                     <properties>
+                      <icon value="folder_page.png"/>
                       <text value="Открыть тест как..."/>
                     </properties>
                     <border type="none"/>
@@ -103,13 +104,14 @@
                   <component id="b1dcc" class="javax.swing.JMenuItem" binding="MenuSaveTestFile">
                     <constraints/>
                     <properties>
-                      <icon value="javax/swing/plaf/metal/icons/ocean/floppy.gif"/>
+                      <icon value="iconfinder_Save_132607.png"/>
                       <text value="Сохранить тест"/>
                     </properties>
                   </component>
                   <grid id="30ad7" class="javax.swing.JMenu" binding="MenuSaveAsTestFile" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
                     <constraints/>
                     <properties>
+                      <icon value="drive_disk.png"/>
                       <text value="Сохранить тест как..."/>
                     </properties>
                     <border type="none"/>
@@ -163,7 +165,7 @@
                   <component id="af75a" class="javax.swing.JMenuItem" binding="MenuExit">
                     <constraints/>
                     <properties>
-                      <icon value="javax/swing/plaf/metal/icons/ocean/close.gif"/>
+                      <icon value="iconfinder_Exit_132751.png"/>
                       <selected value="true"/>
                       <text value="Выход"/>
                     </properties>
@@ -187,13 +189,14 @@
                   <component id="6c70a" class="javax.swing.JMenuItem" binding="MenuExecuteTest">
                     <constraints/>
                     <properties>
-                      <icon value="javax/swing/plaf/metal/icons/ocean/computer.gif"/>
+                      <icon value="control_play_blue.png"/>
                       <text value="Выполнить тест"/>
                     </properties>
                   </component>
                   <component id="2f20e" class="javax.swing.JMenuItem" binding="MenuExecuteGroupTest">
                     <constraints/>
                     <properties>
+                      <icon value="package_green.png"/>
                       <text value="Выполнить группу тестов"/>
                     </properties>
                   </component>
@@ -263,6 +266,7 @@
                   <component id="d4016" class="javax.swing.JMenuItem" binding="MenuAbout">
                     <constraints/>
                     <properties>
+                      <icon value="iconfinder_About_132628.png"/>
                       <text value="О программе"/>
                     </properties>
                   </component>
@@ -283,7 +287,7 @@
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <icon value="javax/swing/plaf/metal/icons/ocean/file.gif"/>
+                  <icon value="iconfinder_New_document_132726.png"/>
                   <text value="Создать новый тест"/>
                 </properties>
               </component>
@@ -297,7 +301,7 @@
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <icon value="javax/swing/plaf/metal/icons/ocean/directory.gif"/>
+                  <icon value="folder.png"/>
                   <text value="Открыть тест"/>
                 </properties>
               </component>
@@ -306,7 +310,7 @@
                   <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <icon value="javax/swing/plaf/metal/icons/ocean/floppy.gif"/>
+                  <icon value="iconfinder_Save_132607.png"/>
                   <text value="Сохранить тест"/>
                 </properties>
               </component>
@@ -315,7 +319,7 @@
                   <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <icon value="javax/swing/plaf/metal/icons/ocean/computer.gif"/>
+                  <icon value="control_play_blue.png"/>
                   <text value="Выполнить тест"/>
                 </properties>
               </component>
@@ -563,6 +567,7 @@
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <icon value="page_add.png"/>
                           <text value="Новая запись"/>
                         </properties>
                       </component>
@@ -576,6 +581,7 @@
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <icon value="page_delete.png"/>
                           <text value="Удалить запись"/>
                         </properties>
                       </component>
@@ -584,6 +590,7 @@
                           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <icon value="page_copy.png"/>
                           <text value="Копировать запись"/>
                         </properties>
                       </component>
@@ -592,6 +599,7 @@
                           <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <icon value="iconfinder_Up_132635.png"/>
                           <text value="Вверх"/>
                         </properties>
                       </component>
@@ -600,6 +608,7 @@
                           <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <icon value="iconfinder_Down_132601.png"/>
                           <text value="Вниз"/>
                         </properties>
                       </component>
@@ -641,6 +650,7 @@
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <icon value="page_add.png"/>
                           <text value="Новая запись"/>
                         </properties>
                       </component>
@@ -654,6 +664,7 @@
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <icon value="page_delete.png"/>
                           <text value="Удалить запись"/>
                         </properties>
                       </component>
@@ -662,6 +673,7 @@
                           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <icon value="page_copy.png"/>
                           <text value="Копировать запись"/>
                         </properties>
                       </component>
@@ -670,6 +682,7 @@
                           <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <icon value="iconfinder_Up_132635.png"/>
                           <text value="Вверх"/>
                         </properties>
                       </component>
@@ -678,6 +691,7 @@
                           <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <icon value="iconfinder_Down_132601.png"/>
                           <text value="Вниз"/>
                         </properties>
                       </component>
@@ -758,6 +772,7 @@
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <icon value="application_osx_terminal.png"/>
               <text value="Консоль:"/>
             </properties>
           </component>
