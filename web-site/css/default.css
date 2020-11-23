@@ -189,7 +189,7 @@ border-bottom: 1px dashed;
 }
 
 .section-dark {
-background-color: #EEEEEE;
+background-color: #FEF9E7;
 }
 
 .section-light {
@@ -221,7 +221,7 @@ left: -10px;
 height: 100px;
 width: 120%;
 margin-top: 20px;
-background-color: #EEEEEE;
+background-color: #FEF9E7;
 -moz-transform: rotate(2deg); /* Для Firefox */
 -ms-transform: rotate(2deg); /* Для IE */
 -webkit-transform: rotate(2deg); /* Для Safari, Chrome, iOS */
@@ -248,7 +248,7 @@ transform: rotate(-2deg);
 #about{
 position: relative;
 left: 35%;
-background-color: #EEEEEE;
+background-color: #E8F6F3;
 border-radius: 5px 5px;
 max-width:50%;
 min-width: 50%;
@@ -273,7 +273,7 @@ min-width: 75%;
 #editor-windows{
 margin-top: 5px;
 margin-left: 5%;
-background-color: #FFFFFF;
+background-color: #EBF5FB;
 border-radius: 5px 5px;
 max-width:50%;
 min-width: 50%;
@@ -294,7 +294,6 @@ z-index: 100;
 .editor-windows-image-right{
 display: none;
 }
-
 #editor-windows {
 left: 0;
 margin: 5px;
@@ -315,7 +314,7 @@ display: inline-block;
 padding: 10px;
 margin-bottom: 5px;
 margin-left: 25px;
-background-color: #EEEEEE;
+background-color: #F4ECF7;
 border-radius: 5px 5px;
 color: #555555;
 text-align: left;
@@ -362,7 +361,7 @@ min-width: 75%;
 
 #editor-linux{
 position: relative;
-left: 45%;
+left: 25%;
 background-color: #FFFFFF;
 border-radius: 5px 5px;
 max-width:50%;
@@ -391,7 +390,7 @@ margin-bottom: 5%;
 
 #documentation{
 display: inline-block;
-background-color: #FFFFFF;
+background-color: #F8F9F9;
 border-radius: 5px 5px;
 color: #555555;
 width: 60%;
@@ -406,7 +405,7 @@ width: 50%;
 
 #contacts{
 display: inline-block;
-background-color: #FFFFFF;
+background-color: #EAFAF1;
 border-radius: 5px 5px;
 color: #555555;
 width: 250px;
@@ -475,7 +474,7 @@ left: -10px;
 height: 100px;
 width: 120%;
 margin-top: 20px;
-background-color: #EEEEEE;
+background-color: #FEF9E7;
 -moz-transform: rotate(-2deg); /* Для Firefox */
 -ms-transform: rotate(-2deg); /* Для IE */
 -webkit-transform: rotate(-2deg); /* Для Safari, Chrome, iOS */
