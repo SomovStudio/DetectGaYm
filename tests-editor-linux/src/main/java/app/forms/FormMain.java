@@ -80,7 +80,7 @@ public class FormMain {
         JFrame frame = new JFrame("MainForm");
         frame.setContentPane(new FormMain().PanelMain);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setTitle("2020 © Somov Studio - Editor tests for DetectGaYm");
+        frame.setTitle("Редактор тестов для DetectGaYm");
         frame.pack();
         frame.setVisible(true);
      }
@@ -195,13 +195,13 @@ public class FormMain {
                 String context = "Редактор тестов для DetectGaYm";
                 context += System.getProperty("line.separator") + "----------------------------------------------------------------------";
                 context += System.getProperty("line.separator") + "Разработчик: Сомов Евгений Павлович";
-                context += System.getProperty("line.separator") + "Сайт: https://somovstudio.github.io";
-                context += System.getProperty("line.separator") + "Почта: somov.studio@gmail.com";
-                context += System.getProperty("line.separator") + "Дата последнего обновления: 22.11.2020";
+                context += System.getProperty("line.separator") + "Сайт: https://detect-gaym.ucoz.net";
+                //context += System.getProperty("line.separator") + "Почта: somov.studio@gmail.com";
+                context += System.getProperty("line.separator") + "Дата последнего обновления: 12.12.2020";
                 context += System.getProperty("line.separator") + "Версия: 1.0.0";
                 //context += System.getProperty("line.separator") + "Лицензия: GNU";
                 context += System.getProperty("line.separator") + "----------------------------------------------------------------------";
-                context += System.getProperty("line.separator") + "2020 © Somov Studio";
+                context += System.getProperty("line.separator") + "© Somov Evgeniy, 2020. All Rights Reserved.";
                 showMessage(context);
             }
         });
