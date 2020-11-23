@@ -176,6 +176,7 @@ public class FormInstruction {
                 System.getProperty("line.separator") + "Запуск:" +
                 System.getProperty("line.separator") + "   - Чтобы запустить выполнение теста нужно в меню 'Запуск' выбрать пункт 'Выполнить тест'" +
                 System.getProperty("line.separator") + "   - Чтобы запустить выполнение группы тестов нужно в меню 'Запуск' выбрать пункт 'Выполнить группу тестов'" +
+                System.getProperty("line.separator") + "   - Чтобы тесты учитывали кодировку необходимо включить флаг 'Выполнять тест в текущей кодировку'" +
                 System.getProperty("line.separator") + "Поддержка:" +
                 System.getProperty("line.separator") + "   - Если нужно сформировать команду для запуска теста например из bat файла, для этого в меню 'Поддержка' выберите пункт 'Сформировать команду для запуска'" +
                 System.getProperty("line.separator") + "   - Если нужно выполнить проверку json файла, для этого в меню 'Поддержка' выберите пункт 'Валидатор JSON'" + System.getProperty("line.separator") + System.getProperty("line.separator") +
