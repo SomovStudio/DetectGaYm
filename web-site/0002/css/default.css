@@ -157,6 +157,7 @@ header {
 .preview-image img{
 	min-width: 80%;
 	max-width: 80%;
+	box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
 
 .preview-description {
