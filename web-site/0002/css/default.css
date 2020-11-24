@@ -30,7 +30,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 body {
 	background-attachment: fixed;
-	background-image: url(../img/body-bg2.jpeg);
+	background-image: url(../img/body-bg.jpg);
 	background-position: top center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -93,12 +93,17 @@ a:hover {
 }
 
 .main-wrapper {
-    width: 68.75%;
+    width: 75%;
     margin: 0 auto;
     margin-top: 6rem;
 }
-@media (min-width: 1200px).main-wrapper {
-    width: 75%;
+
+@media screen and (max-width: 768px){
+	.main-wrapper {
+    	width: 95%;
+    	margin: 0 auto;
+    	margin-top: 6rem;
+	}
 }
 
 .container {
@@ -107,19 +112,6 @@ a:hover {
     padding-right: 15px;
     padding-left: 15px;
     width: 100%;
-}
-@media (min-width: 1200px).container {
-    max-width: 1140px;
-}
-@media (min-width: 992px).container {
-    max-width: 960px;
-}
-
-@media (min-width: 768px).container {
-    max-width: 720px;
-}
-@media (min-width: 576px).container {
-    max-width: 540px;
 }
 
 
@@ -135,8 +127,50 @@ header {
     height: 600px;
 }
 
+.logo {
+	margin: 0;
+	width: 260px;
+	height: 72px;
+	min-width: 20%;
+	max-width: 20%;
+	padding-left: 2%;
+	padding-top: 2%;
+}
+
+.menu {
+	float: right;
+}
+
+.preview {
+	margin: 5% 5%;
+}
+
+.preview-image {
+	text-align: center;
+	min-width: 50%;
+    max-width: 50%;
+	float: left;
+}
+
+.preview-image img{
+	min-width: 80%;
+	max-width: 80%;
+}
+
+.preview-description {
+	text-align: left;
+	color: #EEEEEE;
+	min-width: 40%;
+    max-width: 40%;
+	float: right;
+}
+
 section{
   padding: 70px 0 80px 0;
+}
+
+.section-clear {
+	clear: both;
 }
 
 .section-dark {
