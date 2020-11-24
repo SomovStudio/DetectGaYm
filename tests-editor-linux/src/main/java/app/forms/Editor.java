@@ -32,6 +32,7 @@ public class Editor {
     /* Диалог с текстом */
     public static void showMessage(String message) {
         JOptionPane.showMessageDialog(null, message);
+        System.out.println(message);
     }
 
     /* Путь к папке программы */
@@ -419,11 +420,11 @@ public class Editor {
                 reader.close();
             } catch (IOException e) {
                 showMessage(e.toString());
-                e.printStackTrace();
+                //e.printStackTrace();
                 return;
             } catch (ParseException e) {
                 showMessage("ОШИБКА: Нарущена структура json файла.\n"+e.toString());
-                e.printStackTrace();
+                //e.printStackTrace();
                 return;
             }
         }
@@ -434,11 +435,11 @@ public class Editor {
                 reader.close();
             } catch (IOException e) {
                 showMessage(e.toString());
-                e.printStackTrace();
+                //e.printStackTrace();
                 return;
             } catch (ParseException e) {
                 showMessage("ОШИБКА: Нарущена структура json файла.\n"+e.toString());
-                e.printStackTrace();
+                //e.printStackTrace();
                 return;
             }
         }
@@ -455,11 +456,11 @@ public class Editor {
                 reader.close();
             } catch (IOException e) {
                 showMessage(e.toString());
-                e.printStackTrace();
+                //e.printStackTrace();
                 return;
             } catch (ParseException e) {
                 showMessage("ОШИБКА: Нарущена структура json файла.\n"+e.toString());
-                e.printStackTrace();
+                //e.printStackTrace();
                 return;
             }
         }
@@ -470,11 +471,11 @@ public class Editor {
                 reader.close();
             } catch (IOException e) {
                 showMessage(e.toString());
-                e.printStackTrace();
+                //e.printStackTrace();
                 return;
             } catch (ParseException e) {
                 showMessage("ОШИБКА: Нарущена структура json файла.\n"+e.toString());
-                e.printStackTrace();
+                //e.printStackTrace();
                 return;
             }
         }
@@ -485,11 +486,11 @@ public class Editor {
                 reader.close();
             } catch (IOException e) {
                 showMessage(e.toString());
-                e.printStackTrace();
+                //e.printStackTrace();
                 return;
             } catch (ParseException e) {
                 showMessage("ОШИБКА: Нарущена структура json файла.\n"+e.toString());
-                e.printStackTrace();
+                //e.printStackTrace();
                 return;
             }
         }

@@ -216,10 +216,10 @@ public class FormMain {
                     loadJsonData();
                 } catch (IOException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 } catch (ParseException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 }
             }
         });
@@ -234,10 +234,10 @@ public class FormMain {
                     loadJsonData();
                 } catch (IOException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 } catch (ParseException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 }
             }
         });
@@ -252,10 +252,10 @@ public class FormMain {
                     loadJsonData();
                 } catch (IOException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 } catch (ParseException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 }
             }
         });
@@ -270,10 +270,10 @@ public class FormMain {
                     loadJsonData();
                 } catch (IOException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 } catch (ParseException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 }
             }
         });
@@ -288,10 +288,10 @@ public class FormMain {
                     loadJsonData();
                 } catch (IOException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 } catch (ParseException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 }
             }
         });
@@ -306,10 +306,10 @@ public class FormMain {
                     loadJsonData();
                 } catch (IOException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 } catch (ParseException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 }
             }
         });
@@ -531,10 +531,10 @@ public class FormMain {
                     saveJsonFile(path, labelEncoding.getText(), fields, listOptions, tableData, tableSteps);
                 } catch (IOException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 } catch (ParseException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 }
             }
         });
@@ -554,10 +554,10 @@ public class FormMain {
                     saveJsonFile(path, DEFAULT, fields, listOptions, tableData, tableSteps);
                 } catch (IOException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 } catch (ParseException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 }
             }
         });
@@ -577,10 +577,10 @@ public class FormMain {
                     saveJsonFile(path, UTF_8, fields, listOptions, tableData, tableSteps);
                 } catch (IOException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 } catch (ParseException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 }
             }
         });
@@ -600,10 +600,10 @@ public class FormMain {
                     saveJsonFile(path, UTF_8_BOM, fields, listOptions, tableData, tableSteps);
                 } catch (IOException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 } catch (ParseException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 }
             }
         });
@@ -623,10 +623,10 @@ public class FormMain {
                     saveJsonFile(path, WINDOWS_1251, fields, listOptions, tableData, tableSteps);
                 } catch (IOException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 } catch (ParseException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 }
             }
         });
@@ -646,10 +646,10 @@ public class FormMain {
                     saveJsonFile(path, WINDOWS_1252, fields, listOptions, tableData, tableSteps);
                 } catch (IOException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 } catch (ParseException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 }
             }
         });
@@ -693,7 +693,7 @@ public class FormMain {
                                 "\nа так же включить флаг выполнение: Разрешить выполнение файла как программы\n" +
                                 "\nПосле выполнения всех перечисленных выше действий попробуйте снова запустить тест.");
                     }
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 }
             }
         });
@@ -717,7 +717,7 @@ public class FormMain {
                                 "\nа так же включить флаг выполнение: Разрешить выполнение файла как программы\n" +
                                 "\nПосле выполнения всех перечисленных выше действий попробуйте снова запустить тест.");
                     }
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 }
             }
         });
@@ -773,7 +773,7 @@ public class FormMain {
                 try {
                     validatorJson(jsonFile, labelEncoding.getText());
                 } catch (FileNotFoundException e) {
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 }
             }
         });
@@ -842,10 +842,10 @@ public class FormMain {
                     loadJsonData();
                 } catch (IOException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 } catch (ParseException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 }
             }
         });
@@ -865,10 +865,10 @@ public class FormMain {
                     saveJsonFile(path, labelEncoding.getText(), fields, listOptions, tableData, tableSteps);
                 } catch (IOException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 } catch (ParseException e) {
                     showMessage(e.toString());
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 }
             }
         });
@@ -891,7 +891,7 @@ public class FormMain {
                                 "\nа так же включить флаг выполнение: Разрешить выполнение файла как программы\n" +
                                 "\nПосле выполнения всех перечисленных выше действий попробуйте снова запустить тест.");
                     }
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 }
             }
         });
