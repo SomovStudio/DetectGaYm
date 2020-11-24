@@ -788,7 +788,9 @@
             <children>
               <component id="a94b5" class="javax.swing.JTextArea" binding="textAreaConsole">
                 <constraints/>
-                <properties/>
+                <properties>
+                  <editable value="false"/>
+                </properties>
               </component>
             </children>
           </scrollpane>
