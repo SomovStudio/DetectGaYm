@@ -24,7 +24,7 @@ html {
 	width: device-width;
 }
 
-article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section, form {
 	display: block;
 }
 
@@ -143,8 +143,6 @@ header {
   text-decoration: underline;
 }
 
-
-
 .preview {
 	margin: 5% 5%;
 }
@@ -167,6 +165,28 @@ header {
 	min-width: 40%;
     max-width: 40%;
 	float: right;
+}
+
+.button {
+    width: 150px;
+    height: 33px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: inset 0 0 0 1px #dddddd;
+    background-color: RGBA(0,0,0,0.1);
+    color: #FFFFFF;
+}
+
+.button:hover {
+    width: 150px;
+    height: 33px;
+    cursor:pointer;
+    border: 0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: inset 0 0 0 1px #dddddd;
+    color: #111111;
 }
 
 section{
