@@ -207,7 +207,7 @@ public class FormMain {
         });
         MenuOpenTestFile.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-                String path = Editor.dialogOpenFile(PanelMain);
+                String path = Editor.dialogOpenFile(PanelMain, labelPathFile.getText());
                 if(path.equals("...")) return;
                 labelPathFile.setText(path);
                 labelEncoding.setText(DEFAULT);
@@ -225,7 +225,7 @@ public class FormMain {
         });
         MenuOpenAsDefault.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-                String path = Editor.dialogOpenFile(PanelMain);
+                String path = Editor.dialogOpenFile(PanelMain, labelPathFile.getText());
                 if(path.equals("...")) return;
                 labelPathFile.setText(path);
                 labelEncoding.setText(DEFAULT);
@@ -243,7 +243,7 @@ public class FormMain {
         });
         MenuOpenAsUtf8.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-                String path = Editor.dialogOpenFile(PanelMain);
+                String path = Editor.dialogOpenFile(PanelMain, labelPathFile.getText());
                 if(path.equals("...")) return;
                 labelPathFile.setText(path);
                 labelEncoding.setText(UTF_8);
@@ -261,7 +261,7 @@ public class FormMain {
         });
         MenuOpenAsUtf8Bom.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-                String path = Editor.dialogOpenFile(PanelMain);
+                String path = Editor.dialogOpenFile(PanelMain, labelPathFile.getText());
                 if(path.equals("...")) return;
                 labelPathFile.setText(path);
                 labelEncoding.setText(UTF_8_BOM);
@@ -279,7 +279,7 @@ public class FormMain {
         });
         MenuOpenAsWindows1251.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-                String path = Editor.dialogOpenFile(PanelMain);
+                String path = Editor.dialogOpenFile(PanelMain, labelPathFile.getText());
                 if(path.equals("...")) return;
                 labelPathFile.setText(path);
                 labelEncoding.setText(WINDOWS_1251);
@@ -297,7 +297,7 @@ public class FormMain {
         });
         MenuOpenAsWindows1252.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-                String path = Editor.dialogOpenFile(PanelMain);
+                String path = Editor.dialogOpenFile(PanelMain, labelPathFile.getText());
                 if(path.equals("...")) return;
                 labelPathFile.setText(path);
                 labelEncoding.setText(WINDOWS_1252);
@@ -518,7 +518,7 @@ public class FormMain {
         MenuSaveTestFile.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = labelPathFile.getText();
-                if(path.equals("...")) path = Editor.dialogSaveFile(PanelMain);
+                if(path.equals("...")) path = Editor.dialogSaveFile(PanelMain, labelPathFile.getText());
                 if(path.equals("...")) return;
                 labelPathFile.setText(path);
                 try {
@@ -540,7 +540,7 @@ public class FormMain {
         });
         MenuSaveAsDefault.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-                String path = Editor.dialogSaveFile(PanelMain);
+                String path = Editor.dialogSaveFile(PanelMain, labelPathFile.getText());
                 if(path.equals("...")) return;
                 labelPathFile.setText(path);
                 labelEncoding.setText(DEFAULT);
@@ -563,7 +563,7 @@ public class FormMain {
         });
         MenuSaveAsUtf8.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-                String path = Editor.dialogSaveFile(PanelMain);
+                String path = Editor.dialogSaveFile(PanelMain, labelPathFile.getText());
                 if(path.equals("...")) return;
                 labelPathFile.setText(path);
                 labelEncoding.setText(UTF_8);
@@ -586,7 +586,7 @@ public class FormMain {
         });
         MenuSaveAsUtf8Bom.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-                String path = Editor.dialogSaveFile(PanelMain);
+                String path = Editor.dialogSaveFile(PanelMain, labelPathFile.getText());
                 if(path.equals("...")) return;
                 labelPathFile.setText(path);
                 labelEncoding.setText(UTF_8_BOM);
@@ -609,7 +609,7 @@ public class FormMain {
         });
         MenuSaveAsWindows1251.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-                String path = Editor.dialogSaveFile(PanelMain);
+                String path = Editor.dialogSaveFile(PanelMain, labelPathFile.getText());
                 if(path.equals("...")) return;
                 labelPathFile.setText(path);
                 labelEncoding.setText(WINDOWS_1251);
@@ -632,7 +632,7 @@ public class FormMain {
         });
         MenuSaveAsWindows1252.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-                String path = Editor.dialogSaveFile(PanelMain);
+                String path = Editor.dialogSaveFile(PanelMain, labelPathFile.getText());
                 if(path.equals("...")) return;
                 labelPathFile.setText(path);
                 labelEncoding.setText(WINDOWS_1252);
@@ -768,7 +768,7 @@ public class FormMain {
         MenuValidatorJson.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 String jsonFile;
-                if(labelPathFile.getText() == "...") jsonFile = Editor.dialogOpenFile(PanelMain);
+                if(labelPathFile.getText() == "...") jsonFile = Editor.dialogOpenFile(PanelMain, labelPathFile.getText());
                 else jsonFile = labelPathFile.getText();
                 try {
                     validatorJson(jsonFile, labelEncoding.getText());
@@ -833,7 +833,7 @@ public class FormMain {
         });
         buttonOpenTestFile.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-                String path = Editor.dialogOpenFile(PanelMain);
+                String path = Editor.dialogOpenFile(PanelMain, labelPathFile.getText());
                 if(path.equals("...")) return;
                 labelPathFile.setText(path);
                 labelEncoding.setText(DEFAULT);
@@ -852,7 +852,7 @@ public class FormMain {
         buttonSaveTestFile.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 String path = labelPathFile.getText();
-                if(path.equals("...")) path = Editor.dialogSaveFile(PanelMain);
+                if(path.equals("...")) path = Editor.dialogSaveFile(PanelMain, labelPathFile.getText());
                 if(path.equals("...")) return;
                 labelPathFile.setText(path);
                 try {

@@ -48,10 +48,11 @@ public class Editor {
     }
 
     /* Диалог открытия файла */
-    public static String dialogOpenFile(java.awt.Component parent) {
+    public static String dialogOpenFile(java.awt.Component parent, String openFile) {
         JFileChooser fileChooser = new JFileChooser();
         //fileChooser.setCurrentDirectory(new File(System.getProperty("user.dir"))); //user.home
-        fileChooser.setCurrentDirectory(new File(getProgramFolder()));
+        if(openFile.equals("...")) fileChooser.setCurrentDirectory(new File(getProgramFolder()));
+        else fileChooser.setCurrentDirectory(new File(openFile));
         fileChooser.setFileFilter(new FileFilter() {
             @Override
             public boolean accept(File file) {
@@ -76,10 +77,11 @@ public class Editor {
     }
 
     /* Диалог сохранения файлов */
-    public static String dialogSaveFile(java.awt.Component parent) {
+    public static String dialogSaveFile(java.awt.Component parent, String openFile) {
         JFileChooser fileChooser = new JFileChooser();
         //fileChooser.setCurrentDirectory(new File(System.getProperty("user.dir"))); //user.home
-        fileChooser.setCurrentDirectory(new File(getProgramFolder()));
+        if(openFile.equals("...")) fileChooser.setCurrentDirectory(new File(getProgramFolder()));
+        else fileChooser.setCurrentDirectory(new File(openFile));
         fileChooser.setFileFilter(new FileFilter() {
             @Override
             public boolean accept(File file) {
