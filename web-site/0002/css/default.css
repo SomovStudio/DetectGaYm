@@ -105,7 +105,10 @@ header {
 	background-image: -moz-linear-gradient(0deg, #6C3483 0%, #1B4F72 100%);
 	background-image: -webkit-linear-gradient(0deg, #6C3483 0%, #1B4F72 100%);
 	background-image: -ms-linear-gradient(0deg, #6C3483 0%, #1B4F72 100%);
-    height: 600px;
+    height: auto;
+  	min-height: 600px;
+  	max-height: auto;
+    overflow:auto;
 }
 
 .logo {
@@ -148,6 +151,10 @@ header {
 
 section{
   	padding: 70px 0 80px 0;
+  	height: auto;
+  	min-height: auto;
+  	max-height: auto;
+  	overflow:auto; /* автоматическое увеличение высоты блока */
 }
 
 .section-clear {
@@ -158,10 +165,12 @@ section{
 	background-image: -moz-linear-gradient(0deg, #6C3483 0%, #1B4F72 100%);
 	background-image: -webkit-linear-gradient(0deg, #6C3483 0%, #1B4F72 100%);
 	background-image: -ms-linear-gradient(0deg, #6C3483 0%, #1B4F72 100%);
+	color: #EEEEEE;
 }
 
 .section-light {
 	background: #FFFFFF;
+	color:#222222;
 }
 
 .section-footer {
@@ -179,18 +188,38 @@ section{
 }
 
 .container-left {
+	padding: 2%;
 	min-width: 50%;
     max-width: 50%;
 	float: left;
 }
 
+.container-left img {
+	min-width: 90%;
+    max-width: 90%;
+}
+
 .container-right {
+	padding: 2%;
 	min-width: 50%;
     max-width: 50%;
 	float: right;
 }
 
+.container-right img {
+	min-width: 100%;
+    max-width: 100%;
+}
+
 footer {
 	background: rgba(0, 0, 0, 0.25);
     padding: 15px 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #FFFFFF;
 }
