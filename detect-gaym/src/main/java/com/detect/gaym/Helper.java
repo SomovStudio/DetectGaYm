@@ -154,7 +154,7 @@ public class Helper {
     public static void showTitle(String testname) {
         System.out.println(" ");
         System.out.println(" ");
-        System.out.println("| TITLE --------------------------------------");
+        System.out.println("| BEGIN --------------------------------------");
         System.out.println("| " + testname);
         System.out.println("|---------------------------------------------");
     }
@@ -173,7 +173,7 @@ public class Helper {
 
     /* Показать сообщение о том что тест провален */
     public static void showFail(String failMessage) throws Exception {
-        System.out.println("| FAILED -------------------------------------");
+        System.out.println("FAILED ---------------------------------------");
         System.out.println("| " + failMessage);
         System.out.println("|---------------------------------------------");
         System.out.println(" ");
@@ -184,7 +184,7 @@ public class Helper {
 
     /* Показать успех */
     public static void showPass(String message) {
-        System.out.println("| TEST ---------------------------------------");
+        System.out.println("TEST -----------------------------------------");
         System.out.println("| " + message);
         System.out.println("|---------------------------------------------");
         Assert.assertEquals("PASSED", "PASSED");

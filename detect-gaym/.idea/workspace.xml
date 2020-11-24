@@ -10,7 +10,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5eaef80f-35ed-4559-b799-89a4d119880d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/bcpkix-jdk15on-1.58.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/bcprov-jdk15on-1.58.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/browsermob-core-2.1.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/byte-buddy-1.8.15.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/checker-qual-2.10.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/commons-exec-1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/commons-io-2.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/commons-lang3-3.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/detect-gaym.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/dnsjava-2.1.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/error_prone_annotations-2.3.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/failureaccess-1.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/guava-28.2-jre.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/hamcrest-core-1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/j2objc-annotations-1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/jackson-annotations-2.8.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/jackson-core-2.8.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/jackson-databind-2.8.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/jcl-over-slf4j-1.7.25.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/json-simple-1.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/jsr305-3.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/junit-4.13.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/jzlib-1.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/littleproxy-1.1.0-beta-bmp-17.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/mitm-2.1.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/netty-all-4.0.51.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/okhttp-3.11.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/okio-1.14.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/selenium-api-3.141.59.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/selenium-chrome-driver-3.141.59.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/selenium-edge-driver-3.141.59.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/selenium-firefox-driver-3.141.59.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/selenium-ie-driver-3.141.59.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/selenium-java-3.141.59.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/selenium-opera-driver-3.141.59.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/selenium-remote-driver-3.141.59.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/selenium-safari-driver-3.141.59.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/selenium-support-3.141.59.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/slf4j-api-1.7.25.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/slf4j-simple-1.6.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/detect/gaym/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/detect/gaym/Helper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/detect/gaym/Helper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/detect/gaym/Helper.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +82,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/out" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
