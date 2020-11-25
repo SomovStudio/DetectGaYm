@@ -87,6 +87,10 @@ a:hover {
   text-decoration: underline;
 }
 
+iframe {
+	
+}
+
 .main-wrapper {
     width: 75%;
     margin: 0 auto;
@@ -267,6 +271,14 @@ section{
 .container-right img {
 	min-width: 100%;
     max-width: 100%;
+}
+
+.video {
+	background-image: -moz-linear-gradient(0deg, #6C3483 0%, #1B4F72 100%);
+	background-image: -webkit-linear-gradient(0deg, #6C3483 0%, #1B4F72 100%);
+	background-image: -ms-linear-gradient(0deg, #6C3483 0%, #1B4F72 100%);
+	border-radius: 25px; 
+	padding: 10px;
 }
 
 footer {
