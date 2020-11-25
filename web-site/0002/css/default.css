@@ -133,7 +133,8 @@ header {
 .menu a {
   color: #EFEFEF;
   text-decoration: none;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
+  font-weight: bold;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
@@ -167,6 +168,22 @@ header {
     max-width: 40%;
 	float: right;
 }
+
+.preview-description a {
+  color: #EFEFEF;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+.preview-description a:hover {
+  color: #FC1B1B;
+  text-decoration: underline;
+}
+
+.preview-description ul{
+	padding-left: 5%;
+}
+
 
 .button {
     width: 150px;
