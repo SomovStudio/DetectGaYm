@@ -199,7 +199,7 @@ public class FormMain {
                 //context += System.getProperty("line.separator") + "Почта: somov.studio@gmail.com";
                 context += System.getProperty("line.separator") + "Дата последнего обновления: 12.12.2020";
                 context += System.getProperty("line.separator") + "Версия: 1.0.0";
-                //context += System.getProperty("line.separator") + "Лицензия: GNU";
+                context += System.getProperty("line.separator") + "Лицензия: GNU";
                 context += System.getProperty("line.separator") + "----------------------------------------------------------------------";
                 context += System.getProperty("line.separator") + "© Somov Evgeniy, 2020. All Rights Reserved.";
                 showMessage(context);
