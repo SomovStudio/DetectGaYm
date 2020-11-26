@@ -73,7 +73,7 @@
 					<p>
 						За выполнение сценариев отвечает программа detect-gaym.jar которая находится в папке bin. Чтобы запустить заранее созданный сценарий автоматизированного тестирования достаточно открыть консоль и ввести команду:
 						<br><br>
-						<code>java -jar detect-gaym.jar UTF-8 C:\...\detect-gaym\tests\test-search-ga.json</code>
+						<code>java -jar detect-gaym.jar UTF-8 C:\...\DetectGaYm\tests\test-search-ga.json</code>
 						<br>
 					</p>
 					<p>
@@ -83,7 +83,7 @@
 						Визуальный редактор тестов версия для Windows позволяет не только легко и просто создавать сценарий но так же быстро запускать его на выполнение. Работая в редакторе тестов вам не потребуется запускать сценарий из консоли, достаточно будет нажать одну кнопку и редактор сам сформирует команду в файле run-test.bat в папке bin и запустит выполнение сценария автоматизированного тестирования.
 					</p>
 					<p>
-						Более подробная информация о работе редактора и программы в целом вы найдете в документации.
+						Более подробную информацию о работе с программой вы найдете в документации.
 					</p>
 				</div>
 				<div class="container-right">
@@ -114,8 +114,8 @@
 						<br><br>
 						<code>
 							#!/bin/bash<br>
-							cd /home/.../detect-gaym/bin<br>
-							java -jar detect-gaym.jar UTF-8 /home/.../detect-gaym/tests/test-search-ga.json
+							cd /home/.../DetectGaYm/bin<br>
+							java -jar detect-gaym.jar UTF-8 /home/.../DetectGaYm/tests/test-search-ga.json
 						</code>
 						<br><br>
 						Для корректной работы файла run-test.sh так же требуется предоставить права на чтение и запись, и включить разрешение на выполнение файла как программу.
@@ -140,9 +140,11 @@
 						</ul>
 					</p>
 					<p>
-						Далее необходимо распаковать драйвер из скаченного архива в 
-						<br>папку DetectGaYm\driver\windows - в системе Windows, и в 
-						<br>папку DetectGaYm/driver/linux - в системе Linux.
+						Далее необходимо распаковать драйвер из скаченного архива в папки:
+						<ul class="list-folders">
+							<li>DetectGaYm\driver\windows - для системы Windows</li>
+							<li>DetectGaYm/driver/linux - для системы Linux</li>
+						</ul>
 					</p>
 					<p>
 						В системе Linux кроме обновления драйвера в программе DetectGaYm так же необходимо обновить драйвер в системе. Для этого нужно выполнить команды:
@@ -157,7 +159,7 @@
 						<br>
 					</p>
 					<p>
-						Более подробная информация о работе редактора и программы в целом вы найдете в документации.
+						Более подробную информацию о работе с программой вы найдете в документации.
 					</p>
 				</div>
 				<div class="container-right">
@@ -169,10 +171,38 @@
 		<section class="section-light">
 			<div class="container">
 				<div class="container-left">
-					<h2>Запуск тестов из командной строки</h2>
+					
 				</div>
 				<div class="container-right">
-					
+					<h2>Запуск тестов из командной строки</h2>
+					<br>
+					<p>
+						Программа DetectGaYm позволяет запускать сценарий автоматизированного теста из консоли. В системе Windows это CMD (command line interpreter), а в системе Linux это Terminal (gnome terminal)
+					</p>
+					<p>
+						В системе Windows чтобы запустить заранее созданный сценарий нужно открыть консоль, перейти в папку bin и запустить выполнение сценария:
+						<br><br>
+						<code>
+							cd C:\...\DetectGaYm\bin<br>
+							java -jar detect-gaym.jar UTF-8 C:\...\DetectGaYm\tests\test-search-ga.json
+						</code>
+						<br><br>
+					</p>
+					<p>
+						В системе Linux чтобы запустить заранее созданный сценарий так же нужно открыть консоль, перейти в папку bin и запустить выполнение сценария:
+						<br><br>
+						<code>
+							cd /home/.../DetectGaYm/bin<br>
+							java -jar detect-gaym.jar UTF-8 /home/.../DetectGaYm/tests/test-search-ga.json
+						</code>
+						<br><br>
+					</p>
+					<p>
+						Данный способ запуска сценариев удобно использовать в программах предназначенных для обеспечения процесса непрерывной интеграции, таких как <a href="https://www.jenkins.io/" target="_blank">Jenkins</a> или <a href="https://www.jetbrains.com/ru-ru/teamcity/" target="_blank">TeamCity</a>. Вам нужно будет всего лишь приписать команды запуска.
+					</p>
+					<p>
+						В визуальном редакторе тестов в меню "Поддержка" присутствует специальная функция которая позволяет формировать команды запуска для редактируемого сценария.
+					</p>
 				</div>
 			</div>
 		</section>

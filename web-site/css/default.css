@@ -277,6 +277,11 @@ section{
 	padding-left: 5%;
 }
 
+.list-folders {
+	padding-left: 5%;
+	list-style: none;
+}
+
 .video {
 	background-image: -moz-linear-gradient(0deg, #6C3483 0%, #1B4F72 100%);
 	background-image: -webkit-linear-gradient(0deg, #6C3483 0%, #1B4F72 100%);
