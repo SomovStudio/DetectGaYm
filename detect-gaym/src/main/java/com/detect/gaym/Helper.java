@@ -347,10 +347,12 @@ public class Helper {
             if(typeOS == TYPE_OS_WINDOWS) {
                 FileUtils.copyFile(captureElementBitmap("//html"), new File(getFolderPath() + "\\errors\\img_"+filename+".png"));
                 System.out.println("SCREENSHOT: save image error in file: \\errors\\img_" + filename + ".png");
+                System.out.println(" ");
             }
             if(typeOS == TYPE_OS_LINUX) {
                 FileUtils.copyFile(captureElementBitmap("//html"), new File(getFolderPath() + "/errors/img_"+filename+".png"));
                 System.out.println("SCREENSHOT: save image error in file: "+getFolderPath()+"/errors/img_" + filename + ".png");
+                System.out.println(" ");
             }
         }catch (Exception e) {
             System.out.println("SCREENSHOT: error save screenshot - " + e.fillInStackTrace());
