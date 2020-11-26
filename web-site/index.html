@@ -21,6 +21,7 @@
 					<nav>
 						<a href="#description">О программе</a>
 						<a href="#editor">Редактор тестов</a>
+						<a href="#update">Обновление</a>
 						<a href="" target="_blank">Скачать</a>
 						<a href="#video">Видео обзор</a>
 						<a href="#documentation">Документация</a>
@@ -34,8 +35,8 @@
 					</div>
 					<div id="description" class="preview-description">
 						<p>
-							Программа автоматизированного тестирования событий:
-							<br>Google analytics и Yandex metrika.
+							Бесплатная программа автоматизированного тестирования событий:
+							Google analytics и Yandex metrika.
 							<br><br>
 							Программа позволяет проверить предусмотренные события Google analytics и Yandex metrika отправляемые в момент выполнения каких либо действий на странице сайта. 
 							<br>
@@ -124,7 +125,40 @@
 			<div class="section-clear"></div>
 			<div class="container">
 				<div class="container-left">
-					<h2>Обновление веб драйвера</h2>
+					<h2 id="update">Обновление веб драйвера</h2>
+					<br>
+					<p>
+						Программа DetectGaYm способна выполнять действия над элементами страницы в окне браузера используя для этого <a href="https://www.selenium.dev/" target="_blank">Selenium</a> инструмент автоматизации действий веб-браузера. Для его работы используется специальный <a href="https://chromedriver.chromium.org/" target="_blank">WebDriver</a> под браузер Google Chrome.
+					</p>
+					<p>
+						Периодически браузер Google Chrome обновляетя и в результате этого <a href="https://chromedriver.chromium.org/" target="_blank">WebDriver</a> перестает корректно работать с браузером. В этом случае необходимо зайти на официальную страницу <a href="https://chromedriver.chromium.org/" target="_blank">ChromeDriver - WebDriver for Chrome</a> и скачать архив с последней стабильной версией Latest stable release:
+					</p>
+					<p>
+						<ul class="list-files">
+							<li>chromedriver_win32.zip - архив с драйвером для системы Windows</li>
+							<li>chromedriver_linux64.zip - архив с драйвером для системы Linux</li>
+						</ul>
+					</p>
+					<p>
+						Далее необходимо распаковать драйвер из скаченного архива в 
+						<br>папку DetectGaYm\driver\windows - в системе Windows, и в 
+						<br>папку DetectGaYm/driver/linux - в системе Linux.
+					</p>
+					<p>
+						В системе Linux кроме обновления драйвера в программе DetectGaYm так же необходимо обновить драйвер в системе. Для этого нужно выполнить команды:
+						<br><br>
+						<code>
+							unzip chromedriver_linux64.zip<br>
+							sudo mv chromedriver /usr/local/bin/chromedriver<br>
+							sudo chown root:root /usr/local/bin/chromedriver<br>
+							sudo chmod +x /usr/local/bin/chromedriver<br>
+							chromedriver --version
+						</code>
+						<br>
+					</p>
+					<p>
+						Более подробная информация о работе редактора и программы в целом вы найдете в документации.
+					</p>
 				</div>
 				<div class="container-right">
 					<img src="img/editor-linux-2.png" alt="editor-linux">
