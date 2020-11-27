@@ -116,6 +116,7 @@ public class FormMain {
                 "wait_element",
                 "wait_element_not_visible",
                 "sleep",
+                "execute_js",
                 "get_har",
                 "get_har_ga",
                 "get_har_ym",

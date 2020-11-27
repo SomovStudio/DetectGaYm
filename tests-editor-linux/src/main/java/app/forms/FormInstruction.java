@@ -118,6 +118,11 @@ public class FormInstruction {
                 System.getProperty("line.separator") + "   - Локатор - не нужно заполнять" +
                 System.getProperty("line.separator") + "   - Значение - не нужно заполнять" +
                 System.getProperty("line.separator") + "   - Время ожидания - количество секунд паузы" + System.getProperty("line.separator") +
+                System.getProperty("line.separator") + "execute_js - позволяет выполнять JavaScript код." + System.getProperty("line.separator") +
+                System.getProperty("line.separator") + "   - Описание - текстовое представление действия" +
+                System.getProperty("line.separator") + "   - Локатор - не нужно заполнять" +
+                System.getProperty("line.separator") + "   - Значение - строка JavaScript кода" +
+                System.getProperty("line.separator") + "   - Время ожидания - не нужно заполнять" + System.getProperty("line.separator") +
                 System.getProperty("line.separator") + "test_defaults_ga - проверка GA в режиме по умолчанию (данными берутся из вкладки Данные)." + System.getProperty("line.separator") +
                 System.getProperty("line.separator") + "   - Описание - текстовое представление действия" +
                 System.getProperty("line.separator") + "   - Локатор - не нужно заполнять" +
