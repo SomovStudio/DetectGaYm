@@ -97,14 +97,6 @@ iframe {
     margin-top: 6rem;
 }
 
-@media screen and (max-width: 768px){
-	.main-wrapper {
-    	width: 95%;
-    	margin: 0 auto;
-    	margin-top: 6rem;
-	}
-}
-
 header {
 	background-image: -moz-linear-gradient(0deg, #6C3483 0%, #1B4F72 100%);
 	background-image: -webkit-linear-gradient(0deg, #6C3483 0%, #1B4F72 100%);
@@ -257,8 +249,8 @@ section{
 }
 
 .container-left img {
-	min-width: 90%;
-    max-width: 90%;
+	min-width: 100%;
+    max-width: 100%;
 }
 
 .container-right {
@@ -288,19 +280,8 @@ section{
 	background-image: -ms-linear-gradient(0deg, #6C3483 0%, #1B4F72 100%);
 	border-radius: 25px; 
 	padding: 10px;
-}
-
-footer {
-	background: rgba(0, 0, 0, 0.25);
-    padding: 15px 0;
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 1.5em;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #FFFFFF;
+	width: 560px;
+	height: 315px;
 }
 
 .text-align-center {
@@ -345,4 +326,68 @@ footer {
 	padding: 30px;
 	text-align: center;
 	float: right;
+}
+
+footer {
+	background: rgba(0, 0, 0, 0.25);
+    padding: 15px 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 1024px){
+	.main-wrapper {
+    	width: 95%;
+    	margin: 0 auto;
+    	margin-top: 6rem;
+	}
+
+	.menu {
+		margin-top: 4%;
+	}
+
+	.preview-image {
+		text-align: center;
+    	min-width: 100%;
+    	max-width: 100%;
+		float: none;
+	}
+
+	.preview-description {
+		padding-top: 2%;
+		min-width: 100%;
+    	max-width: 100%;
+		float: none;
+	}
+
+	.container-left {
+		padding: 2%;
+		min-width: 100%;
+	    max-width: 100%;
+	}
+
+	.container-right {
+		padding: 2%;
+		min-width: 100%;
+	    max-width: 100%;
+	}
+
+	.video {
+		width: auto;
+		max-width: 100%;
+		height: auto;
+		max-height: 100%;
+	}
+
+	#counter {
+		padding: 30px;
+		text-align: center;
+		min-width: 100%;
+	}
 }
