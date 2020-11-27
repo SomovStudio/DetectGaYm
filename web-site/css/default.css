@@ -302,3 +302,12 @@ footer {
     text-align: center;
     color: #FFFFFF;
 }
+
+#author{
+	float: left;
+}
+
+#counter {
+	float: right;
+	background-color: #6C3483;
+}
