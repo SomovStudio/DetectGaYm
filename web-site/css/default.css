@@ -238,7 +238,7 @@ section{
 .section-footer {
 	padding: 70px 0 100px 0;
     background: transparent;
-    height: 300px;
+    height: auto;
 }
 
 .container {
@@ -303,11 +303,46 @@ footer {
     color: #FFFFFF;
 }
 
-#author{
+.text-align-center {
+	text-align: center;
+}
+
+.text-align-left {
+	text-align: left;
+}
+
+.text-align-right {
+	text-align: right;
+}
+
+#author {
 	float: left;
+	color: #FFFFFF;	
+	text-align: center;
+}
+
+.author-line {
+	display: inline-block;
+	padding: 30px;
+	min-width: 300px;
+}
+
+.author-line img {
+	text-align: center;
+	width: 85px;
+	height: 85px;
+}
+
+.author-line a {
+	color: #EEEEEE;
+}
+
+.author-line a:hover {
+	color: #FC1B1B;
 }
 
 #counter {
+	padding: 30px;
+	text-align: center;
 	float: right;
-	background-color: #6C3483;
 }
