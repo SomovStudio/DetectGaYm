@@ -2,6 +2,7 @@ package com.detect.gaym;
 
 import com.detect.gaym.Helper;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 import java.io.UnsupportedEncodingException;
@@ -17,7 +18,6 @@ public class StepObjects {
     public static final String FIND_ELEMENT = "find_element";
     public static final String GET_TEXT = "get_text";
     public static final String GET_ATTRIBUTE = "get_attribute_";
-
 
     public static final String IF_EQUALLY = "==";
     public static final String IF_NOT_EQUALLY = "!=";
@@ -44,6 +44,8 @@ public class StepObjects {
     public static final String GET_HAR_GA = "get_har_ga";
     public static final String GET_HAR_YM = "get_har_ym";
     public static final String CLEAR_HAR = "clear_har";
+
+    public static final String EXECUTE_JS = "execute_js";
 
 
     public static void openPage(String url, String title) {
@@ -285,5 +287,12 @@ public class StepObjects {
         if (locator.equals(IF_MORE) && Float.parseFloat(elementAttribute) > Float.parseFloat(value)) return true;
         if (locator.equals(IF_MORE_OR_EQUALLY) && Float.parseFloat(elementAttribute) >= Float.parseFloat(value)) return true;
         return false;
+    }
+
+    public static void executeJS(String value, String description) {
+        JavascriptExecutor js = (JavascriptExecutor) Helper.driver;
+        js.executeScript(value);
+        if (!description.equals("")) System.out.println(description);
+        else System.out.println("STEP: Execute javascript code [" + value + "]");
     }
 }

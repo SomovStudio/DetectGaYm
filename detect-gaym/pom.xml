@@ -53,14 +53,15 @@
             <scope>compile</scope>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
         <dependency>
             <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>1.6.2</version>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.30</version>
             <scope>compile</scope>
         </dependency>
 
+        <!-- http://saltnlight5.blogspot.com/2013/08/how-to-configure-slf4j-with-different.html -->
         <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
         <dependency>
             <groupId>com.google.guava</groupId>

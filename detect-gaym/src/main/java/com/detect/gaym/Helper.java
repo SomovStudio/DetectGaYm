@@ -154,7 +154,7 @@ public class Helper {
     public static void showTitle(String testname) {
         System.out.println(" ");
         System.out.println(" ");
-        System.out.println("| BEGIN --------------------------------------");
+        System.out.println("| BEGIN TESTING ------------------------------");
         System.out.println("| " + testname);
         System.out.println("|---------------------------------------------");
     }
