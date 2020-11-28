@@ -974,15 +974,18 @@ namespace TestsEditor
 
         private void открытьПапкуErrorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string path = Directory.GetCurrentDirectory() + "\\errors";
+            string folderErrors = Directory.GetCurrentDirectory();
+            folderErrors = folderErrors.Substring(0, folderErrors.Length - "editor".Length);
+            folderErrors = folderErrors + "errors";
+
             try
             {
-                Process.Start(path);
+                Process.Start(folderErrors);
             }
             catch (Exception ex)
             {
                 //MessageBox.Show("Не удалось открыть папку " + path, "Ошибка");
-                consoleMessage(DateTime.Now + " Сообщение: Не удалось открыть папку " + path);
+                consoleMessage(DateTime.Now + " Сообщение: Не удалось открыть папку " + folderErrors);
             }
         }
 
