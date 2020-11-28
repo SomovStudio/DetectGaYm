@@ -73,16 +73,15 @@ namespace TestsEditor
                 }
                 else if (encoding == UTF_8)
                 {
-                    sr = new StreamReader(openFileDialog1.FileName, Encoding.UTF8);
+                    sr = new StreamReader(openFileDialog1.FileName, new UTF8Encoding(false));
                 }
                 else if (encoding == UTF_8_BOM)
                 {
-                    UTF8Encoding utf8wb = new UTF8Encoding(false);
-                    sr = new StreamReader(openFileDialog1.FileName, utf8wb);
+                    sr = new StreamReader(openFileDialog1.FileName, new UTF8Encoding(true));
                 }
                 else if (encoding == WINDOWS_1251)
                 {
-                    sr = new StreamReader(openFileDialog1.FileName, Encoding.ASCII);
+                    sr = new StreamReader(openFileDialog1.FileName, Encoding.GetEncoding("Windows-1251"));
                 }
                 else
                 {
@@ -335,16 +334,15 @@ namespace TestsEditor
                     }
                     else if (encoding == UTF_8)
                     {
-                        writer = new StreamWriter(saveFileDialog1.FileName, false, Encoding.UTF8);
+                        writer = new StreamWriter(saveFileDialog1.FileName, false, new UTF8Encoding(false));
                     }
                     else if (encoding == UTF_8_BOM)
                     {
-                        UTF8Encoding utf8wb = new UTF8Encoding(false);
-                        writer = new StreamWriter(saveFileDialog1.FileName, false, utf8wb);
+                        writer = new StreamWriter(saveFileDialog1.FileName, false, new UTF8Encoding(true));
                     }
                     else if (encoding == WINDOWS_1251)
                     {
-                        writer = new StreamWriter(saveFileDialog1.FileName, false, Encoding.ASCII);
+                        writer = new StreamWriter(saveFileDialog1.FileName, false, Encoding.GetEncoding("Windows-1251"));
                     }
                     else
                     {
