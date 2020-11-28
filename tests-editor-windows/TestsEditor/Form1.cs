@@ -64,99 +64,106 @@ namespace TestsEditor
 
         private void openFile(string encoding)
         {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                StreamReader sr;
-                if (encoding == DEFAULT)
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    sr = new StreamReader(openFileDialog1.FileName, Encoding.Default);
-                }
-                else if (encoding == UTF_8)
-                {
-                    sr = new StreamReader(openFileDialog1.FileName, new UTF8Encoding(false));
-                }
-                else if (encoding == UTF_8_BOM)
-                {
-                    sr = new StreamReader(openFileDialog1.FileName, new UTF8Encoding(true));
-                }
-                else if (encoding == WINDOWS_1251)
-                {
-                    sr = new StreamReader(openFileDialog1.FileName, Encoding.GetEncoding("Windows-1251"));
-                }
-                else
-                {
-                    sr = new StreamReader(openFileDialog1.FileName, Encoding.Default);
-                }
-                string jsonText = sr.ReadToEnd();
-                sr.Close();
+                    StreamReader sr;
+                    if (encoding == DEFAULT)
+                    {
+                        sr = new StreamReader(openFileDialog1.FileName, Encoding.Default);
+                    }
+                    else if (encoding == UTF_8)
+                    {
+                        sr = new StreamReader(openFileDialog1.FileName, new UTF8Encoding(false));
+                    }
+                    else if (encoding == UTF_8_BOM)
+                    {
+                        sr = new StreamReader(openFileDialog1.FileName, new UTF8Encoding(true));
+                    }
+                    else if (encoding == WINDOWS_1251)
+                    {
+                        sr = new StreamReader(openFileDialog1.FileName, Encoding.GetEncoding("Windows-1251"));
+                    }
+                    else
+                    {
+                        sr = new StreamReader(openFileDialog1.FileName, Encoding.Default);
+                    }
+                    string jsonText = sr.ReadToEnd();
+                    sr.Close();
 
-                TestJson test = JsonConvert.DeserializeObject<TestJson>(jsonText);
-                textBoxDescription.Text = test.description;
-                textBoxPort.Text = test.port.ToString();
-                listBoxArguments.Items.Clear();
-                foreach (string argument in test.arguments)
-                {
-                    listBoxArguments.Items.Add(argument);
-                }
-                textBoxHar.Text = test.har;
-                numericUpDownPageLoadTimeout.Value = test.timeout;
+                    TestJson test = JsonConvert.DeserializeObject<TestJson>(jsonText);
+                    textBoxDescription.Text = test.description;
+                    textBoxPort.Text = test.port.ToString();
+                    listBoxArguments.Items.Clear();
+                    foreach (string argument in test.arguments)
+                    {
+                        listBoxArguments.Items.Add(argument);
+                    }
+                    textBoxHar.Text = test.har;
+                    numericUpDownPageLoadTimeout.Value = test.timeout;
 
-                listView1.Items.Clear();
-                ListViewItem item;
-                ListViewItem.ListViewSubItem subitem;
-                foreach (TestJsonData data in test.data)
-                {
-                    item = new ListViewItem();
-                    subitem = new ListViewItem.ListViewSubItem();
-                    subitem.Text = data.title;
-                    item.SubItems.Add(subitem);
-                    subitem = new ListViewItem.ListViewSubItem();
-                    subitem.Text = data.url;
-                    item.SubItems.Add(subitem);
-                    subitem = new ListViewItem.ListViewSubItem();
-                    subitem.Text = data.ga_category;
-                    item.SubItems.Add(subitem);
-                    subitem = new ListViewItem.ListViewSubItem();
-                    subitem.Text = data.ga_action;
-                    item.SubItems.Add(subitem);
-                    subitem = new ListViewItem.ListViewSubItem();
-                    subitem.Text = data.ga_label;
-                    item.SubItems.Add(subitem);
-                    subitem = new ListViewItem.ListViewSubItem();
-                    subitem.Text = data.ym_code;
-                    item.SubItems.Add(subitem);
-                    item.ImageIndex = 0;
-                    listView1.Items.Add(item);
-                }
+                    listView1.Items.Clear();
+                    ListViewItem item;
+                    ListViewItem.ListViewSubItem subitem;
+                    foreach (TestJsonData data in test.data)
+                    {
+                        item = new ListViewItem();
+                        subitem = new ListViewItem.ListViewSubItem();
+                        subitem.Text = data.title;
+                        item.SubItems.Add(subitem);
+                        subitem = new ListViewItem.ListViewSubItem();
+                        subitem.Text = data.url;
+                        item.SubItems.Add(subitem);
+                        subitem = new ListViewItem.ListViewSubItem();
+                        subitem.Text = data.ga_category;
+                        item.SubItems.Add(subitem);
+                        subitem = new ListViewItem.ListViewSubItem();
+                        subitem.Text = data.ga_action;
+                        item.SubItems.Add(subitem);
+                        subitem = new ListViewItem.ListViewSubItem();
+                        subitem.Text = data.ga_label;
+                        item.SubItems.Add(subitem);
+                        subitem = new ListViewItem.ListViewSubItem();
+                        subitem.Text = data.ym_code;
+                        item.SubItems.Add(subitem);
+                        item.ImageIndex = 0;
+                        listView1.Items.Add(item);
+                    }
 
-                listView2.Items.Clear();
-                foreach (TestJsonSteps step in test.steps)
-                {
-                    item = new ListViewItem();
-                    subitem = new ListViewItem.ListViewSubItem();
-                    subitem.Text = step.description;
-                    item.SubItems.Add(subitem);
-                    subitem = new ListViewItem.ListViewSubItem();
-                    subitem.Text = step.type;
-                    item.SubItems.Add(subitem);
-                    subitem = new ListViewItem.ListViewSubItem();
-                    subitem.Text = step.locator;
-                    item.SubItems.Add(subitem);
-                    subitem = new ListViewItem.ListViewSubItem();
-                    subitem.Text = step.value;
-                    item.SubItems.Add(subitem);
-                    subitem = new ListViewItem.ListViewSubItem();
-                    subitem.Text = step.timeout.ToString();
-                    item.SubItems.Add(subitem);
-                    item.ImageIndex = 0;
-                    listView2.Items.Add(item);
-                }
+                    listView2.Items.Clear();
+                    foreach (TestJsonSteps step in test.steps)
+                    {
+                        item = new ListViewItem();
+                        subitem = new ListViewItem.ListViewSubItem();
+                        subitem.Text = step.description;
+                        item.SubItems.Add(subitem);
+                        subitem = new ListViewItem.ListViewSubItem();
+                        subitem.Text = step.type;
+                        item.SubItems.Add(subitem);
+                        subitem = new ListViewItem.ListViewSubItem();
+                        subitem.Text = step.locator;
+                        item.SubItems.Add(subitem);
+                        subitem = new ListViewItem.ListViewSubItem();
+                        subitem.Text = step.value;
+                        item.SubItems.Add(subitem);
+                        subitem = new ListViewItem.ListViewSubItem();
+                        subitem.Text = step.timeout.ToString();
+                        item.SubItems.Add(subitem);
+                        item.ImageIndex = 0;
+                        listView2.Items.Add(item);
+                    }
 
-                this.toolStripStatusLabelFileEncoding.Text = encoding;
-                this.toolStripStatusLabelFileName.Text = openFileDialog1.FileName;
-                this.fileName = openFileDialog1.SafeFileName;
+                    this.toolStripStatusLabelFileEncoding.Text = encoding;
+                    this.toolStripStatusLabelFileName.Text = openFileDialog1.FileName;
+                    this.fileName = openFileDialog1.SafeFileName;
+                    consoleMessage(DateTime.Now + " Сообщение: Открыт файл " + fileName);
+                }
             }
-            
+            catch (Exception ex)
+            {
+                consoleMessage(DateTime.Now + " Ошибка: " + ex.Message);
+            }
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -353,13 +360,14 @@ namespace TestsEditor
                     this.fileName = Path.GetFileName(saveFileDialog1.FileName);
                     this.toolStripStatusLabelFileName.Text = saveFileDialog1.FileName;
                     this.toolStripStatusLabelFileEncoding.Text = encoding;
-                    MessageBox.Show("Файл: " + this.fileName + " - успешно сохранён!" , "Сообщение");
+                    consoleMessage(DateTime.Now + " Сообщение: Файл " + fileName + " успешно сохранён!");
+                    //MessageBox.Show("Файл: " + this.fileName + " - успешно сохранён!" , "Сообщение");
                 }
-                catch (Exception exp)
+                catch (Exception ex)
                 {
-                    MessageBox.Show(exp.Message, "Ошибка");
+                    consoleMessage(DateTime.Now + " Ошибка: " + ex.Message);
                 }
-                
+                validatorJson();
             }
         }
 
@@ -452,12 +460,15 @@ namespace TestsEditor
                 }
                 writer.Write(json);
                 writer.Close();
-                MessageBox.Show("Файл успешно сохранён!", "Сообщение");
+                consoleMessage(DateTime.Now + " Сообщение: Файл " + fileName +" успешно сохранён!");
+                //MessageBox.Show("Файл успешно сохранён!", "Сообщение");
             }
-            catch (Exception exp)
+            catch (Exception ex)
             {
-                MessageBox.Show(exp.Message, "Ошибка");
+                consoleMessage(DateTime.Now + " Ошибка: " + ex.Message);
             }
+
+            validatorJson();
         }
 
         private string getFolderName()
@@ -1095,6 +1106,55 @@ namespace TestsEditor
         {
             if (checkEncodingToolStripMenuItem.Checked) checkEncodingToolStripMenuItem.Checked = false;
             else checkEncodingToolStripMenuItem.Checked = true;
+        }
+
+        private void validatorJson()
+        {
+            try
+            {
+                if (toolStripStatusLabelFileName.Text != "...")
+                {
+                    string encoding = toolStripStatusLabelFileEncoding.Text;
+                    StreamReader sr;
+                    if (encoding == DEFAULT)
+                    {
+                        sr = new StreamReader(toolStripStatusLabelFileName.Text, Encoding.Default);
+                    }
+                    else if (encoding == UTF_8)
+                    {
+                        sr = new StreamReader(toolStripStatusLabelFileName.Text, new UTF8Encoding(false));
+                    }
+                    else if (encoding == UTF_8_BOM)
+                    {
+                        sr = new StreamReader(toolStripStatusLabelFileName.Text, new UTF8Encoding(true));
+                    }
+                    else if (encoding == WINDOWS_1251)
+                    {
+                        sr = new StreamReader(toolStripStatusLabelFileName.Text, Encoding.GetEncoding("Windows-1251"));
+                    }
+                    else
+                    {
+                        sr = new StreamReader(toolStripStatusLabelFileName.Text, Encoding.Default);
+                    }
+                    string jsonText = sr.ReadToEnd();
+                    sr.Close();
+                    TestJson test = JsonConvert.DeserializeObject<TestJson>(jsonText);
+                    consoleMessage(DateTime.Now + " Проверка: синтаксис JSON файла - корректный");
+                }
+                else
+                {
+                    consoleMessage(DateTime.Now + " Сообщение: Невозможно выполнить проверку, нет открытого файла.");
+                }
+            }
+            catch (Exception ex)
+            {
+                consoleMessage(DateTime.Now + " Ошибка JSON синтаксис: " + ex.Message);
+            }
+        }
+
+        private void валидаторJsonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            validatorJson();
         }
     }
 }

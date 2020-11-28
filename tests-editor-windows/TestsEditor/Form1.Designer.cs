@@ -176,6 +176,8 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.валидаторJsonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -484,6 +486,8 @@
             this.howToCloseThePortToolStripMenuItem,
             this.toolStripSeparator8,
             this.валидаторJsonФайлаToolStripMenuItem,
+            this.валидаторJsonToolStripMenuItem,
+            this.toolStripSeparator17,
             this.обновитьChromeDriverToolStripMenuItem});
             this.supportToolStripMenuItem.Name = "supportToolStripMenuItem";
             this.supportToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
@@ -516,7 +520,7 @@
             this.httpsjsonformattercuriousconceptcomToolStripMenuItem});
             this.валидаторJsonФайлаToolStripMenuItem.Name = "валидаторJsonФайлаToolStripMenuItem";
             this.валидаторJsonФайлаToolStripMenuItem.Size = new System.Drawing.Size(390, 22);
-            this.валидаторJsonФайлаToolStripMenuItem.Text = "Валидатор json файла";
+            this.валидаторJsonФайлаToolStripMenuItem.Text = "Онлайе валидатор json файла";
             this.валидаторJsonФайлаToolStripMenuItem.Click += new System.EventHandler(this.валидаторJsonФайлаToolStripMenuItem_Click);
             // 
             // httpscodebeautifyorgjsonvalidatorToolStripMenuItem
@@ -1554,6 +1558,18 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // валидаторJsonToolStripMenuItem
+            // 
+            this.валидаторJsonToolStripMenuItem.Name = "валидаторJsonToolStripMenuItem";
+            this.валидаторJsonToolStripMenuItem.Size = new System.Drawing.Size(390, 22);
+            this.валидаторJsonToolStripMenuItem.Text = "Валидатор JSON";
+            this.валидаторJsonToolStripMenuItem.Click += new System.EventHandler(this.валидаторJsonToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator17
+            // 
+            this.toolStripSeparator17.Name = "toolStripSeparator17";
+            this.toolStripSeparator17.Size = new System.Drawing.Size(387, 6);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1755,6 +1771,8 @@
         private System.Windows.Forms.ToolStripMenuItem кодировкаПоУмолчаниюToolStripMenuItem3;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         public System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelFileEncoding;
+        private System.Windows.Forms.ToolStripMenuItem валидаторJsonToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator17;
     }
 }
 
