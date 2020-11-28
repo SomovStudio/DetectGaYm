@@ -503,12 +503,13 @@ namespace TestsEditor
                     else bat += System.Environment.NewLine + "java -jar detect-gaym.jar " + filename;
                 }
                 else{
-                    MessageBox.Show("Невозможно запустить тест! Файл не существует.");
+                    consoleMessage(DateTime.Now + " Сообщение: Невозможно запустить тест! Файл не существует.");
+                    //MessageBox.Show("Невозможно запустить тест! Файл не существует.");
                     return;
                 }
 
                 string batFile = folderBin + "\\run-test.bat";
-                StreamWriter writer = new StreamWriter(batFile, false, Encoding.ASCII);
+                StreamWriter writer = new StreamWriter(batFile, false, new UTF8Encoding(false));
                 writer.Write(bat);
                 writer.Close();
 
@@ -530,7 +531,8 @@ namespace TestsEditor
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Ошибка");
+                consoleMessage(DateTime.Now + " Ошибка: " + ex.Message);
+                //MessageBox.Show(ex.Message, "Ошибка");
                 //if (File.Exists("run.bat")) File.Delete("run.bat");
             }
         }
@@ -548,7 +550,7 @@ namespace TestsEditor
                 else bat += System.Environment.NewLine + "java -jar detect-gaym.jar " + folderName;
 
                 string batFile = folderBin + "\\run-test.bat";
-                StreamWriter writer = new StreamWriter(batFile, false, Encoding.ASCII);
+                StreamWriter writer = new StreamWriter(batFile, false, new UTF8Encoding(false));
                 writer.Write(bat);
                 writer.Close();
 
@@ -570,7 +572,8 @@ namespace TestsEditor
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Ошибка");
+                consoleMessage(DateTime.Now + " Ошибка: " + ex.Message);
+                //MessageBox.Show(ex.Message, "Ошибка");
                 //if (File.Exists("run.bat")) File.Delete("run.bat");
             }
         }
@@ -978,7 +981,8 @@ namespace TestsEditor
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Не удалось открыть папку " + path, "Ошибка");
+                //MessageBox.Show("Не удалось открыть папку " + path, "Ошибка");
+                consoleMessage(DateTime.Now + " Сообщение: Не удалось открыть папку " + path);
             }
         }
 
