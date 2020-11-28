@@ -1365,7 +1365,7 @@
             // 
             // columnHeader14
             // 
-            this.columnHeader14.Text = "Локатор (XPath)";
+            this.columnHeader14.Text = "Локатор/Протокол/Условия";
             this.columnHeader14.Width = 150;
             // 
             // columnHeader15

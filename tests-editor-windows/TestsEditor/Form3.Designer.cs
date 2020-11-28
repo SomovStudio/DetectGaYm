@@ -146,7 +146,10 @@
             "get_attribute_class",
             "get_attribute_value",
             "get_attribute_href",
-            "get_attribute_"});
+            "get_attribute_",
+            "ec=",
+            "ea=",
+            "el="});
             this.comboBoxValue.Location = new System.Drawing.Point(110, 136);
             this.comboBoxValue.Name = "comboBoxValue";
             this.comboBoxValue.Size = new System.Drawing.Size(491, 21);
@@ -224,6 +227,7 @@
             "wait_element",
             "wait_element_not_visible",
             "sleep",
+            "execute_js",
             "get_har",
             "get_har_ga",
             "get_har_ym",

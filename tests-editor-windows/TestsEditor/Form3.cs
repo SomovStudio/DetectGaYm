@@ -137,6 +137,12 @@ namespace TestsEditor
                     comboBoxValue.Enabled = false;
                     numericUpDownTimeout.ReadOnly = false;
                     break;
+                case "execute_js":
+                    label5.Text = "Локатор (XPath):";
+                    textBoxLocator.ReadOnly = true;
+                    comboBoxValue.Enabled = true;
+                    numericUpDownTimeout.ReadOnly = true;
+                    break;
                 case "if_get_text":
                     label5.Text = "Условие:";
                     textBoxLocator.ReadOnly = false;
@@ -237,10 +243,12 @@ namespace TestsEditor
                     break;
             }
             int index = richTextBoxHelp.Find(comboBoxType.Text);
-            richTextBoxHelp.Select(index, comboBoxType.Text.Length);
-            richTextBoxHelp.ScrollToCaret();
-            richTextBoxHelp.Focus();
-
+            if(index >= 0)
+            {
+                richTextBoxHelp.Select(index, comboBoxType.Text.Length);
+                richTextBoxHelp.ScrollToCaret();
+                richTextBoxHelp.Focus();
+            }
         }
 
         private void Form3_Load(object sender, EventArgs e)

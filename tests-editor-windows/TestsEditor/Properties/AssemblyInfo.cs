@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Tests Editor for DetectGaYm")]
 [assembly: AssemblyDescription("Tests Editor for DetectGaYm")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Somov Studio")]
+[assembly: AssemblyCompany("Somov Evgeniy")]
 [assembly: AssemblyProduct("Tests Editor for DetectGaYm")]
-[assembly: AssemblyCopyright("Copyright © Somov Studio 2020")]
+[assembly: AssemblyCopyright("Copyright © Somov Evgeniy 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
