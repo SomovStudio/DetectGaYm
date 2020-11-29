@@ -86,14 +86,14 @@ namespace TestsEditor
                     sr.Close();
 
                     TestJson test = JsonConvert.DeserializeObject<TestJson>(jsonText);
-                    textBoxDescription.Text = test.description;
-                    textBoxPort.Text = test.port.ToString();
+                    textBoxDescription.Text = test.description.Replace("\"", "\\\"");
+                    textBoxPort.Text = test.port.ToString().Replace("\"", "\\\"");
                     listBoxArguments.Items.Clear();
                     foreach (string argument in test.arguments)
                     {
-                        listBoxArguments.Items.Add(argument);
+                        listBoxArguments.Items.Add(argument.Replace("\"", "\\\""));
                     }
-                    textBoxHar.Text = test.har;
+                    textBoxHar.Text = test.har.Replace("\"", "\\\"");
                     numericUpDownPageLoadTimeout.Value = test.timeout;
 
                     listView1.Items.Clear();
@@ -103,22 +103,22 @@ namespace TestsEditor
                     {
                         item = new ListViewItem();
                         subitem = new ListViewItem.ListViewSubItem();
-                        subitem.Text = data.title;
+                        subitem.Text = data.title.Replace("\"", "\\\"");
                         item.SubItems.Add(subitem);
                         subitem = new ListViewItem.ListViewSubItem();
-                        subitem.Text = data.url;
+                        subitem.Text = data.url.Replace("\"", "\\\"");
                         item.SubItems.Add(subitem);
                         subitem = new ListViewItem.ListViewSubItem();
-                        subitem.Text = data.ga_category;
+                        subitem.Text = data.ga_category.Replace("\"", "\\\"");
                         item.SubItems.Add(subitem);
                         subitem = new ListViewItem.ListViewSubItem();
-                        subitem.Text = data.ga_action;
+                        subitem.Text = data.ga_action.Replace("\"", "\\\"");
                         item.SubItems.Add(subitem);
                         subitem = new ListViewItem.ListViewSubItem();
-                        subitem.Text = data.ga_label;
+                        subitem.Text = data.ga_label.Replace("\"", "\\\"");
                         item.SubItems.Add(subitem);
                         subitem = new ListViewItem.ListViewSubItem();
-                        subitem.Text = data.ym_code;
+                        subitem.Text = data.ym_code.Replace("\"", "\\\"");
                         item.SubItems.Add(subitem);
                         item.ImageIndex = 0;
                         listView1.Items.Add(item);
@@ -129,16 +129,16 @@ namespace TestsEditor
                     {
                         item = new ListViewItem();
                         subitem = new ListViewItem.ListViewSubItem();
-                        subitem.Text = step.description;
+                        subitem.Text = step.description.Replace("\"", "\\\"");
                         item.SubItems.Add(subitem);
                         subitem = new ListViewItem.ListViewSubItem();
-                        subitem.Text = step.type;
+                        subitem.Text = step.type.Replace("\"", "\\\"");
                         item.SubItems.Add(subitem);
                         subitem = new ListViewItem.ListViewSubItem();
-                        subitem.Text = step.locator;
+                        subitem.Text = step.locator.Replace("\"", "\\\"");
                         item.SubItems.Add(subitem);
                         subitem = new ListViewItem.ListViewSubItem();
-                        subitem.Text = step.value;
+                        subitem.Text = step.value.Replace("\"", "\\\"");
                         item.SubItems.Add(subitem);
                         subitem = new ListViewItem.ListViewSubItem();
                         subitem.Text = step.timeout.ToString();
