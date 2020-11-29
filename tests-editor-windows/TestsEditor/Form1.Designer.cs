@@ -71,6 +71,8 @@
             this.валидаторJsonФайлаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.httpscodebeautifyorgjsonvalidatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.httpsjsonformattercuriousconceptcomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.валидаторJsonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
             this.обновитьChromeDriverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detailedInformationInTheConsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -175,9 +177,6 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.валидаторJsonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -536,6 +535,18 @@
             this.httpsjsonformattercuriousconceptcomToolStripMenuItem.Size = new System.Drawing.Size(303, 22);
             this.httpsjsonformattercuriousconceptcomToolStripMenuItem.Text = "https://jsonformatter.curiousconcept.com/";
             this.httpsjsonformattercuriousconceptcomToolStripMenuItem.Click += new System.EventHandler(this.httpsjsonformattercuriousconceptcomToolStripMenuItem_Click);
+            // 
+            // валидаторJsonToolStripMenuItem
+            // 
+            this.валидаторJsonToolStripMenuItem.Name = "валидаторJsonToolStripMenuItem";
+            this.валидаторJsonToolStripMenuItem.Size = new System.Drawing.Size(390, 22);
+            this.валидаторJsonToolStripMenuItem.Text = "Валидатор JSON";
+            this.валидаторJsonToolStripMenuItem.Click += new System.EventHandler(this.валидаторJsonToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator17
+            // 
+            this.toolStripSeparator17.Name = "toolStripSeparator17";
+            this.toolStripSeparator17.Size = new System.Drawing.Size(387, 6);
             // 
             // обновитьChromeDriverToolStripMenuItem
             // 
@@ -1553,23 +1564,6 @@
             // 
             this.saveFileDialog1.Filter = "*.json|*.json";
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // валидаторJsonToolStripMenuItem
-            // 
-            this.валидаторJsonToolStripMenuItem.Name = "валидаторJsonToolStripMenuItem";
-            this.валидаторJsonToolStripMenuItem.Size = new System.Drawing.Size(390, 22);
-            this.валидаторJsonToolStripMenuItem.Text = "Валидатор JSON";
-            this.валидаторJsonToolStripMenuItem.Click += new System.EventHandler(this.валидаторJsonToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator17
-            // 
-            this.toolStripSeparator17.Name = "toolStripSeparator17";
-            this.toolStripSeparator17.Size = new System.Drawing.Size(387, 6);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1743,7 +1737,6 @@
         private System.Windows.Forms.ToolStripMenuItem открытьПапкуErrorsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem инструкцияToolStripMenuItem;
         public System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelFileName;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripMenuItem checkEncodingToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
         private System.Windows.Forms.ToolStripMenuItem открытьТестКакToolStripMenuItem;

@@ -35,12 +35,12 @@
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.label9 = new System.Windows.Forms.Label();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label8 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,7 +61,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 83);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(403, 261);
+            this.panel2.Size = new System.Drawing.Size(289, 268);
             this.panel2.TabIndex = 4;
             // 
             // label10
@@ -69,11 +69,11 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(15, 233);
+            this.label10.Location = new System.Drawing.Point(15, 240);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(325, 13);
+            this.label10.Size = new System.Drawing.Size(252, 13);
             this.label10.TabIndex = 9;
-            this.label10.Text = "Copyright © 2020 Сомов Евгений Павлович. All Rights Reserved.";
+            this.label10.Text = "© 2020 Somov Evgeniy, 2020. All Rights Reserved.";
             // 
             // groupBox1
             // 
@@ -86,7 +86,7 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Location = new System.Drawing.Point(6, 140);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(394, 80);
+            this.groupBox1.Size = new System.Drawing.Size(280, 87);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Контакты:";
@@ -122,17 +122,6 @@
             this.linkLabel2.Text = "somov.studio@gmail.com";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(194, 113);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(31, 13);
-            this.linkLabel1.TabIndex = 3;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "GNU";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -142,28 +131,30 @@
             this.label8.TabIndex = 6;
             this.label8.Text = "Почта:";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(128, 113);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 13);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Лицензия:";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 80);
+            this.label7.Location = new System.Drawing.Point(12, 62);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(218, 13);
+            this.label7.Size = new System.Drawing.Size(212, 13);
             this.label7.TabIndex = 5;
-            this.label7.Text = "Дата последнего обновления: 12.12.2020";
+            this.label7.Text = "Дата последнего обновления: 5.12.2020";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(72, 113);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(31, 13);
+            this.linkLabel1.TabIndex = 3;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "GNU";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 113);
+            this.label6.Location = new System.Drawing.Point(12, 87);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 13);
             this.label6.TabIndex = 4;
@@ -172,11 +163,20 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 48);
+            this.label4.Location = new System.Drawing.Point(12, 38);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(208, 13);
             this.label4.TabIndex = 1;
             this.label4.Text = "Разработчик: Сомов Евгений Павлович";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 113);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 13);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Лицензия:";
             // 
             // label3
             // 
@@ -194,7 +194,7 @@
             this.label2.ForeColor = System.Drawing.Color.MediumSlateBlue;
             this.label2.Location = new System.Drawing.Point(0, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(403, 261);
+            this.label2.Size = new System.Drawing.Size(289, 268);
             this.label2.TabIndex = 3;
             this.label2.Text = "Somov Studio";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -207,7 +207,7 @@
             this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(403, 83);
+            this.label1.Size = new System.Drawing.Size(289, 83);
             this.label1.TabIndex = 2;
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -215,7 +215,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(403, 344);
+            this.ClientSize = new System.Drawing.Size(289, 351);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

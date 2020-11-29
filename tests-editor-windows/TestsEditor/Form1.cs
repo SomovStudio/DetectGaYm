@@ -25,7 +25,6 @@ namespace TestsEditor
 
         Form8 startForm;
 
-        public bool showStartDialog = true;
         public string fileName;
         public delegate void AddConsoleItem(String message);
         public AddConsoleItem myDelegate;
@@ -38,12 +37,6 @@ namespace TestsEditor
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (this.showStartDialog)
-            {
-                startForm = new Form8();
-                startForm.Show();
-                timer1.Start();
-            }            
             myDelegate = new AddConsoleItem(addConsoleItemMethod);
             toolStripStatusLabelFileEncoding.Text = DEFAULT;
         }
@@ -179,7 +172,6 @@ namespace TestsEditor
         private void newFile()
         {
             Form1 newform = new Form1();
-            newform.showStartDialog = false;
             newform.Show();
         }
 
@@ -998,12 +990,6 @@ namespace TestsEditor
                 form.parentForm = this;
                 form.Show();
             }
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            startForm.Close();
-            timer1.Stop();
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
