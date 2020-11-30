@@ -163,7 +163,8 @@ public class Helper {
     public static void showError(Exception e) throws Exception {
         System.out.println("| ERROR --------------------------------------");
         //System.out.println(e.getMessage());
-        System.out.println(e.fillInStackTrace());
+        //System.out.println(e.fillInStackTrace());
+        System.out.println(e.toString());
         System.out.println("|---------------------------------------------");
         System.out.println(" ");
         screenshot();
@@ -355,7 +356,8 @@ public class Helper {
                 System.out.println(" ");
             }
         }catch (Exception e) {
-            System.out.println("SCREENSHOT: error save screenshot - " + e.fillInStackTrace());
+            //System.out.println("SCREENSHOT: error save screenshot - " + e.fillInStackTrace());
+            System.out.println("SCREENSHOT: error save screenshot - " + e.toString());
             System.out.println(" ");
         }
     }
