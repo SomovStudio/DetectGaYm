@@ -183,6 +183,7 @@ public class FormMain {
             stepsObj[i][4] = dataJson.get("timeout").toString();
         }
         initStepsTable(stepsObj);
+        consoleMessage(textAreaConsole, "Сообщение: Тест открыт, данные загружены");
     }
 
     public FormMain() {
@@ -541,8 +542,8 @@ public class FormMain {
                             textFieldHar.getText(),
                             spinnerWaitLimit.getValue().toString()
                     };
-                    saveJsonFile(path, labelEncoding.getText(), fields, listOptions, tableData, tableSteps);
-                    validatorJson(path, labelEncoding.getText());
+                    saveJsonFile(path, labelEncoding.getText(), fields, listOptions, tableData, tableSteps, textAreaConsole);
+                    validatorJson(path, labelEncoding.getText(), textAreaConsole);
                 } catch (IOException e) {
                     consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
                     //showMessage(e.toString());
@@ -567,8 +568,8 @@ public class FormMain {
                             textFieldHar.getText(),
                             spinnerWaitLimit.getValue().toString()
                     };
-                    saveJsonFile(path, DEFAULT, fields, listOptions, tableData, tableSteps);
-                    validatorJson(path, labelEncoding.getText());
+                    saveJsonFile(path, DEFAULT, fields, listOptions, tableData, tableSteps, textAreaConsole);
+                    validatorJson(path, labelEncoding.getText(), textAreaConsole);
                 } catch (IOException e) {
                     consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
                     //showMessage(e.toString());
@@ -593,8 +594,8 @@ public class FormMain {
                             textFieldHar.getText(),
                             spinnerWaitLimit.getValue().toString()
                     };
-                    saveJsonFile(path, UTF_8, fields, listOptions, tableData, tableSteps);
-                    validatorJson(path, labelEncoding.getText());
+                    saveJsonFile(path, UTF_8, fields, listOptions, tableData, tableSteps, textAreaConsole);
+                    validatorJson(path, labelEncoding.getText(), textAreaConsole);
                 } catch (IOException e) {
                     consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
                     //showMessage(e.toString());
@@ -619,8 +620,8 @@ public class FormMain {
                             textFieldHar.getText(),
                             spinnerWaitLimit.getValue().toString()
                     };
-                    saveJsonFile(path, UTF_8_BOM, fields, listOptions, tableData, tableSteps);
-                    validatorJson(path, labelEncoding.getText());
+                    saveJsonFile(path, UTF_8_BOM, fields, listOptions, tableData, tableSteps, textAreaConsole);
+                    validatorJson(path, labelEncoding.getText(), textAreaConsole);
                 } catch (IOException e) {
                     consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
                     //showMessage(e.toString());
@@ -645,8 +646,8 @@ public class FormMain {
                             textFieldHar.getText(),
                             spinnerWaitLimit.getValue().toString()
                     };
-                    saveJsonFile(path, WINDOWS_1251, fields, listOptions, tableData, tableSteps);
-                    validatorJson(path, labelEncoding.getText());
+                    saveJsonFile(path, WINDOWS_1251, fields, listOptions, tableData, tableSteps, textAreaConsole);
+                    validatorJson(path, labelEncoding.getText(), textAreaConsole);
                 } catch (IOException e) {
                     consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
                     //showMessage(e.toString());
@@ -671,8 +672,8 @@ public class FormMain {
                             textFieldHar.getText(),
                             spinnerWaitLimit.getValue().toString()
                     };
-                    saveJsonFile(path, WINDOWS_1252, fields, listOptions, tableData, tableSteps);
-                    validatorJson(path, labelEncoding.getText());
+                    saveJsonFile(path, WINDOWS_1252, fields, listOptions, tableData, tableSteps, textAreaConsole);
+                    validatorJson(path, labelEncoding.getText(), textAreaConsole);
                 } catch (IOException e) {
                     consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
                     //showMessage(e.toString());
@@ -703,6 +704,7 @@ public class FormMain {
                 if(tableSteps.getColumnModel().getColumnCount() <= 0) initStepsTable(null);
                 DefaultTableModel modelTableSteps = (DefaultTableModel) tableSteps.getModel();
                 modelTableSteps.setRowCount(0);
+                consoleMessage(textAreaConsole, "Сообщение: Создан новый тест");
             }
         });
         MenuExecuteTest.addActionListener(new ActionListener() {
@@ -812,7 +814,7 @@ public class FormMain {
                 if(labelPathFile.getText() == "...") jsonFile = Editor.dialogOpenFile(PanelMain, labelPathFile.getText());
                 else jsonFile = labelPathFile.getText();
                 try {
-                    validatorJson(jsonFile, labelEncoding.getText());
+                    validatorJson(jsonFile, labelEncoding.getText(), textAreaConsole);
                 } catch (FileNotFoundException e) {
                     consoleMessage(textAreaConsole, e.toString());
                     //e.printStackTrace();
@@ -871,6 +873,7 @@ public class FormMain {
                 if(tableSteps.getColumnModel().getColumnCount() <= 0) initStepsTable(null);
                 DefaultTableModel modelTableSteps = (DefaultTableModel) tableSteps.getModel();
                 modelTableSteps.setRowCount(0);
+                consoleMessage(textAreaConsole, "Сообщение: Создан новый тест");
             }
         });
         buttonOpenTestFile.addActionListener(new ActionListener() {
@@ -906,8 +909,8 @@ public class FormMain {
                             textFieldHar.getText(),
                             spinnerWaitLimit.getValue().toString()
                     };
-                    saveJsonFile(path, labelEncoding.getText(), fields, listOptions, tableData, tableSteps);
-                    validatorJson(path, labelEncoding.getText());
+                    saveJsonFile(path, labelEncoding.getText(), fields, listOptions, tableData, tableSteps, textAreaConsole);
+                    validatorJson(path, labelEncoding.getText(), textAreaConsole);
                 } catch (IOException e) {
                     consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
                     //showMessage(e.toString());

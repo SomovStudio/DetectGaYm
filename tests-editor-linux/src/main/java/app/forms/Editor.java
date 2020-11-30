@@ -218,7 +218,7 @@ public class Editor {
     }
 
     /* Запись json файла */
-    public static void saveJsonFile(String filename, String encoding, String[] fields, JList listOptions, JTable tableData, JTable tableSteps) throws IOException, ParseException {
+    public static void saveJsonFile(String filename, String encoding, String[] fields, JList listOptions, JTable tableData, JTable tableSteps, JTextArea console) throws IOException, ParseException {
         String json = "{";
         json += System.getProperty("line.separator") + "\"description\":\""+ fields[0] +"\",";
         json += System.getProperty("line.separator") + "\"port\":"+ fields[1] +",";
@@ -304,7 +304,8 @@ public class Editor {
         json += System.getProperty("line.separator") + "]";
         json += System.getProperty("line.separator") + "}";
         saveFileInEncoding(filename, encoding, json);
-        showMessage("Файл сохранен!");
+        //showMessage("Файл сохранен!");
+        consoleMessage(console, "Сообщение: Файл сохранен!");
     }
 
     /* Консоле Linux */
@@ -422,7 +423,7 @@ public class Editor {
     }
 
     /* Валидатор Json */
-    public static void validatorJson(String filename, String encoding) throws FileNotFoundException {
+    public static void validatorJson(String filename, String encoding, JTextArea console) throws FileNotFoundException {
 
         if(encoding.equals(DEFAULT)) {
             try {
@@ -430,10 +431,12 @@ public class Editor {
                 Object obj = new JSONParser().parse(reader);
                 reader.close();
             } catch (IOException e) {
-                showMessage(e.toString());
+                consoleMessage(console, "Ошибка: " + e.toString());
+                //showMessage(e.toString());
                 //e.printStackTrace();
                 return;
             } catch (ParseException e) {
+                consoleMessage(console, "Ошибка: Нарущена структура json файла " + e.toString());
                 showMessage("ОШИБКА: Нарущена структура json файла.\n"+e.toString());
                 //e.printStackTrace();
                 return;
@@ -445,10 +448,12 @@ public class Editor {
                 Object obj = new JSONParser().parse(reader);
                 reader.close();
             } catch (IOException e) {
-                showMessage(e.toString());
+                consoleMessage(console, "Ошибка: " + e.toString());
+                //showMessage(e.toString());
                 //e.printStackTrace();
                 return;
             } catch (ParseException e) {
+                consoleMessage(console, "Ошибка: Нарущена структура json файла " + e.toString());
                 showMessage("ОШИБКА: Нарущена структура json файла.\n"+e.toString());
                 //e.printStackTrace();
                 return;
@@ -466,10 +471,12 @@ public class Editor {
                 Object obj = new JSONParser().parse(context);
                 reader.close();
             } catch (IOException e) {
-                showMessage(e.toString());
+                consoleMessage(console, "Ошибка: " + e.toString());
+                //showMessage(e.toString());
                 //e.printStackTrace();
                 return;
             } catch (ParseException e) {
+                consoleMessage(console, "Ошибка: Нарущена структура json файла " + e.toString());
                 showMessage("ОШИБКА: Нарущена структура json файла.\n"+e.toString());
                 //e.printStackTrace();
                 return;
@@ -481,10 +488,12 @@ public class Editor {
                 Object obj = new JSONParser().parse(reader);
                 reader.close();
             } catch (IOException e) {
-                showMessage(e.toString());
+                consoleMessage(console, "Ошибка: " + e.toString());
+                //showMessage(e.toString());
                 //e.printStackTrace();
                 return;
             } catch (ParseException e) {
+                consoleMessage(console, "Ошибка: Нарущена структура json файла " + e.toString());
                 showMessage("ОШИБКА: Нарущена структура json файла.\n"+e.toString());
                 //e.printStackTrace();
                 return;
@@ -496,16 +505,19 @@ public class Editor {
                 Object obj = new JSONParser().parse(reader);
                 reader.close();
             } catch (IOException e) {
-                showMessage(e.toString());
+                consoleMessage(console, "Ошибка: " + e.toString());
+                //showMessage(e.toString());
                 //e.printStackTrace();
                 return;
             } catch (ParseException e) {
+                consoleMessage(console, "Ошибка: Нарущена структура json файла " + e.toString());
                 showMessage("ОШИБКА: Нарущена структура json файла.\n"+e.toString());
                 //e.printStackTrace();
                 return;
             }
         }
         //showMessage("Проверка структуры json файла - успешно!\nФайл: " + filename);
-        showMessage("Проверка структуры json файла - ошибок не обнаружено!");
+        //showMessage("Проверка структуры json файла - ошибок не обнаружено!");
+        consoleMessage(console, "Сообщение: Проверка структуры json файла - ошибок не обнаружено!");
     }
 }
