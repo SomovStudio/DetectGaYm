@@ -121,7 +121,7 @@ public class FormInstruction {
                 System.getProperty("line.separator") + "execute_js - позволяет выполнять JavaScript код." + System.getProperty("line.separator") +
                 System.getProperty("line.separator") + "   - Описание - текстовое представление действия" +
                 System.getProperty("line.separator") + "   - Локатор - не нужно заполнять" +
-                System.getProperty("line.separator") + "   - Значение - строка JavaScript кода" +
+                System.getProperty("line.separator") + "   - Значение - строка JavaScript кода (двойные кавычки обязательно нужно экранировать)" +
                 System.getProperty("line.separator") + "   - Время ожидания - не нужно заполнять" + System.getProperty("line.separator") +
                 System.getProperty("line.separator") + "test_defaults_ga - проверка GA в режиме по умолчанию (данными берутся из вкладки Данные)." + System.getProperty("line.separator") +
                 System.getProperty("line.separator") + "   - Описание - текстовое представление действия" +
@@ -173,18 +173,18 @@ public class FormInstruction {
                 System.getProperty("line.separator") + "=======================================================" +
                 System.getProperty("line.separator") + "Осномное меню программы" + System.getProperty("line.separator") +
                 System.getProperty("line.separator") + "Файл:" +
-                System.getProperty("line.separator") + "   - Чтобы создать тест нужно в меню 'Файл' выберить пункт 'Создать новый тест' " +
-                System.getProperty("line.separator") + "   - Чтобы открыть тест нужно в меню 'Файл' выберить пункт 'Открыть тест' " +
-                System.getProperty("line.separator") + "   - Чтобы открыть тест используя специальную кодировку нужно в меню 'Файл' выберить пункт 'Открыть тест как...' и выбрать необходимую кодировку" +
-                System.getProperty("line.separator") + "   - Чтобы сохранить тест нужно в меню 'Файл' выберить пункт 'Сохранить тест' " +
-                System.getProperty("line.separator") + "   - Чтобы сохранить тест используя специальную кодировку нужно в меню 'Файл' выберить пункт 'Сохранить тест как' и выбрать необходимую кодировку" +
+                System.getProperty("line.separator") + "   - Чтобы создать тест нужно в меню 'Файл' нажать пункт 'Создать новый тест' " +
+                System.getProperty("line.separator") + "   - Чтобы открыть тест нужно в меню 'Файл' нажать пункт 'Открыть тест' " +
+                System.getProperty("line.separator") + "   - Чтобы открыть тест используя специальную кодировку нужно в меню 'Файл' нажать пункт 'Открыть тест как...' и выбрать необходимую кодировку" +
+                System.getProperty("line.separator") + "   - Чтобы сохранить тест нужно в меню 'Файл' нажать пункт 'Сохранить тест' " +
+                System.getProperty("line.separator") + "   - Чтобы сохранить тест используя специальную кодировку нужно в меню 'Файл' нажать пункт 'Сохранить тест как' и выбрать необходимую кодировку" +
                 System.getProperty("line.separator") + "Запуск:" +
-                System.getProperty("line.separator") + "   - Чтобы запустить выполнение теста нужно в меню 'Запуск' выбрать пункт 'Выполнить тест'" +
-                System.getProperty("line.separator") + "   - Чтобы запустить выполнение группы тестов нужно в меню 'Запуск' выбрать пункт 'Выполнить группу тестов'" +
+                System.getProperty("line.separator") + "   - Чтобы запустить выполнение теста нужно в меню 'Запуск' нажать пункт 'Выполнить тест'" +
+                System.getProperty("line.separator") + "   - Чтобы запустить выполнение группы тестов нужно в меню 'Запуск' нажать пункт 'Выполнить группу тестов'" +
                 System.getProperty("line.separator") + "   - Чтобы тесты учитывали кодировку необходимо включить флаг 'Выполнять тест в текущей кодировку'" +
                 System.getProperty("line.separator") + "Поддержка:" +
-                System.getProperty("line.separator") + "   - Если нужно сформировать команду для запуска теста например из bat файла, для этого в меню 'Поддержка' выберите пункт 'Сформировать команду для запуска'" +
-                System.getProperty("line.separator") + "   - Если нужно выполнить проверку json файла, для этого в меню 'Поддержка' выберите пункт 'Валидатор JSON'" + System.getProperty("line.separator") + System.getProperty("line.separator") +
+                System.getProperty("line.separator") + "   - Если нужно сформировать команду для запуска теста например из bat файла, для этого в меню 'Поддержка' нажать пункт 'Сформировать команду для запуска'" +
+                System.getProperty("line.separator") + "   - Если нужно выполнить проверку json файла, для этого в меню 'Поддержка' нажать пункт 'Валидатор JSON'" + System.getProperty("line.separator") + System.getProperty("line.separator") +
                 System.getProperty("line.separator") + "На вкладке 'Общие параметры' необходимо задать параметры теста" +
                 System.getProperty("line.separator") + "   - Описание - текстовое поле для краткого описания теста (наименование)" +
                 System.getProperty("line.separator") + "   - Порт - текстовое поле в котором указывается порт для работы прокси (по умолчанию 9091)" +
@@ -262,6 +262,15 @@ public class FormInstruction {
                 System.getProperty("line.separator") + "=======================================================" +
                 System.getProperty("line.separator") + "ДОПОЛНИТЕЛЬНО" +
                 System.getProperty("line.separator") + "=======================================================" +
+                System.getProperty("line.separator") + "Чтобы выполнить опциональную проверку GA и YM событий нужно указать протокол и значение:" +
+                System.getProperty("line.separator") + "- Действие: test_optionally_ga | GA протокол: google-analytics.com/collect" +
+                System.getProperty("line.separator") + "   pageview&_s=1&dl=https://test.ru" +
+                System.getProperty("line.separator") + "   ec=test_ga_category" +
+                System.getProperty("line.separator") + "   ea=test_ga_action" +
+                System.getProperty("line.separator") + "   el=test_ga_label" +
+                System.getProperty("line.separator") + "- Действие: test_optionally_ym | YM протокол: mc.yandex.ru/watch" +
+                System.getProperty("line.separator") + "   test_ym_code" + System.getProperty("line.separator") +
+                System.getProperty("line.separator") + "--------------------------------------------------------------------------------------------------------------" +
                 System.getProperty("line.separator") + "Чтобы реализовать выполнение условий необходимо описать шаги следующего вида:" +
                 System.getProperty("line.separator") + "1. Описание строки поиска элемента:" +
                 System.getProperty("line.separator") + "   - Поле 'Описание' ввести текст: Находим элемент на странице" +
@@ -299,6 +308,13 @@ public class FormInstruction {
                 System.getProperty("line.separator") + "   - Поле 'Время ожидания' ввести значение: 1" + System.getProperty("line.separator") +
                 System.getProperty("line.separator") + "Таким образом значение из одного элемента можно ввести в другой элемент страницы." + System.getProperty("line.separator") +
                 System.getProperty("line.separator") + "--------------------------------------------------------------------------------------------------------------" + System.getProperty("line.separator") +
+                System.getProperty("line.separator") + "Чтобы выполнить JavaScript код воспользуйтесь специальным действием execute_js" +
+                System.getProperty("line.separator") + "Описание строки выполнения скрипта:" +
+                System.getProperty("line.separator") + "   - Поле 'Описание' ввести текст: Выполнение JavaScript" +
+                System.getProperty("line.separator") + "   - Поле 'Тип данных' выбрать действие: execute_js" +
+                System.getProperty("line.separator") + "   - Поле 'Локатор/Протокол/Условия' не заполняем" +
+                System.getProperty("line.separator") + "   - Поле 'Значение' вводим строку кода (обязательно нужно экранировать двойные кавычки) $(\\\"body\\\").find(\\\"#popup-abonent\\\").css({display:\\\"none!important\\\"});" +
+                System.getProperty("line.separator") + "   - Поле 'Время ожидания' ввести значение: 0" +
                 System.getProperty("line.separator") + "");
         textAreaInformation.setCaretPosition(0);
     }
