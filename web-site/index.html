@@ -10,6 +10,10 @@
 </head>
 <body>
 	<div class="main-wrapper">
+		<div id="image-zoom" class="image-zoom image-zoom-hidden">
+			<div id="image-zoom-image" class="image-zoom-image"></div>
+		</div>
+
 		<header>
 			<div class="container">
 				<div class="logo">
@@ -32,7 +36,7 @@
 				<div class="section-clear"></div>
 				<div class="preview">
 					<div class="preview-image">
-						<img src="img/editor-windows.png" alt="editor-windows">
+						<img src="img/editor-windows.png" alt="editor-windows" id="editor-windows">
 					</div>
 					<div id="description" class="preview-description">
 						<p>
@@ -93,7 +97,7 @@
 					</p>
 				</div>
 				<div class="container-right">
-					<img src="img/editor-windows-2.png" alt="editor-windows">
+					<img src="img/editor-windows-2.png" alt="editor-windows" id="editor-windows-2">
 				</div>
 			</div>
 		</section>
@@ -101,7 +105,7 @@
 		<section class="section-dark">
 			<div class="container">
 				<div class="container-left">
-					<img src="img/editor-linux-1.png" alt="editor-linux">
+					<img src="img/editor-linux-1.png" alt="editor-linux" id="editor-linux-1">
 				</div>
 				<div class="container-right">
 					<h2>Редактор тестов версия для Linux</h2>
@@ -169,7 +173,7 @@
 					</p>
 				</div>
 				<div class="container-right">
-					<img src="img/editor-linux-2.png" alt="editor-linux">
+					<img src="img/editor-linux-2.png" alt="editor-linux" id="editor-linux-2">
 				</div>
 			</div>
 		</section>
@@ -177,7 +181,7 @@
 		<section class="section-light">
 			<div class="container">
 				<div class="container-left">
-					<img src="img/console.png" alt="editor-windows">
+					<img src="img/console.png" alt="console" id="console">
 				</div>
 				<div class="container-right">
 					<h2 id="execute">Запуск тестов из командной строки</h2>
@@ -301,5 +305,70 @@
 		</footer>
 	</div>
 	
+	<script type="text/javascript">
+		(function(){
+			var imageZoom = document.getElementById('image-zoom');
+			var imageZoomImage = document.getElementById('image-zoom-image');
+  			var imageEditorWindows = document.getElementById('editor-windows');
+  			var imageEditorWindows2 = document.getElementById('editor-windows-2');
+  			var imageEditorLinux1 = document.getElementById('editor-linux-1');
+  			var imageEditorLinux2 = document.getElementById('editor-linux-2');
+  			var imageEditorConsole = document.getElementById('console');
+
+   			imageEditorWindows.addEventListener('click', function(){
+   				imageZoomImage.classList.remove("image-editor-windows");
+   				imageZoomImage.classList.remove("image-editor-windows-2");
+   				imageZoomImage.classList.remove("image-editor-linux-1");
+   				imageZoomImage.classList.remove("image-editor-linux-2");
+   				imageZoomImage.classList.remove("image-console");
+   				imageZoomImage.classList.add("image-editor-windows");
+       			imageZoom.classList.remove("image-zoom-hidden");
+   			});
+
+   			imageEditorWindows2.addEventListener('click', function(){
+   				imageZoomImage.classList.remove("image-editor-windows");
+   				imageZoomImage.classList.remove("image-editor-windows-2");
+   				imageZoomImage.classList.remove("image-editor-linux-1");
+   				imageZoomImage.classList.remove("image-editor-linux-2");
+   				imageZoomImage.classList.remove("image-console");
+   				imageZoomImage.classList.add("image-editor-windows-2");
+       			imageZoom.classList.remove("image-zoom-hidden");
+   			});
+
+   			imageEditorLinux1.addEventListener('click', function(){
+   				imageZoomImage.classList.remove("image-editor-windows");
+   				imageZoomImage.classList.remove("image-editor-windows-2");
+   				imageZoomImage.classList.remove("image-editor-linux-1");
+   				imageZoomImage.classList.remove("image-editor-linux-2");
+   				imageZoomImage.classList.remove("image-console");
+   				imageZoomImage.classList.add("image-editor-linux-1");
+       			imageZoom.classList.remove("image-zoom-hidden");
+   			});
+
+   			imageEditorLinux2.addEventListener('click', function(){
+   				imageZoomImage.classList.remove("image-editor-windows");
+   				imageZoomImage.classList.remove("image-editor-windows-2");
+   				imageZoomImage.classList.remove("image-editor-linux-1");
+   				imageZoomImage.classList.remove("image-editor-linux-2");
+   				imageZoomImage.classList.remove("image-console");
+   				imageZoomImage.classList.add("image-editor-linux-2");
+       			imageZoom.classList.remove("image-zoom-hidden");
+   			});
+
+   			imageEditorConsole.addEventListener('click', function(){
+   				imageZoomImage.classList.remove("image-editor-windows");
+   				imageZoomImage.classList.remove("image-editor-windows-2");
+   				imageZoomImage.classList.remove("image-editor-linux-1");
+   				imageZoomImage.classList.remove("image-editor-linux-2");
+   				imageZoomImage.classList.remove("image-console");
+   				imageZoomImage.classList.add("image-console");
+       			imageZoom.classList.remove("image-zoom-hidden");
+   			});
+
+   			imageZoom.addEventListener('click', function(){
+       			imageZoom.classList.add("image-zoom-hidden");
+   			});
+		}());
+	</script>
 </body>
 </html>
