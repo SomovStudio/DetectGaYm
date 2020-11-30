@@ -145,7 +145,10 @@ public class FormMain {
                 "get_attribute_name",
                 "get_attribute_class",
                 "get_attribute_value",
-                "get_attribute_href"});
+                "get_attribute_href",
+                "ec=",
+                "ea=",
+                "el="});
         comboboxValue.setEditable(true);
         DefaultCellEditor editorValue = new DefaultCellEditor(comboboxValue);
         tableSteps.getColumnModel().getColumn(3).setCellEditor(editorValue);
