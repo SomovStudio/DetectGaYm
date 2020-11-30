@@ -202,7 +202,7 @@ public class FormMain {
                 context += System.getProperty("line.separator") + "Разработчик: Сомов Евгений Павлович";
                 context += System.getProperty("line.separator") + "Сайт: https://detect-gaym.ucoz.net";
                 //context += System.getProperty("line.separator") + "Почта: somov.studio@gmail.com";
-                context += System.getProperty("line.separator") + "Дата последнего обновления: 5.12.2020";
+                context += System.getProperty("line.separator") + "Дата последнего обновления: 1.12.2020";
                 context += System.getProperty("line.separator") + "Версия: 1.0.0";
                 context += System.getProperty("line.separator") + "Лицензия: GNU";
                 context += System.getProperty("line.separator") + "----------------------------------------------------------------------";
