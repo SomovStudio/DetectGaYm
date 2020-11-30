@@ -186,7 +186,7 @@ public class FormMain {
             stepsObj[i][4] = dataJson.get("timeout").toString().replace("\"", "\\\"");
         }
         initStepsTable(stepsObj);
-        consoleMessage(textAreaConsole, "Сообщение: Тест открыт, данные загружены");
+        consoleMessage(textAreaConsole, "Сообщение: Файл открыт, данные загружены");
     }
 
     public FormMain() {
