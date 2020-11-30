@@ -542,6 +542,7 @@ public class FormMain {
                             spinnerWaitLimit.getValue().toString()
                     };
                     saveJsonFile(path, labelEncoding.getText(), fields, listOptions, tableData, tableSteps);
+                    validatorJson(path, labelEncoding.getText());
                 } catch (IOException e) {
                     consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
                     //showMessage(e.toString());
@@ -567,6 +568,7 @@ public class FormMain {
                             spinnerWaitLimit.getValue().toString()
                     };
                     saveJsonFile(path, DEFAULT, fields, listOptions, tableData, tableSteps);
+                    validatorJson(path, labelEncoding.getText());
                 } catch (IOException e) {
                     consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
                     //showMessage(e.toString());
@@ -592,6 +594,7 @@ public class FormMain {
                             spinnerWaitLimit.getValue().toString()
                     };
                     saveJsonFile(path, UTF_8, fields, listOptions, tableData, tableSteps);
+                    validatorJson(path, labelEncoding.getText());
                 } catch (IOException e) {
                     consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
                     //showMessage(e.toString());
@@ -617,6 +620,7 @@ public class FormMain {
                             spinnerWaitLimit.getValue().toString()
                     };
                     saveJsonFile(path, UTF_8_BOM, fields, listOptions, tableData, tableSteps);
+                    validatorJson(path, labelEncoding.getText());
                 } catch (IOException e) {
                     consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
                     //showMessage(e.toString());
@@ -642,6 +646,7 @@ public class FormMain {
                             spinnerWaitLimit.getValue().toString()
                     };
                     saveJsonFile(path, WINDOWS_1251, fields, listOptions, tableData, tableSteps);
+                    validatorJson(path, labelEncoding.getText());
                 } catch (IOException e) {
                     consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
                     //showMessage(e.toString());
@@ -667,6 +672,7 @@ public class FormMain {
                             spinnerWaitLimit.getValue().toString()
                     };
                     saveJsonFile(path, WINDOWS_1252, fields, listOptions, tableData, tableSteps);
+                    validatorJson(path, labelEncoding.getText());
                 } catch (IOException e) {
                     consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
                     //showMessage(e.toString());
@@ -808,6 +814,7 @@ public class FormMain {
                 try {
                     validatorJson(jsonFile, labelEncoding.getText());
                 } catch (FileNotFoundException e) {
+                    consoleMessage(textAreaConsole, e.toString());
                     //e.printStackTrace();
                 }
             }
@@ -900,6 +907,7 @@ public class FormMain {
                             spinnerWaitLimit.getValue().toString()
                     };
                     saveJsonFile(path, labelEncoding.getText(), fields, listOptions, tableData, tableSteps);
+                    validatorJson(path, labelEncoding.getText());
                 } catch (IOException e) {
                     consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
                     //showMessage(e.toString());
