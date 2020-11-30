@@ -198,7 +198,7 @@ public class FormMain {
                 context += System.getProperty("line.separator") + "Разработчик: Сомов Евгений Павлович";
                 context += System.getProperty("line.separator") + "Сайт: https://detect-gaym.ucoz.net";
                 //context += System.getProperty("line.separator") + "Почта: somov.studio@gmail.com";
-                context += System.getProperty("line.separator") + "Дата последнего обновления: 12.12.2020";
+                context += System.getProperty("line.separator") + "Дата последнего обновления: 5.12.2020";
                 context += System.getProperty("line.separator") + "Версия: 1.0.0";
                 context += System.getProperty("line.separator") + "Лицензия: GNU";
                 context += System.getProperty("line.separator") + "----------------------------------------------------------------------";
@@ -216,10 +216,12 @@ public class FormMain {
                     readJsonFile(path, DEFAULT);
                     loadJsonData();
                 } catch (IOException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 } catch (ParseException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 }
             }
@@ -234,10 +236,12 @@ public class FormMain {
                     readJsonFile(path, DEFAULT);
                     loadJsonData();
                 } catch (IOException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 } catch (ParseException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 }
             }
@@ -252,10 +256,12 @@ public class FormMain {
                     readJsonFile(path, UTF_8);
                     loadJsonData();
                 } catch (IOException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 } catch (ParseException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 }
             }
@@ -270,10 +276,12 @@ public class FormMain {
                     readJsonFile(path, UTF_8_BOM);
                     loadJsonData();
                 } catch (IOException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 } catch (ParseException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 }
             }
@@ -288,10 +296,12 @@ public class FormMain {
                     readJsonFile(path, WINDOWS_1251);
                     loadJsonData();
                 } catch (IOException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 } catch (ParseException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 }
             }
@@ -306,10 +316,12 @@ public class FormMain {
                     readJsonFile(path, WINDOWS_1252);
                     loadJsonData();
                 } catch (IOException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 } catch (ParseException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 }
             }
@@ -531,10 +543,12 @@ public class FormMain {
                     };
                     saveJsonFile(path, labelEncoding.getText(), fields, listOptions, tableData, tableSteps);
                 } catch (IOException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 } catch (ParseException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 }
             }
@@ -554,10 +568,12 @@ public class FormMain {
                     };
                     saveJsonFile(path, DEFAULT, fields, listOptions, tableData, tableSteps);
                 } catch (IOException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 } catch (ParseException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 }
             }
@@ -577,10 +593,12 @@ public class FormMain {
                     };
                     saveJsonFile(path, UTF_8, fields, listOptions, tableData, tableSteps);
                 } catch (IOException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 } catch (ParseException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 }
             }
@@ -600,10 +618,12 @@ public class FormMain {
                     };
                     saveJsonFile(path, UTF_8_BOM, fields, listOptions, tableData, tableSteps);
                 } catch (IOException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 } catch (ParseException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 }
             }
@@ -623,10 +643,12 @@ public class FormMain {
                     };
                     saveJsonFile(path, WINDOWS_1251, fields, listOptions, tableData, tableSteps);
                 } catch (IOException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 } catch (ParseException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 }
             }
@@ -646,10 +668,12 @@ public class FormMain {
                     };
                     saveJsonFile(path, WINDOWS_1252, fields, listOptions, tableData, tableSteps);
                 } catch (IOException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 } catch (ParseException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 }
             }
@@ -679,13 +703,15 @@ public class FormMain {
             public void actionPerformed(ActionEvent actionEvent) {
                 try {
                     String filename = labelPathFile.getText();
-                    if(filename.equals("...")) showMessage("Невозможно запустить тест.\nФайл теста либо не открыт, либо еще не сохранён.");
+                    if(filename.equals("...")) {
+                        consoleMessage(textAreaConsole, "Сообщение: Невозможно запустить тест. Файл теста либо не открыт, либо еще не сохранён.");
+                        //showMessage("Невозможно запустить тест.\nФайл теста либо не открыт, либо еще не сохранён.");
+                    }
                     else {
                         if(MenuCheckBoxExecuteEncodingTest.getState()) Editor.executeFile(filename, PanelMain, textAreaConsole, labelEncoding.getText());
                         else Editor.executeFile(filename, PanelMain, textAreaConsole, "");
                     }
                 } catch (IOException e) {
-                    showMessage(e.toString());
                     if(e.toString().lastIndexOf("error=13, Отказано в доступе") > -1) {
                         textAreaConsole.setText("Сообщение: " + e.toString() + "\n" +
                                 "\nПричина: Файл run-test.sh недостаточно прав для его выполнения.\n" +
@@ -693,6 +719,9 @@ public class FormMain {
                                 "\nперейти на вкладку Права и включить Доступ: Чтение и запись" +
                                 "\nа так же включить флаг выполнение: Разрешить выполнение файла как программы\n" +
                                 "\nПосле выполнения всех перечисленных выше действий попробуйте снова запустить тест.");
+                    }else{
+                        consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                        //showMessage(e.toString());
                     }
                     //e.printStackTrace();
                 }
@@ -703,13 +732,15 @@ public class FormMain {
                 try {
                     String filename = labelPathFile.getText();
                     String folder = getFileFolder(filename);
-                    if(filename.equals("...")) showMessage("Невозможно запустить группу тестов.\nФайл теста либо не открыт, либо еще не сохранён.\nОткройте один из файлов группы тестов.");
+                    if(filename.equals("...")) {
+                        consoleMessage(textAreaConsole, "Сообщение: Невозможно запустить группу тестов. Файл теста либо не открыт, либо еще не сохранён.\nОткройте один из файлов группы тестов.");
+                        //showMessage("Невозможно запустить группу тестов.\nФайл теста либо не открыт, либо еще не сохранён.\nОткройте один из файлов группы тестов.");
+                    }
                     else {
                         if(MenuCheckBoxExecuteEncodingTest.getState()) Editor.executeGroup(filename, PanelMain, textAreaConsole, labelEncoding.getText());
                         else Editor.executeGroup(filename, PanelMain, textAreaConsole, "");
                     }
                 } catch (IOException e) {
-                    showMessage(e.toString());
                     if(e.toString().lastIndexOf("error=13, Отказано в доступе") > -1) {
                         textAreaConsole.setText("Сообщение: " + e.toString() + "\n" +
                                 "\nПричина: Файл run-test.sh недостаточно прав для его выполнения.\n" +
@@ -717,6 +748,9 @@ public class FormMain {
                                 "\nперейти на вкладку Права и включить Доступ: Чтение и запись" +
                                 "\nа так же включить флаг выполнение: Разрешить выполнение файла как программы\n" +
                                 "\nПосле выполнения всех перечисленных выше действий попробуйте снова запустить тест.");
+                    }else{
+                        consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                        //showMessage(e.toString());
                     }
                     //e.printStackTrace();
                 }
@@ -842,10 +876,12 @@ public class FormMain {
                     readJsonFile(path, DEFAULT);
                     loadJsonData();
                 } catch (IOException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 } catch (ParseException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 }
             }
@@ -865,10 +901,12 @@ public class FormMain {
                     };
                     saveJsonFile(path, labelEncoding.getText(), fields, listOptions, tableData, tableSteps);
                 } catch (IOException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 } catch (ParseException e) {
-                    showMessage(e.toString());
+                    consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                    //showMessage(e.toString());
                     //e.printStackTrace();
                 }
             }
@@ -877,13 +915,15 @@ public class FormMain {
             public void actionPerformed(ActionEvent actionEvent) {
                 try {
                     String filename = labelPathFile.getText();
-                    if(filename.equals("...")) showMessage("Невозможно запустить тест.\nФайл теста либо не открыт, либо еще не сохранён.");
+                    if(filename.equals("...")) {
+                        consoleMessage(textAreaConsole, "Сообщение: Невозможно запустить тест. Файл теста либо не открыт, либо еще не сохранён.");
+                        //showMessage("Невозможно запустить тест.\nФайл теста либо не открыт, либо еще не сохранён.");
+                    }
                     else {
                         if(MenuCheckBoxExecuteEncodingTest.getState()) Editor.executeFile(filename, PanelMain, textAreaConsole, labelEncoding.getText());
                         else Editor.executeFile(filename, PanelMain, textAreaConsole, "");
                     }
                 } catch (IOException e) {
-                    showMessage(e.toString());
                     if(e.toString().lastIndexOf("error=13, Отказано в доступе") > -1) {
                         textAreaConsole.setText("Сообщение: " + e.toString() + "\n" +
                                 "\nПричина: Файл run-test.sh недостаточно прав для его выполнения.\n" +
@@ -891,6 +931,9 @@ public class FormMain {
                                 "\nперейти на вкладку Права и включить Доступ: Чтение и запись" +
                                 "\nа так же включить флаг выполнение: Разрешить выполнение файла как программы\n" +
                                 "\nПосле выполнения всех перечисленных выше действий попробуйте снова запустить тест.");
+                    }else{
+                        consoleMessage(textAreaConsole, "Ошибка: " + e.toString());
+                        //showMessage(e.toString());
                     }
                     //e.printStackTrace();
                 }

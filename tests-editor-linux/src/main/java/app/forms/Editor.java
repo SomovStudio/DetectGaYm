@@ -8,7 +8,9 @@ import org.json.simple.parser.ParseException;
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import java.io.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 
 public class Editor {
@@ -33,6 +35,15 @@ public class Editor {
     public static void showMessage(String message) {
         JOptionPane.showMessageDialog(null, message);
         System.out.println(message);
+    }
+
+    public static void consoleMessage(JTextArea console, String message){
+        Date date = new Date();
+        SimpleDateFormat dateNow = new SimpleDateFormat("yyyy.MM.dd hh:mm:ss");
+        console.append(dateNow.format(date) + " " + message + System.getProperty("line.separator"));
+        console.update(console.getGraphics());
+        console.validate();
+        console.setCaretPosition(console.getText().length() - 1);
     }
 
     /* Путь к папке программы */
