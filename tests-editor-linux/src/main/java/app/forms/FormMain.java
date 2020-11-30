@@ -152,9 +152,9 @@ public class FormMain {
     }
 
     private void loadJsonData() {
-        textFieldDescription.setText(description);
+        textFieldDescription.setText(description.replace("\"", "\\\""));
         textFieldPort.setText(String.valueOf(port));
-        textFieldHar.setText(nameHar);
+        textFieldHar.setText(nameHar.replace("\"", "\\\""));
         listOptions.setListData(arguments.toArray());
         spinnerWaitLimit.setValue(pageLoadTimeout);
 
@@ -163,12 +163,12 @@ public class FormMain {
         {
             JSONObject dataJson = (JSONObject) data.get(i);
             dataObj[i] = new String[6];
-            dataObj[i][0] = dataJson.get("title").toString();
-            dataObj[i][1] = dataJson.get("url").toString();
-            dataObj[i][2] = dataJson.get("ga_category").toString();
-            dataObj[i][3] = dataJson.get("ga_action").toString();
-            dataObj[i][4] = dataJson.get("ga_label").toString();
-            dataObj[i][5] = dataJson.get("ym_code").toString();
+            dataObj[i][0] = dataJson.get("title").toString().replace("\"", "\\\"");
+            dataObj[i][1] = dataJson.get("url").toString().replace("\"", "\\\"");
+            dataObj[i][2] = dataJson.get("ga_category").toString().replace("\"", "\\\"");
+            dataObj[i][3] = dataJson.get("ga_action").toString().replace("\"", "\\\"");
+            dataObj[i][4] = dataJson.get("ga_label").toString().replace("\"", "\\\"");
+            dataObj[i][5] = dataJson.get("ym_code").toString().replace("\"", "\\\"");
         }
         initDataTable(dataObj);
 
@@ -176,11 +176,11 @@ public class FormMain {
         for (int i = 0; i < steps.toArray().length; i++){
             JSONObject dataJson = (JSONObject) steps.get(i);
             stepsObj[i] = new String[5];
-            stepsObj[i][0] = dataJson.get("description").toString();
-            stepsObj[i][1] = dataJson.get("type").toString();
-            stepsObj[i][2] = dataJson.get("locator").toString();
-            stepsObj[i][3] = dataJson.get("value").toString();
-            stepsObj[i][4] = dataJson.get("timeout").toString();
+            stepsObj[i][0] = dataJson.get("description").toString().replace("\"", "\\\"");
+            stepsObj[i][1] = dataJson.get("type").toString().replace("\"", "\\\"");
+            stepsObj[i][2] = dataJson.get("locator").toString().replace("\"", "\\\"");
+            stepsObj[i][3] = dataJson.get("value").toString().replace("\"", "\\\"");
+            stepsObj[i][4] = dataJson.get("timeout").toString().replace("\"", "\\\"");
         }
         initStepsTable(stepsObj);
         consoleMessage(textAreaConsole, "Сообщение: Тест открыт, данные загружены");
