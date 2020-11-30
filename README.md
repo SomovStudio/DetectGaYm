@@ -29,4 +29,4 @@
 <br>
 
 <hr>
-<br>Видео инструкция: https://youtu.be/Ofam2YHdUOQ
+<br>Официальный сайт программы: https://detect-gaym.ucoz.net
