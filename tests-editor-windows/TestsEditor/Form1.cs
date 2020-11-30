@@ -23,8 +23,6 @@ namespace TestsEditor
         public const string UTF_8_BOM = "UTF-8-BOM";
         public const string WINDOWS_1251 = "WINDOWS-1251";
 
-        Form8 startForm;
-
         public string fileName;
         public delegate void AddConsoleItem(String message);
         public AddConsoleItem myDelegate;
@@ -171,8 +169,19 @@ namespace TestsEditor
 
         private void newFile()
         {
-            Form1 newform = new Form1();
-            newform.Show();
+            //Form1 newform = new Form1();
+            //newform.Show();
+            textBoxDescription.Text = "";
+            textBoxPort.Text = "9091";
+            textBoxArguments.Text = "";
+            listBoxArguments.Items.Clear();
+            listBoxArguments.Items.Add("--ignore-certificate-errors");
+            numericUpDownPageLoadTimeout.Value = 0;
+            listView1.Items.Clear();
+            listView2.Items.Clear();
+            fileName = "";
+            toolStripStatusLabelFileEncoding.Text = DEFAULT;
+            toolStripStatusLabelFileName.Text = "...";
         }
 
         private void button1_Click(object sender, EventArgs e)
