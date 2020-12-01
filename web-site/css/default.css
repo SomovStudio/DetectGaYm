@@ -258,8 +258,11 @@ section{
   	padding: 70px 0 80px 0;
   	height: auto;
   	min-height: auto;
-  	max-height: auto;
   	overflow:auto; /* автоматическое увеличение высоты блока */
+}
+
+#donate {
+	padding: 25px 0 0px 0;
 }
 
 .section-clear {
