@@ -379,7 +379,7 @@ section{
 #counter {
 	padding: 30px;
 	text-align: center;
-	float: right;
+	/*float: right;*/
 }
 
 footer {
@@ -430,6 +430,10 @@ footer {
 		padding: 2%;
 		min-width: 100%;
 	    max-width: 100%;
+	}
+
+	.image-zoom {
+		visibility: hidden;
 	}
 
 	.video {
