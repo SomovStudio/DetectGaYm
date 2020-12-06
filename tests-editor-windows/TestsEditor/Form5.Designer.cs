@@ -61,7 +61,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 83);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(289, 268);
+            this.panel2.Size = new System.Drawing.Size(384, 278);
             this.panel2.TabIndex = 4;
             // 
             // label10
@@ -69,7 +69,7 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(15, 240);
+            this.label10.Location = new System.Drawing.Point(15, 250);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(252, 13);
             this.label10.TabIndex = 9;
@@ -86,7 +86,7 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Location = new System.Drawing.Point(6, 140);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(280, 87);
+            this.groupBox1.Size = new System.Drawing.Size(375, 97);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Контакты:";
@@ -194,7 +194,7 @@
             this.label2.ForeColor = System.Drawing.Color.MediumSlateBlue;
             this.label2.Location = new System.Drawing.Point(0, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(289, 268);
+            this.label2.Size = new System.Drawing.Size(384, 278);
             this.label2.TabIndex = 3;
             this.label2.Text = "Somov Studio";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -207,7 +207,7 @@
             this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(289, 83);
+            this.label1.Size = new System.Drawing.Size(384, 83);
             this.label1.TabIndex = 2;
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -215,7 +215,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(289, 351);
+            this.ClientSize = new System.Drawing.Size(384, 361);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
