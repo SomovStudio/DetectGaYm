@@ -27,6 +27,10 @@
 </ul>
 </p>
 <br>
+<p>
+<br>Демонстрация программы DetectGaYm в системе Windows https://youtu.be/M0WG0gu_6b8
+<br>Демонстрация программы DetectGaYm в системе Linux https://youtu.be/pQTkNERJIfM
+</p>
 
 <hr>
 <br>Официальный сайт программы: https://detect-gaym.ucoz.net
