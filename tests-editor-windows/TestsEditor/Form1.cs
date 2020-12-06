@@ -440,23 +440,23 @@ namespace TestsEditor
                 StreamWriter writer;
                 if (toolStripStatusLabelFileEncoding.Text == DEFAULT)
                 {
-                    writer = new StreamWriter(saveFileDialog1.FileName, false, Encoding.Default);
+                    writer = new StreamWriter(this.toolStripStatusLabelFileName.Text, false, Encoding.Default);
                 }
                 else if (toolStripStatusLabelFileEncoding.Text == UTF_8)
                 {
-                    writer = new StreamWriter(saveFileDialog1.FileName, false, new UTF8Encoding(false));
+                    writer = new StreamWriter(this.toolStripStatusLabelFileName.Text, false, new UTF8Encoding(false));
                 }
                 else if (toolStripStatusLabelFileEncoding.Text == UTF_8_BOM)
                 {
-                    writer = new StreamWriter(saveFileDialog1.FileName, false, new UTF8Encoding(true));
+                    writer = new StreamWriter(this.toolStripStatusLabelFileName.Text, false, new UTF8Encoding(true));
                 }
                 else if (toolStripStatusLabelFileEncoding.Text == WINDOWS_1251)
                 {
-                    writer = new StreamWriter(saveFileDialog1.FileName, false, Encoding.GetEncoding("Windows-1251"));
+                    writer = new StreamWriter(this.toolStripStatusLabelFileName.Text, false, Encoding.GetEncoding("Windows-1251"));
                 }
                 else
                 {
-                    writer = new StreamWriter(saveFileDialog1.FileName, false, Encoding.Default);
+                    writer = new StreamWriter(this.toolStripStatusLabelFileName.Text, false, Encoding.Default);
                 }
                 writer.Write(json);
                 writer.Close();
