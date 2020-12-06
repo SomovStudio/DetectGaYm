@@ -1,0 +1,63 @@
+{
+"description":"Тестирование событий поиска",
+"port":9091,
+"arguments":[
+"--ignore-certificate-errors"
+],
+"har":"test.har",
+"timeout":60,
+"data":[
+{
+"title":"ШАГ: Открываю страницу https://rozetka.com.ua/",
+"url":"https://rozetka.com.ua/",
+"ga_category":"Interactions",
+"ga_action":"click",
+"ga_label":"searchButton",
+"ym_code":""
+}
+],
+"steps":[
+{
+"description":"ШАГ: Ввожу данные для поиска",
+"type":"input_value",
+"value":"телефон",
+"locator":"//input[@name='search']",
+"timeout":1
+},
+{
+"description":"ШАГ: Нажал на кнопку Найти",
+"type":"click_element",
+"value":"",
+"locator":"//button[@class='button button_color_green button_size_medium search-form__submit']",
+"timeout":1
+},
+{
+"description":"ШАГ: Ожидание завершения поиска",
+"type":"wait_element",
+"value":"",
+"locator":"//h1[contains(text(), 'Мобильные телефоны')]",
+"timeout":15
+},
+{
+"description":"ШАГ: Нажал на кнопку Найти",
+"type":"click_element",
+"value":"",
+"locator":"//button[@class='button button_color_green button_size_medium search-form__submit']",
+"timeout":1
+},
+{
+"description":"ШАГ: Ожидание 5 секунд",
+"type":"sleep",
+"value":"",
+"locator":"",
+"timeout":5
+},
+{
+"description":"Событие GA",
+"type":"test_defaults_ga",
+"value":"",
+"locator":"",
+"timeout":5
+}
+]
+}
