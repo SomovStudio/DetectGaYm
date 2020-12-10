@@ -1,189 +1,227 @@
-
-
+﻿
 <!DOCTYPE html>
-<html lang="ru">
-
+<html>
 <head>
+	<meta charset="utf-8" />
+	<meta name="generator" content="HelpNDoc Personal Edition 6.9.0.577">
+	<title>DetectGaYm</title>
+	<style type="text/css">
+	/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 10pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+span.rvts1 /* Heading */
+{
+ font-weight: bold;
+ color: #0000ff;
+}
+span.rvts2 /* Subheading */
+{
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts3 /* Keywords */
+{
+ font-style: italic;
+ color: #800000;
+}
+a.rvts4, span.rvts4 /* Jump 1 */
+{
+ color: #008000;
+ text-decoration: underline;
+}
+a.rvts5, span.rvts5 /* Jump 2 */
+{
+ color: #008000;
+ text-decoration: underline;
+}
+span.rvts6
+{
+}
+span.rvts7
+{
+ font-weight: bold;
+ color: #0000ff;
+}
+span.rvts8
+{
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts9
+{
+ font-style: italic;
+ color: #800000;
+}
+a.rvts10, span.rvts10
+{
+ color: #008000;
+ text-decoration: underline;
+}
+a.rvts11, span.rvts11
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts12 /* Font Style */
+{
+ font-family: 'Tahoma', 'Geneva', sans-serif;
+ font-style: italic;
+ color: #c0c0c0;
+}
+a.rvts13, span.rvts13 /* Font Style */
+{
+ font-family: 'Tahoma', 'Geneva', sans-serif;
+ font-style: italic;
+ color: #6666ff;
+ text-decoration: underline;
+}
+span.rvts14
+{
+ font-weight: bold;
+}
+span.rvts15
+{
+ color: #800080;
+}
+span.rvts16
+{
+ text-decoration: underline;
+}
+span.rvts17
+{
+ font-family: 'Consolas';
+}
+span.rvts18
+{
+ color: ;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+}
+.rvps3
+{
+ text-align: center;
+}
+.rvps4 /* Paragraph Style */
+{
+ text-align: center;
+ border-color: #c0c0c0;
+ border-style: solid;
+ border-width: 1px;
+ border-right: none;
+ border-left: none;
+ padding: 2px 0px 2px 0px;
+ margin: 7px 0px 7px 0px;
+}
+.rvps5
+{
+ margin: 0px 0px 0px 24px;
+}
+.rvps6
+{
+ margin: 0px 0px 0px 48px;
+}
+.rvps7
+{
+ margin: 0px 0px 0px 72px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;}
+.list1 {text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: circle;}
+.list2 {text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: square;}
+.list3 {text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: disc;}
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="generator" content="HelpNDoc Personal Edition 6.9.0.577">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="favicon.ico"/>
 
-  <title>Описание</title>
-  <meta name="description" content="" /> 
-  <meta name="keywords" content="">
+	
 
+		body {
+			align-items: stretch;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			overflow: hidden;
+			margin: 0;
+			padding: 0;
+		}
 
+		.toc {
+			height: 100vh;
+			flex: 0 0 25%;
+			overflow: auto;
+		}
 
-  
+		.content {
+			height: 100vh;
+			overflow: auto;
+		}
 
-  <!-- Twitter Card data -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Описание">
-  <meta name="twitter:description" content="">
+		.toc-inner, .content-inner {
+			margin: 1em;
+		}
 
-  <!-- Open Graph data -->
-  <meta property="og:title" content="Описание" />
-  <meta property="og:type" content="article" />
-  <meta property="og:description" content="" />
-  <meta property="og:site_name" content="DetectGaYm" /> 
+		.toc-inner a {
+			display: block;
+			padding: 0.5em 0 0.5em 0;
+			text-decoration: none;
+			color: #000;
+			font-size: 11pt;
+			font-family: 'Segoe UI';
+		}
 
-  <!-- Bootstrap core CSS -->
-  <link href="vendors/bootstrap-3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+		.toc-inner a:hover {
+			background-color: #ddd;
+		}
 
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <link href="vendors/bootstrap-3.4.1/css/ie10-viewport-bug-workaround.css" rel="stylesheet"/>
+		.toc-inner a.toclevel-2 { padding-left: 1em }
+		.toc-inner a.toclevel-3 { padding-left: 2em }
+		.toc-inner a.toclevel-4 { padding-left: 3em }
+		.toc-inner a.toclevel-5 { padding-left: 4em }
+		.toc-inner a.toclevel-6 { padding-left: 5em }
+		.toc-inner a.toclevel-7 { padding-left: 6em }
+		.toc-inner a.toclevel-8 { padding-left: 7em }
+		.toc-inner a.toclevel-9 { padding-left: 8em }
+	
 
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-      <script src="vendors/html5shiv-3.7.3/html5shiv.min.js"></script>
-      <script src="vendors/respond-1.4.2/respond.min.js"></script>
-    <![endif]-->
+	.copyright {
+		font-style: italic;
+		padding-top: 20px;
+	}
 
-  <!-- JsTree styles -->
-  <link href="vendors/jstree-3.3.7/themes/default/style.min.css" rel="stylesheet"/>
-
-  <!-- Hnd styles -->
-  <link href="css/layout.min.css" rel="stylesheet" />
-  <link href="css/effects.min.css" rel="stylesheet" />
-  <link href="css/theme-light-blue.min.css" rel="stylesheet" />
-  <link href="css/print.min.css" rel="stylesheet" media="print" />
-  <style type="text/css">nav { width: 350px} @media screen and (min-width:769px) { body.md-nav-expanded div#main { margin-left: 350px} body.md-nav-expanded header { padding-left: 364px} }</style>
-
-  <!-- Content style -->
-  <link href="css/hnd.content.css" rel="stylesheet" />
-
-  
-
-
-
+	</style>
 </head>
 
-<body class="md-nav-expanded">
+<body>
+	
+	<div class="toc">
+		<div class="toc-inner">
+			<a href="#Newtopic" class="toclevel-1">Описание</a><a href="#Newtopic1" class="toclevel-1">Установка</a><a href="#Newtopic2" class="toclevel-1">Структура программы</a><a href="#Newtopic5" class="toclevel-1">Редактор тестов</a><a href="#Newtopic11" class="toclevel-2">Запуск редактора</a><a href="#Newtopic3" class="toclevel-2">Основное меню</a><a href="#Newtopic4" class="toclevel-2">Панель инструментов</a><a href="#Newtopic6" class="toclevel-2">Общие параметры</a><a href="#Newtopic7" class="toclevel-2">Данные</a><a href="#Newtopic8" class="toclevel-2">Шаги</a><a href="#Newtopic9" class="toclevel-2">Типы действий в шагах</a><a href="#Newtopic10" class="toclevel-2">Выполнение тестов</a><a href="#Newtopic13" class="toclevel-2">Сформировать команду для запуска</a><a href="#Newtopic14" class="toclevel-2">Закрыть заблокированный порт</a><a href="#Newtopic17" class="toclevel-1">Структура теста</a><a href="#Newtopic12" class="toclevel-1">Запуск тестов из командной строки</a><a href="#Jenkins" class="toclevel-1">Запуск тестов в Jenkins</a><a href="#-" class="toclevel-1">Обновление веб-драйвера</a><a href="#Newtopic15" class="toclevel-1">Примеры разработки тестов</a><a href="#Newtopic16" class="toclevel-2">Демонстрационный тест</a><a href="#Newtopic19" class="toclevel-2">Базовая проверка событий</a><a href="#Newtopic18" class="toclevel-2">Опциональная проверка событий</a><a href="#Newtopic21" class="toclevel-2">Получение данных из элементов</a><a href="#Newtopic20" class="toclevel-2">Использование условий</a><a href="#JavaScript" class="toclevel-2">Применение JavaScript</a>
+		</div>
+	</div>
+	
 
-
-
-  <div id="skip-link">
-    <a href="#main-content" class="element-invisible">Skip to main content</a>
-  </div>
-
-  <header class="headroom">
-    <button class="hnd-toggle btn btn-default">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>        
-    </button>
-    <h1>DetectGaYm</h1>
-    
-  </header>
-
-  <nav class="md-nav-expanded">
-    <!-- Nav tabs -->
-    <ul class="tab-tabs nav nav-tabs" role="tablist">
-      <li id="nav-close"> 
-        <button class="hnd-toggle btn btn-default">
-          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-        </button>
-      </li>
-      
-	  
-        <li role="presentation" class="tab active">
-            <a href="#contents" id="tab-contents" aria-controls="contents" role="tab" data-toggle="tab">
-                <i class="glyphicon glyphicon-list"></i>
-                Contents
-            </a>
-        </li>
-      
-        <li role="presentation" class="tab">
-            <a href="#index" id="tab-index" aria-controls="index" role="tab" data-toggle="tab">
-                <i class="glyphicon glyphicon-asterisk"></i>
-                Index
-            </a>
-        </li>
-      
-        <li role="presentation" class="tab">
-            <a href="#search" id="tab-search" aria-controls="search" role="tab" data-toggle="tab">
-                <i class="glyphicon glyphicon-search"></i>
-                Search
-            </a>
-        </li>
-      
-    </ul>  <!-- /Nav tabs -->
-
-    <!-- Tab panes -->
-    <div class="tab-content">
-	  
-      <div role="tabpanel" class="tab-pane active" id="contents">
-        <div id="toc" class="tree-container unselectable"
-            
-            data-openlvl="1"
-        >
-            <ul><li id="Newtopic" ><a href="Newtopic.html">Описание</a></li><li id="Newtopic1" ><a href="Newtopic1.html">Установка</a></li><li id="Newtopic2" ><a href="Newtopic2.html">Структура программы</a></li><li id="Newtopic5" ><a href="Newtopic5.html">Редактор тестов</a><ul><li id="Newtopic11" ><a href="Newtopic11.html">Запуск редактора</a></li><li id="Newtopic3" ><a href="Newtopic3.html">Основное меню</a></li><li id="Newtopic4" ><a href="Newtopic4.html">Панель инструментов</a></li><li id="Newtopic6" ><a href="Newtopic6.html">Общие параметры</a></li><li id="Newtopic7" ><a href="Newtopic7.html">Данные</a></li><li id="Newtopic8" ><a href="Newtopic8.html">Шаги</a></li><li id="Newtopic9" ><a href="Newtopic9.html">Типы действий в шагах</a></li><li id="Newtopic10" ><a href="Newtopic10.html">Выполнение тестов</a></li><li id="Newtopic13" ><a href="Newtopic13.html">Сформировать команду для запуска</a></li><li id="Newtopic14" ><a href="Newtopic14.html">Закрыть заблокированный порт</a></li></ul></li><li id="Newtopic17" ><a href="Newtopic17.html">Структура теста</a></li><li id="Newtopic12" ><a href="Newtopic12.html">Запуск тестов из командной строки</a></li><li id="Jenkins" ><a href="Jenkins.html">Запуск тестов в Jenkins</a></li><li id="-" ><a href="-.html">Обновление веб-драйвера</a></li><li id="Newtopic15" ><a href="Newtopic15.html">Примеры разработки тестов</a><ul><li id="Newtopic16" ><a href="Newtopic16.html">Демонстрационный тест</a></li><li id="Newtopic19" ><a href="Newtopic19.html">Базовая проверка событий</a></li><li id="Newtopic18" ><a href="Newtopic18.html">Опциональная проверка событий</a></li><li id="Newtopic21" ><a href="Newtopic21.html">Получение данных из элементов</a></li><li id="Newtopic20" ><a href="Newtopic20.html">Использование условий</a></li><li id="JavaScript" ><a href="JavaScript.html">Применение JavaScript</a></li></ul></li></ul>
-        </div>
-      </div>  <!-- /contents-->
-      
-      <div role="tabpanel" class="tab-pane" id="index">
-        <div id="keywords" class="tree-container unselectable"
-            
-            data-openlvl="1"
-        >
-            <ul></ul>
-        </div>
-      </div>  <!-- /index-->
-      
-      <div role="tabpanel" class="tab-pane" id="search">
-        <div class="search-content">
-          <div class="search-input">
-            <form id="search-form">
-              <div class="form-group">
-                <div class="input-group">
-                  <input type="text" class="form-control" id="input-search" name="input-search" placeholder="Search..." />
-                  <span class="input-group-btn">
-                    <button class="btn btn-default" type="submit">
-                      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                    </button>
-                  </span>
-                </div>
-              </div>
-            </form>
-          </div>  <!-- /search-input -->
-          <div class="search-result">
-            <div id="search-info"></div>
-            <div class="tree-container unselectable" id="search-tree"></div>
-          </div>  <!-- /search-result -->
-        </div>  <!-- /search-content -->
-      </div>  <!-- /search-->
-      
-    </div>  <!-- /Tab panes -->
-
-  </nav>
-
-  <div id="main">
-
-    <article>
-        <div id="topic-content" class="container-fluid" 
-		  data-hnd-id="Newtopic"
-		  data-hnd-context="0"
-		  data-hnd-title="Описание"
-		>
-            
-                <div class="navigation">
-                    <ol class="breadcrumb">
-                        
-                    </ol>
-                    <div class="nav-arrows">
-                        <div class="btn-group btn-group-xs" role="group"><a class="btn btn-default" href="Newtopic1.html" title="Установка" role="button"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></div>
-                    </div>
-                </div> 
-            
-
-            <a id="main-content"></a>
-
-            <h2>Описание</h2>
-
-            <div class="main-content">
-                
+    <div class="content">
+		<div class="content-inner">
+			<a name="Newtopic"></a><h1>Описание</h1>
 <p></p>
 <p class="rvps2"><span class="rvts6">Бесплатная программа автоматизированного тестирования событий Google analytics и Yandex metrika.</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
@@ -202,77 +240,1446 @@
 </ul>
 <p></p>
 <p class="rvps4" style="clear: both;"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="https://www.helpndoc.com">Free EBook and documentation generator</a></p>
+<a name="Newtopic1"></a><h1>Установка</h1>
+<p></p>
+<p class="rvps2"><span class="rvts14">Установка программы</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Скачайте архив программы с официального сайта </span><a class="rvts11" href="https://detect-gaym.ucoz.net" target="_blank">https://detect-gaym.ucoz.net</a></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem1.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Разблокируйте архив через свойства</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem2.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Программа портативная и не требует инсталяции, достаточно просто распаковать архив в любое место на жестком диске.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem3.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Установка программы завершена.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps4" style="clear: both;"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="https://www.helpndoc.com">Full-featured Documentation generator</a></p>
+<a name="Newtopic2"></a><h1>Структура программы</h1>
+<p></p>
+<p class="rvps2"><span class="rvts14">Структура программы</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">После распаковки архива вы увидите в папке DetectGaYm-1.0.0 следующие папки</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem3.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts14">bin</span><span class="rvts6">&nbsp;- содержит программу </span><span class="rvts15">detect-gaym.jar</span><span class="rvts6">&nbsp;и вспомогательные библиотеки. (файлы </span><span class="rvts15">run-test</span><span class="rvts6">&nbsp;нужны для запуска автотестов с помощью редактора тестов)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts14">driver</span><span class="rvts6">&nbsp;- содержит веб-драйвер </span><span class="rvts15">chromedriver</span><span class="rvts6">&nbsp;необходимый для взаимодействия программы с браузером. (в папке драйвера для операционных систем Windows и Linux) </span><a class="rvts11" href="https://chromedriver.chromium.org/" target="_blank">ChromeDriver - WebDriver for Chrome</a></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts14">editor</span><span class="rvts6">&nbsp;- содержить программы визуального редактирования тестов.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts15">tests-editor-windows.exe</span><span class="rvts6">&nbsp;- редактор тестов для Windows</span></p>
+<p class="rvps5"><span class="rvts15">tests-editor-linux.jar</span><span class="rvts6">&nbsp;- редактор тестов для Linux</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts14">tests</span><span class="rvts6">&nbsp;- папка для хранения тестов, в папке присутствует демонстрационный тест </span><span class="rvts15">test-search-ga.json</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts14">errors</span><span class="rvts6">&nbsp;- папка появится в случае падения теста, в папке будет храниться скриншот экрана сделанный во время ошибки.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps4" style="clear: both;"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Create cross-platform Qt Help files</a></p>
+<a name="Newtopic5"></a><h1>Редактор тестов</h1>
+<p></p>
+<p class="rvps2"><span class="rvts6">Редактор тестов - это встроенная вспомогательная программа которая призвана упростить процесс разработки сценариев автоматизированного тестирования.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Визуальный редактор тестов версии для Windows позволяет не только легко и просто создавать сценарии но так же быстро запускать их выполнение. Работая в редакторе тестов вам не потребуется запускать сценарий из консоли, достаточно будет нажать одну кнопку и редактор сам сформирует команду в файле run-test.bat в папке bin и запустит выполнение сценария автоматизированного тестирования.</span></p>
+<p></p>
+<p class="rvps4" style="clear: both;"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Qt Help documentation made easy</a></p>
+<a name="Newtopic11"></a><h2>Запуск редактора</h2>
+<p></p>
+<p class="rvps2"><span class="rvts14">Запуск редактора</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">В папке editor содержится две версии редактора для систем Windows и Linux</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts15">tests-editor-windows.exe</span><span class="rvts6">&nbsp;- редактор тестов для Windows</span></p>
+<p class="rvps5"><span class="rvts15">tests-editor-linux.jar</span><span class="rvts6">&nbsp;- редактор тестов для Linux</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem35.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts14">Особенности запуска редактора в системе Linux</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Для запуска редактора, файл</span><span class="rvts15">&nbsp;tests-editor-linux.jar</span><span class="rvts6">&nbsp;в папке editor, обязательно нужно включить </span><span class="rvts16">права на чтение и запись</span><span class="rvts6">, а так же включить </span><span class="rvts16">разрешение на выполнение файла как программы</span><span class="rvts6">, включить эти права можно в свойствах файла на вкладке "</span><span class="rvts15">Права</span><span class="rvts6">".</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem33.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Редактор запускается с помощью OpenJDK Java 8 Runtime который устанавливается с пакетом JDK8</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem36.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Для корректной работы файла </span><span class="rvts15">run-test.sh</span><span class="rvts6">&nbsp;так же требуется предоставить права на </span><span class="rvts16">чтение и запись</span><span class="rvts6">&nbsp;и включить </span><span class="rvts16">разрешение на выполнение файла как программу</span><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem37.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps4" style="clear: both;"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="https://www.helpndoc.com/feature-tour">Full-featured Help generator</a></p>
+<a name="Newtopic3"></a><h2>Основное меню</h2>
+<p></p>
+<p class="rvps2"><span class="rvts14">Основное меню программы</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem4.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Windows)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem11.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Linux)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Чтобы создать тест нужно в меню "</span><span class="rvts15">Файл</span><span class="rvts6">" нажать пункт "</span><span class="rvts15">Создать новый тест</span><span class="rvts6">"</span></p>
+<p class="rvps2"><span class="rvts6">Чтобы открыть тест нужно в меню "</span><span class="rvts15">Файл</span><span class="rvts6">" нажать пункт "</span><span class="rvts15">Открыть тест</span><span class="rvts6">"</span></p>
+<p class="rvps2"><span class="rvts6">Чтобы открыть тест используя специальную кодировку нужно в меню "</span><span class="rvts15">Файл</span><span class="rvts6">" нажать пункт "</span><span class="rvts15">Открыть тест как...</span><span class="rvts6">" и выбрать необходимую кодировку</span></p>
+<p class="rvps2"><span class="rvts6">Чтобы сохранить тест нужно в меню "</span><span class="rvts15">Файл</span><span class="rvts6">" нажать пункт "</span><span class="rvts15">Сохранить тест</span><span class="rvts6">"</span></p>
+<p class="rvps2"><span class="rvts6">Чтобы сохранить тест используя специальную кодировку нужно в меню "</span><span class="rvts15">Файл</span><span class="rvts6">" нажать пункт "</span><span class="rvts15">Сохранить тест как</span><span class="rvts6">" и выбрать необходимую кодировку</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem5.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Windows)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem12.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Linux)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Чтобы запустить выполнение теста нужно в меню "</span><span class="rvts15">Запуск</span><span class="rvts6">" нажать пункт "</span><span class="rvts15">Выполнить тест</span><span class="rvts6">"</span></p>
+<p class="rvps2"><span class="rvts6">Чтобы запустить выполнение группы тестов нужно в меню "</span><span class="rvts15">Запуск</span><span class="rvts6">" нажать пункт "</span><span class="rvts15">Выполнить группу тестов</span><span class="rvts6">"</span></p>
+<p class="rvps2"><span class="rvts6">Чтобы тесты учитывали кодировку необходимо включить флаг "</span><span class="rvts15">Выполнять тест в текущей кодировку</span><span class="rvts6">"</span></p>
+<p class="rvps2"><span class="rvts6">Чтобы прервать выполнение запущенного теста нужно в меню "</span><span class="rvts15">Запуск</span><span class="rvts6">" нажать пункт "</span><span class="rvts15">Прервать выполнение</span><span class="rvts6">"</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem6.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Windows)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem13.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Linux)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Если нужно сформировать команду для запуска теста например из bat файла, для этого в меню "</span><span class="rvts15">Поддержка</span><span class="rvts6">" нажать пункт "</span><span class="rvts15">Сформировать команду для запуска</span><span class="rvts6">"</span></p>
+<p class="rvps2"><span class="rvts6">Если нужно выполнить проверку json файла, для этого в меню "Поддержка" выберите пункт "</span><span class="rvts15">Валидатор JSON</span><span class="rvts6">"</span></p>
+<p class="rvps2"><span class="rvts6">Если заблокирован порт вы можете воспользоваться подсказкой "</span><span class="rvts15">Как закрыть порт при ошибке Address already in use: bind</span><span class="rvts6">" выполнив описанные действия вы сможете разблокировать порт.</span></p>
+<p class="rvps2"><span class="rvts6">Так же присутствуют ссылки на валидаторы json файлов и на источник веб-драйвера.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem14.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Windows)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">В настройках вы можете включить параметр детального вывода информации при выполнении теста</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem15.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Windows)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem16.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Linux)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Встроенная справочная информация поможет разобраться в работе с программой.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps4" style="clear: both;"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="https://www.helpndoc.com/help-authoring-tool">Free help authoring environment</a></p>
+<a name="Newtopic4"></a><h2>Панель инструментов</h2>
+<p></p>
+<p class="rvps2"><span class="rvts14">Панель инструментов</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem7.png"><span class="rvts6">&nbsp;</span><img alt="" style="padding : 1px;" src="lib/NewItem9.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Windows)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Панель инструментов дублирует основные функции из основного меню.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps2"><span class="rvts6">Создать новый тест</span></li>
+<li class="rvps2"><span class="rvts6">Открыть тест как...</span></li>
+<li class="rvps2"><span class="rvts6">Сохранить тест</span></li>
+<li class="rvps2"><span class="rvts6">Сохранить тест как...</span></li>
+<li class="rvps2"><span class="rvts6">Выполнить тест</span></li>
+<li class="rvps2"><span class="rvts6">Выполнить группу тестов</span></li>
+<li class="rvps2"><span class="rvts6">Открыть системную консоль</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem17.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Linux)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Панель инструментов дублирует основные функции из основного меню.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps2"><span class="rvts6">Создать новый тест</span></li>
+<li class="rvps2"><span class="rvts6">Открыть тест</span></li>
+<li class="rvps2"><span class="rvts6">Сохранить тест</span></li>
+<li class="rvps2"><span class="rvts6">Выполнить тест</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps4" style="clear: both;"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="https://www.helpndoc.com/feature-tour">Easily create PDF Help documents</a></p>
+<a name="Newtopic6"></a><h2>Общие параметры</h2>
+<p></p>
+<p class="rvps2"><span class="rvts14">Общие параметры</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem18.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Windows)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem19.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Linux)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">На вкладке "</span><span class="rvts15">Общие параметры</span><span class="rvts6">" задаются следующие параметры теста:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">Описание</span><span class="rvts6">&nbsp;- текстовое поле для краткого описания теста (наименование)</span></p>
+<p class="rvps2"><span class="rvts15">Порт</span><span class="rvts6">&nbsp;- текстовое поле в котором указывается порт для работы прокси (по умолчанию 9091)</span></p>
+<p class="rvps2"><span class="rvts15">Опции</span><span class="rvts6">&nbsp;- список настроек необходимых при работе Chrome WebDriver (по умолчанию --ignore-certificate-errors)</span></p>
+<p class="rvps2"><span class="rvts15">HAR</span><span class="rvts6">&nbsp;- текстовое поле в котором указывается имя для текущего пакета данных</span></p>
+<p class="rvps2"><span class="rvts15">Лимит</span><span class="rvts6">&nbsp;- текстовое поле в котором указывается количество секунд ожидания для загрузки старницы (0 означает неограниченное время ожидания)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps4" style="clear: both;"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="https://www.helpndoc.com/feature-tour/create-ebooks-for-amazon-kindle">Full-featured Kindle eBooks generator</a></p>
+<a name="Newtopic7"></a><h2>Данные</h2>
+<p></p>
+<p class="rvps2"><span class="rvts14">Данные</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem20.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Windows)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem21.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Linux)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">На вкладке "</span><span class="rvts15">Данные</span><span class="rvts6">" задаются параметры для проверки событий GA и YM</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">Заголовок</span><span class="rvts6">&nbsp;- текстовое поле для ввода любого текста выводимого в консоль при выполнении теста</span></p>
+<p class="rvps2"><span class="rvts15">URL</span><span class="rvts6">&nbsp;- текстовое поле в котором указывается ссылка на страницу на которой будет выполнятся тест</span></p>
+<p class="rvps2"><span class="rvts15">GA:category</span><span class="rvts6">&nbsp;- текстовое поле для ввода ключа category события GA</span></p>
+<p class="rvps2"><span class="rvts15">GA:action</span><span class="rvts6">&nbsp;- текстовое поле для ввода ключа action события GA</span></p>
+<p class="rvps2"><span class="rvts15">GA:label</span><span class="rvts6">&nbsp;- текстовое поле для ввода ключа label события GA</span></p>
+<p class="rvps2"><span class="rvts15">YM:code</span><span class="rvts6">&nbsp;- текстовое поле для ввода ключа события YM</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Данная таблица выполняется цеклично, то есть все строки в таблице будут выполнены по очереди при запуске теста. При выполнении каждой строки будут использоваться те действия которые описаны в таблице "Шаги"</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem22.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Таким образом вы можете одним тестом выполнить одинаковую проверку для множества страниц.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps4" style="clear: both;"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="https://www.helpndoc.com">Free CHM Help documentation generator</a></p>
+<a name="Newtopic8"></a><h2>Шаги</h2>
+<p></p>
+<p class="rvps2"><span class="rvts14">Шаги</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem23.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Windows)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem24.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Linux)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">На вкладке "</span><span class="rvts15">Шаги</span><span class="rvts6">" описываются шаги которые необходимо выполнить на странице сайта включая проверку событий GA/YM</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">Описание</span><span class="rvts6">&nbsp;- текстовое поле в котором описывается данный шаг, данный текст выводится в консоль при выполнении теста</span></p>
+<p class="rvps2"><span class="rvts15">Тип действия</span><span class="rvts6">&nbsp;- текстовое поле для выбора или ввода ключа действия</span></p>
+<p class="rvps2"><span class="rvts15">Локатор/Протокол/Условия</span><span class="rvts6">&nbsp;- текстовое поле для ввода локатора в формате xpath или протокол GA/YM или ключ условия</span></p>
+<p class="rvps2"><span class="rvts15">Значение</span><span class="rvts6">&nbsp;- текстовое поле для ввода значения которое необходимо вписать в какой либо элемент (например input) или использовать в условии</span></p>
+<p class="rvps2"><span class="rvts15">Время ожидания</span><span class="rvts6">&nbsp;- указывается количество секунд ожидания для выполнения действия (или количество попыток при проверке событий GA/YM)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps4" style="clear: both;"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="https://www.helpndoc.com">Free Qt Help documentation generator</a></p>
+<a name="Newtopic9"></a><h2>Типы действий в шагах</h2>
+<p></p>
+<p class="rvps2"><span class="rvts14">Справочник: Типы действий в шагах</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">open_page</span><span class="rvts6">&nbsp;- открывает указанную страницу сайта в браузере.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Описание - текстовое представление действия</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Локатор - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Значение - ссылка на страницу формата https://site.com</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Время ожидания - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">open_default_page</span><span class="rvts6">&nbsp;- открывает страницу сайта (прописанную на вкладке Данные) в браузере.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Описание - текстовое представление действия</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Локатор - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Значение - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Время ожидания - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">refresh_page</span><span class="rvts6">&nbsp;- перезагружает текущую страницу.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Описание - текстовое представление действия</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Локатор - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Значение - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Время ожидания - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">input_value</span><span class="rvts6">&nbsp;- ввод данных в поле (элемент input).</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Описание - текстовое представление действия</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Локатор - в формате XPath запрос к элементу html страницы</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Значение - данные которые должны быть введены в поле (или данные из find_element)</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Время ожидания - количество секунд до появления элемента</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">click_element</span><span class="rvts6">&nbsp;- нажать на элемент страницы.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Описание - текстовое представление действия</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Локатор - в формате XPath запрос к элементу html страницы</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Значение - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Время ожидания - количество секунд до появления элемента</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">find_element</span><span class="rvts6">&nbsp;- выполняется поиск элемента который затем будет хранится в глобальной переменной.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Описание - текстовое представление действия</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Локатор - в формате XPath запрос к элементу html страницы</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Значение - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Время ожидания - количество секунд до появления текста</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">if_get_text</span><span class="rvts6">&nbsp;- начало условия при котором сравниваются данные (text) элемента глобальной переменной (</span><span class="rvts15">find_element</span><span class="rvts6">)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Описание - текстовое представление действия</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Условие - значение в формате: ==, !=, &lt;, &lt;=, &gt;, &gt;= (равно, не равно, меньше, меньше или равно, больше, больше или равно)</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Значение - данные которые должны быть проверены на соответствие</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Время ожидания - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">if_get_attribute_</span><span class="rvts6">&nbsp;- начало условия при котором сравниваются данные (attribute) элемента глобальной переменной (</span><span class="rvts15">find_element</span><span class="rvts6">)</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp; (обязательно нужно дописывать объект, например </span><span class="rvts15">if_get_attribute_id</span><span class="rvts6">)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Описание - текстовое представление действия</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Условие - значение в формате: ==, !=, &lt;, &lt;=, &gt;, &gt;= (равно, не равно, меньше, меньше или равно, больше, больше или равно)</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Значение - данные которые должны быть проверены на соответствие</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Время ожидания - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">else_if_get_text</span><span class="rvts6">&nbsp;- иначе условие при котором сравниваются данные (text) элемента глобальной переменной (find_element)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Описание - текстовое представление действия</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Условие - значение в формате: ==, !=, &lt;, &lt;=, &gt;, &gt;= (равно, не равно, меньше, меньше или равно, больше, больше или равно)</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Значение - данные которые должны быть проверены на соответствие</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Время ожидания - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">else_if_get_attribute_</span><span class="rvts6">&nbsp;- иначе условие при котором сравниваются данные (attribute) элемента глобальной переменной (</span><span class="rvts15">find_element</span><span class="rvts6">)</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp; (обязательно нужно дописывать объект, например </span><span class="rvts15">else_if_get_attribute_id</span><span class="rvts6">)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Описание - текстовое представление действия</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Условие - значение в формате: ==, !=, &lt;, &lt;=, &gt;, &gt;= (равно, не равно, меньше, меньше или равно, больше, больше или равно)</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Значение - данные которые должны быть проверены на соответствие</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Время ожидания - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">else</span><span class="rvts6">&nbsp;- иначе условие выполняется в том случае если критерии условия не выполнены.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Описание - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Локатор - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Значение - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Время ожидания - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">end_if</span><span class="rvts6">&nbsp;- завершение условия.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Описание - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Локатор - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Значение - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Время ожидания - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">wait_text</span><span class="rvts6">&nbsp;- ожидание появления текста на странице.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Описание - текстовое представление действия</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Локатор - в формате XPath запрос к элементу html страницы</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Значение - текст который должен быть в элементе</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Время ожидания - количество секунд до появления текста</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">wait_element</span><span class="rvts6">&nbsp;- ожидание появления элемента на странице.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Описание - текстовое представление действия</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Локатор - в формате XPath запрос к элементу html страницы</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Значение - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Время ожидания - количество секунд до появления элемента</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">wait_element_not_visible</span><span class="rvts6">&nbsp;- ожидание удаления элемента со страницы.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Описание - текстовое представление действия</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Локатор - в формате XPath запрос к элементу html страницы</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Значение - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Время ожидания - количество секунд до удаления элемента</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">sleep</span><span class="rvts6">&nbsp;- задержка действия на указанное количество секунд.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Описание - текстовое представление действия</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Локатор - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Значение - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Время ожидания - количество секунд паузы</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">execute_js</span><span class="rvts6">&nbsp;- позволяет выполнять JavaScript код.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Описание - текстовое представление действия</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Локатор - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Значение - строка JavaScript кода (двойные кавычки обязательно нужно экранировать)</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Время ожидания - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">test_defaults_ga</span><span class="rvts6">&nbsp;- проверка GA в режиме по умолчанию (данными берутся из вкладки Данные).</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Описание - текстовое представление действия</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Локатор - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Значение - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Время ожидания - количество попыток чтобы найти GA значение</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">test_optionally_ga</span><span class="rvts6">&nbsp;- опциональная проверка GA (данные вводятся вручную).</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Описание - текстовое представление действия</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Протокол - по умолчанию google-analytics.com/collect</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Значение - ключевое слово &nbsp;GA</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Время ожидания - количество попыток чтобы найти GA значение</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">test_defaults_ym</span><span class="rvts6">&nbsp;- проверка YM в режиме по умолчанию (данными берутся из вкладки Данные).</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Описание - текстовое представление действия</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Локатор - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Значение - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Время ожидания - количество попыток чтобы найти YM значение</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">test_optionally_ym</span><span class="rvts6">&nbsp;- опциональная проверка YM (данные вводятся вручную).</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Описание - текстовое представление действия</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Протокол - по умолчанию mc.yandex.ru/watch</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Значение - ключевое слово &nbsp;YM</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Время ожидания - количество попыток чтобы найти YM значение</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">clear_har</span><span class="rvts6">&nbsp;- очистить список отправленных событий.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Описание - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Локатор - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Значение - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Время ожидания - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">get_har</span><span class="rvts6">&nbsp;- получить список всех отправленных событий.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Описание - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Локатор - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Значение - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Время ожидания - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">get_har_ga</span><span class="rvts6">&nbsp;- получить список всех отправленных GA событий.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Описание - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Локатор - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Значение - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Время ожидания - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">get_har_ym</span><span class="rvts6">&nbsp;- получить список всех отправленных YM событий.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Описание - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Локатор - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Значение - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6">&nbsp; &nbsp;- Время ожидания - не нужно заполнять</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps4" style="clear: both;"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="https://www.helpndoc.com">Easy CHM and documentation editor</a></p>
+<a name="Newtopic10"></a><h2>Выполнение тестов</h2>
+<p></p>
+<p class="rvps2"><span class="rvts14">Выполнение тестов</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Есть два способа запускать тесты:</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps2"><span class="rvts6">запуск одного отдельного теста</span></li>
+<li class="rvps2"><span class="rvts6">запуск группы тестов</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<hr style="height: 1px; color : #000000;  background-color : #000000; border-width : 0px;">
+<p class="rvps2"><span class="rvts14">Запуск одного отдельного тест</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem25.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Windows)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Чтобы запустить выполнение теста его нужно открыть в редакторе и в меню "</span><span class="rvts15">Запуск</span><span class="rvts6">" нажать пункт "</span><span class="rvts15">Выполнить тест</span><span class="rvts6">". При запуске теста редактор формирует команды и записывает их в файл </span><span class="rvts15">run-test.bat</span><span class="rvts6">&nbsp;в папке </span><span class="rvts15">bin</span><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts17">cd C:\DetectGaYm\bin</span></p>
+<p class="rvps5"><span class="rvts17">java -jar detect-gaym.jar UTF-8 C:\...\DetectGaYm\tests\test-search-ga.json</span></p>
+<p class="rvps5"><span class="rvts17"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Чтобы прервать выполнение запущенного теста нужно в меню "</span><span class="rvts15">Запуск</span><span class="rvts6">" нажать пункт "</span><span class="rvts15">Прервать выполнение</span><span class="rvts6">"</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem26.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Linux)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Чтобы запустить выполнение теста его нужно открыть в редакторе и в меню "</span><span class="rvts15">Запуск</span><span class="rvts6">" нажать пункт "</span><span class="rvts15">Выполнить тест</span><span class="rvts6">". При запуске теста редактор формирует команды и записывает их в файл </span><span class="rvts15">run-test.sh</span><span class="rvts6">&nbsp;в папке </span><span class="rvts15">bin</span><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts17">#!/bin/bash</span></p>
+<p class="rvps5"><span class="rvts17">cd /DetectGaYm/bin</span></p>
+<p class="rvps5"><span class="rvts17">java -jar detect-gaym.jar UTF-8 /home/.../DetectGaYm/tests/test-search-ga.json</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem28.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<hr style="height: 1px; color : #000000;  background-color : #000000; border-width : 0px;">
+<p class="rvps2"><span class="rvts14">Запуск группы тестов</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem29.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Windows)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Чтобы запустить выполнение группы тестов нужно в меню "</span><span class="rvts15">Запуск</span><span class="rvts6">" нажать пункт "</span><span class="rvts15">Выполнить группу тестов</span><span class="rvts6">". Будет открыто диалоговое окно для выбора папки с тестами. При запуске редактор формирует команды и записывает их в файл </span><span class="rvts15">run-test.bat</span><span class="rvts6">&nbsp;в папке </span><span class="rvts15">bin</span><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts17">cd C:\DetectGaYm\bin</span></p>
+<p class="rvps5"><span class="rvts17">java -jar detect-gaym.jar UTF-8 C:\...\DetectGaYm\tests\</span></p>
+<p class="rvps5"><span class="rvts17"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem30.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Linux)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Чтобы запустить выполнение группы тестов нужно открыть в редакторе любой тест из группы тестов и в меню "</span><span class="rvts15">Запуск</span><span class="rvts6">" нажать пункт "</span><span class="rvts15">Выполнить группу тестов</span><span class="rvts6">". При запуске редактор формирует команды и записывает их в файл </span><span class="rvts15">run-test.sh</span><span class="rvts6">&nbsp;в папке </span><span class="rvts15">bin</span><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts17">#!/bin/bash</span></p>
+<p class="rvps5"><span class="rvts17">cd /DetectGaYm/bin</span></p>
+<p class="rvps5"><span class="rvts17">java -jar detect-gaym.jar UTF-8 /home/.../DetectGaYm/tests/</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<hr style="height: 1px; color : #000000;  background-color : #000000; border-width : 0px;">
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Чтобы тесты учитывали кодировку необходимо включить флаг "</span><span class="rvts15">Выполнять тест в текущей кодировку</span><span class="rvts6">"</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem31.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem32.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Если флаг отключен редактор не будет учитывать кодировку выбранную при открытии/сохранении файла и будет использывать кодировку по умолчанию (в системе Windows это Windows-1251 в системе Linux это UTF-8)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps4" style="clear: both;"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="https://www.helpndoc.com/help-authoring-tool">Full-featured multi-format Help generator</a></p>
+<a name="Newtopic13"></a><h2>Сформировать команду для запуска</h2>
+<p></p>
+<p class="rvps2"><span class="rvts14">Сформировать команду для запуска</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">В редакторе тестов в меню "</span><span class="rvts15">Поддержка</span><span class="rvts6">" добавлена специальная функция которая позволяет формировать команды запуска для редактируемого сценария.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem39.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem40.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Такми образов вы легко и просто получити сформированные команды для запуска</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem42.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Linux)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem43.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Linux)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Данный способ запуска тестов удобно использовать в программах предназначенных для обеспечения процесса непрерывной интеграции, таких как </span><a class="rvts11" href="https://www.jenkins.io/" target="_blank">Jenkins</a><span class="rvts6">&nbsp;или </span><a class="rvts11" href="https://www.jetbrains.com/ru-ru/teamcity/" target="_blank">TeamCity</a><span class="rvts6">. Вам нужно будет всего лишь вписать команды запуска.</span></p>
+<p></p>
+<p class="rvps4" style="clear: both;"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="https://www.helpndoc.com/feature-tour">Easily create PDF Help documents</a></p>
+<a name="Newtopic14"></a><h2>Закрыть заблокированный порт</h2>
+<p></p>
+<p class="rvps2"><span class="rvts14">Закрыть заблокированный порт</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem6.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Windows)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Если заблокирован порт вы можете воспользоваться подсказкой "</span><span class="rvts15">Как закрыть порт при ошибке Address already in use: bind</span><span class="rvts6">" выполнив описанные действия вы сможете разблокировать порт.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem44.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Windows)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Или в диспетчере задач найти данную задачу и закрыть её нажав кнопку "Снять задачу" </span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem45.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps4" style="clear: both;"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="https://www.helpndoc.com/help-authoring-tool">Free help authoring environment</a></p>
+<a name="Newtopic17"></a><h1>Структура теста</h1>
+<p></p>
+<p class="rvps2"><span class="rvts14">Структура теста</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Сценарии тестов пишутся в формате </span><a class="rvts11" href="https://www.json.org/" target="_blank">JSON</a><span class="rvts6">&nbsp;и могут храниться в любом месте на жестком диске.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem48.png"></p>
+<p class="rvps2"><span class="rvts6">Под сценарием понимается файл в формате </span><a class="rvts11" href="https://www.json.org/" target="_blank">JSON</a><span class="rvts6">&nbsp;внутри которого описаны настройки необходимые для работы автоматизированного теста, а так же входные данные и шаги их выполнения. </span><br/><span class="rvts6">Сценарий можно создать в любом текстовом редакторе но удобнее это делать в специальном редакторе тестов.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem50.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Ниже приведен пример демонстрационного теста</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Блок описания общих параметров:</span></p>
+<p class="rvps5"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts17">{</span></p>
+<p class="rvps5"><span class="rvts17">"description":"Тестирование событий поиска",</span></p>
+<p class="rvps5"><span class="rvts17">"port":9091,</span></p>
+<p class="rvps5"><span class="rvts17">"arguments":[</span></p>
+<p class="rvps5"><span class="rvts17">"--ignore-certificate-errors"</span></p>
+<p class="rvps5"><span class="rvts17">],</span></p>
+<p class="rvps5"><span class="rvts17">"har":"test.har",</span></p>
+<p class="rvps5"><span class="rvts17">"timeout":60,</span></p>
+<p class="rvps2"><span class="rvts17"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Блок описания данных:</span></p>
+<p class="rvps2"><span class="rvts17"><br/></span></p>
+<p class="rvps5"><span class="rvts17">"data":[</span></p>
+<p class="rvps5"><span class="rvts17">{</span></p>
+<p class="rvps5"><span class="rvts17">"title":"ШАГ: Открываю страницу https://rozetka.com.ua/",</span></p>
+<p class="rvps5"><span class="rvts17">"url":"https://rozetka.com.ua/",</span></p>
+<p class="rvps5"><span class="rvts17">"ga_category":"Interactions",</span></p>
+<p class="rvps5"><span class="rvts17">"ga_action":"click",</span></p>
+<p class="rvps5"><span class="rvts17">"ga_label":"searchButton",</span></p>
+<p class="rvps5"><span class="rvts17">"ym_code":""</span></p>
+<p class="rvps5"><span class="rvts17">}</span></p>
+<p class="rvps5"><span class="rvts17">],</span></p>
+<p class="rvps2"><span class="rvts17"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Блок описания шагов:</span></p>
+<p class="rvps2"><span class="rvts17"><br/></span></p>
+<p class="rvps5"><span class="rvts17">"steps":[</span></p>
+<p class="rvps5"><span class="rvts17">{</span></p>
+<p class="rvps5"><span class="rvts17">"description":"ШАГ: Ввожу данные для поиска",</span></p>
+<p class="rvps5"><span class="rvts17">"type":"input_value",</span></p>
+<p class="rvps5"><span class="rvts17">"value":"телефон",</span></p>
+<p class="rvps5"><span class="rvts17">"locator":"//input[@name='search']",</span></p>
+<p class="rvps5"><span class="rvts17">"timeout":1</span></p>
+<p class="rvps5"><span class="rvts17">},</span></p>
+<p class="rvps5"><span class="rvts17">{</span></p>
+<p class="rvps5"><span class="rvts17">"description":"ШАГ: Нажал на кнопку Найти",</span></p>
+<p class="rvps5"><span class="rvts17">"type":"click_element",</span></p>
+<p class="rvps5"><span class="rvts17">"value":"",</span></p>
+<p class="rvps5"><span class="rvts17">"locator":"//button[@class='button button_color_green button_size_medium search-form__submit']",</span></p>
+<p class="rvps5"><span class="rvts17">"timeout":1</span></p>
+<p class="rvps5"><span class="rvts17">},</span></p>
+<p class="rvps5"><span class="rvts17">{</span></p>
+<p class="rvps5"><span class="rvts17">"description":"ШАГ: Ожидание завершения поиска",</span></p>
+<p class="rvps5"><span class="rvts17">"type":"wait_element",</span></p>
+<p class="rvps5"><span class="rvts17">"value":"",</span></p>
+<p class="rvps5"><span class="rvts17">"locator":"//h1[contains(text(), 'Мобильные телефоны')]",</span></p>
+<p class="rvps5"><span class="rvts17">"timeout":15</span></p>
+<p class="rvps5"><span class="rvts17">},</span></p>
+<p class="rvps5"><span class="rvts17">{</span></p>
+<p class="rvps5"><span class="rvts17">"description":"ШАГ: Нажал на кнопку Найти",</span></p>
+<p class="rvps5"><span class="rvts17">"type":"click_element",</span></p>
+<p class="rvps5"><span class="rvts17">"value":"",</span></p>
+<p class="rvps5"><span class="rvts17">"locator":"//button[@class='button button_color_green button_size_medium search-form__submit']",</span></p>
+<p class="rvps5"><span class="rvts17">"timeout":1</span></p>
+<p class="rvps5"><span class="rvts17">},</span></p>
+<p class="rvps5"><span class="rvts17">{</span></p>
+<p class="rvps5"><span class="rvts17">"description":"ШАГ: Ожидание 5 секунд",</span></p>
+<p class="rvps5"><span class="rvts17">"type":"sleep",</span></p>
+<p class="rvps5"><span class="rvts17">"value":"",</span></p>
+<p class="rvps5"><span class="rvts17">"locator":"",</span></p>
+<p class="rvps5"><span class="rvts17">"timeout":5</span></p>
+<p class="rvps5"><span class="rvts17">},</span></p>
+<p class="rvps5"><span class="rvts17">{</span></p>
+<p class="rvps5"><span class="rvts17">"description":"Событие GA",</span></p>
+<p class="rvps5"><span class="rvts17">"type":"test_defaults_ga",</span></p>
+<p class="rvps5"><span class="rvts17">"value":"",</span></p>
+<p class="rvps5"><span class="rvts17">"locator":"",</span></p>
+<p class="rvps5"><span class="rvts17">"timeout":5</span></p>
+<p class="rvps5"><span class="rvts17">}</span></p>
+<p class="rvps5"><span class="rvts17">]</span></p>
+<p class="rvps5"><span class="rvts17">}</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Для создания и редактирования тестов рекомендуется использовать специальный редактор.</span></p>
+<p></p>
+<p class="rvps4" style="clear: both;"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="https://www.helpndoc.com/feature-tour/create-ebooks-for-amazon-kindle">Free Kindle producer</a></p>
+<a name="Newtopic12"></a><h1>Запуск тестов из командной строки</h1>
+<p></p>
+<p class="rvps2"><span class="rvts14">Запуск тестов из командной строки</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Программа DetectGaYm позволяет запускать сценарии автоматизированного тестирования из консоли. В системе Windows консоль это CMD (command line interpreter), а в системе Linux консоль это Terminal (gnome terminal)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem38.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">В системе Windows чтобы запустить заранее созданный тест нужно открыть консоль, перейти в папку </span><span class="rvts15">bin</span><span class="rvts6">&nbsp;и выполнить следующие команды:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts17">cd C:\...\DetectGaYm\bin</span></p>
+<p class="rvps5"><span class="rvts17">java -jar detect-gaym.jar UTF-8 C:\...\DetectGaYm\tests\test-search-ga.json</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">В системе Linux чтобы запустить заранее созданный тест нужно открыть консоль, перейти в папку </span><span class="rvts15">bin</span><span class="rvts6">&nbsp;и выполнить следующие команды:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts17">cd /home/.../DetectGaYm/bin</span></p>
+<p class="rvps5"><span class="rvts17">java -jar detect-gaym.jar UTF-8 /home/.../DetectGaYm/tests/test-search-ga.json</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem47.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Данный способ запуска тестов удобно использовать в программах предназначенных для обеспечения процесса непрерывной интеграции, таких как </span><a class="rvts11" href="https://www.jenkins.io/" target="_blank">Jenkins</a><span class="rvts6">&nbsp;или </span><a class="rvts11" href="https://www.jetbrains.com/ru-ru/teamcity/" target="_blank">TeamCity</a><span class="rvts6">. Вам нужно будет всего лишь вписать команды запуска.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">В редакторе тестов в меню "</span><span class="rvts15">Поддержка</span><span class="rvts6">" добавлена специальная функция которая позволяет формировать команды запуска для редактируемого сценария.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem39.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem40.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Такми образов вы легко и просто получити сформированные команды для запуска</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem42.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Linux)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem43.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Linux)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps4" style="clear: both;"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Create help files for the Qt Help Framework</a></p>
+<a name="Jenkins"></a><h1>Запуск тестов в Jenkins</h1>
+<p></p>
+<p class="rvps2"><span class="rvts14">Запуск тестов в Jenkins</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Данный пример вы можете увидеть на видео: </span><a class="rvts11" href="https://youtu.be/M0WG0gu_6b8?t=483" target="_blank">https://youtu.be/M0WG0gu_6b8?t=483</a></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Перейдите в систему Jenkins и создайте новый Item</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem55.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Укажите наименование сборки и выберите тип (например задача со свободной конфигурацией)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem56.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Настройки сборки:</span></p>
+<p class="rvps2"><span class="rvts6">Включите опцию удаление устаревших сборок, оставьте в хранилище 5-ть последних сборок.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem57.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Включите опцию периодического запуска, это позволит запускать автотест автоматически в заданное время (например в 10:00 утра)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem58.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Дальше необходимо перейти в редактор тестов и сформировать команду запуска.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem60.png"><span class="rvts6">&nbsp;</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem61.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Windows)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">&nbsp;</span><img alt="" style="padding : 1px;" src="lib/NewItem13.png"><span class="rvts6">&nbsp;</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem62.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Linux)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Копируем сформированную команду в буфер обмена.</span></p>
+<p class="rvps2"><span class="rvts6">Переходим в Jenkins и включаем опцию сборки "Выполнение команды Windows"</span></p>
+<p class="rvps2"><span class="rvts6">Вставляем скопированную команду в поле "Команда"</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem59.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Сохраняем Item</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Теперь необходимо перейти в наш созданный Item и запустить сборку.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem63.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Во время сборки можно открыть консоль и посмотреть ход выполнения теста.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem64.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">В консоли отобразится вся выводимая тестом информация</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem65.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">В результате в Jenkins будет создана сборка которая покажет результат тестирования</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem66.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Данный пример вы можете увидеть на видео: </span><a class="rvts11" href="https://youtu.be/M0WG0gu_6b8?t=483" target="_blank">https://youtu.be/M0WG0gu_6b8?t=483</a></p>
+<p></p>
+<p class="rvps4" style="clear: both;"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="https://www.helpndoc.com/feature-tour/create-ebooks-for-amazon-kindle">Write eBooks for the Kindle</a></p>
+<a name="-"></a><h1>Обновление веб-драйвера</h1>
+<p></p>
+<p class="rvps2"><span class="rvts14">Обновление веб-драйвера</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Программа DetectGaYm способна выполнять действия над элементами страницы в окне браузера используя для этого </span><a class="rvts11" href="https://www.selenium.dev/" target="_blank">Selenium</a><span class="rvts6">&nbsp;- инструмент автоматизации действий веб-браузера. Для его работы используется специальный </span><a class="rvts11" href="https://chromedriver.chromium.org/" target="_blank">WebDriver</a><span class="rvts6">&nbsp;под браузер Google Chrome.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Периодически браузер Google Chrome обновляетя и в результате этого </span><a class="rvts11" href="https://chromedriver.chromium.org/" target="_blank">WebDriver</a><span class="rvts6">&nbsp;перестает корректно работать с браузером. В этом случае необходимо зайти на официальную страницу </span><a class="rvts11" href="https://chromedriver.chromium.org/" target="_blank">ChromeDriver - WebDriver for Chrome</a><span class="rvts6">&nbsp;и скачать архив с последней стабильной версией Latest stable release:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps2"><span class="rvts15">chromedriver_win32.zip</span><span class="rvts6">&nbsp;- архив с драйвером для системы Windows</span></li>
+<li class="rvps2"><span class="rvts15">chromedriver_linux64.zip</span><span class="rvts6">&nbsp;- архив с драйвером для системы Linux</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem46.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Далее драйвер необходимо распаковать из скаченного архива в папки:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts15">DetectGaYm\driver\windows</span><span class="rvts6">&nbsp;- для системы Windows</span></p>
+<p class="rvps5"><span class="rvts15">DetectGaYm/driver/linux</span><span class="rvts6">&nbsp;- для системы Linux</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem67.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">В системе Linux кроме обновления драйвера в программе DetectGaYm так же необходимо обновить драйвер в системе. Для этого нужно выполнить команды:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts17">unzip chromedriver_linux64.zip</span></p>
+<p class="rvps5"><span class="rvts17">sudo mv chromedriver /usr/local/bin/chromedriver</span></p>
+<p class="rvps5"><span class="rvts17">sudo chown root:root /usr/local/bin/chromedriver</span></p>
+<p class="rvps5"><span class="rvts17">sudo chmod +x /usr/local/bin/chromedriver</span></p>
+<p class="rvps5"><span class="rvts17">chromedriver --version</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps4" style="clear: both;"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="https://www.helpndoc.com/create-epub-ebooks">Free EPub producer</a></p>
+<a name="Newtopic15"></a><h1>Примеры разработки тестов</h1>
+<p></p>
+<p></p>
+<p class="rvps4" style="clear: both;"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Create cross-platform Qt Help files</a></p>
+<a name="Newtopic16"></a><h2>Демонстрационный тест</h2>
+<p></p>
+<p class="rvps2"><span class="rvts14">Демонстрационный тест</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">В папке tests вы найдете демонстрационный тест, данный сценарий выпонялет проверку событий GA.</span></p>
+<p class="rvps2"><span class="rvts6">Структура тестов описана в разделе </span><a class="rvts11" href="#Newtopic17">структура теста</a><span class="rvts6">&nbsp;</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem49.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">В данном примере используется сайт </span><a class="rvts11" href="https://rozetka.com.ua/" target="_blank">https://rozetka.com.ua</a><span class="rvts6">&nbsp;на котором присутствуют события GA.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">При нажатии на кнопку Найти мы можем видить ключи события GA, эти ключи используются в тесте.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem51.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Откроем файл с тестом </span><span class="rvts15">test-search-ga.json</span><span class="rvts6">&nbsp;в редакторе.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Рассмотрим общие параметры необходимые для работы теста.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<div class="rvps2"><table width="100%" border="1" cellpadding="1" cellspacing="2" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
+<tr valign="top">
+<td width="245" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem52.png"></p>
+</td>
+<td width="410" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts14">Общие параметры:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">На вкладке "</span><span class="rvts15">Общие параметры</span><span class="rvts6">" задаются следующие параметры теста:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">Описание</span><span class="rvts6">&nbsp;- текстовое поле для краткого описания теста (наименование)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">Порт</span><span class="rvts6">&nbsp;- текстовое поле в котором указывается порт для работы прокси (по умолчанию 9091)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">Опции</span><span class="rvts6">&nbsp;- список настроек необходимых при работе Chrome WebDriver (по умолчанию --ignore-certificate-errors)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">HAR</span><span class="rvts6">&nbsp;- текстовое поле в котором указывается имя для текущего пакета данных.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">Лимит</span><span class="rvts6">&nbsp;- текстовое поле в котором указывается количество секунд ожидания для загрузки старницы (0 означает неограниченное время ожидания)</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Рассмотрим таблицу данных.</span></p>
+<p class="rvps2"><span class="rvts6">Данная таблица выполняется цеклично, то есть все строки в таблице будут выполнены по очереди при запуске теста. При выполнении каждой строки будут использоваться те действия которые описаны в таблице "Шаги"</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<div class="rvps2"><table width="100%" border="1" cellpadding="1" cellspacing="2" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
+<tr valign="top">
+<td style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem53.png"></p>
+</td>
+</tr>
+<tr valign="top">
+<td style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts6">На вкладке "</span><span class="rvts15">Данные</span><span class="rvts6">" задаются параметры для проверки событий GA и YM</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">Заголовок</span><span class="rvts6">&nbsp;- текстовое поле для ввода любого текста выводимого в консоль при выполнении теста</span></p>
+<p class="rvps2"><span class="rvts15">URL</span><span class="rvts6">&nbsp;- текстовое поле в котором указывается ссылка на страницу на которой будет выполнятся тест</span></p>
+<p class="rvps2"><span class="rvts15">GA:category</span><span class="rvts6">&nbsp;- текстовое поле для ввода ключа category события GA</span></p>
+<p class="rvps2"><span class="rvts15">GA:action</span><span class="rvts6">&nbsp;- текстовое поле для ввода ключа action события GA</span></p>
+<p class="rvps2"><span class="rvts15">GA:label</span><span class="rvts6">&nbsp;- текстовое поле для ввода ключа label события GA</span></p>
+<p class="rvps2"><span class="rvts15">YM:code</span><span class="rvts6">&nbsp;- текстовое поле для ввода ключа события YM</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Рассмотрим таблицу шагов.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Для выполнения действий над элементами необходимо сформировать локаторы этих элементов</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem68.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Конструировать локаторы xpath удобно в интрументе разработчика браузера Chrome.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<div class="rvps2"><table width="100%" border="1" cellpadding="1" cellspacing="2" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
+<tr valign="top">
+<td style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem54.png"></p>
+</td>
+</tr>
+<tr valign="top">
+<td style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts6">На вкладке "</span><span class="rvts15">Шаги</span><span class="rvts6">" описываются шаги которые необходимо выполнить на странице сайта включая проверку событий GA/YM</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts15">Описание</span><span class="rvts6">&nbsp;- текстовое поле в котором описывается данный шаг, данный текст выводится в консоль при выполнении теста</span></p>
+<p class="rvps2"><span class="rvts15">Тип действия</span><span class="rvts6">&nbsp;- текстовое поле для выбора или ввода ключа </span><a class="rvts11" href="#Newtopic9">действия</a></p>
+<p class="rvps2"><span class="rvts15">Локатор/Протокол/Условия</span><span class="rvts6">&nbsp;- текстовое поле для ввода локатора в формате xpath или протокол GA/YM или ключ условия</span></p>
+<p class="rvps2"><span class="rvts15">Значение</span><span class="rvts6">&nbsp;- текстовое поле для ввода значения которое необходимо вписать в какой либо элемент (например input) или использовать в условии</span></p>
+<p class="rvps2"><span class="rvts15">Время ожидания</span><span class="rvts6">&nbsp;- указывается количество секунд ожидания для выполнения действия (или количество попыток при проверке событий GA/YM)</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Справочник с описанием всех встроенных </span><a class="rvts11" href="#Newtopic9">типов действий</a><span class="rvts6">&nbsp;вы найдете в этой документации.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Локаторы описываются в формате </span><a class="rvts11" href="https://ru.wikipedia.org/wiki/XPath" target="_blank">xpath</a><span class="rvts6">&nbsp;и позволяют взаимодействовать с элементами страницы.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Запустив данный тест будет выполнена проверка событий GA на сайте Розетка.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<hr style="height: 1px; color : #000000;  background-color : #000000; border-width : 0px;">
+<p class="rvps2"><span class="rvts6">Исходный код теста:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts17">{</span></p>
+<p class="rvps5"><span class="rvts17">"description":"Тестирование событий поиска",</span></p>
+<p class="rvps5"><span class="rvts17">"port":9091,</span></p>
+<p class="rvps5"><span class="rvts17">"arguments":[</span></p>
+<p class="rvps6"><span class="rvts17">"--ignore-certificate-errors"</span></p>
+<p class="rvps5"><span class="rvts17">],</span></p>
+<p class="rvps5"><span class="rvts17">"har":"test.har",</span></p>
+<p class="rvps5"><span class="rvts17">"timeout":60,</span></p>
+<p class="rvps5"><span class="rvts17">"data":[</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps7"><span class="rvts17">"title":"ШАГ: Открываю страницу https://rozetka.com.ua/",</span></p>
+<p class="rvps7"><span class="rvts17">"url":"https://rozetka.com.ua/",</span></p>
+<p class="rvps7"><span class="rvts17">"ga_category":"Interactions",</span></p>
+<p class="rvps7"><span class="rvts17">"ga_action":"click",</span></p>
+<p class="rvps7"><span class="rvts17">"ga_label":"searchButton",</span></p>
+<p class="rvps7"><span class="rvts17">"ym_code":""</span></p>
+<p class="rvps6"><span class="rvts17">}</span></p>
+<p class="rvps5"><span class="rvts17">],</span></p>
+<p class="rvps5"><span class="rvts17">"steps":[</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ШАГ: Ввожу данные для поиска",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"input_value",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"телефон",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"//input[@name='search']",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":1</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ШАГ: Нажал на кнопку Найти",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"click_element",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"//button[@class='button button_color_green button_size_medium search-form__submit']",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":1</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ШАГ: Ожидание завершения поиска",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"wait_element",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"//h1[contains(text(), 'Мобильные телефоны')]",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":15</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ШАГ: Нажал на кнопку Найти",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"click_element",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"//button[@class='button button_color_green button_size_medium search-form__submit']",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":1</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ШАГ: Ожидание 5 секунд",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"sleep",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":5</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"Событие GA",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"test_defaults_ga",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":5</span></p>
+<p class="rvps6"><span class="rvts17">}</span></p>
+<p class="rvps5"><span class="rvts17">]</span></p>
+<p class="rvps5"><span class="rvts17">}</span></p>
+<p></p>
+<p class="rvps4" style="clear: both;"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Create cross-platform Qt Help files</a></p>
+<a name="Newtopic19"></a><h2>Базовая проверка событий</h2>
+<p></p>
+<p class="rvps2"><span class="rvts14">Базовая проверка событий</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">При базовой проверке используются </span><a class="rvts11" href="#Newtopic9">действия</a><span class="rvts6">:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps2"><span class="rvts15">test_defaults_ga</span></li>
+<li class="rvps2"><span class="rvts15">test_defaults_ym</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Что значит базовая проверка? Это значит что ключи GA и YM описываются в таблице "</span><span class="rvts15">Данные</span><span class="rvts6">" (смотрите раздел </span><a class="rvts11" href="#Newtopic7">Данные</a><span class="rvts6">)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem69.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Windows)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem21.png"></p>
+<p class="rvps2"><span class="rvts6">(версия для Linux)</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Для того чтобы выполнить проверку ключей указанных в таблице "</span><span class="rvts15">Данные</span><span class="rvts6">" нужно использовать специальные </span><a class="rvts11" href="#Newtopic9">действия</a><span class="rvts6">&nbsp;перечисленные выше в таблице "</span><span class="rvts15">Шаги</span><span class="rvts6">".</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">В начале идут </span><a class="rvts11" href="#Newtopic9">действия</a><span class="rvts6">&nbsp;приводящие к срабатыванию событий GA и YM, а затем вызывается </span><a class="rvts11" href="#Newtopic9">действие</a><span class="rvts6">&nbsp;базовой проверки </span><span class="rvts15">test_defaults_ga </span><span class="rvts18">и/или</span><span class="rvts15">&nbsp;test_defaults_ym</span><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem70.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a class="rvts11" href="#Newtopic9">Действие</a><span class="rvts6">&nbsp; </span><span class="rvts15">test_defaults_ga </span><span class="rvts18">и/или</span><span class="rvts15">&nbsp;test_defaults_ym</span><span class="rvts6">&nbsp;смотрит ключи указанные в таблице "Данные" и сверяет их с отправленными ключами в момент выполнения действий на странице.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<hr style="height: 1px; color : #000000;  background-color : #000000; border-width : 0px;">
+<p class="rvps2"><span class="rvts6">Исходный код теста:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts17">{</span></p>
+<p class="rvps5"><span class="rvts17">"description":"Тестирование событий поиска",</span></p>
+<p class="rvps5"><span class="rvts17">"port":9091,</span></p>
+<p class="rvps5"><span class="rvts17">"arguments":[</span></p>
+<p class="rvps6"><span class="rvts17">"--ignore-certificate-errors"</span></p>
+<p class="rvps5"><span class="rvts17">],</span></p>
+<p class="rvps5"><span class="rvts17">"har":"test.har",</span></p>
+<p class="rvps5"><span class="rvts17">"timeout":60,</span></p>
+<p class="rvps5"><span class="rvts17">"data":[</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps7"><span class="rvts17">"title":"ШАГ: Открываю страницу https://rozetka.com.ua/",</span></p>
+<p class="rvps7"><span class="rvts17">"url":"https://rozetka.com.ua/",</span></p>
+<p class="rvps7"><span class="rvts17">"ga_category":"Interactions",</span></p>
+<p class="rvps7"><span class="rvts17">"ga_action":"click",</span></p>
+<p class="rvps7"><span class="rvts17">"ga_label":"searchButton",</span></p>
+<p class="rvps7"><span class="rvts17">"ym_code":""</span></p>
+<p class="rvps6"><span class="rvts17">}</span></p>
+<p class="rvps5"><span class="rvts17">],</span></p>
+<p class="rvps5"><span class="rvts17">"steps":[</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ШАГ: Ввожу данные для поиска",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"input_value",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"телефон",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"//input[@name='search']",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":1</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ШАГ: Нажал на кнопку Найти",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"click_element",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"//button[@class='button button_color_green button_size_medium search-form__submit']",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":1</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ШАГ: Ожидание завершения поиска",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"wait_element",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"//h1[contains(text(), 'Мобильные телефоны')]",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":15</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ШАГ: Нажал на кнопку Найти",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"click_element",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"//button[@class='button button_color_green button_size_medium search-form__submit']",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":1</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ШАГ: Ожидание 5 секунд",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"sleep",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":5</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"Событие GA",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"test_defaults_ga",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":5</span></p>
+<p class="rvps6"><span class="rvts17">}</span></p>
+<p class="rvps5"><span class="rvts17">]</span></p>
+<p class="rvps5"><span class="rvts17">}</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps4" style="clear: both;"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="https://www.helpndoc.com">Free PDF documentation generator</a></p>
+<a name="Newtopic18"></a><h2>Опциональная проверка событий</h2>
+<p></p>
+<p class="rvps2"><span class="rvts14">Опциональная проверка событий</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">В отличии от </span><a class="rvts11" href="#Newtopic19">базовой проверки событий</a><span class="rvts6">&nbsp;опциональная проверка использует данные прописанные в таблице "Шаги"</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Бывают ситуации когда невозможно использовать данные из таблицы "</span><span class="rvts15">Данные</span><span class="rvts6">" в таком случае чтобы выполнить опциональную проверку GA и YM событий описываются шаги специального </span><a class="rvts11" href="#Newtopic9">типа действия</a><span class="rvts6">&nbsp;и с указанием протокола.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Действие: </span><span class="rvts15">test_optionally_ga</span><span class="rvts6">&nbsp;| GA протокол: </span><span class="rvts15">google-analytics.com/collect</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts6">pageview&amp;_s=1&amp;dl=https://test.ru</span></p>
+<p class="rvps5"><span class="rvts6">ec=test_ga_category</span></p>
+<p class="rvps5"><span class="rvts6">ea=test_ga_action</span></p>
+<p class="rvps5"><span class="rvts6">el=test_ga_label</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Действие: </span><span class="rvts15">test_optionally_ym</span><span class="rvts6">&nbsp;| YM протокол: </span><span class="rvts15">mc.yandex.ru/watch</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts6">test_ym_code</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem71.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Как мы можем видет из примера выполняется базовая проверка событий по таблице "Данные", а ниже та же самая проверка выполняется в шагах с использованием действия </span><span class="rvts15">test_optionally_ga</span><span class="rvts6">&nbsp;и/или </span><span class="rvts15">test_optionally_ym</span><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">В результате мы видим что все проверки успешно были выполнены.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem72.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<hr style="height: 1px; color : #000000;  background-color : #000000; border-width : 0px;">
+<p class="rvps2"><span class="rvts6">Исходный код теста:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts17">{</span></p>
+<p class="rvps5"><span class="rvts17">"description":"Тестирование событий поиска",</span></p>
+<p class="rvps5"><span class="rvts17">"port":9091,</span></p>
+<p class="rvps5"><span class="rvts17">"arguments":[</span></p>
+<p class="rvps6"><span class="rvts17">"--ignore-certificate-errors"</span></p>
+<p class="rvps5"><span class="rvts17">],</span></p>
+<p class="rvps5"><span class="rvts17">"har":"test.har",</span></p>
+<p class="rvps5"><span class="rvts17">"timeout":60,</span></p>
+<p class="rvps5"><span class="rvts17">"data":[</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps7"><span class="rvts17">"title":"ШАГ: Открываю страницу https://rozetka.com.ua/",</span></p>
+<p class="rvps7"><span class="rvts17">"url":"https://rozetka.com.ua/",</span></p>
+<p class="rvps7"><span class="rvts17">"ga_category":"Interactions",</span></p>
+<p class="rvps7"><span class="rvts17">"ga_action":"click",</span></p>
+<p class="rvps7"><span class="rvts17">"ga_label":"searchButton",</span></p>
+<p class="rvps7"><span class="rvts17">"ym_code":""</span></p>
+<p class="rvps6"><span class="rvts17">}</span></p>
+<p class="rvps5"><span class="rvts17">],</span></p>
+<p class="rvps5"><span class="rvts17">"steps":[</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ШАГ: Ввожу данные для поиска",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"input_value",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"телефон",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"//input[@name='search']",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":1</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ШАГ: Нажал на кнопку Найти",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"click_element",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"//button[@class='button button_color_green button_size_medium search-form__submit']",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":1</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ШАГ: Ожидание завершения поиска",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"wait_element",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"//h1[contains(text(), 'Мобильные телефоны')]",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":15</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ШАГ: Нажал на кнопку Найти",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"click_element",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"//button[@class='button button_color_green button_size_medium search-form__submit']",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":1</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ШАГ: Ожидание 5 секунд",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"sleep",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":5</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"Событие GA",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"test_defaults_ga",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":5</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"Событие GA:category",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"test_optionally_ga",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"ec=Interactions",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"google-analytics.com/collect",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":5</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"Событие GA:action",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"test_optionally_ga",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"ea=click",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"google-analytics.com/collect",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":5</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"Событие GA:label",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"test_optionally_ga",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"el=searchButton",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"google-analytics.com/collect",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":5</span></p>
+<p class="rvps6"><span class="rvts17">}</span></p>
+<p class="rvps5"><span class="rvts17">]</span></p>
+<p class="rvps5"><span class="rvts17">}</span></p>
+<p></p>
+<p class="rvps4" style="clear: both;"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="https://www.helpndoc.com">Free CHM Help documentation generator</a></p>
+<a name="Newtopic21"></a><h2>Получение данных из элементов</h2>
+<p></p>
+<p class="rvps2"><span class="rvts14">Получение данных из элементов</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Иногда бывает необходимо получить какое-то значение из элемента на странице чтобы потом это значение использовать в другом элементе страницы.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Допустим у нас на странице есть элемент текст которого "Контакты". Наша задача получить этот текст из этемента и вставить его в поле поиска.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Сначала сформируем локатор (xpath) этого элемента: </span><span class="rvts15">/html/body/app-root/div/div[1]/app-rz-header/header/div/div[1]/ul[1]/li[1]/a</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem75.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Дальше опишим шаги.</span></p>
+<p class="rvps2"><span class="rvts6">Сначала используем </span><a class="rvts11" href="#Newtopic9">действие</a><span class="rvts6">&nbsp;</span><span class="rvts15">find_element</span><span class="rvts6">&nbsp;для того чтобы найти элемент. </span></p>
+<p class="rvps2"><span class="rvts6">После того как элемент найден он будет помещен в глобальную переменную доступ к которой есть у следующих методов:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;"><ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: circle;">
+<li style="margin-left: 0px" class="rvps5"><span class="rvts15">get_text</span></li>
+<li style="margin-left: 0px" class="rvps5"><span class="rvts15">get_attribute_id</span></li>
+<li style="margin-left: 0px" class="rvps5"><span class="rvts15">get_attribute_name</span></li>
+<li style="margin-left: 0px" class="rvps5"><span class="rvts15">get_attribute_class</span></li>
+<li style="margin-left: 0px" class="rvps5"><span class="rvts15">get_attribute_value</span></li>
+<li style="margin-left: 0px" class="rvps5"><span class="rvts15">get_attribute_href</span></li>
+<li style="margin-left: 0px" class="rvps5"><span class="rvts15">get_attribute_</span><span class="rvts6">&nbsp;в данном случае вы можете дописать имя атрибута самостоятельно после подчеркивания</span></li>
+</ul></ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">В нашем случае мы вослользуемся методом </span><span class="rvts15">get_text</span><span class="rvts6">&nbsp;для того чтобы встатить текст в поле поиска input.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem76.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Запустим тест на выполнение.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem74.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Как мы видим текст "Контакты" был вставлен в поиск.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem77.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">В консоли мы видим шаги выполнения действий и успешное завершение теста.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<hr style="height: 1px; color : #000000;  background-color : #000000; border-width : 0px;">
+<p class="rvps2"><span class="rvts6">Исходный код теста:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts17">{</span></p>
+<p class="rvps5"><span class="rvts17">"description":"Тестирование событий поиска",</span></p>
+<p class="rvps5"><span class="rvts17">"port":9091,</span></p>
+<p class="rvps5"><span class="rvts17">"arguments":[</span></p>
+<p class="rvps6"><span class="rvts17">"--ignore-certificate-errors"</span></p>
+<p class="rvps5"><span class="rvts17">],</span></p>
+<p class="rvps5"><span class="rvts17">"har":"test.har",</span></p>
+<p class="rvps5"><span class="rvts17">"timeout":60,</span></p>
+<p class="rvps5"><span class="rvts17">"data":[</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps7"><span class="rvts17">"title":"ШАГ: Открываю страницу https://rozetka.com.ua/",</span></p>
+<p class="rvps7"><span class="rvts17">"url":"https://rozetka.com.ua/",</span></p>
+<p class="rvps7"><span class="rvts17">"ga_category":"Interactions",</span></p>
+<p class="rvps7"><span class="rvts17">"ga_action":"click",</span></p>
+<p class="rvps7"><span class="rvts17">"ga_label":"searchButton",</span></p>
+<p class="rvps7"><span class="rvts17">"ym_code":""</span></p>
+<p class="rvps6"><span class="rvts17">}</span></p>
+<p class="rvps5"><span class="rvts17">],</span></p>
+<p class="rvps5"><span class="rvts17">"steps":[</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ШАГ: Поиск элемента",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"find_element",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"/html/body/app-root/div/div[1]/app-rz-header/header/div/div[1]/ul[1]/li[1]/a",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":5</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ШАГ: Ввожу данные для поиска",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"input_value",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"get_text",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"//input[@name='search']",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":1</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ШАГ: Нажал на кнопку Найти",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"click_element",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"//button[@class='button button_color_green button_size_medium search-form__submit']",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":1</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ШАГ: Ожидание завершения поиска",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"wait_element",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"//h1[contains(text(), 'Контакты')]",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":15</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"Событие GA",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"test_defaults_ga",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":5</span></p>
+<p class="rvps6"><span class="rvts17">}</span></p>
+<p class="rvps5"><span class="rvts17">]</span></p>
+<p class="rvps5"><span class="rvts17">}</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps4" style="clear: both;"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="https://www.helpndoc.com/feature-tour">Easily create Qt Help files</a></p>
+<a name="Newtopic20"></a><h2>Использование условий</h2>
+<p></p>
+<p class="rvps2"><span class="rvts14">Использование условий</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Чтобы показать использование условий возьмем предудыщий пример </span><a class="rvts11" href="#Newtopic21">получения данных из элемента</a><span class="rvts6">&nbsp;и доработаем его.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Для программирования условий нужно использовать следующие </span><a class="rvts11" href="#Newtopic9">типы действий</a><span class="rvts6">:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps2"><span class="rvts15">if_get_text</span></li>
+<li class="rvps2"><span class="rvts15">if_get_attribute_</span></li>
+<li class="rvps2"><span class="rvts15">else_if_get_text</span></li>
+<li class="rvps2"><span class="rvts15">else_if_get_attribute_</span></li>
+<li class="rvps2"><span class="rvts15">else</span></li>
+<li class="rvps2"><span class="rvts15">end_if</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">При использовании </span><span class="rvts15">if_get_attribute_</span><span class="rvts6">&nbsp;и </span><span class="rvts15">else_if_get_attribute_</span><span class="rvts6">&nbsp;нужно дописывать имя атрибута после подчеркивания (например: </span><span class="rvts15">if_get_attribute_id </span><span class="rvts18">и</span><span class="rvts15">&nbsp;else_if_get_attribute_id</span><span class="rvts18">)</span></p>
+<p class="rvps2"><span class="rvts18"><br/></span></p>
+<p class="rvps2"><span class="rvts18">Условия начинаются действием </span><span class="rvts15">if_get_text </span><span class="rvts18">или</span><span class="rvts15">&nbsp;if_get_attribute_</span></p>
+<p class="rvps2"><span class="rvts6">Дальше идут шаги действий или проверки.</span></p>
+<p class="rvps2"><span class="rvts6">Если нужно выполнять какие-то шаги в случае невыполнения условия используются действия </span><span class="rvts15">else_if_get_text </span><span class="rvts18">,</span><span class="rvts15">&nbsp;else_if_get_attribute_ </span><span class="rvts18">и</span><span class="rvts15">&nbsp;else</span></p>
+<p class="rvps2"><span class="rvts6">Завершается условие действием </span><span class="rvts15">end_if</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem78.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Запустим автотест и убедимся что условие будет выполнено.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem79.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Полученный текст из элемента соответствует заданному тексту в условие и в результате тест был проведен.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<hr style="height: 1px; color : #000000;  background-color : #000000; border-width : 0px;">
+<p class="rvps2"><span class="rvts6">Исходный код теста:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts17">{</span></p>
+<p class="rvps5"><span class="rvts17">"description":"Тестирование событий поиска",</span></p>
+<p class="rvps5"><span class="rvts17">"port":9091,</span></p>
+<p class="rvps5"><span class="rvts17">"arguments":[</span></p>
+<p class="rvps6"><span class="rvts17">"--ignore-certificate-errors"</span></p>
+<p class="rvps5"><span class="rvts17">],</span></p>
+<p class="rvps5"><span class="rvts17">"har":"test.har",</span></p>
+<p class="rvps5"><span class="rvts17">"timeout":60,</span></p>
+<p class="rvps5"><span class="rvts17">"data":[</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"title":"ШАГ: Открываю страницу https://rozetka.com.ua/",</span></p>
+<p class="rvps6"><span class="rvts17">"url":"https://rozetka.com.ua/",</span></p>
+<p class="rvps6"><span class="rvts17">"ga_category":"Interactions",</span></p>
+<p class="rvps6"><span class="rvts17">"ga_action":"click",</span></p>
+<p class="rvps6"><span class="rvts17">"ga_label":"searchButton",</span></p>
+<p class="rvps6"><span class="rvts17">"ym_code":""</span></p>
+<p class="rvps6"><span class="rvts17">}</span></p>
+<p class="rvps5"><span class="rvts17">],</span></p>
+<p class="rvps5"><span class="rvts17">"steps":[</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ШАГ: Поиск элемента",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"find_element",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"/html/body/app-root/div/div[1]/app-rz-header/header/div/div[1]/ul[1]/li[1]/a",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":5</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"УСЛОВИЕ: Проверяю что текст Контакты",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"if_get_text",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"Контакты",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"==",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":0</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ШАГ: Ввожу данные для поиска",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"input_value",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"get_text",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"//input[@name='search']",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":1</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ШАГ: Нажал на кнопку Найти",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"click_element",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"//button[@class='button button_color_green button_size_medium search-form__submit']",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":1</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ШАГ: Ожидание завершения поиска",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"wait_element",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"//h1[contains(text(), 'Контакты')]",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":15</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"Событие GA",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"test_defaults_ga",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":5</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ИНАЧЕ",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"else",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":0</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ШАГ: сообщение о том что текст не Контакт",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"sleep",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":1</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"КОНЕЦ УСЛОВИЯ",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"end_if",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":0</span></p>
+<p class="rvps6"><span class="rvts17">}</span></p>
+<p class="rvps5"><span class="rvts17">]</span></p>
+<p class="rvps5"><span class="rvts17">}</span></p>
+<p></p>
+<p class="rvps4" style="clear: both;"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Qt Help documentation made easy</a></p>
+<a name="JavaScript"></a><h2>Применение JavaScript</h2>
+<p></p>
+<p class="rvps2"><span class="rvts14">Применение JavaScript</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Иногда бывает необходимо выполнить JavaScript код который поможет в процессе тестирования.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Допустим на сайте присутствует всплывающий баннер который может блокировать ход тестирования.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem82.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Чтобы выполнить JavaScript код воспользуйтесь специальным </span><a class="rvts11" href="#Newtopic9">действием</a><span class="rvts6">&nbsp;</span><span class="rvts15">execute_js</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Добавим шаг выполняющий следующий JavaScript под:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts17">document.head.insertAdjacentHTML(\"beforeend\", '&lt;style type=\"text/css\"&gt;body{overflow:auto!important;}#rz-banner{display:none!important}&lt;/style&gt;');</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">или использовать встроенный на странице jQuery</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts17">$(\"body\").find(\"#rz-banner\").css({display:\"none!important\"});</span></p>
+<p class="rvps5"><span class="rvts17">$(\"head\").prepend('&lt;style type=\"text/css\"&gt;body{overflow:auto!important;}#rz-banner{display:none!important}&lt;/style&gt;');</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Обязательно нужно экранировать двойные кавычки чтобы тест корректно сохранился в json формате.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem84.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Запустим тест. Во время выполнения на странице будет добавлен слить которые удалит баннер и не даст ему появляться.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem83.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">В консоли видим строку выполнения JavaScript кода и успешный результат проверки.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem85.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<hr style="height: 1px; color : #000000;  background-color : #000000; border-width : 0px;">
+<p class="rvps2"><span class="rvts6">Исходный код теста:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts17">{</span></p>
+<p class="rvps5"><span class="rvts17">"description":"Тестирование событий поиска",</span></p>
+<p class="rvps5"><span class="rvts17">"port":9091,</span></p>
+<p class="rvps5"><span class="rvts17">"arguments":[</span></p>
+<p class="rvps6"><span class="rvts17">"--ignore-certificate-errors"</span></p>
+<p class="rvps5"><span class="rvts17">],</span></p>
+<p class="rvps5"><span class="rvts17">"har":"test.har",</span></p>
+<p class="rvps5"><span class="rvts17">"timeout":60,</span></p>
+<p class="rvps5"><span class="rvts17">"data":[</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps7"><span class="rvts17">"title":"ШАГ: Открываю страницу https://rozetka.com.ua/",</span></p>
+<p class="rvps7"><span class="rvts17">"url":"https://rozetka.com.ua/",</span></p>
+<p class="rvps7"><span class="rvts17">"ga_category":"Interactions",</span></p>
+<p class="rvps7"><span class="rvts17">"ga_action":"click",</span></p>
+<p class="rvps7"><span class="rvts17">"ga_label":"searchButton",</span></p>
+<p class="rvps7"><span class="rvts17">"ym_code":""</span></p>
+<p class="rvps6"><span class="rvts17">}</span></p>
+<p class="rvps5"><span class="rvts17">],</span></p>
+<p class="rvps5"><span class="rvts17">"steps":[</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ШАГ: Выполняю JS код (добавляются стили)",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"execute_js",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"document.head.insertAdjacentHTML(\"beforeend\", '&lt;style type=\"text/css\"&gt;body{overflow:auto!important;}#rz-banner{display:none!important}&lt;/style&gt;');",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":0</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"ШАГ: Нажал на кнопку Найти",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"click_element",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"//button[@class='button button_color_green button_size_medium search-form__submit']",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":1</span></p>
+<p class="rvps6"><span class="rvts17">},</span></p>
+<p class="rvps6"><span class="rvts17">{</span></p>
+<p class="rvps6"><span class="rvts17">"description":"Событие GA",</span></p>
+<p class="rvps6"><span class="rvts17">"type":"test_defaults_ga",</span></p>
+<p class="rvps6"><span class="rvts17">"value":"",</span></p>
+<p class="rvps6"><span class="rvts17">"locator":"",</span></p>
+<p class="rvps6"><span class="rvts17">"timeout":5</span></p>
+<p class="rvps6"><span class="rvts17">}</span></p>
+<p class="rvps5"><span class="rvts17">]</span></p>
+<p class="rvps5"><span class="rvts17">}</span></p>
+<p></p>
+<p class="rvps4" style="clear: both;"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="https://www.helpndoc.com/create-epub-ebooks">Produce electronic books easily</a></p>
 
-            </div>
-            
-            <div id="topic_footer"><div id="topic_footer_content">Copyright &copy; 2020 by Somov Evgeniy. All Rights Reserved.</div></div>
-        </div>  <!-- /#topic-content -->
-    </article>
-
-    <footer></footer>
-
-  </div>  <!-- /#main -->
-
-  <div class="mask" data-toggle="sm-nav-expanded"></div>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="hndModal" tabindex="-1" role="dialog" aria-labelledby="hndModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="hndModalLabel"></h4>
-        </div>
-        <div class="modal-body">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary modal-btn-close" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Scripts -->
-  <script src="vendors/jquery-3.4.1/jquery.min.js"></script>
-  <script src="vendors/bootstrap-3.4.1/js/bootstrap.min.js"></script>
-  <script src="vendors/markjs-8.11.1/jquery.mark.min.js"></script>
-  <script src="vendors/uri-1.19.1/uri.min.js"></script>
-  <script src="vendors/imageMapResizer-1.0.7/imageMapResizer.min.js"></script>
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <script src="vendors/bootstrap-3.4.1/js/ie10-viewport-bug-workaround.js"></script>
-  
-  <!-- Headroom -->
-  <script src="vendors/headroom-0.9.4/headroom.min.js"></script>
-  <script src="vendors/headroom-0.9.4/jquery.headroom.min.js"></script>
-
-  <!-- JsTree -->
-  <script src="vendors/jstree-3.3.7/jstree.min.js"></script>
-
-  <!-- HelpNDoc scripts -->
-  <script src="_translations.js"></script>
-  <script src="js/hndsd.min.js"></script>
-  <script src="js/hndse.min.js"></script>
-  <script src="js/app.min.js"></script>
-
-  <!-- Scripts -->
-  <script>
-    $(function() {
-      // Create the app
-      var app = new Hnd.App();
-      // Update translations
-      hnd_ut(app);
-	  // Instanciate imageMapResizer
-	  imageMapResize();
-	  // Custom JS
-	  
-      // Boot the app
-      app.Boot();
-    });
-  </script>
-
-
-
+			
+			<p class="copyright">
+				Copyright &copy; 2020 by Somov Evgeniy. All Rights Reserved.
+			</p>
+		</div>
+	</div>
+		
 </body>
-
 </html>
 
