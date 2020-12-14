@@ -360,6 +360,7 @@ public class Helper {
             //System.out.println("SCREENSHOT: error save screenshot - " + e.fillInStackTrace());
             System.out.println("SCREENSHOT: error save screenshot - " + e.toString());
             System.out.println(" ");
+            endWorkProxy();
         }
     }
 }

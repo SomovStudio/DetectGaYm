@@ -13,11 +13,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/detect-gaym.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/detect-gaym.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/detect/gaym/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/detect/gaym/Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/detect/gaym/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/detect/gaym/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/detect/gaym/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/detect/gaym/TestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests-editor-linux/out/tests-editor-linux.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor-linux/out/tests-editor-linux.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests-editor-linux/src/main/java/app/forms/FormMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor-linux/src/main/java/app/forms/FormMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests-editor-linux/target/classes/app/forms/FormMain$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../tests-editor-linux/target/classes/app/forms/FormMain$2.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
