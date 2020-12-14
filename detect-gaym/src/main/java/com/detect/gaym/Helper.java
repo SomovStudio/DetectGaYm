@@ -160,8 +160,9 @@ public class Helper {
     }
 
     /* Вывод ошибки */
-    public static void showError(Exception e) throws Exception {
+    public static void showError(Exception e, String message) throws Exception {
         System.out.println("| ERROR --------------------------------------");
+        System.out.println(message);
         //System.out.println(e.getMessage());
         //System.out.println(e.fillInStackTrace());
         System.out.println(e.toString());

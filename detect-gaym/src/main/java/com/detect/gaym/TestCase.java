@@ -26,7 +26,7 @@ public class TestCase {
     public static boolean conditionStatus;
     public static boolean conditionResult;
     public static boolean conditionCompleted;
-
+    public static String errorMessage;
 
     private static void beforeTest() {
         Helper.initProxyForChromeDriver(port, arguments, nameHar);
@@ -55,6 +55,7 @@ public class TestCase {
 
             StepObjects.openPage(url, title);
 
+            int indexStep = 1;
             Iterator stepsItr = steps.iterator();
             while (stepsItr.hasNext()) {
                 JSONObject stepObj = (JSONObject) stepsItr.next();
@@ -63,6 +64,8 @@ public class TestCase {
                 String value = stepObj.get("value").toString();
                 String locator = stepObj.get("locator").toString();
                 int timeout = Integer.parseInt(stepObj.get("timeout").toString());
+
+                errorMessage = "LINE: " + indexStep + " | type ["+type+"] locator ["+locator+"] value ["+value+"]";
 
                 if (conditionStatus == true && conditionResult == true && (type.equals(StepObjects.IF_GET_TEXT) || type.equals(StepObjects.ELSE_IF_GET_TEXT) ||
                         type.lastIndexOf(StepObjects.IF_GET_ATTRIBUTE) > -1 || type.lastIndexOf(StepObjects.ELSE_IF_GET_ATTRIBUTE) > -1 ||
@@ -117,12 +120,14 @@ public class TestCase {
                 if (type.equals(StepObjects.EXECUTE_JS)) StepObjects.executeJS(value, desc);
 
                 Thread.sleep(250);
+                indexStep++;
             }
         }
     }
 
     public static void execute(String filename, String encoding) throws Exception {
         try {
+            errorMessage = "";
             conditionStatus = false;
             conditionResult = false;
             conditionCompleted = false;
@@ -144,7 +149,8 @@ public class TestCase {
                 arguments.add(argument);
             }
         } catch (Exception e) {
-            Helper.showError(e);
+            errorMessage = "An error occurred while reading the file "+filename+" ("+encoding+")";
+            Helper.showError(e, errorMessage);
         }
 
         try {
@@ -154,12 +160,13 @@ public class TestCase {
 
             System.out.println("TESTING: finished - SUCCESS");
         } catch (Exception e) {
-            Helper.showError(e);
+            Helper.showError(e, errorMessage);
         }
     }
 
     public static void executeAll(String folder, String encoding) throws Exception {
         try {
+            errorMessage = "";
             conditionStatus = false;
             conditionResult = false;
             conditionCompleted = false;
@@ -201,7 +208,7 @@ public class TestCase {
 
             System.out.println("TESTING: finished - SUCCESS");
         } catch (Exception e) {
-            Helper.showError(e);
+            Helper.showError(e, errorMessage);
         }
     }
 }
