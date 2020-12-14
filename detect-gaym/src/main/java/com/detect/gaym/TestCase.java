@@ -65,7 +65,7 @@ public class TestCase {
                 String locator = stepObj.get("locator").toString();
                 int timeout = Integer.parseInt(stepObj.get("timeout").toString());
 
-                errorMessage = "STEP " + indexStep + ": type "+type+" | locator: "+locator+" | value: "+value+" | description: "+desc;
+                errorMessage = "STEP " + indexStep + ": type ["+type+"] | locator: ["+locator+"] | value: ["+value+"] | description: ["+desc+"]";
 
                 if (conditionStatus == true && conditionResult == true && (type.equals(StepObjects.IF_GET_TEXT) || type.equals(StepObjects.ELSE_IF_GET_TEXT) ||
                         type.lastIndexOf(StepObjects.IF_GET_ATTRIBUTE) > -1 || type.lastIndexOf(StepObjects.ELSE_IF_GET_ATTRIBUTE) > -1 ||
@@ -88,12 +88,14 @@ public class TestCase {
                     {
                         conditionStatus = true;
                         conditionResult = true;
+                        StepObjects.stepElse(desc);
                     }
                 }
                 if (type.equals(StepObjects.END_IF)){
                     conditionStatus = false;
                     conditionResult = false;
                     conditionCompleted = false;
+                    StepObjects.stepEndIf(desc);
                 }
                 if (conditionStatus == true && conditionResult == false && conditionCompleted == false) continue;
                 if (conditionCompleted == true) continue;

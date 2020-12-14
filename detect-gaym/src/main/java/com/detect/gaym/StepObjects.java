@@ -245,17 +245,24 @@ public class StepObjects {
     }
 
     public static void findElement(String locator, String description, int timeout) throws InterruptedException {
-        if(timeout > 0) Helper.waitElement(locator, timeout);
-        Helper.element = Helper.driver.findElement(By.xpath(locator));
-        if (!description.equals("")) System.out.println(description);
-        else System.out.println("STEP: search of element [" + locator + "] - found");
+        try {
+            if(timeout > 0) Helper.waitElement(locator, timeout);
+            Helper.element = Helper.driver.findElement(By.xpath(locator));
+            if (!description.equals("")) System.out.println(description);
+            else System.out.println("STEP: search of element [" + locator + "] - found");
+        } catch (Exception e) {
+            Helper.element = null;
+            System.out.println("WARNING: search of element [" + locator + "] - is not found");
+        }
     }
 
     public static String getText() {
+        if(Helper.element == null) return "null";
         return Helper.element.getText();
     }
 
     public static String getAttribute(String value) {
+        if(Helper.element == null) return "null";
         String attributeName = "";
         if (value.lastIndexOf(GET_ATTRIBUTE) > -1) attributeName = value.substring(GET_ATTRIBUTE.length());
         if (value.lastIndexOf(IF_GET_ATTRIBUTE) > -1) attributeName = value.substring(IF_GET_ATTRIBUTE.length());
@@ -264,6 +271,11 @@ public class StepObjects {
     }
 
     public static boolean ifGetText(String locator, String value, String description, int timeout) {
+        if(Helper.element == null) {
+            if (!description.equals("")) System.out.println(description);
+            else System.out.println("STEP: checking the condition between [null " + locator + " " + value + "]");
+            return false;
+        }
         String elementText = Helper.element.getText();
         if (!description.equals("")) System.out.println(description);
         else System.out.println("STEP: checking the condition between [" + elementText + " " + locator + " " + value + "]");
@@ -277,6 +289,11 @@ public class StepObjects {
     }
 
     public static boolean ifAttribute(String type, String locator, String value, String description, int timeout) {
+        if(Helper.element == null) {
+            if (!description.equals("")) System.out.println(description);
+            else System.out.println("STEP: checking the condition between [null " + locator + " " + value + "]");
+            return false;
+        }
         String elementAttribute = getAttribute(type);
         if (!description.equals("")) System.out.println(description);
         else System.out.println("STEP: checking the condition between [" + elementAttribute + " " + locator + " " + value + "]");
@@ -287,6 +304,16 @@ public class StepObjects {
         if (locator.equals(IF_MORE) && Float.parseFloat(elementAttribute) > Float.parseFloat(value)) return true;
         if (locator.equals(IF_MORE_OR_EQUALLY) && Float.parseFloat(elementAttribute) >= Float.parseFloat(value)) return true;
         return false;
+    }
+
+    public static void stepElse(String description) {
+        if (!description.equals("")) System.out.println(description);
+        else System.out.println("STEP: condition else");
+    }
+
+    public static void stepEndIf(String description) {
+        if (!description.equals("")) System.out.println(description);
+        else System.out.println("STEP: condition end");
     }
 
     public static void executeJS(String value, String description) {
