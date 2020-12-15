@@ -53,6 +53,8 @@ public class TestCase {
             String ga_label = dataObj.get("ga_label").toString();
             String ym_code = dataObj.get("ym_code").toString();
 
+            errorMessage = "DATA: url ["+url+"] | ga_category: ["+ga_category+"] | ga_action: ["+ga_action+"] | ga_label: ["+ga_label+"] | ym_code: ["+ym_code+"]";
+
             StepObjects.openPage(url, title);
 
             int indexStep = 1;

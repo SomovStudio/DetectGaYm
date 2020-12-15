@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import net.lightbody.bmp.BrowserMobProxy;
 import net.lightbody.bmp.BrowserMobProxyServer;
 import net.lightbody.bmp.client.ClientUtil;
@@ -88,7 +89,7 @@ public class Helper {
         // создание драйвера
         driver = new ChromeDriver(capabilities);
         driver.manage().window().maximize();
-        System.out.println("PROXY: created web driver");
+        System.out.println("PROXY: created web driver " + ((RemoteWebDriver) driver).getCapabilities().getVersion());
 
         // включить более детальный захват HAR
         proxy.newHar(nameHar);
