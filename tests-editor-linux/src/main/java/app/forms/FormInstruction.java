@@ -315,6 +315,11 @@ public class FormInstruction {
                 System.getProperty("line.separator") + "   - Поле 'Локатор/Протокол/Условия' не заполняем" +
                 System.getProperty("line.separator") + "   - Поле 'Значение' вводим строку кода (обязательно нужно экранировать двойные кавычки) $(\\\"body\\\").find(\\\"#popup-abonent\\\").css({display:\\\"none!important\\\"});" +
                 System.getProperty("line.separator") + "   - Поле 'Время ожидания' ввести значение: 0" +
+                System.getProperty("line.separator") + "--------------------------------------------------------------------------------------------------------------" + System.getProperty("line.separator") +
+                System.getProperty("line.separator") + "Ручная проверка событий Yandex metrika" +
+                System.getProperty("line.separator") + "Чтобы отслеживать события из Яндекс.Метрики, вставьте параметр site.ru/?_ym_debug=1 в браузерную строку." +
+                System.getProperty("line.separator") + "Пока параметр в браузерной строке, вы будете видеть события Яндекс.Метрики в консоли." +
+                System.getProperty("line.separator") + "Если закроете и снова откроете страницу, вам придётся заново вставлять параметр /?_ym_debug=1" +
                 System.getProperty("line.separator") + "");
         textAreaInformation.setCaretPosition(0);
     }
