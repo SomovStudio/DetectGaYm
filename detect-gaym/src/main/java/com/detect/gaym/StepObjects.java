@@ -134,8 +134,8 @@ public class StepObjects {
             if(result) break;
         }
         if(!result) {
-            if (!description.equals("")) Helper.showFail(description + " - FAILED");
-            else Helper.showFail("TEST: event GA ["+category+"]["+action+"]["+label+"] - FAILED");
+            if (!description.equals("")) Helper.showTestFail(description + " - FAILED", GET_HAR_GA);
+            else Helper.showTestFail("TEST: event GA ["+category+"]["+action+"]["+label+"] - FAILED", GET_HAR_GA);
         }else{
             if (!description.equals("")) Helper.showPass(description + " - PASSED");
             else Helper.showPass("event GA ["+category+"]["+action+"]["+label+"] - PASSED");
@@ -159,8 +159,8 @@ public class StepObjects {
             if(result) break;
         }
         if(!result) {
-            if (!description.equals("")) Helper.showFail(description + " - FAILED");
-            else Helper.showFail("TEST: event GA ["+value+"] - FAILED");
+            if (!description.equals("")) Helper.showTestFail(description + " - FAILED", GET_HAR_GA);
+            else Helper.showTestFail("TEST: event GA ["+value+"] - FAILED", GET_HAR_GA);
         }else{
             if (!description.equals("")) Helper.showPass(description + " - PASSED");
             else Helper.showPass("event GA ["+value+"] - PASSED");
@@ -183,8 +183,8 @@ public class StepObjects {
             if(result) break;
         }
         if(!result) {
-            if (!description.equals("")) Helper.showFail(description + " - FAILED");
-            else Helper.showFail("TEST: event YM ["+code+"] - FAILED");
+            if (!description.equals("")) Helper.showTestFail(description + " - FAILED", GET_HAR_YM);
+            else Helper.showTestFail("TEST: event YM ["+code+"] - FAILED", GET_HAR_YM);
         }else{
             if (!description.equals("")) Helper.showPass(description + " - PASSED");
             else Helper.showPass("event YM ["+code+"] - PASSED");
@@ -208,8 +208,8 @@ public class StepObjects {
             if(result) break;
         }
         if(!result) {
-            if (!description.equals("")) Helper.showFail(description + " - FAILED");
-            else Helper.showFail("TEST: event YM ["+value+"] - FAILED");
+            if (!description.equals("")) Helper.showTestFail(description + " - FAILED", GET_HAR_YM);
+            else Helper.showTestFail("TEST: event YM ["+value+"] - FAILED", GET_HAR_YM);
         }else{
             if (!description.equals("")) Helper.showPass(description + " - PASSED");
             else Helper.showPass("event YM ["+value+"] - PASSED");

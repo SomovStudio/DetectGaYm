@@ -98,10 +98,15 @@ public class Helper {
 
     /* Заканчивает работу с Прокси */
     public static void endWorkProxy() {
-        driver.close();
-        driver.quit();
-        proxy.stop();
-        System.out.println("PROXY: stop");
+        try {
+            driver.close();
+            driver.quit();
+            proxy.stop();
+            System.out.println("PROXY: stop");
+        } catch (Exception e) {
+            System.out.println("ERROR: " + e.toString());
+            System.exit(0);
+        }
     }
 
     /* Возвращает массив ссылок полученных из HAR */
@@ -177,6 +182,19 @@ public class Helper {
     /* Показать сообщение о том что тест провален */
     public static void showFail(String failMessage) throws Exception {
         System.out.println("FAILED ---------------------------------------");
+        System.out.println("| " + failMessage);
+        System.out.println("|---------------------------------------------");
+        System.out.println(" ");
+        screenshot();
+        endWorkProxy();
+        Assert.assertEquals("PASSED", "FAILED");
+    }
+
+    public static void showTestFail(String failMessage, String typeGetHar) throws Exception {
+        if(typeGetHar == StepObjects.GET_HAR_GA) StepObjects.getHarGA();
+        if(typeGetHar == StepObjects.GET_HAR_YM) StepObjects.getHarYM();
+        System.out.println(" ");
+        System.out.println("TEST FAILED ----------------------------------");
         System.out.println("| " + failMessage);
         System.out.println("|---------------------------------------------");
         System.out.println(" ");
