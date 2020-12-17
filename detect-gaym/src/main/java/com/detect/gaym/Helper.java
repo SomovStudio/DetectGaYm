@@ -99,6 +99,7 @@ public class Helper {
     /* Заканчивает работу с Прокси */
     public static void endWorkProxy() {
         try {
+            System.out.println("PROXY: please wait...");
             driver.close();
             driver.quit();
             proxy.stop();

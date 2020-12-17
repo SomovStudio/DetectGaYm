@@ -118,11 +118,13 @@ public class StepObjects {
 
     public static void testGA(String category, String action, String label, String description, int timeout) throws Exception {
         boolean result = false;
+        boolean protocol = false;
         for (int time = -1; time < timeout; time++) // wait sec
         {
             Thread.sleep(1000);
             ArrayList<String> harLinks = Helper.getLinksFromHar();
             for (String link:harLinks) {
+                if(link.contains("google-analytics.com/collect")) protocol = true;
                 if(link.contains("google-analytics.com/collect") && link.contains("&t=event&"))
                 {
                     if(link.contains("ec="+category) && link.contains("ea="+action) && link.contains("el="+label)){
@@ -134,7 +136,9 @@ public class StepObjects {
             if(result) break;
         }
         if(!result) {
-            if (!description.equals("")) Helper.showTestFail(description + " - FAILED", GET_HAR_GA);
+            if(protocol == false && !description.equals("")) Helper.showTestFail(description + " - FAILED (protocol [google-analytics.com/collect] not found)", GET_HAR_GA);
+            else if(protocol == false && description.equals("")) Helper.showTestFail("TEST: event GA ["+category+"]["+action+"]["+label+"] - FAILED (protocol [google-analytics.com/collect] not found", GET_HAR_GA);
+            else if(protocol == true && !description.equals("")) Helper.showTestFail(description + " - FAILED", GET_HAR_GA);
             else Helper.showTestFail("TEST: event GA ["+category+"]["+action+"]["+label+"] - FAILED", GET_HAR_GA);
         }else{
             if (!description.equals("")) Helper.showPass(description + " - PASSED");
@@ -145,6 +149,7 @@ public class StepObjects {
     public static void testOptionallyGA(String value, String locator, String description, int timeout) throws Exception {
         if(locator == "") locator = "google-analytics.com/collect";
         boolean result = false;
+        boolean protocol = false;
         for (int time = -1; time < timeout; time++) // wait sec
         {
             Thread.sleep(1000);
@@ -159,7 +164,9 @@ public class StepObjects {
             if(result) break;
         }
         if(!result) {
-            if (!description.equals("")) Helper.showTestFail(description + " - FAILED", GET_HAR_GA);
+            if(protocol == false && !description.equals("")) Helper.showTestFail(description + " - FAILED (protocol [google-analytics.com/collect] not found)", GET_HAR_GA);
+            else if(protocol == false && description.equals("")) Helper.showTestFail("TEST: event GA ["+value+"] - FAILED (protocol [google-analytics.com/collect] not found)", GET_HAR_GA);
+            else if(protocol == true && !description.equals("")) Helper.showTestFail(description + " - FAILED", GET_HAR_GA);
             else Helper.showTestFail("TEST: event GA ["+value+"] - FAILED", GET_HAR_GA);
         }else{
             if (!description.equals("")) Helper.showPass(description + " - PASSED");
@@ -169,12 +176,14 @@ public class StepObjects {
 
     public static void testYM(String code, String description, int timeout) throws Exception {
         boolean result = false;
+        boolean protocol = false;
         for (int time = -1; time < timeout; time++) // wait sec
         {
             Thread.sleep(1000);
             ArrayList<String> harLinks = Helper.getLinksFromHar();
             for (String link:harLinks)
             {
+                if(link.contains("mc.yandex.ru/watch")) protocol = true;
                 if(link.contains("mc.yandex.ru/watch") && link.contains("&page-url=goal")){
                     result = link.contains(code);
                     if(result) break;
@@ -183,7 +192,9 @@ public class StepObjects {
             if(result) break;
         }
         if(!result) {
-            if (!description.equals("")) Helper.showTestFail(description + " - FAILED", GET_HAR_YM);
+            if(protocol == false && !description.equals("")) Helper.showTestFail(description + " - FAILED (protocol [mc.yandex.ru/watch] not found)", GET_HAR_YM);
+            else if(protocol == false && description.equals("")) Helper.showTestFail("TEST: event YM ["+code+"] - FAILED (protocol [mc.yandex.ru/watch] not found)", GET_HAR_YM);
+            else if(protocol == true && !description.equals("")) Helper.showTestFail(description + " - FAILED", GET_HAR_YM);
             else Helper.showTestFail("TEST: event YM ["+code+"] - FAILED", GET_HAR_YM);
         }else{
             if (!description.equals("")) Helper.showPass(description + " - PASSED");
@@ -194,6 +205,7 @@ public class StepObjects {
     public static void testOptionallyYM(String value, String locator, String description, int timeout) throws Exception {
         if(locator == "") locator = "mc.yandex.ru/watch";
         boolean result = false;
+        boolean protocol = false;
         for (int time = -1; time < timeout; time++) // wait sec
         {
             Thread.sleep(1000);
@@ -208,7 +220,9 @@ public class StepObjects {
             if(result) break;
         }
         if(!result) {
-            if (!description.equals("")) Helper.showTestFail(description + " - FAILED", GET_HAR_YM);
+            if(protocol == false && !description.equals("")) Helper.showTestFail(description + " - FAILED (protocol [mc.yandex.ru/watch] not found)", GET_HAR_YM);
+            else if(protocol == false && description.equals("")) Helper.showTestFail("TEST: event YM ["+value+"] - FAILED (protocol [mc.yandex.ru/watch] not found)", GET_HAR_YM);
+            else if(protocol == true && !description.equals("")) Helper.showTestFail(description + " - FAILED", GET_HAR_YM);
             else Helper.showTestFail("TEST: event YM ["+value+"] - FAILED", GET_HAR_YM);
         }else{
             if (!description.equals("")) Helper.showPass(description + " - PASSED");
