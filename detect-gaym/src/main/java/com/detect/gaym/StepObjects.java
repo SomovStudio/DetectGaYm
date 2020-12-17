@@ -124,7 +124,7 @@ public class StepObjects {
             Thread.sleep(1000);
             ArrayList<String> harLinks = Helper.getLinksFromHar();
             for (String link:harLinks) {
-                if(link.contains("google-analytics.com/collect")) protocol = true;
+                if(link.contains("google-analytics.com/collect") && link.contains("&t=event&")) protocol = true;
                 if(link.contains("google-analytics.com/collect") && link.contains("&t=event&"))
                 {
                     if(link.contains("ec="+category) && link.contains("ea="+action) && link.contains("el="+label)){
@@ -136,8 +136,8 @@ public class StepObjects {
             if(result) break;
         }
         if(!result) {
-            if(protocol == false && !description.equals("")) Helper.showTestFail(description + " - FAILED (protocol [google-analytics.com/collect] not found)", GET_HAR_GA);
-            else if(protocol == false && description.equals("")) Helper.showTestFail("TEST: event GA ["+category+"]["+action+"]["+label+"] - FAILED (protocol [google-analytics.com/collect] not found", GET_HAR_GA);
+            if(protocol == false && !description.equals("")) Helper.showTestFail(description + " - FAILED (protocol [google-analytics.com/collect | &t=event&] not found)", GET_HAR_GA);
+            else if(protocol == false && description.equals("")) Helper.showTestFail("TEST: event GA ["+category+"]["+action+"]["+label+"] - FAILED (protocol [google-analytics.com/collect | &t=event&] not found", GET_HAR_GA);
             else if(protocol == true && !description.equals("")) Helper.showTestFail(description + " - FAILED", GET_HAR_GA);
             else Helper.showTestFail("TEST: event GA ["+category+"]["+action+"]["+label+"] - FAILED", GET_HAR_GA);
         }else{
@@ -155,6 +155,7 @@ public class StepObjects {
             Thread.sleep(1000);
             ArrayList<String> harLinks = Helper.getLinksFromHar();
             for (String link:harLinks) {
+                if(link.contains(locator)) protocol = true;
                 if(link.contains(locator) && link.contains(value))
                 {
                     result = true;
@@ -164,8 +165,8 @@ public class StepObjects {
             if(result) break;
         }
         if(!result) {
-            if(protocol == false && !description.equals("")) Helper.showTestFail(description + " - FAILED (protocol [google-analytics.com/collect] not found)", GET_HAR_GA);
-            else if(protocol == false && description.equals("")) Helper.showTestFail("TEST: event GA ["+value+"] - FAILED (protocol [google-analytics.com/collect] not found)", GET_HAR_GA);
+            if(protocol == false && !description.equals("")) Helper.showTestFail(description + " - FAILED (protocol ["+locator+"] not found)", GET_HAR_GA);
+            else if(protocol == false && description.equals("")) Helper.showTestFail("TEST: event GA ["+value+"] - FAILED (protocol ["+locator+"] not found)", GET_HAR_GA);
             else if(protocol == true && !description.equals("")) Helper.showTestFail(description + " - FAILED", GET_HAR_GA);
             else Helper.showTestFail("TEST: event GA ["+value+"] - FAILED", GET_HAR_GA);
         }else{
@@ -183,7 +184,7 @@ public class StepObjects {
             ArrayList<String> harLinks = Helper.getLinksFromHar();
             for (String link:harLinks)
             {
-                if(link.contains("mc.yandex.ru/watch")) protocol = true;
+                if(link.contains("mc.yandex.ru/watch") && link.contains("&page-url=goal")) protocol = true;
                 if(link.contains("mc.yandex.ru/watch") && link.contains("&page-url=goal")){
                     result = link.contains(code);
                     if(result) break;
@@ -192,8 +193,8 @@ public class StepObjects {
             if(result) break;
         }
         if(!result) {
-            if(protocol == false && !description.equals("")) Helper.showTestFail(description + " - FAILED (protocol [mc.yandex.ru/watch] not found)", GET_HAR_YM);
-            else if(protocol == false && description.equals("")) Helper.showTestFail("TEST: event YM ["+code+"] - FAILED (protocol [mc.yandex.ru/watch] not found)", GET_HAR_YM);
+            if(protocol == false && !description.equals("")) Helper.showTestFail(description + " - FAILED (protocol [mc.yandex.ru/watch | &page-url=goal] not found)", GET_HAR_YM);
+            else if(protocol == false && description.equals("")) Helper.showTestFail("TEST: event YM ["+code+"] - FAILED (protocol [mc.yandex.ru/watch | &page-url=goal] not found)", GET_HAR_YM);
             else if(protocol == true && !description.equals("")) Helper.showTestFail(description + " - FAILED", GET_HAR_YM);
             else Helper.showTestFail("TEST: event YM ["+code+"] - FAILED", GET_HAR_YM);
         }else{
@@ -212,6 +213,7 @@ public class StepObjects {
             ArrayList<String> harLinks = Helper.getLinksFromHar();
             for (String link:harLinks)
             {
+                if(link.contains(locator)) protocol = true;
                 if(link.contains(locator) && link.contains(value)){
                     result = true;
                     break;
@@ -220,8 +222,8 @@ public class StepObjects {
             if(result) break;
         }
         if(!result) {
-            if(protocol == false && !description.equals("")) Helper.showTestFail(description + " - FAILED (protocol [mc.yandex.ru/watch] not found)", GET_HAR_YM);
-            else if(protocol == false && description.equals("")) Helper.showTestFail("TEST: event YM ["+value+"] - FAILED (protocol [mc.yandex.ru/watch] not found)", GET_HAR_YM);
+            if(protocol == false && !description.equals("")) Helper.showTestFail(description + " - FAILED (protocol ["+locator+"] not found)", GET_HAR_YM);
+            else if(protocol == false && description.equals("")) Helper.showTestFail("TEST: event YM ["+value+"] - FAILED (protocol ["+locator+"] not found)", GET_HAR_YM);
             else if(protocol == true && !description.equals("")) Helper.showTestFail(description + " - FAILED", GET_HAR_YM);
             else Helper.showTestFail("TEST: event YM ["+value+"] - FAILED", GET_HAR_YM);
         }else{

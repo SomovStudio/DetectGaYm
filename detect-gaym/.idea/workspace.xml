@@ -10,9 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5eaef80f-35ed-4559-b799-89a4d119880d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/detect-gaym.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/detect-gaym.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/detect/gaym/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/detect/gaym/Helper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/detect/gaym/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/detect/gaym/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/detect/gaym/StepObjects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/detect/gaym/StepObjects.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/detect/gaym/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/detect/gaym/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/detect/gaym/StepObjects.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/detect/gaym/StepObjects.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
