@@ -245,6 +245,8 @@ public class StepObjects {
         for (String link:harLinks)
         {
             if (link.contains("google-analytics.com/collect") && link.contains("&t=event&")) {
+                System.out.println("HAR: event GA [&t=event&] " + link);
+            }else if(link.contains("google-analytics.com/collect")){
                 System.out.println("HAR: event GA " + link);
             }
         }
@@ -255,6 +257,8 @@ public class StepObjects {
         for (String link:harLinks)
         {
             if (link.contains("mc.yandex.ru/watch") && link.contains("&page-url=goal")) {
+                System.out.println("HAR: event YM [&page-url=goal] " + link);
+            }else if(link.contains("mc.yandex.ru/watch")) {
                 System.out.println("HAR: event YM " + link);
             }
         }
