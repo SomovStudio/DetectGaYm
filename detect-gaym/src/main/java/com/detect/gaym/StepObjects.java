@@ -124,9 +124,9 @@ public class StepObjects {
             Thread.sleep(1000);
             ArrayList<String> harLinks = Helper.getLinksFromHar();
             for (String link:harLinks) {
-                if(link.contains("google-analytics.com/collect") && link.contains("t=event")) protocol = true;
                 if(link.contains("google-analytics.com/collect") && link.contains("t=event"))
                 {
+                    protocol = true;
                     if(link.contains("ec="+category) && link.contains("ea="+action) && link.contains("el="+label)){
                         result = true;
                         break;
@@ -184,8 +184,8 @@ public class StepObjects {
             ArrayList<String> harLinks = Helper.getLinksFromHar();
             for (String link:harLinks)
             {
-                if(link.contains("mc.yandex.ru/watch") && link.contains("page-url=goal")) protocol = true;
                 if(link.contains("mc.yandex.ru/watch") && link.contains("page-url=goal")){
+                    protocol = true;
                     result = link.contains(code);
                     if(result) break;
                 }
