@@ -18,46 +18,81 @@
 ],
 "steps":[
 {
+"description":"ШАГ: Поиск элемента",
+"type":"find_element",
+"locator":"//button[@class='button button_color_green button_size_medium search-form__submit']",
+"value":"",
+"timeout":1
+},
+{
+"description":"ШАГ: Условие",
+"type":"if_get_text",
+"locator":"!=",
+"value":"null",
+"timeout":0
+},
+{
 "description":"ШАГ: Ввожу данные для поиска",
 "type":"input_value",
-"value":"телефон",
 "locator":"//input[@name='search']",
+"value":"телефон",
 "timeout":1
 },
 {
 "description":"ШАГ: Нажал на кнопку Найти",
 "type":"click_element",
-"value":"",
 "locator":"//button[@class='button button_color_green button_size_medium search-form__submit']",
+"value":"",
 "timeout":1
 },
 {
 "description":"ШАГ: Ожидание завершения поиска",
 "type":"wait_element",
-"value":"",
 "locator":"//h1[contains(text(), 'Мобильные телефоны')]",
+"value":"",
 "timeout":15
 },
 {
 "description":"ШАГ: Нажал на кнопку Найти",
 "type":"click_element",
-"value":"",
 "locator":"//button[@class='button button_color_green button_size_medium search-form__submit']",
+"value":"",
 "timeout":1
 },
 {
 "description":"ШАГ: Ожидание 5 секунд",
 "type":"sleep",
-"value":"",
 "locator":"",
+"value":"",
 "timeout":5
 },
 {
 "description":"Событие GA",
 "type":"test_defaults_ga",
-"value":"",
 "locator":"",
+"value":"",
 "timeout":5
+},
+{
+"description":"ШАГ: Иначе",
+"type":"else",
+"locator":"",
+"value":"",
+"timeout":0
+},
+{
+"description":"Элемент не найден (null)",
+"type":"sleep",
+"locator":"",
+"value":"",
+"timeout":1
+},
+{
+"description":"ШАГ: Конец условия",
+"type":"end_if",
+"locator":"",
+"value":"",
+"timeout":0
 }
 ]
 }
