@@ -4,8 +4,9 @@ public class Main {
     public static void main(String[] args) throws Exception {
         System.out.println("|=================================================");
         System.out.println("| Detect Google Analytics & Yandex Metrika");
-        System.out.println("| Latest stable version: 1.0.1 (beta 0.0.0.4)");
-        System.out.println("| © Somov Evgeniy, 2020. All Rights Reserved.");
+        //System.out.println("| Latest stable version: 1.0.1 (beta 0.0.0.4)");
+        System.out.println("| Latest stable version: 1.0.1");
+        System.out.println("| © Somov Evgeniy, 2021. All Rights Reserved.");
         System.out.println("|=================================================");
 
         String argumentFileName = "";
