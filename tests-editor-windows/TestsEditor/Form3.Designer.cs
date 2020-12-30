@@ -149,7 +149,8 @@
             "get_attribute_",
             "ec=",
             "ea=",
-            "el="});
+            "el=",
+            "null"});
             this.comboBoxValue.Location = new System.Drawing.Point(110, 136);
             this.comboBoxValue.Name = "comboBoxValue";
             this.comboBoxValue.Size = new System.Drawing.Size(491, 21);

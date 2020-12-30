@@ -71,9 +71,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(15, 250);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(252, 13);
+            this.label10.Size = new System.Drawing.Size(225, 13);
             this.label10.TabIndex = 9;
-            this.label10.Text = "© 2021 Somov Evgeniy, 2020. All Rights Reserved.";
+            this.label10.Text = "© Somov Evgeniy, 2021. All Rights Reserved.";
             // 
             // groupBox1
             // 
