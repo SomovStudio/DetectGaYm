@@ -292,6 +292,12 @@ public class FormInstruction {
                 System.getProperty("line.separator") + "   - Поле 'Значение' не заполняем" +
                 System.getProperty("line.separator") + "   - Поле 'Время ожидания' ввести значение: 0" + System.getProperty("line.separator") +
                 System.getProperty("line.separator") + "Так же можно использовать ключи else и else_if чтобы построить сложное условие." + System.getProperty("line.separator") +
+                System.getProperty("line.separator") + "С помощью условия можно проверить полученный элемент на null" +
+                System.getProperty("line.separator") + "   - Поле 'Описание' ввести текст: Уловие" +
+                System.getProperty("line.separator") + "   - Поле 'Тип данных' выбрать действие: if_get_text" +
+                System.getProperty("line.separator") + "   - Поле 'Локатор/Протокол/Условия' ввести ключ условия: !=" +
+                System.getProperty("line.separator") + "   - Поле 'Значение' ввести текст: null" +
+                System.getProperty("line.separator") + "   - Поле 'Время ожидания' ввести значение: 0" + System.getProperty("line.separator") +
                 System.getProperty("line.separator") + "--------------------------------------------------------------------------------------------------------------" +
                 System.getProperty("line.separator") + "Чтобы ввести в элемент значение из другого элемента необходимо описать шаги следующего вида:" +
                 System.getProperty("line.separator") + "1. Описание строки поиска элемента:" +
