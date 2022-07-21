@@ -7,7 +7,7 @@
 Программа портативная и кроссплатформенная с поддержкой операционных систем Windows и Linux.
 <br>
 <br>
-Скачать архив: https://github.com/SomovStudio/DetectGaYm/archive/1.0.1.zip
+Скачать архив: https://github.com/SomovStudio/DetectGaYm/archive/refs/tags/1.0.1.zip
 
 <hr>
 
